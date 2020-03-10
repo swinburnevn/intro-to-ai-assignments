@@ -1,0 +1,4 @@
+[1, 2] -- size of map (1 row 2 cols)
+[0, 0] -- starting pos for agent (0, 0)
+[0, 0] dirty -- description of each cell {dirty, clean, nil} where nil meas unenterable room.
+[0, 1] clean
