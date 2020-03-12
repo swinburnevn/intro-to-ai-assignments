@@ -2,6 +2,7 @@
 using System.IO;
 using System.Text.RegularExpressions;
 using System.Collections.Generic;
+using System.Threading;
 
 namespace tutorial_2
 {
@@ -12,6 +13,7 @@ namespace tutorial_2
         Right,
         Up,
         Down,
+        Clean,
         Standby
     }
     public interface IAgentStrategy
@@ -34,17 +36,21 @@ namespace tutorial_2
         SquareStatus _currentSquareStatus;
         int[] _currentPosition;
         SquareStatus[,] _map;
-
+        int _lifetime;
+        /*
         public Percepts(Map map)
         {
             _currentPosition = map.AgentPos;
             _map = map.MapMatrix;
             _currentSquareStatus = map.MapMatrix[map.AgentPos[0], map.AgentPos[1]];
+            _lifetime = 1000;
         }
+        */
 
         public SquareStatus CurrentSquareStatus { get => _currentSquareStatus; set => _currentSquareStatus = value; }
         public int[] CurrentPosition { get => _currentPosition; set => _currentPosition = value; }
         public SquareStatus[,] Map { get => _map; set => _map = value; }
+        public int Lifetime { get => _lifetime; set => _lifetime = value; }
     }
 
     public interface IAgent
@@ -128,13 +134,15 @@ namespace tutorial_2
         }
         public void Draw()
         {
+
+            Console.Clear();
             Console.WriteLine("+-----------------------------------------+");
 
-            for (int x = 0; x < _data.Map.MapMatrix.GetLength(0); x++)
+            for (int y = 0; y < _data.Map.MapMatrix.GetLength(1); y++)
             {
                 Console.Write("  |");
 
-                for (int y = 0; y < _data.Map.MapMatrix.GetLength(1); y++)
+                for (int x = 0; x < _data.Map.MapMatrix.GetLength(0); x++)
                 {
 
                     if ((_data.Map.AgentPos[0] == x) && (_data.Map.AgentPos[1] == y))
@@ -156,6 +164,16 @@ namespace tutorial_2
 
             Console.WriteLine("+-----------------------------------------+");
 
+
+            if (_data.AgentDecisions.Count  > 0)
+            {
+                Console.WriteLine(" Agent has decided: " + _data.AgentDecisions[_data.AgentDecisions.Count - 1]);
+                Console.WriteLine(" Agent Score: " + _data.Lifetime);
+                Console.WriteLine(" Agent Position: x: " + _data.Map.AgentPos[0] + ", y:" + +_data.Map.AgentPos[1]);
+            }
+            
+
+
         }
     }
 
@@ -163,24 +181,27 @@ namespace tutorial_2
     {
         private IAgent _agent;
         private Map _map;
-        private Percepts _percepts;
+
+        private int _lifetime;
+
+        private bool _finished = false;
+
+        List<AgentActions> _agentDecisions;
 
         public void Initilize(Map map)
         {
             _agent = new CleaningAgent();
             _map = map;
+            _agentDecisions = new List<AgentActions>();
+            _lifetime = 1000;
         }
 
 
         public IAgent Agent { get => _agent; set => _agent = value; }
         public Map Map { get => _map; set => _map = value; }
-        public Percepts Percepts
-        {
-            get
-            {
-                return new Percepts(_map);
-            }
-        }
+        public bool Finished { get => _finished; set => _finished = value; }
+        public List<AgentActions> AgentDecisions { get => _agentDecisions; set => _agentDecisions = value; }
+        public int Lifetime { get => _lifetime; set => _lifetime = value; }
     }
 
 
@@ -219,12 +240,133 @@ namespace tutorial_2
                 _readMap.MapMatrix[int.Parse(location[1]), int.Parse(location[2])] 
                     = (SquareStatus)Enum.Parse(typeof(SquareStatus), status, true);
             }
-
+            _reader.Close();
             return _readMap;
 
         }
     }
 
+
+    // Manipulates game data
+    public interface IModel
+    {
+        public void Run();
+    }
+
+    public class GameModel : IModel
+    {
+        ProgramData _data;
+        public GameModel(ref ProgramData data)
+        {
+            _data = data;
+        }
+
+        public Percepts NewPercept()
+        {
+            return new Percepts()
+            {
+                CurrentPosition = _data.Map.AgentPos,
+                Map = _data.Map.MapMatrix,
+                CurrentSquareStatus = _data.Map.MapMatrix[_data.Map.AgentPos[0], _data.Map.AgentPos[1]],
+                Lifetime = _data.Lifetime
+            };
+        }
+        public void Run()
+        {
+            //Update agent percepts
+            Percepts currentPercepts = NewPercept();
+
+            //Decide on what to do
+            AgentActions currentDecision = _data.Agent.next(currentPercepts);
+            _data.AgentDecisions.Add(currentDecision);
+
+
+            //Update World + Percepts
+            switch (currentDecision)
+            {
+                case AgentActions.Down:
+                    MoveAgent(currentDecision);
+                    break;
+
+                case AgentActions.Up:
+                    MoveAgent(currentDecision);
+                    break;
+
+                case AgentActions.Left:
+                    MoveAgent(currentDecision);
+                    break;
+
+                case AgentActions.Right:
+                    MoveAgent(currentDecision);
+                    break;
+
+                case AgentActions.Clean:
+                    CleanCurrentTile();
+                    break;
+
+            }
+
+
+            _data.Lifetime--;
+
+
+        }
+
+        public void CleanCurrentTile()
+        {
+            if (_data.Map.MapMatrix[_data.Map.AgentPos[0], _data.Map.AgentPos[1]] == SquareStatus.Dirty)
+            {
+                _data.Map.MapMatrix[_data.Map.AgentPos[0], _data.Map.AgentPos[1]] = SquareStatus.Clean;
+                _data.Lifetime++;
+            }
+            
+        }
+
+        public bool WithinMapBorders(int[] loc)
+        {
+            if ((0 <= loc[0]) && (loc[0] <= _data.Map.Size[0] - 1))
+            {
+                if ((0 <= loc[1]) && (loc[1] <= _data.Map.Size[1] - 1))
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        public void MoveAgent(AgentActions action)
+        {
+            int[] newPos;
+            switch (action)
+            {
+                //Down is +VE, matrix notation
+                case AgentActions.Down:
+                    newPos = new int[] { _data.Map.AgentPos[0], _data.Map.AgentPos[1] + 1 };
+                    if (WithinMapBorders(newPos))
+                        _data.Map.AgentPos = newPos;
+                    break;
+
+                case AgentActions.Up:
+                    newPos = new int[] { _data.Map.AgentPos[0], _data.Map.AgentPos[1] - 1 };
+                    if (WithinMapBorders(newPos))
+                        _data.Map.AgentPos = newPos;
+                    break;
+
+                case AgentActions.Left:
+                    newPos = new int[] { _data.Map.AgentPos[0] - 1, _data.Map.AgentPos[1] };
+                    if (WithinMapBorders(newPos))
+                        _data.Map.AgentPos = newPos;
+                    break;
+
+                case AgentActions.Right:
+                    newPos = new int[] { _data.Map.AgentPos[0] + 1, _data.Map.AgentPos[1] };
+                    if (WithinMapBorders(newPos))
+                        _data.Map.AgentPos = newPos;
+                    break;
+            }
+        }
+    }
 
     class Program
     {
@@ -232,6 +374,7 @@ namespace tutorial_2
         {       
             ProgramData _data = new ProgramData();
             IView _view = new ConsoleView(ref _data);
+            IModel _model = new GameModel(ref _data);
             IMapParser _mapParser = new MapParser();
 
             Map _map = _mapParser.ReadMapFromFile("basic-map.txt");
@@ -239,15 +382,13 @@ namespace tutorial_2
 
             _data.Agent.SetAgentStrategy(new AgentRandomStrategy());
 
-            _view.Draw();
-
-            Console.WriteLine("Agent Decision: " + _data.Agent.next(_data.Percepts));
-
-            //while ((line = _reader.ReadLine()) != null)
-            //{
-            //    string[] items = line.Split(' ');
-            //}
-
+            while(!_data.Finished)
+            {
+                _model.Run();
+                _view.Draw();
+                Thread.Sleep(1000);
+                
+            }
         }
     }
 }
