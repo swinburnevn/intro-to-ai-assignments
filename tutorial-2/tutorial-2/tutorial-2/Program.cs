@@ -6,32 +6,69 @@ using System.Collections.Generic;
 namespace tutorial_2
 {
 
-    public interface IAgentStategy
+    public enum AgentActions
     {
-        abstract void next(Percepts percepts);
+        Left,
+        Right,
+        Up,
+        Down,
+        Standby
+    }
+    public interface IAgentStrategy
+    {
+        abstract AgentActions next(Percepts percepts);
 
+    }
+
+    public class AgentRandomStrategy : IAgentStrategy
+    {
+        public AgentActions next(Percepts percepts)
+        {
+            Array possibleActions = Enum.GetValues(typeof(AgentActions));
+            return (AgentActions)possibleActions.GetValue(new Random().Next(0, possibleActions.Length));
+        }
     }
 
     public class Percepts
     {
-        // wrapper that contains all the information required
+        SquareStatus _currentSquareStatus;
+        int[] _currentPosition;
+        SquareStatus[,] _map;
+
+        public Percepts(Map map)
+        {
+            _currentPosition = map.AgentPos;
+            _map = map.MapMatrix;
+            _currentSquareStatus = map.MapMatrix[map.AgentPos[0], map.AgentPos[1]];
+        }
+
+        public SquareStatus CurrentSquareStatus { get => _currentSquareStatus; set => _currentSquareStatus = value; }
+        public int[] CurrentPosition { get => _currentPosition; set => _currentPosition = value; }
+        public SquareStatus[,] Map { get => _map; set => _map = value; }
     }
 
     public interface IAgent
     {
-        public abstract void next(Percepts percepts);
+        public AgentActions next(Percepts percepts);
+        public void SetAgentStrategy(IAgentStrategy strategy);
     }
+
 
     public class CleaningAgent: IAgent
     {
-        private IAgentStategy _agentStategy;
+        private IAgentStrategy _agentStrategy;
 
-        public void next(Percepts percepts)
+        public AgentActions next(Percepts percepts)
         {
-            AgentStategy.next(percepts);
+            return AgentStategy.next(percepts);
         }
 
-        public IAgentStategy AgentStategy { get => _agentStategy; set => _agentStategy = value; }
+        public void SetAgentStrategy(IAgentStrategy strategy)
+        {
+            _agentStrategy = strategy;
+        }
+
+        public IAgentStrategy AgentStategy { get => _agentStrategy; set => _agentStrategy = value; }
     }
 
 
@@ -44,6 +81,7 @@ namespace tutorial_2
     public class Map
     {
         private int[] _size;
+        private int[] _agentPos;
         private SquareStatus[,] _map;
 
 
@@ -52,14 +90,19 @@ namespace tutorial_2
         {
             _size = size;
             _map = new SquareStatus[size[0], size[1]];
+            _agentPos = new int[2] { 0, 0 };
 
+        }
 
-
+        public Map(int x, int y)
+            : this (new int[] { x, y })
+        {
         }
 
 
         public int[] Size { get => _size; }
         public SquareStatus[,] MapMatrix { get => _map; set => _map = value; }
+        public int[] AgentPos { get => _agentPos; set => _agentPos = value; }
     }
 
     public interface IView
@@ -79,8 +122,8 @@ namespace tutorial_2
         {
             _data = data;
 
-            _consoleDisplayValuePairs.Add(SquareStatus.Clean, '_');
-            _consoleDisplayValuePairs.Add(SquareStatus.Dirty, '*');
+            _consoleDisplayValuePairs.Add(SquareStatus.Clean, '.');
+            _consoleDisplayValuePairs.Add(SquareStatus.Dirty, ':');
             _consoleDisplayValuePairs.Add(SquareStatus.Null, '#');
         }
         public void Draw()
@@ -89,11 +132,23 @@ namespace tutorial_2
 
             for (int x = 0; x < _data.Map.MapMatrix.GetLength(0); x++)
             {
-                Console.Write("| ");
+                Console.Write("  |");
 
                 for (int y = 0; y < _data.Map.MapMatrix.GetLength(1); y++)
                 {
-                    Console.Write(_consoleDisplayValuePairs[_data.Map.MapMatrix[x, y]]);
+
+                    if ((_data.Map.AgentPos[0] == x) && (_data.Map.AgentPos[1] == y))
+                    {
+                        Console.Write("A");
+                    } 
+                    else
+                    {
+                        Console.Write(" ");
+                    }
+
+                    Console.Write(_consoleDisplayValuePairs[_data.Map.MapMatrix[x, y]] + "|");
+
+                    
                 }
 
                 Console.WriteLine();
@@ -108,48 +163,90 @@ namespace tutorial_2
     {
         private IAgent _agent;
         private Map _map;
+        private Percepts _percepts;
 
-        public void Initilize(int[] size)
+        public void Initilize(Map map)
         {
             _agent = new CleaningAgent();
-            _map = new Map(size);
+            _map = map;
         }
+
 
         public IAgent Agent { get => _agent; set => _agent = value; }
         public Map Map { get => _map; set => _map = value; }
+        public Percepts Percepts
+        {
+            get
+            {
+                return new Percepts(_map);
+            }
+        }
     }
 
+
+    public interface IMapParser
+    {
+        public Map ReadMapFromFile(string filename);
+    }
+
+    public class MapParser : IMapParser
+    {
+        public Map ReadMapFromFile(string filename)
+        {
+            StreamReader _reader = new StreamReader(filename);
+
+            string line = _reader.ReadLine();               // read first line: map size
+            string[] sizes = Regex.Split(line, @"\D+");     // Returns string[4] with sizes in 1 and 2
+            Map _readMap = new Map(int.Parse(sizes[1]), int.Parse(sizes[2]));
+
+
+            line = _reader.ReadLine();                      // read next line: agent pos
+            string[] agentPos = Regex.Split(line, @"\D+");  // Returns string[4] with pos in 1 and 2
+            _readMap.AgentPos = new int[] { int.Parse(agentPos[1]), int.Parse(agentPos[2]) };
+
+            // rest of lines are in the form [x, y] status
+            while (!_reader.EndOfStream)
+            {
+                line = _reader.ReadLine();
+
+                //failsafe
+                if (line == "")
+                    break;
+
+                string[] location = Regex.Split(line, @"\D+");
+                string status = Regex.Match(line, @"\b(clean|dirty|null)\b").Value;
+
+                _readMap.MapMatrix[int.Parse(location[1]), int.Parse(location[2])] 
+                    = (SquareStatus)Enum.Parse(typeof(SquareStatus), status, true);
+            }
+
+            return _readMap;
+
+        }
+    }
 
 
     class Program
     {
         static void Main(string[] args)
-        {
-            
-            StreamReader _reader = new StreamReader("basic-map.txt");
+        {       
             ProgramData _data = new ProgramData();
             IView _view = new ConsoleView(ref _data);
+            IMapParser _mapParser = new MapParser();
 
+            Map _map = _mapParser.ReadMapFromFile("basic-map.txt");
+            _data.Initilize(_map);
 
-            string line = _reader.ReadLine(); // read size of array
-            string[] sizes = Regex.Split(line, @"\D+"); // Returns string[4] with sizes in 1 and 2
-
-            //why not create map here and send it? (here being procedural)
-            
-            _data.Initilize(new int[2] { int.Parse(sizes[1]), int.Parse(sizes[2]) }); // Creates Map
-
+            _data.Agent.SetAgentStrategy(new AgentRandomStrategy());
 
             _view.Draw();
 
-
-
-
+            Console.WriteLine("Agent Decision: " + _data.Agent.next(_data.Percepts));
 
             //while ((line = _reader.ReadLine()) != null)
             //{
             //    string[] items = line.Split(' ');
             //}
-
 
         }
     }
