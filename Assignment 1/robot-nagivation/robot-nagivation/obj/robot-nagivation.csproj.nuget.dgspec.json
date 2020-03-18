@@ -1,0 +1,81 @@
+{
+  "format": 1,
+  "restore": {
+    "F:\\repos\\intro-to-ai\\Assignment 1\\robot-nagivation\\robot-nagivation\\robot-nagivation.csproj": {}
+  },
+  "projects": {
+    "F:\\repos\\intro-to-ai\\Assignment 1\\robot-nagivation\\robot-nagivation\\robot-nagivation.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "F:\\repos\\intro-to-ai\\Assignment 1\\robot-nagivation\\robot-nagivation\\robot-nagivation.csproj",
+        "projectName": "robot-nagivation",
+        "projectPath": "F:\\repos\\intro-to-ai\\Assignment 1\\robot-nagivation\\robot-nagivation\\robot-nagivation.csproj",
+        "packagesPath": "C:\\Users\\Mikan Kikuchi\\.nuget\\packages\\",
+        "outputPath": "F:\\repos\\intro-to-ai\\Assignment 1\\robot-nagivation\\robot-nagivation\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Mikan Kikuchi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "NUnit": {
+              "target": "Package",
+              "version": "[3.12.0, )"
+            },
+            "sfml-graphics": {
+              "target": "Package",
+              "version": "[2.4.2, )"
+            },
+            "sfml-system": {
+              "target": "Package",
+              "version": "[2.4.2, )"
+            },
+            "sfml-window": {
+              "target": "Package",
+              "version": "[2.4.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

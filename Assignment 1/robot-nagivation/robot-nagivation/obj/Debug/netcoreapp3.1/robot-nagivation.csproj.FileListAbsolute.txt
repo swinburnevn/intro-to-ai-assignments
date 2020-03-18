@@ -1,0 +1,6 @@
+F:\repos\intro-to-ai\Assignment 1\robot-nagivation\robot-nagivation\bin\Debug\netcoreapp3.1\robot-nagivation.exe
+F:\repos\intro-to-ai\Assignment 1\robot-nagivation\robot-nagivation\obj\Debug\netcoreapp3.1\robot-nagivation.csprojAssemblyReference.cache
+F:\repos\intro-to-ai\Assignment 1\robot-nagivation\robot-nagivation\obj\Debug\netcoreapp3.1\robot-nagivation.AssemblyInfoInputs.cache
+F:\repos\intro-to-ai\Assignment 1\robot-nagivation\robot-nagivation\obj\Debug\netcoreapp3.1\robot-nagivation.AssemblyInfo.cs
+F:\repos\intro-to-ai\Assignment 1\robot-nagivation\robot-nagivation\bin\Debug\netcoreapp3.1\nunit.framework.dll
+F:\repos\intro-to-ai\Assignment 1\robot-nagivation\robot-nagivation\obj\Debug\netcoreapp3.1\robot-nagivation.csproj.CopyComplete

@@ -1,0 +1,673 @@
+{
+  "version": 3,
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "Microsoft.NETCore.Platforms/1.1.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard1.0/_._": {}
+        },
+        "runtime": {
+          "lib/netstandard1.0/_._": {}
+        }
+      },
+      "NETStandard.Library/2.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "1.1.0"
+        },
+        "compile": {
+          "lib/netstandard1.0/_._": {}
+        },
+        "runtime": {
+          "lib/netstandard1.0/_._": {}
+        },
+        "build": {
+          "build/netstandard2.0/NETStandard.Library.targets": {}
+        }
+      },
+      "NUnit/3.12.0": {
+        "type": "package",
+        "dependencies": {
+          "NETStandard.Library": "2.0.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/nunit.framework.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/nunit.framework.dll": {}
+        },
+        "build": {
+          "build/NUnit.props": {}
+        }
+      },
+      "sfml-graphics/2.4.2": {
+        "type": "package",
+        "dependencies": {
+          "sfml-graphics.redist": "2.4.2",
+          "sfml-system": "2.4.2",
+          "sfml-window": "2.4.2"
+        }
+      },
+      "sfml-graphics.redist/2.4.2": {
+        "type": "package"
+      },
+      "sfml-system/2.4.2": {
+        "type": "package",
+        "dependencies": {
+          "sfml-system.redist": "2.4.2"
+        }
+      },
+      "sfml-system.redist/2.4.2": {
+        "type": "package"
+      },
+      "sfml-window/2.4.2": {
+        "type": "package",
+        "dependencies": {
+          "sfml-system": "2.4.2",
+          "sfml-window.redist": "2.4.2"
+        }
+      },
+      "sfml-window.redist/2.4.2": {
+        "type": "package"
+      }
+    }
+  },
+  "libraries": {
+    "Microsoft.NETCore.Platforms/1.1.0": {
+      "sha512": "kz0PEW2lhqygehI/d6XsPCQzD7ff7gUJaVGPVETX611eadGsA3A877GdSlU0LRVMCTH/+P3o2iDTak+S08V2+A==",
+      "type": "package",
+      "path": "microsoft.netcore.platforms/1.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "ThirdPartyNotices.txt",
+        "dotnet_library_license.txt",
+        "lib/netstandard1.0/_._",
+        "microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+        "microsoft.netcore.platforms.nuspec",
+        "runtime.json"
+      ]
+    },
+    "NETStandard.Library/2.0.0": {
+      "sha512": "7jnbRU+L08FXKMxqUflxEXtVymWvNOrS8yHgu9s6EM8Anr6T/wIX4nZ08j/u3Asz+tCufp3YVwFSEvFTPYmBPA==",
+      "type": "package",
+      "path": "netstandard.library/2.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "build/NETStandard.Library.targets",
+        "build/netstandard2.0/NETStandard.Library.targets",
+        "build/netstandard2.0/ref/Microsoft.Win32.Primitives.dll",
+        "build/netstandard2.0/ref/System.AppContext.dll",
+        "build/netstandard2.0/ref/System.Collections.Concurrent.dll",
+        "build/netstandard2.0/ref/System.Collections.NonGeneric.dll",
+        "build/netstandard2.0/ref/System.Collections.Specialized.dll",
+        "build/netstandard2.0/ref/System.Collections.dll",
+        "build/netstandard2.0/ref/System.ComponentModel.Composition.dll",
+        "build/netstandard2.0/ref/System.ComponentModel.EventBasedAsync.dll",
+        "build/netstandard2.0/ref/System.ComponentModel.Primitives.dll",
+        "build/netstandard2.0/ref/System.ComponentModel.TypeConverter.dll",
+        "build/netstandard2.0/ref/System.ComponentModel.dll",
+        "build/netstandard2.0/ref/System.Console.dll",
+        "build/netstandard2.0/ref/System.Core.dll",
+        "build/netstandard2.0/ref/System.Data.Common.dll",
+        "build/netstandard2.0/ref/System.Data.dll",
+        "build/netstandard2.0/ref/System.Diagnostics.Contracts.dll",
+        "build/netstandard2.0/ref/System.Diagnostics.Debug.dll",
+        "build/netstandard2.0/ref/System.Diagnostics.FileVersionInfo.dll",
+        "build/netstandard2.0/ref/System.Diagnostics.Process.dll",
+        "build/netstandard2.0/ref/System.Diagnostics.StackTrace.dll",
+        "build/netstandard2.0/ref/System.Diagnostics.TextWriterTraceListener.dll",
+        "build/netstandard2.0/ref/System.Diagnostics.Tools.dll",
+        "build/netstandard2.0/ref/System.Diagnostics.TraceSource.dll",
+        "build/netstandard2.0/ref/System.Diagnostics.Tracing.dll",
+        "build/netstandard2.0/ref/System.Drawing.Primitives.dll",
+        "build/netstandard2.0/ref/System.Drawing.dll",
+        "build/netstandard2.0/ref/System.Dynamic.Runtime.dll",
+        "build/netstandard2.0/ref/System.Globalization.Calendars.dll",
+        "build/netstandard2.0/ref/System.Globalization.Extensions.dll",
+        "build/netstandard2.0/ref/System.Globalization.dll",
+        "build/netstandard2.0/ref/System.IO.Compression.FileSystem.dll",
+        "build/netstandard2.0/ref/System.IO.Compression.ZipFile.dll",
+        "build/netstandard2.0/ref/System.IO.Compression.dll",
+        "build/netstandard2.0/ref/System.IO.FileSystem.DriveInfo.dll",
+        "build/netstandard2.0/ref/System.IO.FileSystem.Primitives.dll",
+        "build/netstandard2.0/ref/System.IO.FileSystem.Watcher.dll",
+        "build/netstandard2.0/ref/System.IO.FileSystem.dll",
+        "build/netstandard2.0/ref/System.IO.IsolatedStorage.dll",
+        "build/netstandard2.0/ref/System.IO.MemoryMappedFiles.dll",
+        "build/netstandard2.0/ref/System.IO.Pipes.dll",
+        "build/netstandard2.0/ref/System.IO.UnmanagedMemoryStream.dll",
+        "build/netstandard2.0/ref/System.IO.dll",
+        "build/netstandard2.0/ref/System.Linq.Expressions.dll",
+        "build/netstandard2.0/ref/System.Linq.Parallel.dll",
+        "build/netstandard2.0/ref/System.Linq.Queryable.dll",
+        "build/netstandard2.0/ref/System.Linq.dll",
+        "build/netstandard2.0/ref/System.Net.Http.dll",
+        "build/netstandard2.0/ref/System.Net.NameResolution.dll",
+        "build/netstandard2.0/ref/System.Net.NetworkInformation.dll",
+        "build/netstandard2.0/ref/System.Net.Ping.dll",
+        "build/netstandard2.0/ref/System.Net.Primitives.dll",
+        "build/netstandard2.0/ref/System.Net.Requests.dll",
+        "build/netstandard2.0/ref/System.Net.Security.dll",
+        "build/netstandard2.0/ref/System.Net.Sockets.dll",
+        "build/netstandard2.0/ref/System.Net.WebHeaderCollection.dll",
+        "build/netstandard2.0/ref/System.Net.WebSockets.Client.dll",
+        "build/netstandard2.0/ref/System.Net.WebSockets.dll",
+        "build/netstandard2.0/ref/System.Net.dll",
+        "build/netstandard2.0/ref/System.Numerics.dll",
+        "build/netstandard2.0/ref/System.ObjectModel.dll",
+        "build/netstandard2.0/ref/System.Reflection.Extensions.dll",
+        "build/netstandard2.0/ref/System.Reflection.Primitives.dll",
+        "build/netstandard2.0/ref/System.Reflection.dll",
+        "build/netstandard2.0/ref/System.Resources.Reader.dll",
+        "build/netstandard2.0/ref/System.Resources.ResourceManager.dll",
+        "build/netstandard2.0/ref/System.Resources.Writer.dll",
+        "build/netstandard2.0/ref/System.Runtime.CompilerServices.VisualC.dll",
+        "build/netstandard2.0/ref/System.Runtime.Extensions.dll",
+        "build/netstandard2.0/ref/System.Runtime.Handles.dll",
+        "build/netstandard2.0/ref/System.Runtime.InteropServices.RuntimeInformation.dll",
+        "build/netstandard2.0/ref/System.Runtime.InteropServices.dll",
+        "build/netstandard2.0/ref/System.Runtime.Numerics.dll",
+        "build/netstandard2.0/ref/System.Runtime.Serialization.Formatters.dll",
+        "build/netstandard2.0/ref/System.Runtime.Serialization.Json.dll",
+        "build/netstandard2.0/ref/System.Runtime.Serialization.Primitives.dll",
+        "build/netstandard2.0/ref/System.Runtime.Serialization.Xml.dll",
+        "build/netstandard2.0/ref/System.Runtime.Serialization.dll",
+        "build/netstandard2.0/ref/System.Runtime.dll",
+        "build/netstandard2.0/ref/System.Security.Claims.dll",
+        "build/netstandard2.0/ref/System.Security.Cryptography.Algorithms.dll",
+        "build/netstandard2.0/ref/System.Security.Cryptography.Csp.dll",
+        "build/netstandard2.0/ref/System.Security.Cryptography.Encoding.dll",
+        "build/netstandard2.0/ref/System.Security.Cryptography.Primitives.dll",
+        "build/netstandard2.0/ref/System.Security.Cryptography.X509Certificates.dll",
+        "build/netstandard2.0/ref/System.Security.Principal.dll",
+        "build/netstandard2.0/ref/System.Security.SecureString.dll",
+        "build/netstandard2.0/ref/System.ServiceModel.Web.dll",
+        "build/netstandard2.0/ref/System.Text.Encoding.Extensions.dll",
+        "build/netstandard2.0/ref/System.Text.Encoding.dll",
+        "build/netstandard2.0/ref/System.Text.RegularExpressions.dll",
+        "build/netstandard2.0/ref/System.Threading.Overlapped.dll",
+        "build/netstandard2.0/ref/System.Threading.Tasks.Parallel.dll",
+        "build/netstandard2.0/ref/System.Threading.Tasks.dll",
+        "build/netstandard2.0/ref/System.Threading.Thread.dll",
+        "build/netstandard2.0/ref/System.Threading.ThreadPool.dll",
+        "build/netstandard2.0/ref/System.Threading.Timer.dll",
+        "build/netstandard2.0/ref/System.Threading.dll",
+        "build/netstandard2.0/ref/System.Transactions.dll",
+        "build/netstandard2.0/ref/System.ValueTuple.dll",
+        "build/netstandard2.0/ref/System.Web.dll",
+        "build/netstandard2.0/ref/System.Windows.dll",
+        "build/netstandard2.0/ref/System.Xml.Linq.dll",
+        "build/netstandard2.0/ref/System.Xml.ReaderWriter.dll",
+        "build/netstandard2.0/ref/System.Xml.Serialization.dll",
+        "build/netstandard2.0/ref/System.Xml.XDocument.dll",
+        "build/netstandard2.0/ref/System.Xml.XPath.XDocument.dll",
+        "build/netstandard2.0/ref/System.Xml.XPath.dll",
+        "build/netstandard2.0/ref/System.Xml.XmlDocument.dll",
+        "build/netstandard2.0/ref/System.Xml.XmlSerializer.dll",
+        "build/netstandard2.0/ref/System.Xml.dll",
+        "build/netstandard2.0/ref/System.dll",
+        "build/netstandard2.0/ref/mscorlib.dll",
+        "build/netstandard2.0/ref/netstandard.dll",
+        "build/netstandard2.0/ref/netstandard.xml",
+        "lib/netstandard1.0/_._",
+        "netstandard.library.2.0.0.nupkg.sha512",
+        "netstandard.library.nuspec"
+      ]
+    },
+    "NUnit/3.12.0": {
+      "sha512": "3oJTrcUcT9wmweBUwgUf0f1XIYy6RZq2ziV+RM95HMKAJGsHPN2i3MKK1dAPvDPMRLz799Llj4eyu/STB9Q7OA==",
+      "type": "package",
+      "path": "nunit/3.12.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "CHANGES.md",
+        "LICENSE.txt",
+        "NOTICES.txt",
+        "build/NUnit.props",
+        "lib/net35/nunit.framework.dll",
+        "lib/net35/nunit.framework.pdb",
+        "lib/net35/nunit.framework.xml",
+        "lib/net40/nunit.framework.dll",
+        "lib/net40/nunit.framework.pdb",
+        "lib/net40/nunit.framework.xml",
+        "lib/net45/nunit.framework.dll",
+        "lib/net45/nunit.framework.pdb",
+        "lib/net45/nunit.framework.xml",
+        "lib/netstandard1.4/nunit.framework.dll",
+        "lib/netstandard1.4/nunit.framework.pdb",
+        "lib/netstandard1.4/nunit.framework.xml",
+        "lib/netstandard2.0/nunit.framework.dll",
+        "lib/netstandard2.0/nunit.framework.pdb",
+        "lib/netstandard2.0/nunit.framework.xml",
+        "nunit.3.12.0.nupkg.sha512",
+        "nunit.nuspec"
+      ]
+    },
+    "sfml-graphics/2.4.2": {
+      "sha512": "dfYGdsUh4yUFstSRDlkocMgZJVefXnjTybi/YE9SX31Tha9m6FPBXklsVrFBHfmUwHae7uCnrpM0qTXDLMW+/g==",
+      "type": "package",
+      "path": "sfml-graphics/2.4.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "build/configurations.autopkg",
+        "build/native/default-propertiesui.xml",
+        "build/native/lib/Win32/v110/Debug/dynamic/sfml-graphics-d.lib",
+        "build/native/lib/Win32/v110/Debug/static/sfml-graphics-s-d.lib",
+        "build/native/lib/Win32/v110/Release/dynamic/sfml-graphics.lib",
+        "build/native/lib/Win32/v110/Release/static/sfml-graphics-s.lib",
+        "build/native/lib/Win32/v120/Debug/dynamic/sfml-graphics-d.lib",
+        "build/native/lib/Win32/v120/Debug/static/sfml-graphics-s-d.lib",
+        "build/native/lib/Win32/v120/Release/dynamic/sfml-graphics.lib",
+        "build/native/lib/Win32/v120/Release/static/sfml-graphics-s.lib",
+        "build/native/lib/Win32/v140/Debug/dynamic/sfml-graphics-d.lib",
+        "build/native/lib/Win32/v140/Debug/static/sfml-graphics-s-d.lib",
+        "build/native/lib/Win32/v140/Release/dynamic/sfml-graphics.lib",
+        "build/native/lib/Win32/v140/Release/static/sfml-graphics-s.lib",
+        "build/native/lib/x64/v110/Debug/dynamic/sfml-graphics-d.lib",
+        "build/native/lib/x64/v110/Debug/static/sfml-graphics-s-d.lib",
+        "build/native/lib/x64/v110/Release/dynamic/sfml-graphics.lib",
+        "build/native/lib/x64/v110/Release/static/sfml-graphics-s.lib",
+        "build/native/lib/x64/v120/Debug/dynamic/sfml-graphics-d.lib",
+        "build/native/lib/x64/v120/Debug/static/sfml-graphics-s-d.lib",
+        "build/native/lib/x64/v120/Release/dynamic/sfml-graphics.lib",
+        "build/native/lib/x64/v120/Release/static/sfml-graphics-s.lib",
+        "build/native/lib/x64/v140/Debug/dynamic/sfml-graphics-d.lib",
+        "build/native/lib/x64/v140/Debug/static/sfml-graphics-s-d.lib",
+        "build/native/lib/x64/v140/Release/dynamic/sfml-graphics.lib",
+        "build/native/lib/x64/v140/Release/static/sfml-graphics-s.lib",
+        "build/native/sfml-graphics-propertiesui-ac675c79-772c-404f-9a30-4edb6aa1b9c6.xml",
+        "build/native/sfml-graphics.targets",
+        "build/publisher-info.txt",
+        "sfml-graphics.2.4.2.nupkg.sha512",
+        "sfml-graphics.nuspec"
+      ]
+    },
+    "sfml-graphics.redist/2.4.2": {
+      "sha512": "/+HJ2fl9WVGX3Lc3fBvBVHHErmwJ6ft1zH3oXztTYysJcbXb9Ehc9xYjkYKdRhhTgUueldKHXn85EmULET8rrA==",
+      "type": "package",
+      "path": "sfml-graphics.redist/2.4.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "build/configurations.autopkg",
+        "build/native/bin/Win32/v110/Debug/dynamic/sfml-graphics-d-2.dll",
+        "build/native/bin/Win32/v110/Release/dynamic/sfml-graphics-2.dll",
+        "build/native/bin/Win32/v120/Debug/dynamic/sfml-graphics-d-2.dll",
+        "build/native/bin/Win32/v120/Release/dynamic/sfml-graphics-2.dll",
+        "build/native/bin/Win32/v140/Debug/dynamic/sfml-graphics-d-2.dll",
+        "build/native/bin/Win32/v140/Release/dynamic/sfml-graphics-2.dll",
+        "build/native/bin/x64/v110/Debug/dynamic/sfml-graphics-d-2.dll",
+        "build/native/bin/x64/v110/Release/dynamic/sfml-graphics-2.dll",
+        "build/native/bin/x64/v120/Debug/dynamic/sfml-graphics-d-2.dll",
+        "build/native/bin/x64/v120/Release/dynamic/sfml-graphics-2.dll",
+        "build/native/bin/x64/v140/Debug/dynamic/sfml-graphics-d-2.dll",
+        "build/native/bin/x64/v140/Release/dynamic/sfml-graphics-2.dll",
+        "build/native/default-propertiesui.xml",
+        "build/native/sfml-graphics.redist.targets",
+        "build/publisher-info.txt",
+        "sfml-graphics.redist.2.4.2.nupkg.sha512",
+        "sfml-graphics.redist.nuspec"
+      ]
+    },
+    "sfml-system/2.4.2": {
+      "sha512": "xDEi9ssf/xe8xlFB3LFz8ipPWJNAQ0qqIBzwmOjcyIcwotm8Ae7vXo0c8U18I7P5SxN87Wac86enIevJFSU/rA==",
+      "type": "package",
+      "path": "sfml-system/2.4.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "build/configurations.autopkg",
+        "build/native/default-propertiesui.xml",
+        "build/native/include/SFML/Audio.hpp",
+        "build/native/include/SFML/Audio/AlResource.hpp",
+        "build/native/include/SFML/Audio/Export.hpp",
+        "build/native/include/SFML/Audio/InputSoundFile.hpp",
+        "build/native/include/SFML/Audio/Listener.hpp",
+        "build/native/include/SFML/Audio/Music.hpp",
+        "build/native/include/SFML/Audio/OutputSoundFile.hpp",
+        "build/native/include/SFML/Audio/Sound.hpp",
+        "build/native/include/SFML/Audio/SoundBuffer.hpp",
+        "build/native/include/SFML/Audio/SoundBufferRecorder.hpp",
+        "build/native/include/SFML/Audio/SoundFileFactory.hpp",
+        "build/native/include/SFML/Audio/SoundFileFactory.inl",
+        "build/native/include/SFML/Audio/SoundFileReader.hpp",
+        "build/native/include/SFML/Audio/SoundFileWriter.hpp",
+        "build/native/include/SFML/Audio/SoundRecorder.hpp",
+        "build/native/include/SFML/Audio/SoundSource.hpp",
+        "build/native/include/SFML/Audio/SoundStream.hpp",
+        "build/native/include/SFML/Config.hpp",
+        "build/native/include/SFML/Graphics.hpp",
+        "build/native/include/SFML/Graphics/BlendMode.hpp",
+        "build/native/include/SFML/Graphics/CircleShape.hpp",
+        "build/native/include/SFML/Graphics/Color.hpp",
+        "build/native/include/SFML/Graphics/ConvexShape.hpp",
+        "build/native/include/SFML/Graphics/Drawable.hpp",
+        "build/native/include/SFML/Graphics/Export.hpp",
+        "build/native/include/SFML/Graphics/Font.hpp",
+        "build/native/include/SFML/Graphics/Glsl.hpp",
+        "build/native/include/SFML/Graphics/Glsl.inl",
+        "build/native/include/SFML/Graphics/Glyph.hpp",
+        "build/native/include/SFML/Graphics/Image.hpp",
+        "build/native/include/SFML/Graphics/PrimitiveType.hpp",
+        "build/native/include/SFML/Graphics/Rect.hpp",
+        "build/native/include/SFML/Graphics/Rect.inl",
+        "build/native/include/SFML/Graphics/RectangleShape.hpp",
+        "build/native/include/SFML/Graphics/RenderStates.hpp",
+        "build/native/include/SFML/Graphics/RenderTarget.hpp",
+        "build/native/include/SFML/Graphics/RenderTexture.hpp",
+        "build/native/include/SFML/Graphics/RenderWindow.hpp",
+        "build/native/include/SFML/Graphics/Shader.hpp",
+        "build/native/include/SFML/Graphics/Shape.hpp",
+        "build/native/include/SFML/Graphics/Sprite.hpp",
+        "build/native/include/SFML/Graphics/Text.hpp",
+        "build/native/include/SFML/Graphics/Texture.hpp",
+        "build/native/include/SFML/Graphics/Transform.hpp",
+        "build/native/include/SFML/Graphics/Transformable.hpp",
+        "build/native/include/SFML/Graphics/Vertex.hpp",
+        "build/native/include/SFML/Graphics/VertexArray.hpp",
+        "build/native/include/SFML/Graphics/View.hpp",
+        "build/native/include/SFML/Main.hpp",
+        "build/native/include/SFML/Network.hpp",
+        "build/native/include/SFML/Network/Export.hpp",
+        "build/native/include/SFML/Network/Ftp.hpp",
+        "build/native/include/SFML/Network/Http.hpp",
+        "build/native/include/SFML/Network/IpAddress.hpp",
+        "build/native/include/SFML/Network/Packet.hpp",
+        "build/native/include/SFML/Network/Socket.hpp",
+        "build/native/include/SFML/Network/SocketHandle.hpp",
+        "build/native/include/SFML/Network/SocketSelector.hpp",
+        "build/native/include/SFML/Network/TcpListener.hpp",
+        "build/native/include/SFML/Network/TcpSocket.hpp",
+        "build/native/include/SFML/Network/UdpSocket.hpp",
+        "build/native/include/SFML/OpenGL.hpp",
+        "build/native/include/SFML/System.hpp",
+        "build/native/include/SFML/System/Clock.hpp",
+        "build/native/include/SFML/System/Err.hpp",
+        "build/native/include/SFML/System/Export.hpp",
+        "build/native/include/SFML/System/FileInputStream.hpp",
+        "build/native/include/SFML/System/InputStream.hpp",
+        "build/native/include/SFML/System/Lock.hpp",
+        "build/native/include/SFML/System/MemoryInputStream.hpp",
+        "build/native/include/SFML/System/Mutex.hpp",
+        "build/native/include/SFML/System/NativeActivity.hpp",
+        "build/native/include/SFML/System/NonCopyable.hpp",
+        "build/native/include/SFML/System/Sleep.hpp",
+        "build/native/include/SFML/System/String.hpp",
+        "build/native/include/SFML/System/String.inl",
+        "build/native/include/SFML/System/Thread.hpp",
+        "build/native/include/SFML/System/Thread.inl",
+        "build/native/include/SFML/System/ThreadLocal.hpp",
+        "build/native/include/SFML/System/ThreadLocalPtr.hpp",
+        "build/native/include/SFML/System/ThreadLocalPtr.inl",
+        "build/native/include/SFML/System/Time.hpp",
+        "build/native/include/SFML/System/Utf.hpp",
+        "build/native/include/SFML/System/Utf.inl",
+        "build/native/include/SFML/System/Vector2.hpp",
+        "build/native/include/SFML/System/Vector2.inl",
+        "build/native/include/SFML/System/Vector3.hpp",
+        "build/native/include/SFML/System/Vector3.inl",
+        "build/native/include/SFML/Window.hpp",
+        "build/native/include/SFML/Window/Context.hpp",
+        "build/native/include/SFML/Window/ContextSettings.hpp",
+        "build/native/include/SFML/Window/Event.hpp",
+        "build/native/include/SFML/Window/Export.hpp",
+        "build/native/include/SFML/Window/GlResource.hpp",
+        "build/native/include/SFML/Window/Joystick.hpp",
+        "build/native/include/SFML/Window/Keyboard.hpp",
+        "build/native/include/SFML/Window/Mouse.hpp",
+        "build/native/include/SFML/Window/Sensor.hpp",
+        "build/native/include/SFML/Window/Touch.hpp",
+        "build/native/include/SFML/Window/VideoMode.hpp",
+        "build/native/include/SFML/Window/Window.hpp",
+        "build/native/include/SFML/Window/WindowHandle.hpp",
+        "build/native/include/SFML/Window/WindowStyle.hpp",
+        "build/native/include/delete.me",
+        "build/native/lib/Win32/flac.lib",
+        "build/native/lib/Win32/freetype.lib",
+        "build/native/lib/Win32/jpeg.lib",
+        "build/native/lib/Win32/ogg.lib",
+        "build/native/lib/Win32/openal32.lib",
+        "build/native/lib/Win32/v110/Debug/dynamic/sfml-system-d.lib",
+        "build/native/lib/Win32/v110/Debug/sfml-main-d.lib",
+        "build/native/lib/Win32/v110/Debug/static/sfml-system-s-d.lib",
+        "build/native/lib/Win32/v110/Release/dynamic/sfml-system.lib",
+        "build/native/lib/Win32/v110/Release/sfml-main.lib",
+        "build/native/lib/Win32/v110/Release/static/sfml-system-s.lib",
+        "build/native/lib/Win32/v120/Debug/dynamic/sfml-system-d.lib",
+        "build/native/lib/Win32/v120/Debug/sfml-main-d.lib",
+        "build/native/lib/Win32/v120/Debug/static/sfml-system-s-d.lib",
+        "build/native/lib/Win32/v120/Release/dynamic/sfml-system.lib",
+        "build/native/lib/Win32/v120/Release/sfml-main.lib",
+        "build/native/lib/Win32/v120/Release/static/sfml-system-s.lib",
+        "build/native/lib/Win32/v140/Debug/dynamic/sfml-system-d.lib",
+        "build/native/lib/Win32/v140/Debug/sfml-main-d.lib",
+        "build/native/lib/Win32/v140/Debug/static/sfml-system-s-d.lib",
+        "build/native/lib/Win32/v140/Release/dynamic/sfml-system.lib",
+        "build/native/lib/Win32/v140/Release/sfml-main.lib",
+        "build/native/lib/Win32/v140/Release/static/sfml-system-s.lib",
+        "build/native/lib/Win32/vorbis.lib",
+        "build/native/lib/Win32/vorbisenc.lib",
+        "build/native/lib/Win32/vorbisfile.lib",
+        "build/native/lib/x64/flac.lib",
+        "build/native/lib/x64/freetype.lib",
+        "build/native/lib/x64/jpeg.lib",
+        "build/native/lib/x64/ogg.lib",
+        "build/native/lib/x64/openal32.lib",
+        "build/native/lib/x64/v110/Debug/dynamic/sfml-system-d.lib",
+        "build/native/lib/x64/v110/Debug/sfml-main-d.lib",
+        "build/native/lib/x64/v110/Debug/static/sfml-system-s-d.lib",
+        "build/native/lib/x64/v110/Release/dynamic/sfml-system.lib",
+        "build/native/lib/x64/v110/Release/sfml-main.lib",
+        "build/native/lib/x64/v110/Release/static/sfml-system-s.lib",
+        "build/native/lib/x64/v120/Debug/dynamic/sfml-system-d.lib",
+        "build/native/lib/x64/v120/Debug/sfml-main-d.lib",
+        "build/native/lib/x64/v120/Debug/static/sfml-system-s-d.lib",
+        "build/native/lib/x64/v120/Release/dynamic/sfml-system.lib",
+        "build/native/lib/x64/v120/Release/sfml-main.lib",
+        "build/native/lib/x64/v120/Release/static/sfml-system-s.lib",
+        "build/native/lib/x64/v140/Debug/dynamic/sfml-system-d.lib",
+        "build/native/lib/x64/v140/Debug/sfml-main-d.lib",
+        "build/native/lib/x64/v140/Debug/static/sfml-system-s-d.lib",
+        "build/native/lib/x64/v140/Release/dynamic/sfml-system.lib",
+        "build/native/lib/x64/v140/Release/sfml-main.lib",
+        "build/native/lib/x64/v140/Release/static/sfml-system-s.lib",
+        "build/native/lib/x64/vorbis.lib",
+        "build/native/lib/x64/vorbisenc.lib",
+        "build/native/lib/x64/vorbisfile.lib",
+        "build/native/sfml-system-propertiesui-42456d24-88cf-4b52-ab4c-2f0567019ea3.xml",
+        "build/native/sfml-system.targets",
+        "build/publisher-info.txt",
+        "sfml-system.2.4.2.nupkg.sha512",
+        "sfml-system.nuspec"
+      ]
+    },
+    "sfml-system.redist/2.4.2": {
+      "sha512": "5omFNp4Kb7rv1vnuGMC1xMLWa0l37RB4q4Mrupn+P871DyYl8yoDl5pKMgf2SB6ihaLvlDH+zzeqta9WgFh3Cg==",
+      "type": "package",
+      "path": "sfml-system.redist/2.4.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "build/configurations.autopkg",
+        "build/native/bin/Win32/openal32.dll",
+        "build/native/bin/Win32/v110/Debug/dynamic/sfml-system-d-2.dll",
+        "build/native/bin/Win32/v110/Release/dynamic/sfml-system-2.dll",
+        "build/native/bin/Win32/v120/Debug/dynamic/sfml-system-d-2.dll",
+        "build/native/bin/Win32/v120/Release/dynamic/sfml-system-2.dll",
+        "build/native/bin/Win32/v140/Debug/dynamic/sfml-system-d-2.dll",
+        "build/native/bin/Win32/v140/Release/dynamic/sfml-system-2.dll",
+        "build/native/bin/x64/openal32.dll",
+        "build/native/bin/x64/v110/Debug/dynamic/sfml-system-d-2.dll",
+        "build/native/bin/x64/v110/Release/dynamic/sfml-system-2.dll",
+        "build/native/bin/x64/v120/Debug/dynamic/sfml-system-d-2.dll",
+        "build/native/bin/x64/v120/Release/dynamic/sfml-system-2.dll",
+        "build/native/bin/x64/v140/Debug/dynamic/sfml-system-d-2.dll",
+        "build/native/bin/x64/v140/Release/dynamic/sfml-system-2.dll",
+        "build/native/default-propertiesui.xml",
+        "build/native/sfml-system.redist.targets",
+        "build/publisher-info.txt",
+        "sfml-system.redist.2.4.2.nupkg.sha512",
+        "sfml-system.redist.nuspec"
+      ]
+    },
+    "sfml-window/2.4.2": {
+      "sha512": "nusTq6IH/IgxdB10ojHxD9CgLfCMIWhHdFltJHjrJU4l1BfWAbFUUpZfphfKmOE/imNU8i1PSsiegp4A3MQ9qA==",
+      "type": "package",
+      "path": "sfml-window/2.4.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "build/configurations.autopkg",
+        "build/native/default-propertiesui.xml",
+        "build/native/lib/Win32/v110/Debug/dynamic/sfml-window-d.lib",
+        "build/native/lib/Win32/v110/Debug/static/sfml-window-s-d.lib",
+        "build/native/lib/Win32/v110/Release/dynamic/sfml-window.lib",
+        "build/native/lib/Win32/v110/Release/static/sfml-window-s.lib",
+        "build/native/lib/Win32/v120/Debug/dynamic/sfml-window-d.lib",
+        "build/native/lib/Win32/v120/Debug/static/sfml-window-s-d.lib",
+        "build/native/lib/Win32/v120/Release/dynamic/sfml-window.lib",
+        "build/native/lib/Win32/v120/Release/static/sfml-window-s.lib",
+        "build/native/lib/Win32/v140/Debug/dynamic/sfml-window-d.lib",
+        "build/native/lib/Win32/v140/Debug/static/sfml-window-s-d.lib",
+        "build/native/lib/Win32/v140/Release/dynamic/sfml-window.lib",
+        "build/native/lib/Win32/v140/Release/static/sfml-window-s.lib",
+        "build/native/lib/x64/v110/Debug/dynamic/sfml-window-d.lib",
+        "build/native/lib/x64/v110/Debug/static/sfml-window-s-d.lib",
+        "build/native/lib/x64/v110/Release/dynamic/sfml-window.lib",
+        "build/native/lib/x64/v110/Release/static/sfml-window-s.lib",
+        "build/native/lib/x64/v120/Debug/dynamic/sfml-window-d.lib",
+        "build/native/lib/x64/v120/Debug/static/sfml-window-s-d.lib",
+        "build/native/lib/x64/v120/Release/dynamic/sfml-window.lib",
+        "build/native/lib/x64/v120/Release/static/sfml-window-s.lib",
+        "build/native/lib/x64/v140/Debug/dynamic/sfml-window-d.lib",
+        "build/native/lib/x64/v140/Debug/static/sfml-window-s-d.lib",
+        "build/native/lib/x64/v140/Release/dynamic/sfml-window.lib",
+        "build/native/lib/x64/v140/Release/static/sfml-window-s.lib",
+        "build/native/sfml-window-propertiesui-54ff1a4a-80fd-4631-ab43-c48896c58517.xml",
+        "build/native/sfml-window.targets",
+        "build/publisher-info.txt",
+        "sfml-window.2.4.2.nupkg.sha512",
+        "sfml-window.nuspec"
+      ]
+    },
+    "sfml-window.redist/2.4.2": {
+      "sha512": "KAkXpTnmRtmP8fJOWLQQLTPpiqDd+EV9o3Ri3yJ6K5rzvxRZqQEeBeKpRREr5GbhSFRmgnBIFckz8n/C05/auA==",
+      "type": "package",
+      "path": "sfml-window.redist/2.4.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "build/configurations.autopkg",
+        "build/native/bin/Win32/v110/Debug/dynamic/sfml-window-d-2.dll",
+        "build/native/bin/Win32/v110/Release/dynamic/sfml-window-2.dll",
+        "build/native/bin/Win32/v120/Debug/dynamic/sfml-window-d-2.dll",
+        "build/native/bin/Win32/v120/Release/dynamic/sfml-window-2.dll",
+        "build/native/bin/Win32/v140/Debug/dynamic/sfml-window-d-2.dll",
+        "build/native/bin/Win32/v140/Release/dynamic/sfml-window-2.dll",
+        "build/native/bin/x64/v110/Debug/dynamic/sfml-window-d-2.dll",
+        "build/native/bin/x64/v110/Release/dynamic/sfml-window-2.dll",
+        "build/native/bin/x64/v120/Debug/dynamic/sfml-window-d-2.dll",
+        "build/native/bin/x64/v120/Release/dynamic/sfml-window-2.dll",
+        "build/native/bin/x64/v140/Debug/dynamic/sfml-window-d-2.dll",
+        "build/native/bin/x64/v140/Release/dynamic/sfml-window-2.dll",
+        "build/native/default-propertiesui.xml",
+        "build/native/sfml-window.redist.targets",
+        "build/publisher-info.txt",
+        "sfml-window.redist.2.4.2.nupkg.sha512",
+        "sfml-window.redist.nuspec"
+      ]
+    }
+  },
+  "projectFileDependencyGroups": {
+    ".NETCoreApp,Version=v3.1": [
+      "NUnit >= 3.12.0",
+      "sfml-graphics >= 2.4.2",
+      "sfml-system >= 2.4.2",
+      "sfml-window >= 2.4.2"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\Mikan Kikuchi\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "F:\\repos\\intro-to-ai\\Assignment 1\\robot-nagivation\\robot-nagivation\\robot-nagivation.csproj",
+      "projectName": "robot-nagivation",
+      "projectPath": "F:\\repos\\intro-to-ai\\Assignment 1\\robot-nagivation\\robot-nagivation\\robot-nagivation.csproj",
+      "packagesPath": "C:\\Users\\Mikan Kikuchi\\.nuget\\packages\\",
+      "outputPath": "F:\\repos\\intro-to-ai\\Assignment 1\\robot-nagivation\\robot-nagivation\\obj\\",
+      "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
+      "configFilePaths": [
+        "C:\\Users\\Mikan Kikuchi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "netcoreapp3.1"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "projectReferences": {}
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "netcoreapp3.1": {
+        "dependencies": {
+          "NUnit": {
+            "target": "Package",
+            "version": "[3.12.0, )"
+          },
+          "sfml-graphics": {
+            "target": "Package",
+            "version": "[2.4.2, )"
+          },
+          "sfml-system": {
+            "target": "Package",
+            "version": "[2.4.2, )"
+          },
+          "sfml-window": {
+            "target": "Package",
+            "version": "[2.4.2, )"
+          }
+        },
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}
