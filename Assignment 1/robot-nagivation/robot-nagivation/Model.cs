@@ -88,8 +88,11 @@ namespace robot_nagivation
             AgentActions agentDecision = _data.Agent.next(percepts);
 
             _data.AgentDecisions.Add(agentDecision);
-            _data.AgentPositions.Add(_data.Map.AgentPos);
+            
             MoveAgent(agentDecision);
+            Console.WriteLine(agentDecision);
+
+            _data.AgentPositions.Add(_data.Map.AgentPos);
 
             // Check if agent has reached goal state
             if (_data.Map.MapMatrix[(int)_data.Map.AgentPos.X, (int)_data.Map.AgentPos.Y] == TileType.Goal)

@@ -22,6 +22,7 @@ namespace robot_nagivation
         {
             _finished = false;
             _agentDecisions = new List<AgentActions>();
+            _agentPositions = new List<Vector2>();
             _steps = 0;
         }
 
@@ -30,6 +31,7 @@ namespace robot_nagivation
         public List<AgentActions> AgentDecisions { get => _agentDecisions; set => _agentDecisions = value; }
         public bool Finished { get => _finished; set => _finished = value; }
         public int Steps { get => _steps; set => _steps = value; }
+        public List<Vector2> AgentPositions { get => _agentPositions; set => _agentPositions = value; }
     }
 
 

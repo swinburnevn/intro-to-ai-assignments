@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Threading;
+using System.Numerics;
 
 using SFML.Graphics;
 using SFML.System;
@@ -25,6 +26,7 @@ namespace robot_nagivation
 
         public SFMLView(ref ProgramData data)
         {
+
             _data = data;
 
 
@@ -111,6 +113,9 @@ namespace robot_nagivation
                 FillColor = new Color(40, 40, 40)
             });
 
+
+
+
             Vector2f boxSize = new Vector2f(
                     (570 - 100) / _data.Map.MapMatrix.GetLength(0),
                     (430 - 100) / _data.Map.MapMatrix.GetLength(1)
@@ -119,6 +124,10 @@ namespace robot_nagivation
             Vector2f spacing = new Vector2f(
                 100 / _data.Map.MapMatrix.GetLength(0),
                 100 / (_data.Map.MapMatrix.GetLength(1)+1));
+
+           
+
+            
 
             for (int y = 0; y < _data.Map.MapMatrix.GetLength(1); y++)
             {
@@ -173,6 +182,7 @@ namespace robot_nagivation
                             break;
                     }
 
+
                     if ((_data.Map.AgentPos.X == x) && (_data.Map.AgentPos.Y == y))
                     {
                         _window.Draw(new RectangleShape()
@@ -186,6 +196,44 @@ namespace robot_nagivation
                     }
 
                 }
+            }
+
+            for (int i = 0; i < _data.AgentPositions.Count - 1; i++)
+            {
+                Vector2 prev = _data.AgentPositions[i];
+                Vector2 curr = _data.AgentPositions[i + 1];
+
+                Vector2f A = new Vector2f(
+                    85 + (spacing.X) + prev.X * (boxSize.X + spacing.X) + boxSize.X / 2,
+                    85 + (spacing.Y) + prev.Y * (boxSize.Y + spacing.Y)
+                    );
+
+                Vector2f B = new Vector2f(
+                    85 + (spacing.X) + curr.X * (boxSize.X + spacing.X) + boxSize.X / 2,
+                    85 + (spacing.Y) + curr.Y * (boxSize.Y + spacing.Y)
+                    );
+                Vector2f AB = B - A;
+                float magnitude = (float)Math.Sqrt(AB.X * AB.X + AB.Y * AB.Y);
+                float rotation = (float)(Math.Atan(AB.Y / AB.X) * 180 / Math.PI);
+                if (AB.X < 0)
+                    rotation += 180;
+
+
+                RectangleShape rectLine = new RectangleShape()
+                {
+                    Position = A,
+                    Size = new Vector2f(magnitude, 3),
+                    Rotation = rotation,
+                    FillColor = new Color(
+                        (byte)(255 * i / _data.AgentPositions.Count),
+                        0,
+                       (byte)(255 - 255 * i / _data.AgentPositions.Count)
+                    )
+
+                };
+
+                _window.Draw(rectLine);
+
             }
 
 

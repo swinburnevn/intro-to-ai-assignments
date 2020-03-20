@@ -96,6 +96,7 @@ namespace robot_nagivation
                 line = _reader.ReadLine();                      // Agent pos
                 string[] agentPos = Regex.Split(line, @"\D+");
                 readInMap.AgentPos = new Vector2 ( int.Parse(agentPos[1]), int.Parse(agentPos[2]) );
+                
                 readInMap.MapMatrix[(int)readInMap.AgentPos.X, (int)readInMap.AgentPos.Y] = TileType.Start;
 
                 line = _reader.ReadLine();                      // Goal states of agent / Goal pos.
