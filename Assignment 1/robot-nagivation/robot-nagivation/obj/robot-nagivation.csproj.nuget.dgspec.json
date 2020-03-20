@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "F:\\repos\\intro-to-ai\\Assignment 1\\robot-nagivation\\robot-nagivation\\robot-nagivation.csproj": {}
+    "C:\\repos\\intro-to-ai\\Assignment 1\\robot-nagivation\\robot-nagivation\\robot-nagivation.csproj": {}
   },
   "projects": {
-    "F:\\repos\\intro-to-ai\\Assignment 1\\robot-nagivation\\robot-nagivation\\robot-nagivation.csproj": {
+    "C:\\repos\\intro-to-ai\\Assignment 1\\robot-nagivation\\robot-nagivation\\robot-nagivation.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\repos\\intro-to-ai\\Assignment 1\\robot-nagivation\\robot-nagivation\\robot-nagivation.csproj",
+        "projectUniqueName": "C:\\repos\\intro-to-ai\\Assignment 1\\robot-nagivation\\robot-nagivation\\robot-nagivation.csproj",
         "projectName": "robot-nagivation",
-        "projectPath": "F:\\repos\\intro-to-ai\\Assignment 1\\robot-nagivation\\robot-nagivation\\robot-nagivation.csproj",
-        "packagesPath": "C:\\Users\\Mikan Kikuchi\\.nuget\\packages\\",
-        "outputPath": "F:\\repos\\intro-to-ai\\Assignment 1\\robot-nagivation\\robot-nagivation\\obj\\",
+        "projectPath": "C:\\repos\\intro-to-ai\\Assignment 1\\robot-nagivation\\robot-nagivation\\robot-nagivation.csproj",
+        "packagesPath": "C:\\Users\\Mikan Lumi\\.nuget\\packages\\",
+        "outputPath": "C:\\repos\\intro-to-ai\\Assignment 1\\robot-nagivation\\robot-nagivation\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Mikan Kikuchi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Mikan Lumi\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -45,17 +45,9 @@
               "target": "Package",
               "version": "[3.12.0, )"
             },
-            "sfml-graphics": {
+            "SFML.Net": {
               "target": "Package",
-              "version": "[2.4.2, )"
-            },
-            "sfml-system": {
-              "target": "Package",
-              "version": "[2.4.2, )"
-            },
-            "sfml-window": {
-              "target": "Package",
-              "version": "[2.4.2, )"
+              "version": "[2.5.0, )"
             }
           },
           "imports": [
@@ -73,7 +65,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.200\\RuntimeIdentifierGraph.json"
         }
       }
     }

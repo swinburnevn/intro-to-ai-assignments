@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "dgSpecHash": "PbRztgZcVOYNr8e1oF19Wuzn/iTKaphiOAV9XTbggEUil9bekkEELueR9ZTFeSsMuyUrcN96xxqK+5FrDyCpOw==",
+  "success": true,
+  "projectFilePath": "C:\\repos\\intro-to-ai\\Assignment 1\\robot-nagivation\\robot-nagivation\\robot-nagivation.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Mikan Lumi\\.nuget\\packages\\csfml\\2.5.0\\csfml.2.5.0.nupkg.sha512",
+    "C:\\Users\\Mikan Lumi\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\Mikan Lumi\\.nuget\\packages\\netstandard.library\\2.0.0\\netstandard.library.2.0.0.nupkg.sha512",
+    "C:\\Users\\Mikan Lumi\\.nuget\\packages\\nunit\\3.12.0\\nunit.3.12.0.nupkg.sha512",
+    "C:\\Users\\Mikan Lumi\\.nuget\\packages\\sfml.audio\\2.5.0\\sfml.audio.2.5.0.nupkg.sha512",
+    "C:\\Users\\Mikan Lumi\\.nuget\\packages\\sfml.graphics\\2.5.0\\sfml.graphics.2.5.0.nupkg.sha512",
+    "C:\\Users\\Mikan Lumi\\.nuget\\packages\\sfml.net\\2.5.0\\sfml.net.2.5.0.nupkg.sha512",
+    "C:\\Users\\Mikan Lumi\\.nuget\\packages\\sfml.system\\2.5.0\\sfml.system.2.5.0.nupkg.sha512",
+    "C:\\Users\\Mikan Lumi\\.nuget\\packages\\sfml.window\\2.5.0\\sfml.window.2.5.0.nupkg.sha512"
+  ],
+  "logs": []
+}
