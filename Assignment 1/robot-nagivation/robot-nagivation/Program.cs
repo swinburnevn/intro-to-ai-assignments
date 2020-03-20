@@ -9,7 +9,7 @@ namespace robot_nagivation
             // Create modules and assign connections
 
             ProgramData _data = new ProgramData();
-            IView _view = new ConsoleView(ref _data);
+            IView _view = new SFMLView(ref _data);
             IModel _model = new GameModel(ref _data);
             IMapParser _mapParser = new MapParser();
 
