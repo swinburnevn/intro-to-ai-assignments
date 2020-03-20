@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading;
 
 using SFML.Graphics;
 using SFML.System;
@@ -250,6 +251,7 @@ namespace robot_nagivation
 
             Console.WriteLine("  +-----------------------------------------+");
 
+            Thread.Sleep(10);
            
             if (_data.AgentDecisions.Count > 0)
             {

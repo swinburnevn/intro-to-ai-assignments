@@ -52,6 +52,7 @@ namespace robot_nagivation
             }
 
 
+            Console.Read();
 
 
 
