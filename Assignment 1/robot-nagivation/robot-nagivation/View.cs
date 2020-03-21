@@ -125,6 +125,19 @@ namespace robot_nagivation
                 100 / _data.Map.MapMatrix.GetLength(0),
                 100 / (_data.Map.MapMatrix.GetLength(1)+1));
 
+            int _posPointer = 0;
+            for (int i = _data.AgentDecisions.Count; (i > _data.AgentDecisions.Count - 15) && (i >= 1); i--)
+            {
+                
+                _window.Draw(new Text(i +  " : " +_data.AgentDecisions[i-1].ToString(), _font, 16)
+                {
+                    Position = new Vector2f(740, 160 + _posPointer * 22),
+                    FillColor = new Color(252, 187, 116)
+
+                });
+                _posPointer++;
+            }
+
            
 
             

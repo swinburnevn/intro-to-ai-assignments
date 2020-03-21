@@ -48,7 +48,7 @@ namespace robot_nagivation
             {
                 _model.Run();
                 _view.Draw();
-                //Thread.Sleep(1000);
+                System.Threading.Thread.Sleep(50);
 
             }
 
