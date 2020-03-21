@@ -19,6 +19,8 @@ namespace robot_nagivation
 
     public enum AgentActions
     {
+        Search,
+        Idle,
         Up,
         Down,
         Left,

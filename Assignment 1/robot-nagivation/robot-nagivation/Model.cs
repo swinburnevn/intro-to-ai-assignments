@@ -24,6 +24,7 @@ namespace robot_nagivation
      */
     public interface IModel
     {
+        public void Initialise();
         public void Run();
     }
 
@@ -33,6 +34,12 @@ namespace robot_nagivation
         public GameModel(ref ProgramData data)
         {
             _data = data;
+        }
+
+        public void Initialise()
+        {
+            _data.AgentPositions.Add(_data.Map.AgentPos);
+            _data.Agent.Initialise(CreatePercepts());
         }
 
         public bool WithinMap (Vector2 pos)
@@ -76,18 +83,25 @@ namespace robot_nagivation
                     break;
             }
         }
+
+        public Percepts CreatePercepts()
+        {
+            Percepts percepts = new Percepts();
+            percepts.Map = _data.Map.MapMatrix;
+            percepts.AgentPos = _data.Map.AgentPos;
+            return percepts;
+        }
         public void Run()
         {
             _data.Steps++;
 
 
-            Percepts percepts = new Percepts();
-            percepts.Map = _data.Map.MapMatrix;
-            percepts.AgentPos = _data.Map.AgentPos;
+            Percepts percepts = CreatePercepts();
             
             AgentActions agentDecision = _data.Agent.next(percepts);
 
             _data.AgentDecisions.Add(agentDecision);
+            _data.SearchedNodes = _data.Agent.GetSearchedNodes();
             
             MoveAgent(agentDecision);
             Console.WriteLine(agentDecision);

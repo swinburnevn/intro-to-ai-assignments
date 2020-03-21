@@ -249,7 +249,17 @@ namespace robot_nagivation
 
             }
 
-
+            foreach (Vector2 node in _data.SearchedNodes)
+            {
+                _window.Draw(new CircleShape()
+                {
+                    Position = new Vector2f(
+                            85 + (spacing.X) + node.X * (boxSize.X + spacing.X) + boxSize.X / 2 - 10,
+                            60 + (spacing.Y) + node.Y * (boxSize.Y + spacing.Y) + boxSize.Y / 2 - 5) ,
+                    Radius = 10,
+                    FillColor = new Color(150, 150, 150)
+                });
+            }
 
             _window.Display();
         }

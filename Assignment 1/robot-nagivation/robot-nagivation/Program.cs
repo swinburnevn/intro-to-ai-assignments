@@ -22,7 +22,7 @@ namespace robot_nagivation
             }
 
             _data.Map = _map;
-            _data.AgentPositions.Add(_data.Map.AgentPos);
+
 
             // Define type of agent, insert into data.
             /*
@@ -42,7 +42,8 @@ namespace robot_nagivation
             }
             */
 
-            _data.Agent = new RandomAgent();
+            _data.Agent = new BreadthFirstAgent();
+            _model.Initialise();
 
             while (!_data.Finished)
             {
