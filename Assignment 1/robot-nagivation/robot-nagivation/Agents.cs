@@ -12,6 +12,7 @@ namespace robot_nagivation
 
         public List<Vector2> GetSearchedNodes();
         public List<Vector2> GetFrontierNodes();
+        public List<Vector2> GetPath();
          
 
     }
@@ -57,11 +58,16 @@ namespace robot_nagivation
 
         public abstract List<Vector2> GetSearchedNodes();
         public abstract List<Vector2> GetFrontierNodes();
+        public abstract List<Vector2> GetPath();
     }
 
     public class RandomAgent : IAgent
     {
         public List<Vector2> GetSearchedNodes()
+        {
+            return new List<Vector2>();
+        }
+        public List<Vector2> GetPath()
         {
             return new List<Vector2>();
         }
@@ -82,7 +88,14 @@ namespace robot_nagivation
 
     }
 
+    public class Node
+    {
+        Vector2 _pos;
+        List<Vector2> _prevNodes;
 
+        public Vector2 Pos { get => _pos; set => _pos = value; }
+        public List<Vector2> PrevNodes { get => _prevNodes; set => _prevNodes = value; }
+    }
 
     public class BreadthFirstAgent : SearchingAgent
     {
@@ -91,6 +104,11 @@ namespace robot_nagivation
 
         private List<Vector2> _listSearchedNodes;
         private List<Vector2> _frontierNodes;
+
+        private List<Vector2> _nodePath;
+        private Queue<AgentActions> _commandPath;
+
+        private Vector2[,] _internalMap;
 
         private bool _foundGoal;
 
@@ -102,7 +120,9 @@ namespace robot_nagivation
             _searchedNodes = new HashSet<Vector2>();
             _listSearchedNodes = new List<Vector2>();
             _frontierNodes = new List<Vector2>();
+            _nodePath = new List<Vector2>();
             _foundGoal = false;
+
         }
 
         public override List<Vector2> GetSearchedNodes()
@@ -116,13 +136,50 @@ namespace robot_nagivation
         public override void Initialise(Percepts percepts)
         {
             _nodeQueue.Enqueue(percepts.AgentPos);
+            _internalMap = new Vector2[percepts.Map.GetLength(0), percepts.Map.GetLength(1)];
+        }
+
+        public void InterpretCommands()
+        {
+            _commandPath = new Queue<AgentActions>();
+
+            for(int i = 0; i < _nodePath.Count - 1; i++)
+            {
+                Vector2 direction = _nodePath[i + 1] - _nodePath[i];
+                if (direction.X > 0)
+                    _commandPath.Enqueue(AgentActions.Right);
+                if (direction.X < 0)
+                    _commandPath.Enqueue(AgentActions.Left);
+                if (direction.Y > 0)
+                    _commandPath.Enqueue(AgentActions.Down);
+                if (direction.Y < 0)
+                    _commandPath.Enqueue(AgentActions.Up);
+            }
+        }
+
+        public void Backtrack(Vector2 start, Vector2 end)
+        {
+            bool finished = false;
+            Vector2 currentNode = start;
+            _nodePath.Add(start);
+            while (!finished)
+            {
+                Vector2 nextNode = _internalMap[(int)currentNode.X, (int)currentNode.Y];
+                _nodePath.Add(nextNode);
+                currentNode = nextNode;
+
+                if (currentNode == end)
+                    finished = true;
+            }
+            _nodePath.Reverse();
         }
 
         public override AgentActions next(Percepts percepts)
         {
             if (_foundGoal)
             {
-
+                if (_commandPath.Count > 0)
+                    return _commandPath.Dequeue();
             } 
             else
             {
@@ -132,6 +189,8 @@ namespace robot_nagivation
                     if (IsGoalNode(currentNode, percepts))
                     {
                         _foundGoal = true;
+                        Backtrack(currentNode, percepts.AgentPos);
+                        InterpretCommands();
                         Console.WriteLine("Found Goal, setting internal flag to true");
                     }
 
@@ -142,6 +201,8 @@ namespace robot_nagivation
                     {
                         if (!_searchedNodes.Contains(subnode))
                         {
+
+                            _internalMap[(int)subnode.X, (int)subnode.Y] = currentNode;
                             _nodeQueue.Enqueue(subnode);
                             _searchedNodes.Add(subnode);
                             _listSearchedNodes.Add(subnode);
@@ -161,6 +222,10 @@ namespace robot_nagivation
             return AgentActions.Idle;
         }
 
+        public override List<Vector2> GetPath()
+        {
+            return _nodePath;
+        }
     }
 
 

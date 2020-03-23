@@ -103,6 +103,7 @@ namespace robot_nagivation
             _data.AgentDecisions.Add(agentDecision);
             _data.SearchedNodes = _data.Agent.GetSearchedNodes();
             _data.FrontierNodes = _data.Agent.GetFrontierNodes();
+            _data.Path = _data.Agent.GetPath();
             
             MoveAgent(agentDecision);
             Console.WriteLine(agentDecision);
