@@ -102,6 +102,7 @@ namespace robot_nagivation
 
             _data.AgentDecisions.Add(agentDecision);
             _data.SearchedNodes = _data.Agent.GetSearchedNodes();
+            _data.FrontierNodes = _data.Agent.GetFrontierNodes();
             
             MoveAgent(agentDecision);
             Console.WriteLine(agentDecision);

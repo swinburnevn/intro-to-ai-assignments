@@ -14,6 +14,7 @@ namespace robot_nagivation
         private List<AgentActions> _foundPath;
         private List<Vector2> _agentPositions;
         private List<Vector2> _searchedNodes;
+        private List<Vector2> _frontierNodes;
 
         private int _steps;
 
@@ -35,6 +36,7 @@ namespace robot_nagivation
         public int Steps { get => _steps; set => _steps = value; }
         public List<Vector2> AgentPositions { get => _agentPositions; set => _agentPositions = value; }
         public List<Vector2> SearchedNodes { get => _searchedNodes; set => _searchedNodes = value; }
+        public List<Vector2> FrontierNodes { get => _frontierNodes; set => _frontierNodes = value; }
     }
 
 

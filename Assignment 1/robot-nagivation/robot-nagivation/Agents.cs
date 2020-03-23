@@ -11,6 +11,7 @@ namespace robot_nagivation
         public void Initialise(Percepts percepts);
 
         public List<Vector2> GetSearchedNodes();
+        public List<Vector2> GetFrontierNodes();
          
 
     }
@@ -55,11 +56,16 @@ namespace robot_nagivation
         }
 
         public abstract List<Vector2> GetSearchedNodes();
+        public abstract List<Vector2> GetFrontierNodes();
     }
 
     public class RandomAgent : IAgent
     {
         public List<Vector2> GetSearchedNodes()
+        {
+            return new List<Vector2>();
+        }
+        public List<Vector2> GetFrontierNodes()
         {
             return new List<Vector2>();
         }
@@ -84,17 +90,27 @@ namespace robot_nagivation
         private HashSet<Vector2> _searchedNodes;
 
         private List<Vector2> _listSearchedNodes;
+        private List<Vector2> _frontierNodes;
+
+        private bool _foundGoal;
+
+        public bool FoundGoal { get => _foundGoal; set => _foundGoal = value; }
 
         public BreadthFirstAgent()
         {
             _nodeQueue = new Queue<Vector2>();
             _searchedNodes = new HashSet<Vector2>();
             _listSearchedNodes = new List<Vector2>();
+            _frontierNodes = new List<Vector2>();
+            _foundGoal = false;
         }
 
         public override List<Vector2> GetSearchedNodes()
         {
             return _listSearchedNodes;
+        }public override List<Vector2> GetFrontierNodes()
+        {
+            return _frontierNodes;
         }
 
         public override void Initialise(Percepts percepts)
@@ -104,29 +120,45 @@ namespace robot_nagivation
 
         public override AgentActions next(Percepts percepts)
         {
-            if (_nodeQueue.Count > 0)
+            if (_foundGoal)
             {
-                Vector2 currentNode = _nodeQueue.Dequeue();
-                if (IsGoalNode(currentNode, percepts))
+
+            } 
+            else
+            {
+                if (_nodeQueue.Count > 0)
                 {
-                    Console.WriteLine("at goal node need event handler of some sort");
-                }
-
-
-
-                foreach (Vector2 subnode in SearchSurroundingNodes(currentNode, percepts))
-                {
-                    if (!_searchedNodes.Contains(subnode))
+                    Vector2 currentNode = _nodeQueue.Dequeue();
+                    if (IsGoalNode(currentNode, percepts))
                     {
-                        _nodeQueue.Enqueue(subnode);
-                        _searchedNodes.Add(subnode);
-                        _listSearchedNodes.Add(subnode);
+                        _foundGoal = true;
+                        Console.WriteLine("Found Goal, setting internal flag to true");
+                    }
+
+                    _frontierNodes = new List<Vector2>();
+
+
+                    foreach (Vector2 subnode in SearchSurroundingNodes(currentNode, percepts))
+                    {
+                        if (!_searchedNodes.Contains(subnode))
+                        {
+                            _nodeQueue.Enqueue(subnode);
+                            _searchedNodes.Add(subnode);
+                            _listSearchedNodes.Add(subnode);
+                            _frontierNodes.Add(subnode);
+                        }
+
+
                     }
                 }
+
+                return AgentActions.Search;
+
             }
             
+            
 
-            return AgentActions.Search;
+            return AgentActions.Idle;
         }
 
     }
