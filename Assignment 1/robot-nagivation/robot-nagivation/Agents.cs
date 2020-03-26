@@ -199,7 +199,7 @@ namespace robot_nagivation
 
                     foreach (Vector2 subnode in SearchSurroundingNodes(currentNode, percepts))
                     {
-                        if (true)
+                        if (!_searchedNodes.Contains(subnode))
                         {
 
                             _internalMap[(int)subnode.X, (int)subnode.Y] = currentNode;
