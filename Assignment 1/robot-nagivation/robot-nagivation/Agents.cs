@@ -22,14 +22,15 @@ namespace robot_nagivation
         private AgentData _agentData;   // Contains all the information used by the agent.
         private Percepts _percepts;     // Determines what the agent can "see".
         private AgentState _state;      // Determines what the agent is currently doing
-        private Queue<AgentActions> _determinedMoveSet; // List of actions agent takes
 
         public virtual void Initialise(Percepts percepts)
         {
             _agentData = new AgentData();
             _percepts = percepts;
             _state = AgentState.Searching;
-            _determinedMoveSet = new Queue<AgentActions>();
+
+            AgentData.RootNode = new Node<TileType>(TileType.Start, null, percepts.AgentPos);
+
         }
         public abstract AgentActions next(Percepts percepts);
 
@@ -59,7 +60,7 @@ namespace robot_nagivation
             {
                 if (WithinMap(newNode, percepts))
                     foundNodes.Add(new Node<TileType>(
-                        percepts.MapMatrix[newNode.X, newNode.Y], currentNode));
+                        percepts.MapMatrix[newNode.X, newNode.Y], currentNode, newNode));
             }
             return foundNodes;
         }
@@ -69,39 +70,44 @@ namespace robot_nagivation
             return (node.Data == TileType.Goal);
         }
 
-        //Fix!
-        public void InterpretCommands()
+        public virtual bool IsFinished()
         {
-            _determinedMoveSet = new Queue<AgentActions>();
-
-            for (int i = 0; i < _nodePath.Count - 1; i++)
-            {
-                Vector2 direction = _nodePath[i + 1] - _nodePath[i];
-                if (direction.X > 0)
-                    _commandPath.Enqueue(AgentActions.Right);
-                if (direction.X < 0)
-                    _commandPath.Enqueue(AgentActions.Left);
-                if (direction.Y > 0)
-                    _commandPath.Enqueue(AgentActions.Down);
-                if (direction.Y < 0)
-                    _commandPath.Enqueue(AgentActions.Up);
-            }
+            return (_state == AgentState.Finished);
         }
 
-        public void CreateAgentPath(Node<TileType> start, Node<TileType> end)
+        public Queue<AgentActions> DetermineMoveSet()
+        {
+            Queue<AgentActions> moveSet= new Queue<AgentActions>();
+            for (int i = 0; i < AgentData.NodePath.Count - 1; i++)
+            {
+                Vector2i direction = AgentData.NodePath[i + 1].Pos - AgentData.NodePath[i].Pos;
+                if (direction.X > 0)
+                    moveSet.Enqueue(AgentActions.Right);
+                if (direction.X < 0)
+                    moveSet.Enqueue(AgentActions.Left);
+                if (direction.Y > 0)
+                    moveSet.Enqueue(AgentActions.Down);
+                if (direction.Y < 0)
+                    moveSet.Enqueue(AgentActions.Up);
+            }
+
+            return moveSet;
+        }
+
+        public List<Node<TileType>> DetermineAgentPath(Node<TileType> start, Node<TileType> end)
         {
 
             Node<TileType> currentNode = end;
 
-            AgentData.NodePath = new List<Node<TileType>>();
+            List < Node<TileType>> nodePath = new List<Node<TileType>>();
 
             while (currentNode != start)
             {
-                AgentData.NodePath.Add(currentNode);
+                nodePath.Add(currentNode);
                 currentNode = currentNode.Parent;
-                
             }
-            AgentData.NodePath.Reverse();
+            nodePath.Reverse();
+            return nodePath;
         }
 
 
@@ -113,7 +119,6 @@ namespace robot_nagivation
         public AgentData AgentData { get => _agentData; set => _agentData = value; }
         public Percepts Percepts { get => _percepts; }
         public AgentState State { get => _state; set => _state = value; }
-        public Queue<AgentActions> DeterminedMoveSet { get => _determinedMoveSet; set => _determinedMoveSet = value; }
 
         #endregion
 
@@ -132,8 +137,6 @@ namespace robot_nagivation
 
     public class BreadthFirstAgent : Agent
     {
-
-
         /*  Breadth-First Search Specific Items  */
         private Queue<Node<TileType>> _nodeQueue;
         private HashSet<Node<TileType>> _searchedNodes;
@@ -150,6 +153,8 @@ namespace robot_nagivation
 
             _nodeQueue = new Queue<Node<TileType>>();
             _searchedNodes = new HashSet<Node<TileType>>();
+
+            _nodeQueue.Enqueue(AgentData.RootNode);
         }
 
         public override AgentActions next(Percepts percepts)
@@ -167,8 +172,8 @@ namespace robot_nagivation
                         {
                             State = AgentState.Moving;
 
-                            //Backtrack(currentNode, percepts.AgentPos);
-                            //InterpretCommands();
+                            AgentData.NodePath = DetermineAgentPath(AgentData.RootNode, currentNode );
+                            AgentData.DeterminedMoveSet = DetermineMoveSet();
                         }
 
                         AgentData.PosToSearch = new List<Vector2i>();
@@ -176,24 +181,23 @@ namespace robot_nagivation
                         foreach (Node<TileType> subnode in SearchSurroundingNodes(currentNode, percepts))
                         {
                             if (!_searchedNodes.Contains(subnode))
-                            {
-                                _nodeQueue.Enqueue(subnode);
-                                _searchedNodes.Add(subnode);
-                                AgentData.PosToSearch.Add(subnode.Pos);
-                                AgentData.SeaarchedPos.Add(subnode.Pos);
-                            }
-
-
+                                if (!AgentData.SearchedPos.Contains(subnode.Pos))
+                                {
+                                    _nodeQueue.Enqueue(subnode);
+                                    _searchedNodes.Add(subnode);
+                                    AgentData.PosToSearch.Add(subnode.Pos);
+                                    AgentData.SearchedPos.Add(subnode.Pos);
+                                }
                         }
                     }
 
-                    break;
+                    return AgentActions.Search;
 
 
                 case AgentState.Moving:
 
-                    if (DeterminedMoveSet.Count > 0)
-                        return DeterminedMoveSet.Dequeue();
+                    if (AgentData.DeterminedMoveSet.Count > 0)
+                        return AgentData.DeterminedMoveSet.Dequeue();
                     State = AgentState.Finished;
                     break;
 

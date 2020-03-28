@@ -57,6 +57,12 @@ namespace robot_nagivation
             _parent = parent;
         }
 
+        public Node(T data, Node<T> parent, Vector2i pos)
+            : this(data, parent)
+        {
+            _pos = pos;
+        }
+
         public T Data { get => _data; set => _data = value; }
         public Vector2i Pos { get => _pos; set => _pos = value; }
         public Node<T> Parent { get => _parent; set => _parent = value; }

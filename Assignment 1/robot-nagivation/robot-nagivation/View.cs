@@ -44,22 +44,14 @@ namespace robot_nagivation
         {
             _windowSize = new Vector2i(width, height);
         }
-        
-        
-        public void Draw()
+
+        protected void DrawBackground()
         {
-            // Process Events
-            _window.DispatchEvents();
-
-            _window.Clear(new Color(61,71,78));
-
-            
-
             _window.Draw(new Text("Agent Actions", _font, 35)
             {
-                Position = new Vector2f(720,90),
+                Position = new Vector2f(720, 90),
                 FillColor = new Color(190, 190, 190)
-                
+
             });
 
             //Left Bar
@@ -112,8 +104,17 @@ namespace robot_nagivation
                 Size = new Vector2f(860, 30),
                 FillColor = new Color(40, 40, 40)
             });
+        }
+        
+        
+        public void Draw()
+        {
+            // Process Events
+            _window.DispatchEvents();
 
+            _window.Clear(new Color(61,71,78));
 
+            DrawBackground();
 
 
             Vector2f boxSize = new Vector2f(
@@ -138,10 +139,6 @@ namespace robot_nagivation
                 _posPointer++;
             }
 
-           
-
-            
-
             for (int y = 0; y < _data.Map.MapMatrix.GetLength(1); y++)
             {
                 for (int x = 0; x < _data.Map.MapMatrix.GetLength(0); x++)
@@ -156,7 +153,7 @@ namespace robot_nagivation
                         FillColor = new Color(50, 50, 52)
                     });
 
-                    switch(_data.Map.MapMatrix[x,y].Data)
+                    switch(_data.Map.MapMatrix[x,y])
                     {
                         case TileType.Wall:
 
@@ -211,10 +208,12 @@ namespace robot_nagivation
                 }
             }
 
-            for (int i = 0; i < _data.AgentPositions.Count - 1; i++)
+            /* Draw out the heatmap path */
+
+            for (int i = 0; i < _data.Agent.AgentData.Path.Count - 1; i++)
             {
-                Vector2i prev = _data.AgentPositions[i];
-                Vector2i curr = _data.AgentPositions[i + 1];
+                Vector2i prev = _data.Agent.AgentData.Path[i];
+                Vector2i curr = _data.Agent.AgentData.Path[i + 1];
 
                 Vector2f A = new Vector2f(
                     85 + (spacing.X) + prev.X * (boxSize.X + spacing.X) + boxSize.X / 2,
@@ -238,9 +237,9 @@ namespace robot_nagivation
                     Size = new Vector2f(magnitude, 3),
                     Rotation = rotation,
                     FillColor = new Color(
-                        (byte)(255 * i / _data.AgentPositions.Count),
+                        (byte)(255 * i / _data.Agent.AgentData.Path.Count),
                         0,
-                       (byte)(255 - 255 * i / _data.AgentPositions.Count)
+                       (byte)(255 - 255 * i / _data.Agent.AgentData.Path.Count)
                     )
 
                 };
@@ -249,7 +248,7 @@ namespace robot_nagivation
 
             }
 
-            foreach (Vector2 node in _data.SearchedNodes)
+            foreach (Vector2i node in _data.Agent.AgentData.SearchedPos)
             {
                 _window.Draw(new CircleShape()
                 {
@@ -261,7 +260,7 @@ namespace robot_nagivation
                 });
             }
 
-            foreach (Vector2 node in _data.FrontierNodes)
+            foreach (Vector2i node in _data.Agent.AgentData.PosToSearch)
             {
                 _window.Draw(new CircleShape()
                 {
@@ -273,7 +272,8 @@ namespace robot_nagivation
                 });
             }
 
-            foreach (Vector2 node in _data.Path)
+            /*
+            foreach (Vector2i node in _data.Path)
             {
                 _window.Draw(new CircleShape()
                 {
@@ -284,6 +284,7 @@ namespace robot_nagivation
                     FillColor = new Color(255, 255, 255)
                 });
             }
+            */
 
 
             _window.Display();

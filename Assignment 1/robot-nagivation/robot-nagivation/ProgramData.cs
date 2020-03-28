@@ -25,22 +25,26 @@ namespace robot_nagivation
      */
     public class AgentData
     {
-        private List<AgentActions> _foundPath;      // Path the agent takes. Not altered after it is found.
-        private List<Vector2i> _searchedPos;        // Searched positions
-        private List<Vector2i> _posToSearch;        // Currently searching positions
-        private List<Vector2i> _path;               // List of positions used to get to the final node
+        private Queue<AgentActions> _determinedMoveSet;      // Path the agent takes. Not altered after it is found.
+        private List<Vector2i> _searchedPos;                // Searched positions
+        private List<Vector2i> _posToSearch;                // Currently searching positions
+        private List<Vector2i> _path;                       // List of positions used to get to the final 
 
-        private List<Node<TileType>> _nodePath;     // List of states required to get to end state.
+        private Node<TileType> _rootNode;                   // The starting node
 
-        public int Steps { get => _foundPath.Count; }
-        public List<AgentActions> FoundPath { get => _foundPath; set => _foundPath = value; }
-        public List<Vector2i> SeaarchedPos { get => _searchedPos; set => _searchedPos = value; }
+        private List<Node<TileType>> _nodePath;             // List of states required to get to end state.
+
+        public int Steps { get => _determinedMoveSet.Count; }
+        public Queue<AgentActions> DeterminedMoveSet { get => _determinedMoveSet; set => _determinedMoveSet = value; }
+        public List<Vector2i> SearchedPos { get => _searchedPos; set => _searchedPos = value; }
         public List<Vector2i> PosToSearch { get => _posToSearch; set => _posToSearch = value; }
         public List<Node<TileType>> NodePath { get => _nodePath; set => _nodePath = value; }
+        public Node<TileType> RootNode { get => _rootNode; set => _rootNode = value; }
+        public List<Vector2i> Path { get => _path; set => _path = value; }
 
         public AgentData()
         {
-            _foundPath = new List<AgentActions>();
+            _determinedMoveSet = new Queue<AgentActions>();
             _searchedPos = new List<Vector2i>();
             _posToSearch = new List<Vector2i>();
             _path = new List<Vector2i>();

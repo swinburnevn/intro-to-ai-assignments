@@ -43,7 +43,7 @@ namespace robot_nagivation
             _data.Agent.Initialise(CreatePercepts());
         }
 
-        public bool WithinMap (Vector2 pos)
+        public bool WithinMap (Vector2i pos)
         {
             if ((0 <= pos.X) && (pos.X < _data.Map.MapMatrix.GetLength(0)))
                 if ((0 <= pos.Y) && (pos.Y < _data.Map.MapMatrix.GetLength(1)))
@@ -55,30 +55,30 @@ namespace robot_nagivation
 
         public void MoveAgent(AgentActions direction)
         {
-            Vector2 newPos;
+            Vector2i newPos;
 
             switch (direction)
             {
                 case AgentActions.Up:
-                    newPos = new Vector2(_data.Map.AgentPos.X, _data.Map.AgentPos.Y - 1);
+                    newPos = new Vector2i(_data.Map.AgentPos.X, _data.Map.AgentPos.Y - 1);
                     if (WithinMap(newPos))
                         _data.Map.AgentPos = newPos; 
                     break;
 
                 case AgentActions.Down:
-                    newPos = new Vector2(_data.Map.AgentPos.X, _data.Map.AgentPos.Y + 1);
+                    newPos = new Vector2i(_data.Map.AgentPos.X, _data.Map.AgentPos.Y + 1);
                     if (WithinMap(newPos))
                         _data.Map.AgentPos = newPos;
                     break;
 
                 case AgentActions.Left:
-                    newPos = new Vector2(_data.Map.AgentPos.X - 1, _data.Map.AgentPos.Y);
+                    newPos = new Vector2i(_data.Map.AgentPos.X - 1, _data.Map.AgentPos.Y);
                     if (WithinMap(newPos))
                         _data.Map.AgentPos = newPos;
                     break;
 
                 case AgentActions.Right:
-                    newPos = new Vector2(_data.Map.AgentPos.X + 1, _data.Map.AgentPos.Y);
+                    newPos = new Vector2i(_data.Map.AgentPos.X + 1, _data.Map.AgentPos.Y);
                     if (WithinMap(newPos))
                         _data.Map.AgentPos = newPos;
                     break;
@@ -88,32 +88,31 @@ namespace robot_nagivation
         public Percepts CreatePercepts()
         {
             Percepts percepts = new Percepts();
-            percepts.Map = _data.Map.MapMatrix;
+            percepts.MapMatrix = _data.Map.MapMatrix;
             percepts.AgentPos = _data.Map.AgentPos;
             return percepts;
         }
         public void Run()
         {
-            _data.Steps++;
-
 
             Percepts percepts = CreatePercepts();
             
             AgentActions agentDecision = _data.Agent.next(percepts);
 
             _data.AgentDecisions.Add(agentDecision);
-            _data.SearchedNodes = _data.Agent.GetSearchedNodes();
-            _data.FrontierNodes = _data.Agent.GetFrontierNodes();
-            _data.Path = _data.Agent.GetPath();
+
+            //_data.SearchedNodes = _data.Agent.GetSearchedNodes();
+            //_data.FrontierNodes = _data.Agent.GetFrontierNodes();
+            //_data.Path = _data.Agent.GetPath();
             
             MoveAgent(agentDecision);
             Console.WriteLine(agentDecision);
 
-            _data.AgentPositions.Add(_data.Map.AgentPos);
+            //_data.AgentPositions.Add(_data.Map.AgentPos);
 
             // Check if agent has reached goal state
-            if (_data.Map.MapMatrix[(int)_data.Map.AgentPos.X, (int)_data.Map.AgentPos.Y] == TileType.Goal)
-                _data.Finished = true;
+            _data.Finished = _data.Agent.IsFinished();
+                
             
         }
     }
