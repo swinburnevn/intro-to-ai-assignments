@@ -42,10 +42,10 @@ namespace robot_nagivation
             }
             */
 
-            _data.Agent = new BreadthFirstAgent();
+            _data.Agent = new DepthFirstAgent();
             _model.Initialise();
 
-            while (!_data.Finished)
+            while (!_data.WindowRequestClosed)
             {
                 _model.Run();
                 _view.Draw();

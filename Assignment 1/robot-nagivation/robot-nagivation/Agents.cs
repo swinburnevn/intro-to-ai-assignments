@@ -30,7 +30,7 @@ namespace robot_nagivation
             _state = AgentState.Searching;
 
             AgentData.RootNode = new Node<TileType>(TileType.Start, null, percepts.AgentPos);
-
+            AgentData.RootNode.IsOnPath = true;
         }
         public abstract AgentActions next(Percepts percepts);
 
@@ -51,16 +51,23 @@ namespace robot_nagivation
             Vector2i[] searchNodes = new Vector2i[4]; // 4 surrounding nodes
             List<Node<TileType>> foundNodes = new List<Node<TileType>>();
 
-            searchNodes[0] = new Vector2i(currentNode.Pos.X, currentNode.Pos.Y + 1);
-            searchNodes[1] = new Vector2i(currentNode.Pos.X, currentNode.Pos.Y - 1);
-            searchNodes[2] = new Vector2i(currentNode.Pos.X + 1, currentNode.Pos.Y);
-            searchNodes[3] = new Vector2i(currentNode.Pos.X - 1, currentNode.Pos.Y);
+            // Priorities: Goes UP before LEFT then DOWN then RIGHT
+            searchNodes[3] = new Vector2i(currentNode.Pos.X, currentNode.Pos.Y - 1);
+            searchNodes[2] = new Vector2i(currentNode.Pos.X - 1, currentNode.Pos.Y);
+            searchNodes[1] = new Vector2i(currentNode.Pos.X, currentNode.Pos.Y + 1);
+            searchNodes[0] = new Vector2i(currentNode.Pos.X + 1, currentNode.Pos.Y);
+            
 
-            foreach (Vector2i newNode in searchNodes)
+            foreach (Vector2i newPos in searchNodes)
             {
-                if (WithinMap(newNode, percepts))
-                    foundNodes.Add(new Node<TileType>(
-                        percepts.MapMatrix[newNode.X, newNode.Y], currentNode, newNode));
+                if (WithinMap(newPos, percepts))
+                {
+                    Node<TileType> newNode = new Node<TileType>(
+                        percepts.MapMatrix[newPos.X, newPos.Y], currentNode, newPos);
+                    foundNodes.Add(newNode);
+                    currentNode.Children.Add(newNode);
+                }
+                    
             }
             return foundNodes;
         }
@@ -103,6 +110,7 @@ namespace robot_nagivation
 
             while (currentNode != start)
             {
+                currentNode.IsOnPath = true;
                 nodePath.Add(currentNode);
                 currentNode = currentNode.Parent;
             }
@@ -148,6 +156,87 @@ namespace robot_nagivation
 
     }
 
+    public class DepthFirstAgent : Agent
+    {
+
+        /*  Depth-First Search Specific Items  */
+        private Stack<Node<TileType>> _nodeStack;
+        private HashSet<Node<TileType>> _searchedNodes;
+
+        public DepthFirstAgent()
+        {
+            _nodeStack = new Stack<Node<TileType>>();
+            _searchedNodes = new HashSet<Node<TileType>>();
+        }
+
+        public override void Initialise(Percepts percepts)
+        {
+            base.Initialise(percepts);
+
+            _nodeStack.Push(AgentData.RootNode);
+        }
+
+        public override AgentActions next(Percepts percepts)
+        {
+            Percepts = percepts;
+
+
+            switch (State)
+            {
+                case AgentState.Searching:
+
+                    if (_nodeStack.Count > 0)
+                    {
+                        Node<TileType> currentNode = _nodeStack.Pop();
+
+                        if (IsGoalNode(currentNode))
+                        {
+                            State = AgentState.Moving;
+
+                            AgentData.NodePath = DetermineAgentPath(AgentData.RootNode, currentNode);
+                            AgentData.DeterminedMoveSet = DetermineMoveSet();
+                        }
+
+                        AgentData.PosToSearch = new List<Vector2i>();
+
+                        AgentData.PosToSearch.Add(currentNode.Pos);
+                        AgentData.SearchedPos.Add(currentNode.Pos);
+                        _searchedNodes.Add(currentNode);
+                        AgentData.SearchedNodes.Add(currentNode);
+
+                        foreach (Node<TileType> subnode in SearchSurroundingNodes(currentNode, percepts))
+                        {
+                            if (!_searchedNodes.Contains(subnode))
+                                if (!AgentData.SearchedPos.Contains(subnode.Pos))
+                                {
+                                    _nodeStack.Push(subnode);
+
+                                    
+                                }
+                        }
+                    }
+
+                    return AgentActions.Search;
+
+
+                case AgentState.Moving:
+
+                    AgentData.Path.Add(percepts.AgentPos);
+
+                    if (AgentData.DeterminedMoveSet.Count > 0)
+                        return AgentData.DeterminedMoveSet.Dequeue();
+                    State = AgentState.Finished;
+                    break;
+
+                default:
+                    break;
+
+            }
+
+            return AgentActions.Idle;
+        }
+    }
+
     public class BreadthFirstAgent : Agent
     {
         /*  Breadth-First Search Specific Items  */
@@ -163,9 +252,6 @@ namespace robot_nagivation
         public override void Initialise(Percepts percepts)
         {
             base.Initialise(percepts);
-
-            _nodeQueue = new Queue<Node<TileType>>();
-            _searchedNodes = new HashSet<Node<TileType>>();
 
             _nodeQueue.Enqueue(AgentData.RootNode);
         }
@@ -192,6 +278,8 @@ namespace robot_nagivation
                         }
 
                         AgentData.PosToSearch = new List<Vector2i>();
+
+                        AgentData.SearchedNodes.Add(currentNode);
 
                         foreach (Node<TileType> subnode in SearchSurroundingNodes(currentNode, percepts))
                         {

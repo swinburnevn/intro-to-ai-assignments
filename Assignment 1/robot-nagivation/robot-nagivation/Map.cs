@@ -42,13 +42,17 @@ namespace robot_nagivation
     {
         private T _data; // TileType + Pos
         private Node<T> _parent;
+        private List<Node<T>> _children; // This is assigned externally. For drawing...
         private string _message;
+        private bool _isOnPath;
         private Vector2i _pos;
 
         public Node(T data)
         {
             _data = data;
             _pos = new Vector2i();
+            _children = new List<Node<T>>();
+            _isOnPath = false;
         }
 
         public Node(T data, Node<T> parent)
@@ -67,6 +71,8 @@ namespace robot_nagivation
         public Vector2i Pos { get => _pos; set => _pos = value; }
         public Node<T> Parent { get => _parent; set => _parent = value; }
         public string Message { get => _message; set => _message = value; }
+        public List<Node<T>> Children { get => _children; set => _children = value; }
+        public bool IsOnPath { get => _isOnPath; set => _isOnPath = value; }
     }
     
 

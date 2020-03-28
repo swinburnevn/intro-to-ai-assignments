@@ -33,6 +33,7 @@ namespace robot_nagivation
         private Node<TileType> _rootNode;                   // The starting node
 
         private List<Node<TileType>> _nodePath;             // List of states required to get to end state.
+        private List<Node<TileType>> _searchedNodes;             // List of states required to get to end state.
 
         public int Steps { get => _determinedMoveSet.Count; }
         public Queue<AgentActions> DeterminedMoveSet { get => _determinedMoveSet; set => _determinedMoveSet = value; }
@@ -41,12 +42,14 @@ namespace robot_nagivation
         public List<Node<TileType>> NodePath { get => _nodePath; set => _nodePath = value; }
         public Node<TileType> RootNode { get => _rootNode; set => _rootNode = value; }
         public List<Vector2i> Path { get => _path; set => _path = value; }
+        public List<Node<TileType>> SearchedNodes { get => _searchedNodes; set => _searchedNodes = value; }
 
         public AgentData()
         {
             _determinedMoveSet = new Queue<AgentActions>();
             _searchedPos = new List<Vector2i>();
             _posToSearch = new List<Vector2i>();
+            _searchedNodes = new List<Node<TileType>>();
             _path = new List<Vector2i>();
         }
 
@@ -56,11 +59,15 @@ namespace robot_nagivation
         private Agent _agent;
         private Map _map;
         private bool _finished;
+        private bool _windowRequestClosed;
         private List<AgentActions> _agentDecisions;
+
+        string _agentType;
 
         public ProgramData()
         {
             _finished = false;
+            _windowRequestClosed = false;
             _agentDecisions = new List<AgentActions>();
         }
 
@@ -68,6 +75,8 @@ namespace robot_nagivation
         public Map Map { get => _map; set => _map = value; }
         public List<AgentActions> AgentDecisions { get => _agentDecisions; set => _agentDecisions = value; }
         public bool Finished { get => _finished; set => _finished = value; }
+        public bool WindowRequestClosed { get => _windowRequestClosed; set => _windowRequestClosed = value; }
+        public string AgentType { get => _agentType; set => _agentType = value; }
     }
 
 

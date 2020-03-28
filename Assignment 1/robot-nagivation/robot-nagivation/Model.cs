@@ -93,17 +93,20 @@ namespace robot_nagivation
         public void Run()
         {
 
-            Percepts percepts = CreatePercepts();
+            if (!_data.Finished)
+            {
+                Percepts percepts = CreatePercepts();
 
 
-            AgentActions agentDecision = _data.Agent.next(percepts);
+                AgentActions agentDecision = _data.Agent.next(percepts);
 
-            _data.AgentDecisions.Add(agentDecision);
+                if (agentDecision != AgentActions.Search)
+                    _data.AgentDecisions.Add(agentDecision);
 
-            MoveAgent(agentDecision);
+                MoveAgent(agentDecision);
 
-            _data.Finished = _data.Agent.IsFinished();
-                
+                _data.Finished = _data.Agent.IsFinished();
+            }
             
         }
     }
