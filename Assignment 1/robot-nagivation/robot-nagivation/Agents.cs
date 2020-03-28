@@ -106,10 +106,23 @@ namespace robot_nagivation
                 nodePath.Add(currentNode);
                 currentNode = currentNode.Parent;
             }
+            nodePath.Add(start);
             nodePath.Reverse();
             return nodePath;
         }
 
+        /*
+        public List<Vector2i> DetermineAgentPosPath(List<Node<TileType>> nodePath)
+        {
+            List<Vector2i> posPath = new List<Vector2i>();
+            foreach (Node<TileType> node in nodePath)
+            {
+                posPath.Add(node.Pos);
+            }
+
+            return posPath;
+        }
+        */
 
         #endregion
 
@@ -117,7 +130,7 @@ namespace robot_nagivation
         #region Agent Properties
 
         public AgentData AgentData { get => _agentData; set => _agentData = value; }
-        public Percepts Percepts { get => _percepts; }
+        public Percepts Percepts { get => _percepts; set => _percepts = value; }
         public AgentState State { get => _state; set => _state = value; }
 
         #endregion
@@ -159,6 +172,7 @@ namespace robot_nagivation
 
         public override AgentActions next(Percepts percepts)
         {
+            Percepts = percepts;
 
             switch (State)
             {
@@ -174,6 +188,7 @@ namespace robot_nagivation
 
                             AgentData.NodePath = DetermineAgentPath(AgentData.RootNode, currentNode );
                             AgentData.DeterminedMoveSet = DetermineMoveSet();
+                            //AgentData.Path = DetermineAgentPosPath(AgentData.NodePath);
                         }
 
                         AgentData.PosToSearch = new List<Vector2i>();
@@ -195,6 +210,8 @@ namespace robot_nagivation
 
 
                 case AgentState.Moving:
+
+                    AgentData.Path.Add(percepts.AgentPos);
 
                     if (AgentData.DeterminedMoveSet.Count > 0)
                         return AgentData.DeterminedMoveSet.Dequeue();

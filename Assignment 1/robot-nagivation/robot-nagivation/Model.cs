@@ -20,8 +20,6 @@ namespace robot_nagivation
     /*
      * Encapsulates the logic of the virtual world
      *  Contains Map, Agents, and provides agent with percepts
-     *  
-     * 
      */
     public interface IModel
     {
@@ -96,21 +94,14 @@ namespace robot_nagivation
         {
 
             Percepts percepts = CreatePercepts();
-            
+
+
             AgentActions agentDecision = _data.Agent.next(percepts);
 
             _data.AgentDecisions.Add(agentDecision);
 
-            //_data.SearchedNodes = _data.Agent.GetSearchedNodes();
-            //_data.FrontierNodes = _data.Agent.GetFrontierNodes();
-            //_data.Path = _data.Agent.GetPath();
-            
             MoveAgent(agentDecision);
-            Console.WriteLine(agentDecision);
 
-            //_data.AgentPositions.Add(_data.Map.AgentPos);
-
-            // Check if agent has reached goal state
             _data.Finished = _data.Agent.IsFinished();
                 
             

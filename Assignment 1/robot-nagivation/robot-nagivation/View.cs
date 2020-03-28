@@ -116,7 +116,6 @@ namespace robot_nagivation
 
             DrawBackground();
 
-
             Vector2f boxSize = new Vector2f(
                     (570 - 100) / _data.Map.MapMatrix.GetLength(0),
                     (430 - 100) / _data.Map.MapMatrix.GetLength(1)
@@ -273,7 +272,7 @@ namespace robot_nagivation
             }
 
             /*
-            foreach (Vector2i node in _data.Path)
+            foreach (Vector2i node in _data.AgentData.Path)
             {
                 _window.Draw(new CircleShape()
                 {

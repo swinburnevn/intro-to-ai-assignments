@@ -54,7 +54,6 @@ namespace robot_nagivation
     public class ProgramData
     {
         private Agent _agent;
-        private AgentData _agentData;
         private Map _map;
         private bool _finished;
         private List<AgentActions> _agentDecisions;
@@ -63,16 +62,12 @@ namespace robot_nagivation
         {
             _finished = false;
             _agentDecisions = new List<AgentActions>();
-
-            _agentData = new AgentData();
         }
 
         public Agent Agent { get => _agent; set => _agent = value; }
         public Map Map { get => _map; set => _map = value; }
         public List<AgentActions> AgentDecisions { get => _agentDecisions; set => _agentDecisions = value; }
         public bool Finished { get => _finished; set => _finished = value; }
-        public int Steps { get => _agentData.Steps; }
-        public AgentData AgentData { get => _agentData; set => _agentData = value; }
     }
 
 
