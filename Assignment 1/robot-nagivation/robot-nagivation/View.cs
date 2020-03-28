@@ -54,6 +54,16 @@ namespace robot_nagivation
             _windowSize = new Vector2i(width, height);
         }
 
+        public Color HashedPosColor(int x, int y, int seed)
+        {
+            byte r = (byte)(150 * Math.Sin(x / 3.0f));
+            byte g = (byte)(150 * Math.Cos(y / 3.0f));
+            byte b = (byte)seed;
+
+            return new Color(r, g, b);
+
+        }
+
         protected void DrawBackground()
         {
             _window.Draw(new Text("Agent Actions", _font, 35)
@@ -125,6 +135,20 @@ namespace robot_nagivation
         
         public void DrawNodeDisplay()
         {
+
+            _nodeWindow.Draw(new Text("Node display", _font, 35)
+            {
+                Position = new Vector2f(90, 30),
+                FillColor = new Color(190, 190, 190)
+
+            });
+
+            _nodeWindow.Draw(new Text(_data.AgentType, _font, 15)
+            {
+                Position = new Vector2f(305, 53),
+                FillColor = new Color(190, 190, 190)
+
+            });
 
             bool finished = false;
             int level = 0;
@@ -224,16 +248,15 @@ namespace robot_nagivation
                                 105 + 50 * childXPos,
                                 100 + 20 * level),
                             Radius = 5,
-                            FillColor = new Color(120, 120, 150)
+                            FillColor = HashedPosColor(child.Pos.X, child.Pos.Y, 100)
                         };
 
-                        if (child.IsOnPath)
-                            nodeCircle.FillColor = new Color(148, 202, 214);
 
                         if (child.Data == TileType.Goal)
-                            nodeCircle.FillColor = new Color(255, 201, 14);
+                            nodeCircle.FillColor = new Color(111, 221, 102);
 
-                        
+
+
 
                         _nodeWindow.Draw(nodeCircle);
 
@@ -285,12 +308,7 @@ namespace robot_nagivation
 
             DrawBackground();
 
-            _nodeWindow.Draw(new Text("Node display", _font, 35)
-            {
-                Position = new Vector2f(90, 30),
-                FillColor = new Color(190, 190, 190)
-
-            });
+            
 
             DrawNodeDisplay();
 
@@ -395,7 +413,7 @@ namespace robot_nagivation
                             85 + (spacing.X) + node.X * (boxSize.X + spacing.X) + boxSize.X / 2 - 10,
                             60 + (spacing.Y) + node.Y * (boxSize.Y + spacing.Y) + boxSize.Y / 2 - 5) ,
                     Radius = 10,
-                    FillColor = new Color(150, 150, 150)
+                    FillColor = HashedPosColor(node.X, node.Y, 100)
                 });
             }
 

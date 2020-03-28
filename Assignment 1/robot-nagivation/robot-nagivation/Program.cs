@@ -42,7 +42,8 @@ namespace robot_nagivation
             }
             */
 
-            _data.Agent = new DepthFirstAgent();
+            _data.Agent = new BreadthFirstAgent();
+            _data.AgentType = "Breadth First Agent";
             _model.Initialise();
 
             while (!_data.WindowRequestClosed)
