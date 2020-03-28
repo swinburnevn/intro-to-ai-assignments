@@ -5,6 +5,8 @@ using System.IO;
 using System.Text.RegularExpressions;
 using System.Numerics;
 
+using SFML.System;
+
 namespace robot_nagivation
 {
 
@@ -27,6 +29,39 @@ namespace robot_nagivation
         Right
     }
 
+
+    /*
+     * Node<T> represents a potential state of the agent, notably, it 
+     *  is a position on the tile map. 
+     *  
+     *  Though it was originally inteded to be a pure class, for ease of reading and writing,
+     *  It will not be.
+     * 
+     */
+    public class Node<T>
+    {
+        private T _data; // TileType + Pos
+        private Node<T> _parent;
+        private string _message;
+        private Vector2i _pos;
+
+        public Node(T data)
+        {
+            _data = data;
+            _pos = new Vector2i();
+        }
+
+        public Node(T data, Node<T> parent)
+            : this(data)
+        {
+            _parent = parent;
+        }
+
+        public T Data { get => _data; set => _data = value; }
+        public Vector2i Pos { get => _pos; set => _pos = value; }
+        public Node<T> Parent { get => _parent; set => _parent = value; }
+        public string Message { get => _message; set => _message = value; }
+    }
     
 
     /* 
@@ -40,16 +75,15 @@ namespace robot_nagivation
     /// </summary>
     public class Map
     {
-        private Vector2 _agentPos;
-        private Vector2 _size;
+        private Vector2i _agentPos;
+        private Vector2i _size;
         private TileType[,] _mapMatrix;
-        private List<Vector2> _goalPositions;
+        private List<Vector2i> _goalPositions;
 
-
-        public Map(Vector2 size)
+        public Map(Vector2i size)
         {
             _size = size;
-            _mapMatrix = new TileType[(int)size.X, (int)size.Y];
+            _mapMatrix = new TileType[size.X, size.Y];
             
             for (int y = 0; y < _mapMatrix.GetLength(1); y++)
             {
@@ -59,20 +93,20 @@ namespace robot_nagivation
                 }
             }
 
-            _agentPos = new Vector2(0, 0);
+            _agentPos = new Vector2i(0, 0);
 
-            _goalPositions = new List<Vector2>();
+            _goalPositions = new List<Vector2i>();
 
         }
 
         public Map(int x, int y)
-            : this(new Vector2( x, y ))
+            : this(new Vector2i( x, y ))
         {
         }
 
-        public List<Vector2> GoalPos { get => _goalPositions; set => _goalPositions = value; }
+        public List<Vector2i> GoalPos { get => _goalPositions; set => _goalPositions = value; }
         public TileType[,] MapMatrix { get => _mapMatrix; set => _mapMatrix = value; }
-        public Vector2 AgentPos { get => _agentPos; set => _agentPos = value; }
+        public Vector2i AgentPos { get => _agentPos; set => _agentPos = value; }
     }
 
     /*
@@ -99,7 +133,7 @@ namespace robot_nagivation
 
                 line = _reader.ReadLine();                      // Agent pos
                 string[] agentPos = Regex.Split(line, @"\D+");
-                readInMap.AgentPos = new Vector2 ( int.Parse(agentPos[1]), int.Parse(agentPos[2]) );
+                readInMap.AgentPos = new Vector2i ( int.Parse(agentPos[1]), int.Parse(agentPos[2]) );
                 
                 readInMap.MapMatrix[(int)readInMap.AgentPos.X, (int)readInMap.AgentPos.Y] = TileType.Start;
 
@@ -109,12 +143,12 @@ namespace robot_nagivation
                 foreach (string s in goalPos)
                 {
                     string[] aGoalPos = Regex.Split(s, @"\D+");
-                    Vector2 vectorGoalPos = new Vector2(int.Parse(aGoalPos[1]), int.Parse(aGoalPos[2]));
+                    Vector2i vectorGoalPos = new Vector2i(int.Parse(aGoalPos[1]), int.Parse(aGoalPos[2]));
                     readInMap.GoalPos.Add(vectorGoalPos);
                     readInMap.MapMatrix[(int)vectorGoalPos.X, (int)vectorGoalPos.Y] = TileType.Goal;
                 }
 
-                readInMap.AgentPos = new Vector2 ( int.Parse(agentPos[1]), int.Parse(agentPos[2]) );
+                readInMap.AgentPos = new Vector2i ( int.Parse(agentPos[1]), int.Parse(agentPos[2]) );
 
 
                 // Rest of lines are in the form (x, y, w, h)
@@ -138,7 +172,7 @@ namespace robot_nagivation
                     for (int x = wallX; x < wallX + wallW; x++)
                     {
                         readInMap.MapMatrix[x, y] = TileType.Wall;
-                    }
+                        }
                 }
 
             }

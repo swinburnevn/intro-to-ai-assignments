@@ -3,147 +3,78 @@ using System.Collections.Generic;
 using System.Text;
 using System.Numerics;
 
+using SFML.System;
+
 namespace robot_nagivation
 {
-    public interface IAgent
+
+    public enum AgentState
     {
-        public AgentActions next(Percepts percepts);
-        public void Initialise(Percepts percepts);
-
-        public List<Vector2> GetSearchedNodes();
-        public List<Vector2> GetFrontierNodes();
-        public List<Vector2> GetPath();
-         
-
+        Searching,
+        Moving,
+        Lost,           // Cannot find path
+        Finished,
+        Idle
     }
 
-    public abstract class SearchingAgent : IAgent
+    public abstract class Agent
     {
-        public abstract void Initialise(Percepts percepts);
+        private AgentData _agentData;   // Contains all the information used by the agent.
+        private Percepts _percepts;     // Determines what the agent can "see".
+        private AgentState _state;      // Determines what the agent is currently doing
+        private Queue<AgentActions> _determinedMoveSet; // List of actions agent takes
+
+        public virtual void Initialise(Percepts percepts)
+        {
+            _agentData = new AgentData();
+            _percepts = percepts;
+            _state = AgentState.Searching;
+            _determinedMoveSet = new Queue<AgentActions>();
+        }
         public abstract AgentActions next(Percepts percepts);
 
-        public virtual bool WithinMap(Vector2 pos, Percepts percepts)
+
+        #region Agent Virtual methods
+
+        protected virtual bool WithinMap(Vector2i pos, Percepts percepts)
         {
-            if ((0 <= pos.X) && (pos.X < percepts.Map.GetLength(0)))
-                if ((0 <= pos.Y) && (pos.Y < percepts.Map.GetLength(1)))
-                    if (percepts.Map[(int)pos.X, (int)pos.Y] != TileType.Wall)
+            if ((0 <= pos.X) && (pos.X < percepts.MapMatrix.GetLength(0)))
+                if ((0 <= pos.Y) && (pos.Y < percepts.MapMatrix.GetLength(1)))
+                    if (percepts.MapMatrix[pos.X, pos.Y] != TileType.Wall)
                         return true;
             return false;
         }
 
-        public virtual List<Vector2> SearchSurroundingNodes(Vector2 currentNode, Percepts percepts)
+        protected virtual List<Node<TileType>> SearchSurroundingNodes(Node<TileType> currentNode, Percepts percepts)
         {
-            Vector2[] searchNodes = new Vector2[4]; // 4 surrounding nodes
-            List<Vector2> foundNodes = new List<Vector2>();
+            Vector2i[] searchNodes = new Vector2i[4]; // 4 surrounding nodes
+            List<Node<TileType>> foundNodes = new List<Node<TileType>>();
 
-            searchNodes[0] = new Vector2(currentNode.X, currentNode.Y+1);
-            searchNodes[1] = new Vector2(currentNode.X, currentNode.Y-1);
-            searchNodes[2] = new Vector2(currentNode.X+1, currentNode.Y);
-            searchNodes[3] = new Vector2(currentNode.X-1, currentNode.Y);
+            searchNodes[0] = new Vector2i(currentNode.Pos.X, currentNode.Pos.Y + 1);
+            searchNodes[1] = new Vector2i(currentNode.Pos.X, currentNode.Pos.Y - 1);
+            searchNodes[2] = new Vector2i(currentNode.Pos.X + 1, currentNode.Pos.Y);
+            searchNodes[3] = new Vector2i(currentNode.Pos.X - 1, currentNode.Pos.Y);
 
-            foreach (Vector2 node in searchNodes)
+            foreach (Vector2i newNode in searchNodes)
             {
-                if (WithinMap(node, percepts))
-                    foundNodes.Add(node);
+                if (WithinMap(newNode, percepts))
+                    foundNodes.Add(new Node<TileType>(
+                        percepts.MapMatrix[newNode.X, newNode.Y], currentNode));
             }
             return foundNodes;
         }
 
-        public virtual bool IsGoalNode(Vector2 node, Percepts percepts)
+        public virtual bool IsGoalNode(Node<TileType> node)
         {
-            if (percepts.Map[(int)node.X, (int)node.Y] == TileType.Goal)
-                return true;
-            return false;
+            return (node.Data == TileType.Goal);
         }
 
-        public abstract List<Vector2> GetSearchedNodes();
-        public abstract List<Vector2> GetFrontierNodes();
-        public abstract List<Vector2> GetPath();
-    }
-
-    public class RandomAgent : IAgent
-    {
-        public List<Vector2> GetSearchedNodes()
-        {
-            return new List<Vector2>();
-        }
-        public List<Vector2> GetPath()
-        {
-            return new List<Vector2>();
-        }
-        public List<Vector2> GetFrontierNodes()
-        {
-            return new List<Vector2>();
-        }
-
-        public void Initialise(Percepts percepts)
-        {
-        }
-
-        public AgentActions next(Percepts percepts)
-        {
-            Array possibleActions = Enum.GetValues(typeof(AgentActions));
-            return (AgentActions)possibleActions.GetValue(new Random().Next(0, possibleActions.Length));
-        }
-
-    }
-
-    public class Node
-    {
-        Vector2 _pos;
-        List<Vector2> _prevNodes;
-
-        public Vector2 Pos { get => _pos; set => _pos = value; }
-        public List<Vector2> PrevNodes { get => _prevNodes; set => _prevNodes = value; }
-    }
-
-    public class BreadthFirstAgent : SearchingAgent
-    {
-        private Queue<Vector2> _nodeQueue;
-        private HashSet<Vector2> _searchedNodes;
-
-        private List<Vector2> _listSearchedNodes;
-        private List<Vector2> _frontierNodes;
-
-        private List<Vector2> _nodePath;
-        private Queue<AgentActions> _commandPath;
-
-        private Vector2[,] _internalMap;
-
-        private bool _foundGoal;
-
-        public bool FoundGoal { get => _foundGoal; set => _foundGoal = value; }
-
-        public BreadthFirstAgent()
-        {
-            _nodeQueue = new Queue<Vector2>();
-            _searchedNodes = new HashSet<Vector2>();
-            _listSearchedNodes = new List<Vector2>();
-            _frontierNodes = new List<Vector2>();
-            _nodePath = new List<Vector2>();
-            _foundGoal = false;
-
-        }
-
-        public override List<Vector2> GetSearchedNodes()
-        {
-            return _listSearchedNodes;
-        }public override List<Vector2> GetFrontierNodes()
-        {
-            return _frontierNodes;
-        }
-
-        public override void Initialise(Percepts percepts)
-        {
-            _nodeQueue.Enqueue(percepts.AgentPos);
-            _internalMap = new Vector2[percepts.Map.GetLength(0), percepts.Map.GetLength(1)];
-        }
-
+        //Fix!
         public void InterpretCommands()
         {
-            _commandPath = new Queue<AgentActions>();
+            _determinedMoveSet = new Queue<AgentActions>();
 
-            for(int i = 0; i < _nodePath.Count - 1; i++)
+            for (int i = 0; i < _nodePath.Count - 1; i++)
             {
                 Vector2 direction = _nodePath[i + 1] - _nodePath[i];
                 if (direction.X > 0)
@@ -157,79 +88,124 @@ namespace robot_nagivation
             }
         }
 
-        public void Backtrack(Vector2 start, Vector2 end)
+        public void CreateAgentPath(Node<TileType> start, Node<TileType> end)
         {
-            bool finished = false;
-            Vector2 currentNode = start;
-            _nodePath.Add(start);
-            while (!finished)
-            {
-                Vector2 nextNode = _internalMap[(int)currentNode.X, (int)currentNode.Y];
-                _nodePath.Add(nextNode);
-                currentNode = nextNode;
 
-                if (currentNode == end)
-                    finished = true;
+            Node<TileType> currentNode = end;
+
+            AgentData.NodePath = new List<Node<TileType>>();
+
+            while (currentNode != start)
+            {
+                AgentData.NodePath.Add(currentNode);
+                currentNode = currentNode.Parent;
+                
             }
-            _nodePath.Reverse();
+            AgentData.NodePath.Reverse();
+        }
+
+
+        #endregion
+
+
+        #region Agent Properties
+
+        public AgentData AgentData { get => _agentData; set => _agentData = value; }
+        public Percepts Percepts { get => _percepts; }
+        public AgentState State { get => _state; set => _state = value; }
+        public Queue<AgentActions> DeterminedMoveSet { get => _determinedMoveSet; set => _determinedMoveSet = value; }
+
+        #endregion
+
+    }
+
+    public class RandomAgent : Agent
+    {
+
+        public override AgentActions next(Percepts percepts)
+        {
+            Array possibleActions = Enum.GetValues(typeof(AgentActions));
+            return (AgentActions)possibleActions.GetValue(new Random().Next(0, possibleActions.Length));
+        }
+
+    }
+
+    public class BreadthFirstAgent : Agent
+    {
+
+
+        /*  Breadth-First Search Specific Items  */
+        private Queue<Node<TileType>> _nodeQueue;
+        private HashSet<Node<TileType>> _searchedNodes;
+
+        public BreadthFirstAgent()
+        {
+            _nodeQueue = new Queue<Node<TileType>>();
+            _searchedNodes = new HashSet<Node<TileType>>();
+        }
+
+        public override void Initialise(Percepts percepts)
+        {
+            base.Initialise(percepts);
+
+            _nodeQueue = new Queue<Node<TileType>>();
+            _searchedNodes = new HashSet<Node<TileType>>();
         }
 
         public override AgentActions next(Percepts percepts)
         {
-            if (_foundGoal)
+
+            switch (State)
             {
-                if (_commandPath.Count > 0)
-                    return _commandPath.Dequeue();
-            } 
-            else
-            {
-                if (_nodeQueue.Count > 0)
-                {
-                    Vector2 currentNode = _nodeQueue.Dequeue();
-                    if (IsGoalNode(currentNode, percepts))
+                case AgentState.Searching:
+
+                    if (_nodeQueue.Count > 0)
                     {
-                        _foundGoal = true;
-                        Backtrack(currentNode, percepts.AgentPos);
-                        InterpretCommands();
-                        Console.WriteLine("Found Goal, setting internal flag to true");
-                    }
+                        Node<TileType> currentNode = _nodeQueue.Dequeue();
 
-                    _frontierNodes = new List<Vector2>();
-
-
-                    foreach (Vector2 subnode in SearchSurroundingNodes(currentNode, percepts))
-                    {
-                        if (!_searchedNodes.Contains(subnode))
+                        if (IsGoalNode(currentNode))
                         {
+                            State = AgentState.Moving;
 
-                            _internalMap[(int)subnode.X, (int)subnode.Y] = currentNode;
-                            _nodeQueue.Enqueue(subnode);
-                            _searchedNodes.Add(subnode);
-                            _listSearchedNodes.Add(subnode);
-                            _frontierNodes.Add(subnode);
+                            //Backtrack(currentNode, percepts.AgentPos);
+                            //InterpretCommands();
                         }
 
+                        AgentData.PosToSearch = new List<Vector2i>();
 
+                        foreach (Node<TileType> subnode in SearchSurroundingNodes(currentNode, percepts))
+                        {
+                            if (!_searchedNodes.Contains(subnode))
+                            {
+                                _nodeQueue.Enqueue(subnode);
+                                _searchedNodes.Add(subnode);
+                                AgentData.PosToSearch.Add(subnode.Pos);
+                                AgentData.SeaarchedPos.Add(subnode.Pos);
+                            }
+
+
+                        }
                     }
-                }
 
-                return AgentActions.Search;
+                    break;
+
+
+                case AgentState.Moving:
+
+                    if (DeterminedMoveSet.Count > 0)
+                        return DeterminedMoveSet.Dequeue();
+                    State = AgentState.Finished;
+                    break;
+
+                default:
+                    break;
 
             }
-            
-            
 
             return AgentActions.Idle;
         }
 
-        public override List<Vector2> GetPath()
-        {
-            return _nodePath;
-        }
     }
-
-
-
 }
 
 

@@ -7,7 +7,7 @@ using System.Text;
 /*
  * Extends on the Java solutions provided in week 3 since it's a fascinating way to write code. 
  * 
- * 
+ * We'll leave it here
  * 
  */
 
@@ -46,7 +46,10 @@ namespace robot_nagivation
             _cost = cost;
         }
 
-        public State<T> Parent { get => _parent; set => _parent = value; }
+
+        public State<T> Parent { get => _parent; }
+        public string Message { get => _message; }
+        public int Cost { get => _cost; }
     }
 
     public abstract class Scenario<T>
@@ -54,5 +57,20 @@ namespace robot_nagivation
         public abstract List<T> DeterminePossibleMoves(State<T> state);
 
         public abstract bool isSolved(T data);
+
+        public void LogSolution(State<T> state)
+        {
+            Stack<String> messageStack = new Stack<string>();
+            while (state != null)
+            {
+                messageStack.Push(state.Message);
+                state = state.Parent;
+            }
+
+            while(messageStack.Count > 0)
+            {
+                Console.WriteLine(messageStack.Pop());
+            }
+        }
     }
 }

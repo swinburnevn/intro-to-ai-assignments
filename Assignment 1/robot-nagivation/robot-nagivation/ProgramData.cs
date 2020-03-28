@@ -3,42 +3,72 @@ using System.Collections.Generic;
 using System.Text;
 using System.Numerics;
 
+using SFML.System;
+
 namespace robot_nagivation
 {
+
+
+    /*
+     * Used to pass information between the agent and the program,
+     *  This is the empty data object that the agent manipulates ot acheive the goal
+     *  
+     * Requesting this allows us to understand what the agent is "thinking" and to visualise
+     *  the search pattern of the agent.
+     *  
+     *  A key difference here is POS vs NODE
+     *   A pos is a Vector2i representing a position with no additional information
+     *   A Node is the agent's association with that state -- whether it be parent node, actual pos, type...
+     *   
+     *   In other words, Node is a possible state of an agent.
+     * 
+     */
+    public class AgentData
+    {
+        private List<AgentActions> _foundPath;      // Path the agent takes. Not altered after it is found.
+        private List<Vector2i> _searchedPos;        // Searched positions
+        private List<Vector2i> _posToSearch;        // Currently searching positions
+        private List<Vector2i> _path;               // List of positions used to get to the final node
+
+        private List<Node<TileType>> _nodePath;     // List of states required to get to end state.
+
+        public int Steps { get => _foundPath.Count; }
+        public List<AgentActions> FoundPath { get => _foundPath; set => _foundPath = value; }
+        public List<Vector2i> SeaarchedPos { get => _searchedPos; set => _searchedPos = value; }
+        public List<Vector2i> PosToSearch { get => _posToSearch; set => _posToSearch = value; }
+        public List<Node<TileType>> NodePath { get => _nodePath; set => _nodePath = value; }
+
+        public AgentData()
+        {
+            _foundPath = new List<AgentActions>();
+            _searchedPos = new List<Vector2i>();
+            _posToSearch = new List<Vector2i>();
+            _path = new List<Vector2i>();
+        }
+
+    }
     public class ProgramData
     {
-        private IAgent _agent;
+        private Agent _agent;
+        private AgentData _agentData;
         private Map _map;
         private bool _finished;
         private List<AgentActions> _agentDecisions;
-        private List<AgentActions> _foundPath;
-        private List<Vector2> _agentPositions;
-        private List<Vector2> _searchedNodes;
-        private List<Vector2> _frontierNodes;
-        private List<Vector2> _path;
-
-        private int _steps;
-
-        
 
         public ProgramData()
         {
             _finished = false;
             _agentDecisions = new List<AgentActions>();
-            _agentPositions = new List<Vector2>();
-            _searchedNodes = new List<Vector2>();
-            _steps = 0;
+
+            _agentData = new AgentData();
         }
 
-        public IAgent Agent { get => _agent; set => _agent = value; }
+        public Agent Agent { get => _agent; set => _agent = value; }
         public Map Map { get => _map; set => _map = value; }
         public List<AgentActions> AgentDecisions { get => _agentDecisions; set => _agentDecisions = value; }
         public bool Finished { get => _finished; set => _finished = value; }
-        public int Steps { get => _steps; set => _steps = value; }
-        public List<Vector2> AgentPositions { get => _agentPositions; set => _agentPositions = value; }
-        public List<Vector2> SearchedNodes { get => _searchedNodes; set => _searchedNodes = value; }
-        public List<Vector2> FrontierNodes { get => _frontierNodes; set => _frontierNodes = value; }
-        public List<Vector2> Path { get => _path; set => _path = value; }
+        public int Steps { get => _agentData.Steps; }
+        public AgentData AgentData { get => _agentData; set => _agentData = value; }
     }
 
 

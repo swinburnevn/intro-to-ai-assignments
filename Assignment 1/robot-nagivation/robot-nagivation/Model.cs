@@ -3,18 +3,19 @@ using System.Collections.Generic;
 using System.Text;
 using System.Numerics;
 
+using SFML.System;
+
 namespace robot_nagivation
 {
     public class Percepts
     {
-        private int[] _currentPosition;
-        private TileType[,] _map;
-        private Vector2 _agentPos;
+        private Vector2i _agentPos;
+
+        private TileType[,] _mapMatrix;
 
        
-        public int[] CurrentPosition { get => _currentPosition; set => _currentPosition = value; }
-        public TileType[,] Map { get => _map; set => _map = value; }
-        public Vector2 AgentPos { get => _agentPos; set => _agentPos = value; }
+        public Vector2i AgentPos { get => _agentPos; set => _agentPos = value; }
+        public TileType[,] MapMatrix { get => _mapMatrix; set => _mapMatrix = value; }
     }
     /*
      * Encapsulates the logic of the virtual world
@@ -38,7 +39,7 @@ namespace robot_nagivation
 
         public void Initialise()
         {
-            _data.AgentPositions.Add(_data.Map.AgentPos);
+            //_data.AgentPositions.Add(_data.Map.AgentPos);
             _data.Agent.Initialise(CreatePercepts());
         }
 
@@ -61,7 +62,7 @@ namespace robot_nagivation
                 case AgentActions.Up:
                     newPos = new Vector2(_data.Map.AgentPos.X, _data.Map.AgentPos.Y - 1);
                     if (WithinMap(newPos))
-                        _data.Map.AgentPos = newPos;
+                        _data.Map.AgentPos = newPos; 
                     break;
 
                 case AgentActions.Down:

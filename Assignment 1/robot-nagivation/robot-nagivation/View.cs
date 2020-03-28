@@ -156,7 +156,7 @@ namespace robot_nagivation
                         FillColor = new Color(50, 50, 52)
                     });
 
-                    switch(_data.Map.MapMatrix[x,y])
+                    switch(_data.Map.MapMatrix[x,y].Data)
                     {
                         case TileType.Wall:
 
@@ -213,8 +213,8 @@ namespace robot_nagivation
 
             for (int i = 0; i < _data.AgentPositions.Count - 1; i++)
             {
-                Vector2 prev = _data.AgentPositions[i];
-                Vector2 curr = _data.AgentPositions[i + 1];
+                Vector2i prev = _data.AgentPositions[i];
+                Vector2i curr = _data.AgentPositions[i + 1];
 
                 Vector2f A = new Vector2f(
                     85 + (spacing.X) + prev.X * (boxSize.X + spacing.X) + boxSize.X / 2,
