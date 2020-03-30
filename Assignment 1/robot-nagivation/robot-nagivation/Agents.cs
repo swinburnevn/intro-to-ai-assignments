@@ -32,6 +32,10 @@ namespace robot_nagivation
         }
         public abstract AgentActions next(Percepts percepts);
 
+        public virtual void UpdateInternalHeap()
+        {
+
+        }
 
         #region Agent Virtual methods
 
@@ -171,12 +175,19 @@ namespace robot_nagivation
 
         /*  Depth-First Search Specific Items  */
         private Stack<Node<TileType>> _nodeStack;
-        private HashSet<Node<TileType>> _searchedNodes;
 
         public DepthFirstAgent()
         {
             _nodeStack = new Stack<Node<TileType>>();
-            _searchedNodes = new HashSet<Node<TileType>>();
+        }
+
+        public override void UpdateInternalHeap()
+        {
+            AgentData.InternalHeap = new List<Node<TileType>>();
+            foreach (Node<TileType> node in _nodeStack)
+            {
+                AgentData.InternalHeap.Add(node);
+            }
         }
 
         public override void Initialise(Percepts percepts)
@@ -199,6 +210,8 @@ namespace robot_nagivation
                 return AgentActions.Search;
             }
 
+            UpdateInternalHeap();
+
             switch (State)
             {
                 case AgentState.Searching:
@@ -220,16 +233,27 @@ namespace robot_nagivation
 
                         AgentData.PosToSearch.Add(currentNode.Pos); // frontier nodes, yellow.
                         AgentData.SearchedPos.Add(currentNode.Pos); // important: searched positions
-                        _searchedNodes.Add(currentNode);            // hashset nodes. I think we can remove this.
-                        AgentData.SearchedNodes.Add(currentNode);   // for the node tree, searched nodes.
+                        
 
-                        foreach (Node<TileType> subnode in SearchSurroundingNodes(currentNode, percepts))
+                        List<Node<TileType>> surroundingNodes = SearchSurroundingNodes(currentNode, percepts);
+
+
+                        // The order of the surrounding nodes is in:
+                        //  Up -> Left -> Down -> Right
+                        // However, since we're pushing it into the stack in that order,
+                        //  the first one that's popped is the "right" one. let's flip the order here...
+                        for (int i = surroundingNodes.Count - 1; i >= 0; i--)
                         {
-                            if (!_searchedNodes.Contains(subnode))
-                                if (!AgentData.SearchedPos.Contains(subnode.Pos))
-                                {
-                                    _nodeStack.Push(subnode);
-                                }
+                            Node<TileType> subnode = surroundingNodes[i];
+                            if (!AgentData.SearchedPos.Contains(subnode.Pos))
+                            {
+                                
+
+
+                                _nodeStack.Push(subnode);
+
+                                AgentData.SearchedNodes.Add(subnode);   // for the node tree, searched nodes.
+                            }
                         }
                     }
 
@@ -258,12 +282,10 @@ namespace robot_nagivation
     {
         /*  Breadth-First Search Specific Items  */
         private Queue<Node<TileType>> _nodeQueue;
-        private HashSet<Node<TileType>> _searchedNodes;
 
         public BreadthFirstAgent()
         {
             _nodeQueue = new Queue<Node<TileType>>();
-            _searchedNodes = new HashSet<Node<TileType>>();
         }
 
         public override void Initialise(Percepts percepts)
@@ -271,6 +293,15 @@ namespace robot_nagivation
             base.Initialise(percepts);
 
             _nodeQueue.Enqueue(AgentData.RootNode);
+        }
+
+        public override void UpdateInternalHeap()
+        {
+            AgentData.InternalHeap = new List<Node<TileType>>();
+            foreach (Node<TileType> node in _nodeQueue)
+            {
+                AgentData.InternalHeap.Add(node);
+            }
         }
 
         public override AgentActions next(Percepts percepts)
@@ -286,6 +317,8 @@ namespace robot_nagivation
                 return AgentActions.Search;
             }
 
+            UpdateInternalHeap();
+
             switch (State)
             {
                 case AgentState.Searching:
@@ -298,7 +331,7 @@ namespace robot_nagivation
                         {
                             State = AgentState.Moving;
 
-                            AgentData.NodePath = DetermineAgentPath(AgentData.RootNode, currentNode );
+                            AgentData.NodePath = DetermineAgentPath(AgentData.RootNode, currentNode);
                             AgentData.DeterminedMoveSet = DetermineMoveSet();
                             //AgentData.Path = DetermineAgentPosPath(AgentData.NodePath);
                             State = AgentState.Moving;
@@ -306,19 +339,24 @@ namespace robot_nagivation
 
                         AgentData.PosToSearch = new List<Vector2i>();
 
-                        AgentData.SearchedNodes.Add(currentNode);
+                        AgentData.PosToSearch.Add(currentNode.Pos);
 
-                        foreach (Node<TileType> subnode in SearchSurroundingNodes(currentNode, percepts))
+
+                        List<Node<TileType>> surroundingNodes = SearchSurroundingNodes(currentNode, percepts);
+
+                        for (int i = 0; i < surroundingNodes.Count; i++)
                         {
-                            if (!_searchedNodes.Contains(subnode))
-                                if (!AgentData.SearchedPos.Contains(subnode.Pos))
-                                {
-                                    _nodeQueue.Enqueue(subnode);
-                                    _searchedNodes.Add(subnode);
-                                    AgentData.PosToSearch.Add(subnode.Pos);
-                                    AgentData.SearchedPos.Add(subnode.Pos);
-                                }
+                            Node<TileType> subnode = surroundingNodes[i];
+
+                            if (!AgentData.SearchedPos.Contains(subnode.Pos))
+                            {
+                                _nodeQueue.Enqueue(subnode);
+                                
+                                AgentData.SearchedPos.Add(subnode.Pos);
+                                AgentData.SearchedNodes.Add(subnode);
+                            }
                         }
+
                     }
 
                     return AgentActions.Search;

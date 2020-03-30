@@ -25,12 +25,14 @@ namespace robot_nagivation
      */
     public class AgentData
     {
-        private Queue<AgentActions> _determinedMoveSet;      // Path the agent takes. Not altered after it is found.
+        private Queue<AgentActions> _determinedMoveSet;     // Path the agent takes. Not altered after it is found.
         private List<Vector2i> _searchedPos;                // Searched positions
         private List<Vector2i> _posToSearch;                // Currently searching positions
         private List<Vector2i> _path;                       // List of positions used to get to the final 
 
         private Node<TileType> _rootNode;                   // The starting node
+
+        private List<Node<TileType>> _internalHeap;         // Agent internal list, whether stack or Queue
 
         private List<Node<TileType>> _nodePath;             // List of states required to get to end state.
         private List<Node<TileType>> _searchedNodes;             // List of states required to get to end state.
@@ -43,6 +45,7 @@ namespace robot_nagivation
         public Node<TileType> RootNode { get => _rootNode; set => _rootNode = value; }
         public List<Vector2i> Path { get => _path; set => _path = value; }
         public List<Node<TileType>> SearchedNodes { get => _searchedNodes; set => _searchedNodes = value; }
+        public List<Node<TileType>> InternalHeap { get => _internalHeap; set => _internalHeap = value; }
 
         public AgentData()
         {
@@ -51,6 +54,7 @@ namespace robot_nagivation
             _posToSearch = new List<Vector2i>();
             _searchedNodes = new List<Node<TileType>>();
             _path = new List<Vector2i>();
+            _internalHeap = new List<Node<TileType>>();
         }
 
     }
