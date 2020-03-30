@@ -6,6 +6,8 @@ namespace robot_nagivation
     {
         static void Main(string[] args)
         {
+
+            
             // Create modules and assign connections
 
             ProgramData _data = new ProgramData();
@@ -13,9 +15,12 @@ namespace robot_nagivation
             IModel _model = new GameModel(ref _data);
             IMapParser _mapParser = new MapParser();
 
+            bool startRequested = false;
+
             // Read in the map
 
             Map _map = _mapParser.ReadMapFromFile("RobotNav-test.txt");
+            //Map _map = _mapParser.ReadMapFromFile("robot-nav-map2.txt");
             if (_map == null)
             {
                 throw new Exception("Map could not be initialised");
@@ -42,9 +47,21 @@ namespace robot_nagivation
             }
             */
 
-            _data.Agent = new BreadthFirstAgent();
-            _data.AgentType = "Breadth First Agent";
+            _data.Agent = new DepthFirstAgent();
+            _data.AgentType = "Breath First Agent";
             _model.Initialise();
+
+
+            int count = 0;
+
+            while(!startRequested)
+            {
+                count++;
+                _view.Draw();
+                System.Threading.Thread.Sleep(50);
+                if (count > 100)
+                    startRequested = true;
+            }
 
             while (!_data.WindowRequestClosed)
             {

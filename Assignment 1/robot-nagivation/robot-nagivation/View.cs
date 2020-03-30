@@ -215,8 +215,8 @@ namespace robot_nagivation
                             {
                                 line = new Vertex[]
                             {
-                                new Vertex(new Vector2f(105 + 5 + 50 * parentXPos, 100 + 5 + 20 * (level - 1 )), new Color(250,250,220)),
-                                new Vertex(new Vector2f(105 + 5 + 50 * childXPos, 100 + 5 + 20 * level), new Color(250,250,220))
+                                new Vertex(new Vector2f(105 + 5 + 60 * parentXPos, 100 + 5 + 20 * (level - 1 )), new Color(250,250,220)),
+                                new Vertex(new Vector2f(105 + 5 + 60 * childXPos, 100 + 5 + 20 * level), new Color(250,250,220))
                             };
                             }
                         }
@@ -224,8 +224,8 @@ namespace robot_nagivation
                         {
                             line = new Vertex[]
                             {
-                                new Vertex(new Vector2f(105 + 5 + 50 * parentXPos, 100 + 5 + 20 * (level - 1 )), new Color(150,150,150)),
-                                new Vertex(new Vector2f(105 + 5 + 50 * childXPos, 100 + 5 + 20 * level), new Color(150,150,150))
+                                new Vertex(new Vector2f(105 + 5 + 60 * parentXPos, 100 + 5 + 20 * (level - 1 )), new Color(150,150,150)),
+                                new Vertex(new Vector2f(105 + 5 + 60 * childXPos, 100 + 5 + 20 * level), new Color(150,150,150))
                             };
                         }
 
@@ -236,7 +236,7 @@ namespace robot_nagivation
                         _nodeWindow.Draw(new Text( "(" + child.Pos.X + ", " + child.Pos.Y + ")", _font, 10)
                         {
                             Position = new Vector2f(
-                                105 + 15 +  50 * childXPos,
+                                105 + 15 +  60 * childXPos,
                                 100 + 20 * level),
                             FillColor = new Color(220, 220, 220)
 
@@ -245,7 +245,7 @@ namespace robot_nagivation
                         CircleShape nodeCircle = new CircleShape()
                         {
                             Position = new Vector2f(
-                                105 + 50 * childXPos,
+                                105 + 60 * childXPos,
                                 100 + 20 * level),
                             Radius = 5,
                             FillColor = HashedPosColor(child.Pos.X, child.Pos.Y, 100)

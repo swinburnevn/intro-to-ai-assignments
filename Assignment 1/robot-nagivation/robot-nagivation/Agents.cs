@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using System.Numerics;
 
 using SFML.System;
 
@@ -20,13 +19,11 @@ namespace robot_nagivation
     public abstract class Agent
     {
         private AgentData _agentData;   // Contains all the information used by the agent.
-        private Percepts _percepts;     // Determines what the agent can "see".
         private AgentState _state;      // Determines what the agent is currently doing
 
         public virtual void Initialise(Percepts percepts)
         {
             _agentData = new AgentData();
-            _percepts = percepts;
             _state = AgentState.Searching;
 
             AgentData.RootNode = new Node<TileType>(TileType.Start, null, percepts.AgentPos);
@@ -46,6 +43,10 @@ namespace robot_nagivation
             return false;
         }
 
+        public virtual int HeuristicFunction(Vector2i Pos, Percepts percepts)
+        {
+            return 0;
+        }
         protected virtual List<Node<TileType>> SearchSurroundingNodes(Node<TileType> currentNode, Percepts percepts)
         {
             Vector2i[] searchNodes = new Vector2i[4]; // 4 surrounding nodes
@@ -64,6 +65,7 @@ namespace robot_nagivation
                 {
                     Node<TileType> newNode = new Node<TileType>(
                         percepts.MapMatrix[newPos.X, newPos.Y], currentNode, newPos);
+                    newNode.Cost = HeuristicFunction(newPos, percepts);
                     foundNodes.Add(newNode);
                     currentNode.Children.Add(newNode);
                 }
@@ -138,7 +140,6 @@ namespace robot_nagivation
         #region Agent Properties
 
         public AgentData AgentData { get => _agentData; set => _agentData = value; }
-        public Percepts Percepts { get => _percepts; set => _percepts = value; }
         public AgentState State { get => _state; set => _state = value; }
 
         #endregion
@@ -178,8 +179,6 @@ namespace robot_nagivation
 
         public override AgentActions next(Percepts percepts)
         {
-            Percepts = percepts;
-
 
             switch (State)
             {
@@ -195,6 +194,7 @@ namespace robot_nagivation
 
                             AgentData.NodePath = DetermineAgentPath(AgentData.RootNode, currentNode);
                             AgentData.DeterminedMoveSet = DetermineMoveSet();
+                            State = AgentState.Moving;
                         }
 
                         AgentData.PosToSearch = new List<Vector2i>();
@@ -258,8 +258,6 @@ namespace robot_nagivation
 
         public override AgentActions next(Percepts percepts)
         {
-            Percepts = percepts;
-
             switch (State)
             {
                 case AgentState.Searching:
@@ -275,6 +273,7 @@ namespace robot_nagivation
                             AgentData.NodePath = DetermineAgentPath(AgentData.RootNode, currentNode );
                             AgentData.DeterminedMoveSet = DetermineMoveSet();
                             //AgentData.Path = DetermineAgentPosPath(AgentData.NodePath);
+                            State = AgentState.Moving;
                         }
 
                         AgentData.PosToSearch = new List<Vector2i>();

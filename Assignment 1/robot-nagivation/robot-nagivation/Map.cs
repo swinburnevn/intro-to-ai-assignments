@@ -47,6 +47,8 @@ namespace robot_nagivation
         private bool _isOnPath;
         private Vector2i _pos;
 
+        private int _cost;
+
         public Node(T data)
         {
             _data = data;
@@ -73,6 +75,7 @@ namespace robot_nagivation
         public string Message { get => _message; set => _message = value; }
         public List<Node<T>> Children { get => _children; set => _children = value; }
         public bool IsOnPath { get => _isOnPath; set => _isOnPath = value; }
+        public int Cost { get => _cost; set => _cost = value; }
     }
     
 

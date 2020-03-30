@@ -13,9 +13,12 @@ namespace robot_nagivation
 
         private TileType[,] _mapMatrix;
 
+        private List<Vector2i> _goalPositions;
+
        
         public Vector2i AgentPos { get => _agentPos; set => _agentPos = value; }
         public TileType[,] MapMatrix { get => _mapMatrix; set => _mapMatrix = value; }
+        public List<Vector2i> GoalPositions { get => _goalPositions; set => _goalPositions = value; }
     }
     /*
      * Encapsulates the logic of the virtual world
@@ -88,6 +91,8 @@ namespace robot_nagivation
             Percepts percepts = new Percepts();
             percepts.MapMatrix = _data.Map.MapMatrix;
             percepts.AgentPos = _data.Map.AgentPos;
+            percepts.GoalPositions = new List<Vector2i>(_data.Map.GoalPos);
+
             return percepts;
         }
         public void Run()
