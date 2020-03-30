@@ -145,7 +145,7 @@ namespace robot_nagivation
         public void DrawNodeDisplay()
         {
 
-            _nodeWindow.Draw(new Text("Node display", _font, 35)
+            _nodeWindow.Draw(new Text("Node tree", _font, 35)
             {
                 Position = new Vector2f(90, 30),
                 FillColor = new Color(190, 190, 190)
@@ -154,8 +154,8 @@ namespace robot_nagivation
 
             _nodeWindow.Draw(new Text(_data.AgentType, _font, 15)
             {
-                Position = new Vector2f(305, 53),
-                FillColor = new Color(190, 190, 190)
+                Position = new Vector2f(260, 53),
+                FillColor = new Color(200, 200, 200)
 
             });
 
@@ -174,7 +174,7 @@ namespace robot_nagivation
             {
                 Position = new Vector2f(
             105,
-            70),
+            80),
                 Radius = 5,
                 FillColor = new Color(221, 108, 102)
             });
@@ -224,8 +224,8 @@ namespace robot_nagivation
                             {
                                 line = new Vertex[]
                             {
-                                new Vertex(new Vector2f(105 + 5 + 80 * parentXPos, 100 + 5 + 30 * (level - 1 )), new Color(250,250,220)),
-                                new Vertex(new Vector2f(105 + 5 + 80 * childXPos, 100 + 5 + 30 * level), new Color(250,250,220))
+                                new Vertex(new Vector2f(105 + 5 + 80 * parentXPos, 110 + 5 + 30 * (level - 1 )), new Color(250,250,220)),
+                                new Vertex(new Vector2f(105 + 5 + 80 * childXPos, 110 + 5 + 30 * level), new Color(250,250,220))
                             };
                             }
                         }
@@ -233,8 +233,8 @@ namespace robot_nagivation
                         {
                             line = new Vertex[]
                             {
-                                new Vertex(new Vector2f(105 + 5 + 80 * parentXPos, 100 + 5 + 30 * (level - 1 )), new Color(150,150,150)),
-                                new Vertex(new Vector2f(105 + 5 + 80 * childXPos, 100 + 5 + 30 * level), new Color(150,150,150))
+                                new Vertex(new Vector2f(105 + 5 + 80 * parentXPos, 110 + 5 + 30 * (level - 1 )), new Color(150,150,150)),
+                                new Vertex(new Vector2f(105 + 5 + 80 * childXPos, 110 + 5 + 30 * level), new Color(150,150,150))
                             };
                         }
 
@@ -246,7 +246,7 @@ namespace robot_nagivation
                         {
                             Position = new Vector2f(
                                 105 + 15 +  80 * childXPos,
-                                100 + 30 * level),
+                                110 + 30 * level),
                             FillColor = new Color(220, 220, 220)
 
                         });
@@ -257,7 +257,7 @@ namespace robot_nagivation
                             {
                                 Position = new Vector2f(
                                 105 + 50 + 80 * childXPos,
-                                100 + 30 * level),
+                                110 + 30 * level),
                                 FillColor = new Color(220, 220, 220)
 
                             });
@@ -268,7 +268,7 @@ namespace robot_nagivation
                         {
                             Position = new Vector2f(
                                 105 + 80 * childXPos,
-                                100 + 30 * level),
+                                110 + 30 * level),
                             Radius = 5,
                             FillColor = HashedPosColor(child.Pos.X, child.Pos.Y, 100)
                         };
@@ -596,6 +596,8 @@ namespace robot_nagivation
             var window = (SFML.Window.Window)sender;
 
             _nodeViewPos += -40 * e.Delta;
+            if (_nodeViewPos < 576 / 2)
+                _nodeViewPos = 576 / 2;
 
             //_nodeView.Move(new Vector2f(0, -30 * e.Delta));
 
