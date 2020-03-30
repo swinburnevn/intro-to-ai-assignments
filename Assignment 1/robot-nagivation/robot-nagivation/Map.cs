@@ -57,6 +57,12 @@ namespace robot_nagivation
             _isOnPath = false;
         }
 
+        public override string ToString()
+        {
+            String node = "Node: (" + Pos.X + ", " + Pos.Y + ") - [" + Data + "]";
+            return node;
+        }
+
         public Node(T data, Node<T> parent)
             : this(data)
         {

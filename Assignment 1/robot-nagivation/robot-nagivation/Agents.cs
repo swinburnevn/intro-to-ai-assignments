@@ -21,6 +21,7 @@ namespace robot_nagivation
         private AgentData _agentData;   // Contains all the information used by the agent.
         private AgentState _state;      // Determines what the agent is currently doing
 
+        private int _agentDelay = 0;
         public virtual void Initialise(Percepts percepts)
         {
             _agentData = new AgentData();
@@ -47,30 +48,37 @@ namespace robot_nagivation
         {
             return 0;
         }
+
+        public virtual int CostFunction(Vector2i Pos, Percepts percepts)
+        {
+            return 0;
+        }
         protected virtual List<Node<TileType>> SearchSurroundingNodes(Node<TileType> currentNode, Percepts percepts)
         {
             Vector2i[] searchNodes = new Vector2i[4]; // 4 surrounding nodes
             List<Node<TileType>> foundNodes = new List<Node<TileType>>();
 
             // Priorities: Goes UP before LEFT then DOWN then RIGHT
-            searchNodes[3] = new Vector2i(currentNode.Pos.X, currentNode.Pos.Y - 1);
-            searchNodes[2] = new Vector2i(currentNode.Pos.X - 1, currentNode.Pos.Y);
-            searchNodes[1] = new Vector2i(currentNode.Pos.X, currentNode.Pos.Y + 1);
-            searchNodes[0] = new Vector2i(currentNode.Pos.X + 1, currentNode.Pos.Y);
+            searchNodes[0] = new Vector2i(currentNode.Pos.X, currentNode.Pos.Y - 1);
+            searchNodes[1] = new Vector2i(currentNode.Pos.X - 1, currentNode.Pos.Y);
+            searchNodes[2] = new Vector2i(currentNode.Pos.X, currentNode.Pos.Y + 1);
+            searchNodes[3] = new Vector2i(currentNode.Pos.X + 1, currentNode.Pos.Y);
             
 
-            foreach (Vector2i newPos in searchNodes)
+
+            for (int i = 0; i < searchNodes.Length; i++)
             {
+                Vector2i newPos = searchNodes[i];
                 if (WithinMap(newPos, percepts))
                 {
                     Node<TileType> newNode = new Node<TileType>(
                         percepts.MapMatrix[newPos.X, newPos.Y], currentNode, newPos);
-                    newNode.Cost = HeuristicFunction(newPos, percepts);
+                    newNode.Cost = HeuristicFunction(newPos, percepts) + CostFunction(newPos, percepts);
                     foundNodes.Add(newNode);
                     currentNode.Children.Add(newNode);
                 }
-                    
             }
+
             return foundNodes;
         }
 
@@ -141,6 +149,7 @@ namespace robot_nagivation
 
         public AgentData AgentData { get => _agentData; set => _agentData = value; }
         public AgentState State { get => _state; set => _state = value; }
+        public int AgentDelay { get => _agentDelay; set => _agentDelay = value; }
 
         #endregion
 
@@ -180,6 +189,16 @@ namespace robot_nagivation
         public override AgentActions next(Percepts percepts)
         {
 
+            AgentDelay--;
+            if (AgentDelay < 0)
+            {
+                AgentDelay = 50;
+            }
+            else
+            {
+                return AgentActions.Search;
+            }
+
             switch (State)
             {
                 case AgentState.Searching:
@@ -199,10 +218,10 @@ namespace robot_nagivation
 
                         AgentData.PosToSearch = new List<Vector2i>();
 
-                        AgentData.PosToSearch.Add(currentNode.Pos);
-                        AgentData.SearchedPos.Add(currentNode.Pos);
-                        _searchedNodes.Add(currentNode);
-                        AgentData.SearchedNodes.Add(currentNode);
+                        AgentData.PosToSearch.Add(currentNode.Pos); // frontier nodes, yellow.
+                        AgentData.SearchedPos.Add(currentNode.Pos); // important: searched positions
+                        _searchedNodes.Add(currentNode);            // hashset nodes. I think we can remove this.
+                        AgentData.SearchedNodes.Add(currentNode);   // for the node tree, searched nodes.
 
                         foreach (Node<TileType> subnode in SearchSurroundingNodes(currentNode, percepts))
                         {
@@ -210,8 +229,6 @@ namespace robot_nagivation
                                 if (!AgentData.SearchedPos.Contains(subnode.Pos))
                                 {
                                     _nodeStack.Push(subnode);
-
-                                    
                                 }
                         }
                     }
@@ -258,6 +275,17 @@ namespace robot_nagivation
 
         public override AgentActions next(Percepts percepts)
         {
+
+            AgentDelay--;
+            if (AgentDelay < 0)
+            {
+                AgentDelay = 50;
+            }
+            else
+            {
+                return AgentActions.Search;
+            }
+
             switch (State)
             {
                 case AgentState.Searching:

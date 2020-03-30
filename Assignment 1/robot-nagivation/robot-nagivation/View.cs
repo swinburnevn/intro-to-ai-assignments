@@ -174,7 +174,7 @@ namespace robot_nagivation
             {
                 Position = new Vector2f(
             105,
-            80),
+            70),
                 Radius = 5,
                 FillColor = new Color(221, 108, 102)
             });
@@ -428,16 +428,27 @@ namespace robot_nagivation
 
 
 
-            foreach (Vector2i node in _data.Agent.AgentData.SearchedPos)
+            foreach (Node<TileType> node in _data.Agent.AgentData.SearchedNodes)
             {
                 _window.Draw(new CircleShape()
                 {
                     Position = new Vector2f(
-                            85 + (spacing.X) + node.X * (boxSize.X + spacing.X) + boxSize.X / 2 - 10,
-                            60 + (spacing.Y) + node.Y * (boxSize.Y + spacing.Y) + boxSize.Y / 2 - 5) ,
+                            85 + (spacing.X) + node.Pos.X * (boxSize.X + spacing.X) + boxSize.X / 2 - 10,
+                            60 + (spacing.Y) + node.Pos.Y * (boxSize.Y + spacing.Y) + boxSize.Y / 2 - 5) ,
                     Radius = 10,
-                    FillColor = HashedPosColor(node.X, node.Y, 100)
+                    FillColor = HashedPosColor(node.Pos.X, node.Pos.Y, 100)
                 });
+
+
+                _window.Draw(new Text(node.Cost.ToString(), _font, 15)
+                {
+                    Position = new Vector2f(
+                            85 + 5 + (spacing.X) + node.Pos.X * (boxSize.X + spacing.X) + boxSize.X / 2 - 10,
+                            60 + (spacing.Y) + node.Pos.Y * (boxSize.Y + spacing.Y) + boxSize.Y / 2 - 5),
+                    FillColor = new Color(220, 220, 220)
+
+                });
+
             }
 
             foreach (Vector2i node in _data.Agent.AgentData.PosToSearch)
