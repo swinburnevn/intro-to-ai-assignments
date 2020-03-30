@@ -182,7 +182,7 @@ namespace robot_nagivation
             AgentDelay--;
             if (AgentDelay < 0)
             {
-                AgentDelay = 50;
+                AgentDelay = 20;
             }
             else
             {

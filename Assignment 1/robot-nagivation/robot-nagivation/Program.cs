@@ -47,7 +47,7 @@ namespace robot_nagivation
             }
             */
 
-            _data.Agent = new GreedyFirstAgent();
+            _data.Agent = new DepthFirstAgent();
             _data.AgentType = "Depth First Agent";
             _model.Initialise();
 
