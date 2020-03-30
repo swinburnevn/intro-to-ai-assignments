@@ -273,10 +273,11 @@ namespace robot_nagivation
                             FillColor = HashedPosColor(child.Pos.X, child.Pos.Y, 100)
                         };
 
-                        if (child.Pos == _data.Agent.AgentData.PosToSearch[0])
-                        {
-                            nodeCircle.FillColor = new Color(255, 201, 14);
-                        }
+                        if (_data.Agent.AgentData.PosToSearch.Count > 0) 
+                            if (child.Pos == _data.Agent.AgentData.PosToSearch[0])
+                            {
+                                nodeCircle.FillColor = new Color(255, 201, 14);
+                            }
 
 
                         if (child.Data == TileType.Goal)

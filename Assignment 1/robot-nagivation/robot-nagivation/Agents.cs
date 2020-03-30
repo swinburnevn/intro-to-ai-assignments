@@ -94,11 +94,15 @@ namespace robot_nagivation
                 Vector2i newPos = searchNodes[i];
                 if (WithinMap(newPos, percepts))
                 {
-                    Node<TileType> newNode = new Node<TileType>(
-                        percepts.MapMatrix[newPos.X, newPos.Y], currentNode, newPos);
-                    newNode.Cost = HeuristicFunction(newPos, percepts) + CostFunction(newPos, percepts);
-                    foundNodes.Add(newNode);
-                    currentNode.Children.Add(newNode);
+                    if (!AgentData.SearchedPos.Contains(newPos))
+                    {
+                        Node<TileType> newNode = new Node<TileType>(
+                                                percepts.MapMatrix[newPos.X, newPos.Y], currentNode, newPos);
+                        newNode.Cost = HeuristicFunction(newPos, percepts) + CostFunction(newPos, percepts);
+                        foundNodes.Add(newNode);
+                        currentNode.Children.Add(newNode);
+                    }
+                        
                 }
             }
 
@@ -238,6 +242,7 @@ namespace robot_nagivation
                             AgentData.NodePath = DetermineAgentPath(AgentData.RootNode, currentNode);
                             AgentData.DeterminedMoveSet = DetermineMoveSet();
                             State = AgentState.Moving;
+                            AgentData.PosToSearch.Clear();
                             break;
                         }
 
@@ -340,6 +345,7 @@ namespace robot_nagivation
                             AgentData.DeterminedMoveSet = DetermineMoveSet();
                             //AgentData.Path = DetermineAgentPosPath(AgentData.NodePath);
                             State = AgentState.Moving;
+                            AgentData.PosToSearch.Clear();
                             break;
                         }
 

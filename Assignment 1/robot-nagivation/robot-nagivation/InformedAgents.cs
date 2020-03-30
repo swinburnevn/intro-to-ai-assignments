@@ -83,6 +83,7 @@ namespace robot_nagivation
                             AgentData.NodePath = DetermineAgentPath(AgentData.RootNode, currentNode);
                             AgentData.DeterminedMoveSet = DetermineMoveSet();
                             State = AgentState.Moving;
+                            AgentData.PosToSearch.Clear();
                             break;
                         }
 
@@ -216,6 +217,7 @@ namespace robot_nagivation
                             AgentData.NodePath = DetermineAgentPath(AgentData.RootNode, currentNode);
                             AgentData.DeterminedMoveSet = DetermineMoveSet();
                             State = AgentState.Moving;
+                            AgentData.PosToSearch.Clear();
                             break;
                         }
 
