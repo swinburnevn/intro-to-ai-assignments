@@ -11,12 +11,12 @@ namespace robot_nagivation
     public class AStarAgent : Agent
     {
         /*  Depth-First Search Specific Items  */
-        private Stack<Node<TileType>> _nodeQueue;
+        private List<Node<TileType>> _frontierList;
         private HashSet<Node<TileType>> _searchedNodes;
 
         public AStarAgent()
         {
-            _nodeQueue = new Stack<Node<TileType>>();
+            _frontierList = new List<Node<TileType>>();
             _searchedNodes = new HashSet<Node<TileType>>();
         }
 
@@ -24,7 +24,7 @@ namespace robot_nagivation
         {
             base.Initialise(percepts);
 
-            _nodeQueue.Push(AgentData.RootNode);
+            _frontierList.Add(AgentData.RootNode);
         }
 
         public override int HeuristicFunction(Vector2i Pos, Percepts percepts)
@@ -55,15 +55,26 @@ namespace robot_nagivation
         public override AgentActions next(Percepts percepts)
         {
 
-
+            
                 
             switch (State)
             {
                 case AgentState.Searching:
 
-                    if (_nodeQueue.Count > 0)
+                    if (_frontierList.Count > 0)
                     {
-                        Node<TileType> currentNode = _nodeQueue.Pop();
+                        Node<TileType> currentNode = _frontierList[_frontierList.Count - 1];
+                        int lowestCost = 5000;
+                        foreach (Node<TileType> listNode in _frontierList)
+                        {
+                            if (listNode.Cost < lowestCost)
+                            {
+                                lowestCost = listNode.Cost;
+                                currentNode = listNode;
+                            }
+                        }
+
+                        
 
                         if (IsGoalNode(currentNode))
                         {
@@ -72,6 +83,7 @@ namespace robot_nagivation
                             AgentData.NodePath = DetermineAgentPath(AgentData.RootNode, currentNode);
                             AgentData.DeterminedMoveSet = DetermineMoveSet();
                             State = AgentState.Moving;
+                            break;
                         }
 
                         AgentData.PosToSearch = new List<Vector2i>();
@@ -104,7 +116,7 @@ namespace robot_nagivation
                         {
                             if (potentialNode.Cost <= lowestCostFound)
                             {
-                                _nodeQueue.Push(potentialNode);
+                                _frontierList.Add(potentialNode);
                             }
                         }
 
@@ -136,20 +148,18 @@ namespace robot_nagivation
     public class GreedyFirstAgent : Agent
     {
         /*  Breadth-First Search Specific Items  */
-        private Queue<Node<TileType>> _nodeQueue;
-        private HashSet<Node<TileType>> _searchedNodes;
+        private List<Node<TileType>> _frontierList;
 
         public GreedyFirstAgent()
         {
-            _nodeQueue = new Queue<Node<TileType>>();
-            _searchedNodes = new HashSet<Node<TileType>>();
+            _frontierList = new List<Node<TileType>>();
         }
 
         public override void Initialise(Percepts percepts)
         {
             base.Initialise(percepts);
 
-            _nodeQueue.Enqueue(AgentData.RootNode);
+            _frontierList.Add(AgentData.RootNode);
         }
 
         public override int HeuristicFunction(Vector2i Pos, Percepts percepts)
@@ -159,21 +169,45 @@ namespace robot_nagivation
 
             // Manhanttan Distance to the FIRST goal
 
-            Vector2i vectorDistance = percepts.GoalPositions[0] - Pos;
-            manhattanDistance = Math.Abs(vectorDistance.X + vectorDistance.Y);
+            manhattanDistance = Math.Abs(percepts.GoalPositions[0].X - Pos.X) +
+                Math.Abs(percepts.GoalPositions[0].Y - Pos.Y);
 
             return manhattanDistance;
         }
 
         public override AgentActions next(Percepts percepts)
         {
+
+            AgentDelay--;
+            if (AgentDelay < 0)
+            {
+                AgentDelay = 50;
+            }
+            else
+            {
+                return AgentActions.Search;
+            }
+
+            UpdateInternalHeap(_frontierList);
+
             switch (State)
             {
                 case AgentState.Searching:
 
-                    if (_nodeQueue.Count > 0)
+                    if (_frontierList.Count > 0)
                     {
-                        Node<TileType> currentNode = _nodeQueue.Dequeue();
+                        Node<TileType> currentNode = _frontierList[_frontierList.Count - 1];
+                        int lowestCost = 5000;
+                        foreach (Node<TileType> listNode in _frontierList)
+                        {
+                            if (listNode.Cost < lowestCost)
+                            {
+                                lowestCost = listNode.Cost;
+                                currentNode = listNode;
+                            }
+                        }
+
+                        _frontierList.Remove(currentNode);
 
                         if (IsGoalNode(currentNode))
                         {
@@ -182,40 +216,48 @@ namespace robot_nagivation
                             AgentData.NodePath = DetermineAgentPath(AgentData.RootNode, currentNode);
                             AgentData.DeterminedMoveSet = DetermineMoveSet();
                             State = AgentState.Moving;
+                            break;
                         }
 
                         AgentData.PosToSearch = new List<Vector2i>();
-
+                        AgentData.PosToSearch.Add(currentNode.Pos);
                         AgentData.SearchedNodes.Add(currentNode);
 
 
                         List<Node<TileType>> bestNodes = new List<Node<TileType>>();
-                        int lowestCostFound = 50000; // some high cost or cost of first child node.
+                        int lowestLocalCost = 50000; // some high cost or cost of first child node.
 
-                        foreach (Node<TileType> subnode in SearchSurroundingNodes(currentNode, percepts))
+
+                        List<Node<TileType>> surroundingNodes = SearchSurroundingNodes(currentNode, percepts);
+
+                        for (int i = 0; i < surroundingNodes.Count; i++)
                         {
-                            if (!_searchedNodes.Contains(subnode))
-                                if (!AgentData.SearchedPos.Contains(subnode.Pos))
+                            Node<TileType> subnode = surroundingNodes[i];
+
+                            if (!AgentData.SearchedPos.Contains(subnode.Pos))
+                            {
+
+                                if (subnode.Cost <= lowestLocalCost)
                                 {
+                                    lowestLocalCost = subnode.Cost;
 
-                                    if (subnode.Cost <= lowestCostFound)
-                                     {
-                                        lowestCostFound = subnode.Cost;
-                                        bestNodes.Add(subnode);
-                                    }
-
-
-                                    _searchedNodes.Add(subnode);
-                                    AgentData.PosToSearch.Add(subnode.Pos);
-                                    AgentData.SearchedPos.Add(subnode.Pos);
+                                    bestNodes.Add(subnode);
                                 }
+
+                                AgentData.SearchedPos.Add(subnode.Pos);
+                                AgentData.SearchedNodes.Add(subnode);
+                            }
                         }
 
                         foreach (Node<TileType> potentialNode in bestNodes)
                         {
-                            if (potentialNode.Cost <= lowestCostFound)
+                            if (potentialNode.Cost <= lowestLocalCost)
                             {
-                                _nodeQueue.Enqueue(potentialNode);
+                                //of ALL the expanded nodes, these are the lowest
+                                // we can compare with the stack cost?
+
+
+                                _frontierList.Add(potentialNode);
                             }
                         }
 

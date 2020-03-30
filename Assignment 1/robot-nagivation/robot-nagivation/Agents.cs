@@ -29,12 +29,31 @@ namespace robot_nagivation
 
             AgentData.RootNode = new Node<TileType>(TileType.Start, null, percepts.AgentPos);
             AgentData.RootNode.IsOnPath = true;
+            AgentData.SearchedPos.Add(AgentData.RootNode.Pos);
         }
         public abstract AgentActions next(Percepts percepts);
 
-        public virtual void UpdateInternalHeap()
+        public virtual void UpdateInternalHeap(Queue<Node<TileType>> list)
         {
+            AgentData.InternalHeap = new List<Node<TileType>>();
+            foreach (Node<TileType> node in list)
+            {
+                AgentData.InternalHeap.Add(node);
+            }
+        }
 
+        public virtual void UpdateInternalHeap(Stack<Node<TileType>> list)
+        {
+            AgentData.InternalHeap = new List<Node<TileType>>();
+            foreach (Node<TileType> node in list)
+            {
+                AgentData.InternalHeap.Add(node);
+            }
+        }
+
+        public virtual void UpdateInternalHeap(List<Node<TileType>> list)
+        {
+            AgentData.InternalHeap = new List<Node<TileType>>(list);
         }
 
         #region Agent Virtual methods
@@ -181,14 +200,6 @@ namespace robot_nagivation
             _nodeStack = new Stack<Node<TileType>>();
         }
 
-        public override void UpdateInternalHeap()
-        {
-            AgentData.InternalHeap = new List<Node<TileType>>();
-            foreach (Node<TileType> node in _nodeStack)
-            {
-                AgentData.InternalHeap.Add(node);
-            }
-        }
 
         public override void Initialise(Percepts percepts)
         {
@@ -210,7 +221,7 @@ namespace robot_nagivation
                 return AgentActions.Search;
             }
 
-            UpdateInternalHeap();
+            UpdateInternalHeap(_nodeStack);
 
             switch (State)
             {
@@ -227,6 +238,7 @@ namespace robot_nagivation
                             AgentData.NodePath = DetermineAgentPath(AgentData.RootNode, currentNode);
                             AgentData.DeterminedMoveSet = DetermineMoveSet();
                             State = AgentState.Moving;
+                            break;
                         }
 
                         AgentData.PosToSearch = new List<Vector2i>();
@@ -295,14 +307,7 @@ namespace robot_nagivation
             _nodeQueue.Enqueue(AgentData.RootNode);
         }
 
-        public override void UpdateInternalHeap()
-        {
-            AgentData.InternalHeap = new List<Node<TileType>>();
-            foreach (Node<TileType> node in _nodeQueue)
-            {
-                AgentData.InternalHeap.Add(node);
-            }
-        }
+        
 
         public override AgentActions next(Percepts percepts)
         {
@@ -317,7 +322,7 @@ namespace robot_nagivation
                 return AgentActions.Search;
             }
 
-            UpdateInternalHeap();
+            UpdateInternalHeap(_nodeQueue);
 
             switch (State)
             {
@@ -335,6 +340,7 @@ namespace robot_nagivation
                             AgentData.DeterminedMoveSet = DetermineMoveSet();
                             //AgentData.Path = DetermineAgentPosPath(AgentData.NodePath);
                             State = AgentState.Moving;
+                            break;
                         }
 
                         AgentData.PosToSearch = new List<Vector2i>();
