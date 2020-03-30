@@ -19,8 +19,8 @@ namespace robot_nagivation
 
             // Read in the map
 
-            Map _map = _mapParser.ReadMapFromFile("RobotNav-test.txt");
-            //Map _map = _mapParser.ReadMapFromFile("robot-nav-map2.txt");
+            //Map _map = _mapParser.ReadMapFromFile("RobotNav-test.txt");
+            Map _map = _mapParser.ReadMapFromFile("robot-nav-map2.txt");
             if (_map == null)
             {
                 throw new Exception("Map could not be initialised");
@@ -47,8 +47,8 @@ namespace robot_nagivation
             }
             */
 
-            _data.Agent = new DepthFirstAgent();
-            _data.AgentType = "Breath First Agent";
+            _data.Agent = new GreedyFirstAgent();
+            _data.AgentType = "Greedy Best First Agent";
             _model.Initialise();
 
 
@@ -58,8 +58,8 @@ namespace robot_nagivation
             {
                 count++;
                 _view.Draw();
-                System.Threading.Thread.Sleep(50);
-                if (count > 100)
+                System.Threading.Thread.Sleep(10);
+                if (count > 1000)
                     startRequested = true;
             }
 
@@ -67,7 +67,7 @@ namespace robot_nagivation
             {
                 _model.Run();
                 _view.Draw();
-                System.Threading.Thread.Sleep(50);
+                System.Threading.Thread.Sleep(10);
 
             }
 

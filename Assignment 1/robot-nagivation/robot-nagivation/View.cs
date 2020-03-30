@@ -21,6 +21,10 @@ namespace robot_nagivation
         private RenderWindow _window;
         private RenderWindow _nodeWindow;
 
+        private View _nodeView;
+
+        private float _nodeViewPos;
+
         private Font _font;
 
         private Vector2i _windowSize = new Vector2i(1024, 576);
@@ -42,10 +46,15 @@ namespace robot_nagivation
                  new SFML.Window.VideoMode(1024, 576),
                  "SFML: Robot Nagivation");
 
+            _nodeView = new View(new FloatRect(new Vector2f(), new Vector2f(1024, 576)));
+            _nodeViewPos = _nodeView.Center.Y;
             
+
 
             _window.KeyPressed += Window_KeyPressed;
             _nodeWindow.KeyPressed += Window_KeyPressed;
+
+            _nodeWindow.MouseWheelScrolled += Window_MouseWheeled;
 
         }
 
@@ -85,7 +94,7 @@ namespace robot_nagivation
             _nodeWindow.Draw(new RectangleShape()
             {
                 Position = new Vector2f(0, 0),
-                Size = new Vector2f(60, 600),
+                Size = new Vector2f(60, 3000),
                 FillColor = new Color(27, 27, 40)
             });
 
@@ -215,8 +224,8 @@ namespace robot_nagivation
                             {
                                 line = new Vertex[]
                             {
-                                new Vertex(new Vector2f(105 + 5 + 60 * parentXPos, 100 + 5 + 20 * (level - 1 )), new Color(250,250,220)),
-                                new Vertex(new Vector2f(105 + 5 + 60 * childXPos, 100 + 5 + 20 * level), new Color(250,250,220))
+                                new Vertex(new Vector2f(105 + 5 + 80 * parentXPos, 100 + 5 + 30 * (level - 1 )), new Color(250,250,220)),
+                                new Vertex(new Vector2f(105 + 5 + 80 * childXPos, 100 + 5 + 30 * level), new Color(250,250,220))
                             };
                             }
                         }
@@ -224,8 +233,8 @@ namespace robot_nagivation
                         {
                             line = new Vertex[]
                             {
-                                new Vertex(new Vector2f(105 + 5 + 60 * parentXPos, 100 + 5 + 20 * (level - 1 )), new Color(150,150,150)),
-                                new Vertex(new Vector2f(105 + 5 + 60 * childXPos, 100 + 5 + 20 * level), new Color(150,150,150))
+                                new Vertex(new Vector2f(105 + 5 + 80 * parentXPos, 100 + 5 + 30 * (level - 1 )), new Color(150,150,150)),
+                                new Vertex(new Vector2f(105 + 5 + 80 * childXPos, 100 + 5 + 30 * level), new Color(150,150,150))
                             };
                         }
 
@@ -236,8 +245,17 @@ namespace robot_nagivation
                         _nodeWindow.Draw(new Text( "(" + child.Pos.X + ", " + child.Pos.Y + ")", _font, 10)
                         {
                             Position = new Vector2f(
-                                105 + 15 +  60 * childXPos,
-                                100 + 20 * level),
+                                105 + 15 +  80 * childXPos,
+                                100 + 30 * level),
+                            FillColor = new Color(220, 220, 220)
+
+                        });
+
+                        _nodeWindow.Draw(new Text("c: " + child.Cost, _font, 10)
+                        {
+                            Position = new Vector2f(
+                                105 + 50 + 80 * childXPos,
+                                100 + 30 * level),
                             FillColor = new Color(220, 220, 220)
 
                         });
@@ -245,8 +263,8 @@ namespace robot_nagivation
                         CircleShape nodeCircle = new CircleShape()
                         {
                             Position = new Vector2f(
-                                105 + 60 * childXPos,
-                                100 + 20 * level),
+                                105 + 80 * childXPos,
+                                100 + 30 * level),
                             Radius = 5,
                             FillColor = HashedPosColor(child.Pos.X, child.Pos.Y, 100)
                         };
@@ -305,6 +323,11 @@ namespace robot_nagivation
 
             _window.Clear(new Color(61,71,78));
             _nodeWindow.Clear(new Color(61,71,78));
+
+
+            float _currentViewYPos = _nodeView.Center.Y;
+            _nodeView.Move(new Vector2f(0,  ( _nodeViewPos - _currentViewYPos) / 10));
+            _nodeWindow.SetView(_nodeView);
 
             DrawBackground();
 
@@ -494,6 +517,16 @@ namespace robot_nagivation
                 window.Close();
                 _data.Finished = true;
             }
+        }
+
+        private void Window_MouseWheeled(object sender, SFML.Window.MouseWheelScrollEventArgs e)
+        {
+            var window = (SFML.Window.Window)sender;
+
+            _nodeViewPos += -40 * e.Delta;
+
+            //_nodeView.Move(new Vector2f(0, -30 * e.Delta));
+
         }
     }
 

@@ -32,10 +32,12 @@ namespace robot_nagivation
 
             int manhattanDistance = 0;
 
-            
+            // Manhanttan Distance to the FIRST goal
 
+            Vector2i vectorDistance = percepts.GoalPositions[0] - Pos;
+            manhattanDistance = Math.Abs(vectorDistance.X + vectorDistance.Y);
 
-            return 0;
+            return manhattanDistance;
         }
 
         public override AgentActions next(Percepts percepts)
@@ -61,17 +63,39 @@ namespace robot_nagivation
 
                         AgentData.SearchedNodes.Add(currentNode);
 
+
+                        List<Node<TileType>> bestNodes = new List<Node<TileType>>();
+                        int lowestCostFound = 50000; // some high cost or cost of first child node.
+
                         foreach (Node<TileType> subnode in SearchSurroundingNodes(currentNode, percepts))
                         {
                             if (!_searchedNodes.Contains(subnode))
                                 if (!AgentData.SearchedPos.Contains(subnode.Pos))
                                 {
-                                    _nodeQueue.Enqueue(subnode);
+
+                                    if (subnode.Cost <= lowestCostFound)
+                                     {
+                                        lowestCostFound = subnode.Cost;
+                                        bestNodes.Add(subnode);
+                                    }
+
+
                                     _searchedNodes.Add(subnode);
                                     AgentData.PosToSearch.Add(subnode.Pos);
                                     AgentData.SearchedPos.Add(subnode.Pos);
                                 }
                         }
+
+                        foreach (Node<TileType> potentialNode in bestNodes)
+                        {
+                            if (potentialNode.Cost <= lowestCostFound)
+                            {
+                                _nodeQueue.Enqueue(potentialNode);
+                            }
+                        }
+
+
+
                     }
 
                     return AgentActions.Search;
