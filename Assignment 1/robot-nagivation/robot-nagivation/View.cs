@@ -152,7 +152,7 @@ namespace robot_nagivation
 
             });
 
-            _nodeWindow.Draw(new Text(_data.AgentType, _font, 15)
+            _nodeWindow.Draw(new Text(_data.Agent.Name, _font, 15)
             {
                 Position = new Vector2f(260, 53),
                 FillColor = new Color(200, 200, 200)

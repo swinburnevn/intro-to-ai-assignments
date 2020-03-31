@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Text;
 
+using C5;
+
 using SFML.System;
 
 namespace robot_nagivation
@@ -12,7 +14,7 @@ namespace robot_nagivation
         Searching,
         Moving,
         Lost,           // Cannot find path
-        Finished,
+        Finished,   
         Idle
     }
 
@@ -20,6 +22,8 @@ namespace robot_nagivation
     {
         private AgentData _agentData;   // Contains all the information used by the agent.
         private AgentState _state;      // Determines what the agent is currently doing
+        private string _name = "You shouldn't be seeing this";
+
 
         private int _agentDelay = 0;
         public virtual void Initialise(Percepts percepts)
@@ -32,6 +36,9 @@ namespace robot_nagivation
             AgentData.SearchedPos.Add(AgentData.RootNode.Pos);
         }
         public abstract AgentActions next(Percepts percepts);
+
+
+        #region Agent Virtual methods
 
         public virtual void UpdateInternalHeap(Queue<Node<TileType>> list)
         {
@@ -55,9 +62,6 @@ namespace robot_nagivation
         {
             AgentData.InternalHeap = new List<Node<TileType>>(list);
         }
-
-        #region Agent Virtual methods
-
         protected virtual bool WithinMap(Vector2i pos, Percepts percepts)
         {
             if ((0 <= pos.X) && (pos.X < percepts.MapMatrix.GetLength(0)))
@@ -156,19 +160,6 @@ namespace robot_nagivation
             return nodePath;
         }
 
-        /*
-        public List<Vector2i> DetermineAgentPosPath(List<Node<TileType>> nodePath)
-        {
-            List<Vector2i> posPath = new List<Vector2i>();
-            foreach (Node<TileType> node in nodePath)
-            {
-                posPath.Add(node.Pos);
-            }
-
-            return posPath;
-        }
-        */
-
         #endregion
 
 
@@ -177,6 +168,7 @@ namespace robot_nagivation
         public AgentData AgentData { get => _agentData; set => _agentData = value; }
         public AgentState State { get => _state; set => _state = value; }
         public int AgentDelay { get => _agentDelay; set => _agentDelay = value; }
+        public string Name { get => _name; set => _name = value; }
 
         #endregion
 
@@ -185,10 +177,18 @@ namespace robot_nagivation
     public class RandomAgent : Agent
     {
 
+        public override void Initialise(Percepts percepts)
+        {
+            Name = "Random Agent";
+
+            base.Initialise(percepts);
+        }
+
         public override AgentActions next(Percepts percepts)
         {
             Array possibleActions = Enum.GetValues(typeof(AgentActions));
             return (AgentActions)possibleActions.GetValue(new Random().Next(0, possibleActions.Length));
+            
         }
 
     }
@@ -207,6 +207,8 @@ namespace robot_nagivation
 
         public override void Initialise(Percepts percepts)
         {
+            Name = "Depth-First Agent";
+
             base.Initialise(percepts);
 
             _nodeStack.Push(AgentData.RootNode);
@@ -307,6 +309,8 @@ namespace robot_nagivation
 
         public override void Initialise(Percepts percepts)
         {
+            Name = "Breadth-First Agent";
+
             base.Initialise(percepts);
 
             _nodeQueue.Enqueue(AgentData.RootNode);
@@ -343,7 +347,6 @@ namespace robot_nagivation
 
                             AgentData.NodePath = DetermineAgentPath(AgentData.RootNode, currentNode);
                             AgentData.DeterminedMoveSet = DetermineMoveSet();
-                            //AgentData.Path = DetermineAgentPosPath(AgentData.NodePath);
                             State = AgentState.Moving;
                             AgentData.PosToSearch.Clear();
                             break;

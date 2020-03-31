@@ -66,8 +66,6 @@ namespace robot_nagivation
         private bool _windowRequestClosed;
         private List<AgentActions> _agentDecisions;
 
-        string _agentType;
-
         public ProgramData()
         {
             _finished = false;
@@ -80,7 +78,6 @@ namespace robot_nagivation
         public List<AgentActions> AgentDecisions { get => _agentDecisions; set => _agentDecisions = value; }
         public bool Finished { get => _finished; set => _finished = value; }
         public bool WindowRequestClosed { get => _windowRequestClosed; set => _windowRequestClosed = value; }
-        public string AgentType { get => _agentType; set => _agentType = value; }
     }
 
 
