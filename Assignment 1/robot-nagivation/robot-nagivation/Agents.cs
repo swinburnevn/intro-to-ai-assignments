@@ -120,7 +120,7 @@ namespace robot_nagivation
 
         public virtual bool IsFinished()
         {
-            return (_state == AgentState.Finished);
+            return ((_state == AgentState.Finished) || (_state == AgentState.Lost));
         }
 
         public Queue<AgentActions> DetermineMoveSet()
@@ -275,6 +275,11 @@ namespace robot_nagivation
                             }
                         }
                     }
+                    else
+                    {
+                        State = AgentState.Lost;
+                        return AgentActions.Lost;
+                    }
 
                     return AgentActions.Search;
 
@@ -372,6 +377,11 @@ namespace robot_nagivation
                             }
                         }
 
+                    }
+                    else
+                    {
+                        State = AgentState.Lost;
+                        return AgentActions.Lost;
                     }
 
                     return AgentActions.Search;

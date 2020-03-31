@@ -20,7 +20,7 @@ namespace robot_nagivation
             // Read in the map
 
             //Map _map = _mapParser.ReadMapFromFile("RobotNav-test.txt");
-            Map _map = _mapParser.ReadMapFromFile("robot-nav-map2.txt");
+            Map _map = _mapParser.ReadMapFromFile("robot-nav-map4.txt");
             if (_map == null)
             {
                 throw new Exception("Map could not be initialised");

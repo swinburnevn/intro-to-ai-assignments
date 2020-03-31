@@ -26,7 +26,8 @@ namespace robot_nagivation
         Up,
         Down,
         Left,
-        Right
+        Right,
+        Lost
     }
 
 

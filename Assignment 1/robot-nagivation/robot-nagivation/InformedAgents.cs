@@ -168,6 +168,11 @@ namespace robot_nagivation
 
 
 
+                    } 
+                    else
+                    {
+                        State = AgentState.Lost;
+                        return AgentActions.Lost;
                     }
 
                     return AgentActions.Search;
