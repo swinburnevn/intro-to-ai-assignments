@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Text;
 
 using C5;
@@ -62,6 +63,7 @@ namespace robot_nagivation
         {
             AgentData.InternalHeap = new List<Node<TileType>>(list);
         }
+
         protected virtual bool WithinMap(Vector2i pos, Percepts percepts)
         {
             if ((0 <= pos.X) && (pos.X < percepts.MapMatrix.GetLength(0)))
@@ -193,11 +195,300 @@ namespace robot_nagivation
 
     }
 
+    public class NodeComparer : IComparer<Node<TileType>>
+    {
+        public int Compare([AllowNull] Node<TileType> x, [AllowNull] Node<TileType> y)
+        {
+            return x.Cost - y.Cost;
+        }
+    }
+
+    public class UniformCostAgent : Agent
+    {
+        private IntervalHeap<Node<TileType>> _priorityQueue;
+
+        public override void Initialise(Percepts percepts)
+        {
+            base.Initialise(percepts);
+
+            Name = "Uniform Cost Agent";
+
+            _priorityQueue = new IntervalHeap<Node<TileType>>(new NodeComparer());
+            _priorityQueue.Add(AgentData.RootNode);
+        }
+
+        public override int CostFunction(Vector2i Pos, Percepts percepts)
+        {
+
+            // Get the current latest node
+            // GBFS should only expand one node at a time...
+
+
+            if (AgentData.SearchedNodes.Count < 1)
+            {
+                return 1;
+            }
+
+            Node<TileType> currentNode = AgentData.SearchedNodes[AgentData.SearchedNodes.Count - 1];
+
+            // Determine layers of parents
+            //  This gives us the "cost" to get up to this point
+            int nodeDistance = 0;
+            Node<TileType> parentNode = currentNode.Parent;
+            while (parentNode != null)
+            {
+                nodeDistance++;
+                parentNode = parentNode.Parent;
+            }
+
+            return nodeDistance;
+
+        }
+
+        public void UpdateInternalHeap(IntervalHeap<Node<TileType>> priorityQueue)
+        {
+            AgentData.InternalHeap = new List<Node<TileType>>();
+            foreach (Node<TileType> node in priorityQueue)
+            {
+                AgentData.InternalHeap.Add(node);
+            }
+        }
+
+        public override AgentActions next(Percepts percepts)
+        {
+
+            AgentDelay--;
+            if (AgentDelay < 0)
+            {
+                AgentDelay = 20;
+            }
+            else
+            {
+                return AgentActions.Search;
+            }
+
+           UpdateInternalHeap(_priorityQueue);
+
+            switch (State)
+            {
+                case AgentState.Searching:
+
+                    if (_priorityQueue.Count > 0)
+                    {
+                        Node<TileType> currentNode = _priorityQueue.FindMin();
+                        _priorityQueue.DeleteMin();
+
+                        if (IsGoalNode(currentNode))
+                        {
+                            State = AgentState.Moving;
+
+                            AgentData.NodePath = DetermineAgentPath(AgentData.RootNode, currentNode);
+                            AgentData.DeterminedMoveSet = DetermineMoveSet();
+                            State = AgentState.Moving;
+                            AgentData.PosToSearch.Clear();
+                            break;
+                        }
+
+                        AgentData.PosToSearch = new List<Vector2i>();
+
+                        AgentData.PosToSearch.Add(currentNode.Pos); // frontier nodes, yellow.
+                        AgentData.SearchedPos.Add(currentNode.Pos); // important: searched positions
+
+
+                        List<Node<TileType>> surroundingNodes = SearchSurroundingNodes(currentNode, percepts);
+
+
+                        // The order of the surrounding nodes is in:
+                        //  Up -> Left -> Down -> Right
+                        // However, since we're pushing it into the stack in that order,
+                        //  the first one that's popped is the "right" one. let's flip the order here...
+                        for (int i = surroundingNodes.Count - 1; i >= 0; i--)
+                        {
+                            Node<TileType> subnode = surroundingNodes[i];
+                            if (!AgentData.SearchedPos.Contains(subnode.Pos))
+                            {
+                                _priorityQueue.Add(subnode);
+
+                                AgentData.SearchedNodes.Add(subnode);   // for the node tree, searched nodes.
+                            }
+                        }
+                    }
+                    else
+                    {
+                        State = AgentState.Lost;
+                        return AgentActions.Lost;
+                    }
+
+                    return AgentActions.Search;
+
+
+                case AgentState.Moving:
+
+                    AgentData.Path.Add(percepts.AgentPos);
+
+                    if (AgentData.DeterminedMoveSet.Count > 0)
+                        return AgentData.DeterminedMoveSet.Dequeue();
+                    State = AgentState.Finished;
+                    break;
+
+                default:
+                    break;
+
+            }
+
+            return AgentActions.Idle;
+        }
+    }
+
+    public class IterativeDDFSAgent : DepthFirstAgent
+    {
+        private int _targetDepth = 1;
+        private int _currentDepth = 0;
+
+        private int _leadingDepth;
+
+        public override void Initialise(Percepts percepts)
+        {
+            base.Initialise(percepts);
+
+            Name = "Iterative Deepening DFS Agent";
+
+        }
+
+        public int DepthFunction(Node<TileType> currentNode)
+        {
+
+            // Determine layers of parents
+            //  This gives us the "cost" to get up to this point
+            int nodeDistance = 0;
+            Node<TileType> parentNode = currentNode.Parent;
+            while (parentNode != null)
+            {
+                nodeDistance++;
+                parentNode = parentNode.Parent;
+            }
+
+            return nodeDistance;
+
+        }
+
+        public override AgentActions next(Percepts percepts)
+        {
+
+            AgentDelay--;
+            if (AgentDelay < 0)
+            {
+                AgentDelay = 20;
+            }
+            else
+            {
+                return AgentActions.Search;
+            }
+
+            
+
+            UpdateInternalHeap(_nodeStack);
+
+            switch (State)
+            {
+                case AgentState.Searching:
+
+                    if (_nodeStack.Count > 0)
+                    {
+                        Node<TileType> currentNode = _nodeStack.Pop();
+
+                        if (IsGoalNode(currentNode))
+                        {
+                            State = AgentState.Moving;
+
+                            AgentData.NodePath = DetermineAgentPath(AgentData.RootNode, currentNode);
+                            AgentData.DeterminedMoveSet = DetermineMoveSet();
+                            State = AgentState.Moving;
+                            AgentData.PosToSearch.Clear();
+                            break;
+                        }
+
+                        AgentData.PosToSearch = new List<Vector2i>();
+
+                        AgentData.PosToSearch.Add(currentNode.Pos); // frontier nodes, yellow.
+                        AgentData.SearchedPos.Add(currentNode.Pos); // important: searched positions
+
+
+                        List<Node<TileType>> surroundingNodes = SearchSurroundingNodes(currentNode, percepts);
+
+                        // The order of the surrounding nodes is in:
+                        //  Up -> Left -> Down -> Right
+                        // However, since we're pushing it into the stack in that order,
+                        //  the first one that's popped is the "right" one. let's flip the order here...
+
+                        
+
+                        for (int i = surroundingNodes.Count - 1; i >= 0; i--)
+                        {
+                            
+
+                            Node<TileType> subnode = surroundingNodes[i];
+                            if (!AgentData.SearchedPos.Contains(subnode.Pos))
+                            {
+                                _currentDepth = DepthFunction(subnode);
+
+                                if (_currentDepth > _leadingDepth)
+                                    _leadingDepth = _currentDepth;
+                                if (_currentDepth <  _targetDepth)
+                                {
+                                    _nodeStack.Push(subnode);
+
+                                    AgentData.SearchedNodes.Add(subnode);   // for the node tree, searched nodes.
+                                }
+                                
+                                
+                            }
+                        }
+                    }
+                    else
+                    {
+                        if (_leadingDepth < _targetDepth)
+                        {
+                            State = AgentState.Lost;
+                            return AgentActions.Lost;
+                        }
+
+
+                        _targetDepth++;
+                        _nodeStack.Push(AgentData.RootNode);
+                        AgentData.RootNode.Children.Clear();
+                        AgentData.SearchedNodes.Clear();
+                        AgentData.SearchedPos.Clear();
+
+
+                    }
+
+                    return AgentActions.Search;
+
+
+                case AgentState.Moving:
+
+                    AgentData.Path.Add(percepts.AgentPos);
+
+                    if (AgentData.DeterminedMoveSet.Count > 0)
+                        return AgentData.DeterminedMoveSet.Dequeue();
+                    State = AgentState.Finished;
+                    break;
+
+                default:
+                    break;
+
+            }
+
+            return AgentActions.Idle;
+        }
+    }
+
     public class DepthFirstAgent : Agent
     {
 
         /*  Depth-First Search Specific Items  */
-        private Stack<Node<TileType>> _nodeStack;
+        protected Stack<Node<TileType>> _nodeStack;
 
         public DepthFirstAgent()
         {
@@ -266,9 +557,6 @@ namespace robot_nagivation
                             Node<TileType> subnode = surroundingNodes[i];
                             if (!AgentData.SearchedPos.Contains(subnode.Pos))
                             {
-                                
-
-
                                 _nodeStack.Push(subnode);
 
                                 AgentData.SearchedNodes.Add(subnode);   // for the node tree, searched nodes.

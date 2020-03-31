@@ -19,8 +19,8 @@ namespace robot_nagivation
 
             // Read in the map
 
-            //Map _map = _mapParser.ReadMapFromFile("RobotNav-test.txt");
-            Map _map = _mapParser.ReadMapFromFile("robot-nav-map4.txt");
+            Map _map = _mapParser.ReadMapFromFile("RobotNav-test.txt");
+            //Map _map = _mapParser.ReadMapFromFile("robot-nav-map4.txt");
             if (_map == null)
             {
                 throw new Exception("Map could not be initialised");
@@ -47,7 +47,7 @@ namespace robot_nagivation
             }
             */
 
-            _data.Agent = new AStarAgent();
+            _data.Agent = new UniformCostAgent();
             _model.Initialise();
 
 
