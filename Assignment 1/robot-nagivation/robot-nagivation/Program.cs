@@ -30,11 +30,15 @@ namespace robot_nagivation
             bool startRequested = false;
 
             // Defaults to console view, if program specifically calls for GUI, it's then used.
-            if (args[2] == "gui")
+            if (args.Length >= 3 )
             {
-                _view = new SFMLView(ref _data);
-                _data.DisplayMode = true;
+                if (args[2] != null)
+                {
+                    _view = new SFMLView(ref _data);
+                    _data.DisplayMode = true;
+                }
             }
+                
                 
 
 
@@ -103,20 +107,33 @@ namespace robot_nagivation
                 System.Threading.Thread.Sleep(10);
 
             }
-
+            // Write to file, open streamwriter without append (overwrite)
+            System.IO.StreamWriter _file = new System.IO.StreamWriter(_outputFile, false);
+            string line;
             // Write output to console, write output to file.
             // Note: The SearchedNodes field doesn't include the root node, hence the +1 at the end.
-            Console.WriteLine($"{_outputFile} '{args[1]}:{_data.Agent.Name}' {_data.Agent.AgentData.SearchedNodes.Count + 1}");
+            line = $"{_outputFile} '{args[1]}: {_data.Agent.Name}' {_data.Agent.AgentData.SearchedNodes.Count + 1}";
+            Console.WriteLine(line);
+            _file.WriteLine(line);
 
             foreach (AgentActions action in _data.AgentDecisions)
             {
                 if (action == AgentActions.Lost)
                 {
-                    Console.WriteLine("No solution found");
+                    line = "No solution found";
+                    Console.WriteLine(line);
+                    _file.WriteLine(line);
                     break;
                 }
-                Console.Write($"{action}; ");
+                line = $"{action}; ";
+                Console.Write(line);
+                _file.Write(line);
             }
+            _file.Close();
+
+            
+
+            
 
 
 
