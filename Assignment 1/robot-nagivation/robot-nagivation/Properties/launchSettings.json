@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "robot-nagivation": {
+      "commandName": "Project",
+      "commandLineArgs": "\"RobotNav-test.txt\" bfs gui"
+    }
+  }
+}

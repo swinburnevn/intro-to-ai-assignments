@@ -100,16 +100,6 @@ namespace robot_nagivation
                     {
                         Node<TileType> currentNode = _frontierList[_frontierList.Count - 1];
                         int lowestCost = 5000;
-                        /*
-                        foreach (Node<TileType> listNode in _frontierList)
-                        {
-                            if (listNode.Cost < lowestCost)
-                            {
-                                lowestCost = listNode.Cost;
-                                currentNode = listNode; // this gives the LAST node, which is the unideal
-                            }
-                        }
-                        */
 
                         // This is reversed such that it provides a DFS under all equal circumstances
                         //  this implies in a worst-case scenario, A* behaves as  GBFS
@@ -192,7 +182,7 @@ namespace robot_nagivation
 
             }
 
-            return AgentActions.Idle;
+            return AgentActions.Search;
         }
     }
 }

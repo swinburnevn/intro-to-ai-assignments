@@ -524,21 +524,6 @@ namespace robot_nagivation
                 });
             }
 
-            /*
-            foreach (Vector2i node in _data.AgentData.Path)
-            {
-                _window.Draw(new CircleShape()
-                {
-                    Position = new Vector2f(
-                            85 + (spacing.X) + node.X * (boxSize.X + spacing.X) + boxSize.X / 2 - 10,
-                            60 + (spacing.Y) + node.Y * (boxSize.Y + spacing.Y) + boxSize.Y / 2 - 5),
-                    Radius = 5,
-                    FillColor = new Color(255, 255, 255)
-                });
-            }
-            */
-            /* Draw out the heatmap path */
-
             for (int i = 0; i < _data.Agent.AgentData.Path.Count - 1; i++)
             {
                 Vector2i prev = _data.Agent.AgentData.Path[i];
@@ -587,6 +572,7 @@ namespace robot_nagivation
             if (e.Code == SFML.Window.Keyboard.Key.Escape)
             {
                 window.Close();
+                _data.WindowRequestClosed = true;
                 _data.Finished = true;
             }
         }
@@ -604,8 +590,22 @@ namespace robot_nagivation
         }
     }
 
-        public class ConsoleView : IView
+
+    public class ConsoleOutput : IView
     {
+        private ProgramData _data;
+
+        public ConsoleOutput(ref ProgramData data)
+        {
+            _data = data;
+
+        }
+        public void Draw()
+        {
+        }
+    }
+    public class ConsoleView : IView
+        {
         
         private ProgramData _data;
 
@@ -651,7 +651,7 @@ namespace robot_nagivation
 
             Console.WriteLine("  +-----------------------------------------+");
 
-            Thread.Sleep(10);
+            //Thread.Sleep(10);
            
             if (_data.AgentDecisions.Count > 0)
             {

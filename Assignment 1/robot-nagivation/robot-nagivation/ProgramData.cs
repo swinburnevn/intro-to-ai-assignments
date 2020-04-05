@@ -37,6 +37,8 @@ namespace robot_nagivation
         private List<Node<TileType>> _nodePath;             // List of states required to get to end state.
         private List<Node<TileType>> _searchedNodes;             // List of states required to get to end state.
 
+        private int _agentDelay = 0;
+
         public int Steps { get => _determinedMoveSet.Count; }
         public Queue<AgentActions> DeterminedMoveSet { get => _determinedMoveSet; set => _determinedMoveSet = value; }
         public List<Vector2i> SearchedPos { get => _searchedPos; set => _searchedPos = value; }
@@ -46,6 +48,7 @@ namespace robot_nagivation
         public List<Vector2i> Path { get => _path; set => _path = value; }
         public List<Node<TileType>> SearchedNodes { get => _searchedNodes; set => _searchedNodes = value; }
         public List<Node<TileType>> InternalHeap { get => _internalHeap; set => _internalHeap = value; }
+        public int AgentDelay { get => _agentDelay; set => _agentDelay = value; }
 
         public AgentData()
         {
@@ -66,6 +69,8 @@ namespace robot_nagivation
         private bool _windowRequestClosed;
         private List<AgentActions> _agentDecisions;
 
+        private bool _displayMode = false;
+
         public ProgramData()
         {
             _finished = false;
@@ -78,6 +83,7 @@ namespace robot_nagivation
         public List<AgentActions> AgentDecisions { get => _agentDecisions; set => _agentDecisions = value; }
         public bool Finished { get => _finished; set => _finished = value; }
         public bool WindowRequestClosed { get => _windowRequestClosed; set => _windowRequestClosed = value; }
+        public bool DisplayMode { get => _displayMode; set => _displayMode = value; }
     }
 
 

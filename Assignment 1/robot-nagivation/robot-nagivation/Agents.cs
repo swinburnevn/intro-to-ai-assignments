@@ -260,7 +260,7 @@ namespace robot_nagivation
             AgentDelay--;
             if (AgentDelay < 0)
             {
-                AgentDelay = 20;
+                AgentDelay = AgentData.AgentDelay;
             }
             else
             {
@@ -336,7 +336,7 @@ namespace robot_nagivation
 
             }
 
-            return AgentActions.Idle;
+            return AgentActions.Search;
         }
     }
 
@@ -378,7 +378,7 @@ namespace robot_nagivation
             AgentDelay--;
             if (AgentDelay < 0)
             {
-                AgentDelay = 20;
+                AgentDelay = AgentData.AgentDelay;
             }
             else
             {
@@ -480,7 +480,7 @@ namespace robot_nagivation
 
             }
 
-            return AgentActions.Idle;
+            return AgentActions.Search;
         }
     }
 
@@ -511,7 +511,7 @@ namespace robot_nagivation
             AgentDelay--;
             if (AgentDelay < 0)
             {
-                AgentDelay = 20;
+                AgentDelay = AgentData.AgentDelay;
             }
             else
             {
@@ -586,7 +586,7 @@ namespace robot_nagivation
 
             }
 
-            return AgentActions.Idle;
+            return AgentActions.Search;
         }
     }
 
@@ -617,7 +617,7 @@ namespace robot_nagivation
             AgentDelay--;
             if (AgentDelay < 0)
             {
-                AgentDelay = 20;
+                AgentDelay = AgentData.AgentDelay;
             }
             else
             {
@@ -689,7 +689,7 @@ namespace robot_nagivation
 
             }
 
-            return AgentActions.Idle;
+            return AgentActions.Search;
         }
 
     }
