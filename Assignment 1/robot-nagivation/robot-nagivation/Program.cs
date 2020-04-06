@@ -67,7 +67,7 @@ namespace robot_nagivation
             _agentsByIdentifier.Add("gbfs", new GreedyFirstAgent());
             _agentsByIdentifier.Add("astar", new AStarAgent());
             _agentsByIdentifier.Add("iddfs", new IterativeDDFSAgent());
-            _agentsByIdentifier.Add("ufcs", new UniformCostAgent());
+            _agentsByIdentifier.Add("ucs", new UniformCostAgent());
 
             try
             {
@@ -93,7 +93,7 @@ namespace robot_nagivation
                 {
                     count++;
                     _view.Draw();
-                    System.Threading.Thread.Sleep(10);
+                    System.Threading.Thread.Sleep(5);
                     if (count > 300)
                         startRequested = true;
                 }
@@ -111,8 +111,7 @@ namespace robot_nagivation
             System.IO.StreamWriter _file = new System.IO.StreamWriter(_outputFile, false);
             string line;
             // Write output to console, write output to file.
-            // Note: The SearchedNodes field doesn't include the root node, hence the +1 at the end.
-            line = $"{_outputFile} '{args[1]}: {_data.Agent.Name}' {_data.Agent.AgentData.SearchedNodes.Count + 1}";
+            line = $"{_outputFile} '{args[1]}: {_data.Agent.Name}' {_data.Agent.AgentData.SearchedPos.Count}";
             Console.WriteLine(line);
             _file.WriteLine(line);
 

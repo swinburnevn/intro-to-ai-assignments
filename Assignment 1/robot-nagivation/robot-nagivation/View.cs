@@ -144,7 +144,6 @@ namespace robot_nagivation
         
         public void DrawNodeDisplay()
         {
-
             _nodeWindow.Draw(new Text("Node tree", _font, 35)
             {
                 Position = new Vector2f(90, 30),
@@ -287,8 +286,6 @@ namespace robot_nagivation
 
 
                         _nodeWindow.Draw(nodeCircle);
-
-
 
 
 

@@ -1,0 +1,149 @@
+@startuml
+
+title Robot Navigation 101624964
+
+class Main 
+{
+    + ProgramData _data
+    + IView _view
+    + IModel _model
+    
+    
+}
+
+enum AgentActions {
+    Search
+    Up
+    Down
+    Left
+    Right
+    Lost
+}
+
+
+interface IView 
+{
+    + void Draw()
+    
+}
+
+interface IModel 
+{
+    + void Run()
+}
+
+class ProgramData
+{
+    Agent _agent
+    Map _map
+    Bool _finished
+    List<AgentActions> _actions
+}
+
+class Agent
+{
++ AgentData _agentData
++ void Initialise(Percepts perecpts)
++ AgentActions Next(Percepts percets)
+}
+
+class AgentData 
+{
+    +Queue<AgentActions> _determinedMoveSet
+    +List<Vector2i> _searchedPos
+    +List<Vector2i> _posToSearch
+    +List<Vector2i> _path
+}
+
+class FileMapParser
+{
+ Map ReadInMap(string fileName)
+}
+
+interface IMapParser
+{
+ Map ReadInMap(string fileName)
+}
+
+Main *--> IMapParser
+IMapParser <|-- FileMapParser
+
+
+Agent *-->AgentData
+
+
+class GameModel {
+    + ref ProgramData _data
+    + bool WithinMap(Vector2i pos)
+    + void MoveAgent(Pos)
+    + Percepts createPercepts()
+    + void Run()
+    
+}
+
+IModel <|-- GameModel
+
+class BreadthFirstAgent 
+{
++AgentActions Next() 
++void Initialise()
+}
+Agent <|-- BreadthFirstAgent
+
+class DepthFirstAgent
+{
++AgentActions Next() 
++void Initialise()
+}
+Agent <|-- DepthFirstAgent
+
+class GreedyFirstAgent 
+{
++AgentActions Next() 
++void Initialise()
+}
+Agent <|-- GreedyFirstAgent
+
+class AStarAgent 
+{
++AgentActions Next() 
++void Initialise()
+}
+Agent <|-- AStarAgent
+
+
+
+
+
+class SFMLView
+{
+    + ref ProgramData _data
+    + void Initialise(ref ProgramData data)
+    + void Draw()
+}
+
+class ConsoleOutput
+{
+    + ref ProgramData _data
+    + void Initialise(ref ProgramData data)
+    + void Draw()
+}
+
+class ConsoleView
+{
+    + ref ProgramData _data
+    + void Initialise(ref ProgramData data)
+    + void Draw()
+}
+IView <|-- SFMLView
+IView <|-- ConsoleOutput
+IView <|-- ConsoleView
+
+Main *--> IView
+Main *--> IModel
+Main *--> ProgramData
+
+ProgramData *--> Agent
+
+
+@enduml

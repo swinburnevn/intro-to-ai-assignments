@@ -1,2 +1,2 @@
-101624964-output.txt 'ufcs: Uniform Cost Agent' 56
-Right; Down; Right; Right; Right; Right; Up; Right; Right; Up; 
+101624964-output.txt 'gbfs: Greedy-Best First Agent' 24
+Right; Down; Right; Right; Right; Right; Right; Right; Up; Up; 

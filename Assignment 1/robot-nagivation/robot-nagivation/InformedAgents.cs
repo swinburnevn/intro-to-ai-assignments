@@ -83,7 +83,7 @@ namespace robot_nagivation
             AgentDelay--;
             if (AgentDelay < 0)
             {
-                AgentDelay = 20;
+                AgentDelay = AgentData.AgentDelay;
             }
             else
             {
@@ -132,8 +132,6 @@ namespace robot_nagivation
 
 
                         List<Node<TileType>> bestNodes = new List<Node<TileType>>();
-                        int lowestLocalCost = 50000; // some high cost or cost of first child node.
-
 
                         List<Node<TileType>> surroundingNodes = SearchSurroundingNodes(currentNode, percepts);
 
@@ -143,14 +141,8 @@ namespace robot_nagivation
 
                             if (!AgentData.SearchedPos.Contains(subnode.Pos))
                             {
-
-                                if (subnode.Cost <= lowestLocalCost)
-                                {
-                                    lowestLocalCost = subnode.Cost;
-
-                                    _frontierList.Add(subnode);
-                                }
-
+                                _frontierList.Add(subnode);
+                                
                                 AgentData.SearchedPos.Add(subnode.Pos);
                                 AgentData.SearchedNodes.Add(subnode);
                             }
