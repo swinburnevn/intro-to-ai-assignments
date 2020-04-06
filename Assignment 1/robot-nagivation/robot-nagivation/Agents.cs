@@ -82,6 +82,7 @@ namespace robot_nagivation
         {
             return 0;
         }
+
         protected virtual List<Node<TileType>> SearchSurroundingNodes(Node<TileType> currentNode, Percepts percepts)
         {
             Vector2i[] searchNodes = new Vector2i[4]; // 4 surrounding nodes
@@ -105,6 +106,10 @@ namespace robot_nagivation
                         Node<TileType> newNode = new Node<TileType>(
                                                 percepts.MapMatrix[newPos.X, newPos.Y], currentNode, newPos);
                         newNode.Cost = HeuristicFunction(newPos, percepts) + CostFunction(newPos, percepts);
+                        if (AgentData.DirectionalMovementCost.Count != 0)
+                        {
+                            newNode.Cost += AgentData.DirectionalMovementCost[newPos - currentNode.Pos];
+                        }
                         foundNodes.Add(newNode);
                         currentNode.Children.Add(newNode);
                     }

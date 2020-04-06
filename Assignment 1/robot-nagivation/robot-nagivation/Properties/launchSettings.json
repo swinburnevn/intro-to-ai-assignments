@@ -2,7 +2,7 @@
   "profiles": {
     "robot-nagivation": {
       "commandName": "Project",
-      "commandLineArgs": "RobotNav-test.txt gbfs gui"
+      "commandLineArgs": "RobotNav-test.txt ucs gui 10 asd"
     }
   }
 }

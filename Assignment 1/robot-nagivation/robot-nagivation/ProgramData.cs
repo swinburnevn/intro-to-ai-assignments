@@ -37,6 +37,8 @@ namespace robot_nagivation
         private List<Node<TileType>> _nodePath;             // List of states required to get to end state.
         private List<Node<TileType>> _searchedNodes;             // List of states required to get to end state.
 
+        private Dictionary<Vector2i, int> _directionalMovementCost;
+
         private int _agentDelay = 0;
 
         public int Steps { get => _determinedMoveSet.Count; }
@@ -49,6 +51,7 @@ namespace robot_nagivation
         public List<Node<TileType>> SearchedNodes { get => _searchedNodes; set => _searchedNodes = value; }
         public List<Node<TileType>> InternalHeap { get => _internalHeap; set => _internalHeap = value; }
         public int AgentDelay { get => _agentDelay; set => _agentDelay = value; }
+        public Dictionary<Vector2i, int> DirectionalMovementCost { get => _directionalMovementCost; set => _directionalMovementCost = value; }
 
         public AgentData()
         {
@@ -58,6 +61,7 @@ namespace robot_nagivation
             _searchedNodes = new List<Node<TileType>>();
             _path = new List<Vector2i>();
             _internalHeap = new List<Node<TileType>>();
+            _directionalMovementCost = new Dictionary<Vector2i, int>();
         }
 
     }

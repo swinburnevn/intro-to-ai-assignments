@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using SFML.System;
 
 namespace robot_nagivation
 {
@@ -78,9 +79,25 @@ namespace robot_nagivation
                 Console.WriteLine($"Could not find method/agent in dictionary, error returned: '{e}'");
                 return 2; //Agent could not be initialised, check docs for accepted methods
             }
+
             
+
+
             _model.Initialise();
             int count = 0;
+
+            if (args.Length >= 5)
+            {
+                if (args[3] != null)
+                {
+                    _data.Agent.AgentData.DirectionalMovementCost.Add(new Vector2i(0, -1), 4);
+                    _data.Agent.AgentData.DirectionalMovementCost.Add(new Vector2i(1, 0), 2);
+                    _data.Agent.AgentData.DirectionalMovementCost.Add(new Vector2i(-1, 0), 2);
+                    _data.Agent.AgentData.DirectionalMovementCost.Add(new Vector2i(0, 1), 1);
+                }
+            }
+
+            
 
 
             if (args.Length >= 4)

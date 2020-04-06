@@ -140,6 +140,17 @@ namespace robot_nagivation
                 Size = new Vector2f(860, 30),
                 FillColor = new Color(40, 40, 40)
             });
+
+                
+            _window.Draw(new Text($"{_data.Agent.Name},   " +
+                $"Artificial Delay: {_data.Agent.AgentData.AgentDelay},   " +
+                $"Directional Cost: {_data.Agent.AgentData.DirectionalMovementCost.Count != 0},   " +
+                $"Nodes: {_data.Agent.AgentData.SearchedPos.Count}", _font, 16)
+            {
+                Position = new Vector2f(110, 535),
+                FillColor = new Color(252, 187, 116)
+
+            });
         }
         
         public void DrawNodeDisplay()
