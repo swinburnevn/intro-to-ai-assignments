@@ -1,8 +1,0 @@
-{
-  "profiles": {
-    "tutorial-2": {
-      "commandName": "Project",
-      "commandLineArgs": "basic-map.txt"
-    }
-  }
-}
