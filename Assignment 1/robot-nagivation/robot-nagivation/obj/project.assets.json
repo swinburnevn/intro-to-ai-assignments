@@ -2,6 +2,18 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v3.1": {
+      "C5/2.5.3": {
+        "type": "package",
+        "dependencies": {
+          "NETStandard.Library": "1.6.1"
+        },
+        "compile": {
+          "lib/netstandard1.0/C5.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.0/C5.dll": {}
+        }
+      },
       "CSFML/2.5.0": {
         "type": "package",
         "runtimeTargets": {
@@ -344,6 +356,29 @@
     }
   },
   "libraries": {
+    "C5/2.5.3": {
+      "sha512": "0entkPMY08efpo9w95vu8EoTIIs/DdGHxSQo1KxZhXYLWxnNb5UA2OCW4rioSm7L0ZSysQV1tiLIqzyZkscqoQ==",
+      "type": "package",
+      "path": "c5/2.5.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "c5.2.5.3.nupkg.sha512",
+        "c5.nuspec",
+        "lib/net35/C5.dll",
+        "lib/net35/C5.xml",
+        "lib/net40/C5.dll",
+        "lib/net40/C5.xml",
+        "lib/net45/C5.dll",
+        "lib/net45/C5.xml",
+        "lib/netstandard1.0/C5.dll",
+        "lib/netstandard1.0/C5.xml",
+        "lib/portable-net40+sl5+win8+wp8+wpa81/C5.dll",
+        "lib/portable-net40+sl5+win8+wp8+wpa81/C5.xml",
+        "lib/portable-net45+win8+wp8+wpa81/C5.dll",
+        "lib/portable-net45+win8+wp8+wpa81/C5.xml"
+      ]
+    },
     "CSFML/2.5.0": {
       "sha512": "A3X+zyjAtvIQkpwCSS/F5fDOFRWeT+USIAK+DhGujNufF+qV1ty5cYGJihmmGeokX3yd89uZoNH8mcsmXCY/yw==",
       "type": "package",
@@ -654,6 +689,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
+      "C5 >= 2.5.3",
       "NUnit >= 3.12.0",
       "SFML.Net >= 2.5.0"
     ]
@@ -699,6 +735,10 @@
     "frameworks": {
       "netcoreapp3.1": {
         "dependencies": {
+          "C5": {
+            "target": "Package",
+            "version": "[2.5.3, )"
+          },
           "NUnit": {
             "target": "Package",
             "version": "[3.12.0, )"

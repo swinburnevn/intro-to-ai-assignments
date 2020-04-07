@@ -19,6 +19,11 @@ namespace robot_nagivation
         private ProgramData _data;
 
         private RenderWindow _window;
+        private RenderWindow _nodeWindow;
+
+        private View _nodeView;
+
+        private float _nodeViewPos;
 
         private Font _font;
 
@@ -32,11 +37,24 @@ namespace robot_nagivation
 
             _font = new Font("express.ttf");
 
+            _nodeWindow = new RenderWindow(
+                 new SFML.Window.VideoMode(1024, 576),
+                 "SFML: Node Display");
+
+
             _window = new RenderWindow(
                  new SFML.Window.VideoMode(1024, 576),
                  "SFML: Robot Nagivation");
 
+            _nodeView = new View(new FloatRect(new Vector2f(), new Vector2f(1024, 576)));
+            _nodeViewPos = _nodeView.Center.Y;
+            
+
+
             _window.KeyPressed += Window_KeyPressed;
+            _nodeWindow.KeyPressed += Window_KeyPressed;
+
+            _nodeWindow.MouseWheelScrolled += Window_MouseWheeled;
 
         }
 
@@ -44,22 +62,24 @@ namespace robot_nagivation
         {
             _windowSize = new Vector2i(width, height);
         }
-        
-        
-        public void Draw()
+
+        public Color HashedPosColor(int x, int y, int seed)
         {
-            // Process Events
-            _window.DispatchEvents();
+            byte r = (byte)(150 * Math.Sin(x / 3.0f));
+            byte g = (byte)(150 * Math.Cos(y / 3.0f));
+            byte b = (byte)seed;
 
-            _window.Clear(new Color(61,71,78));
+            return new Color(r, g, b);
 
-            
+        }
 
+        protected void DrawBackground()
+        {
             _window.Draw(new Text("Agent Actions", _font, 35)
             {
-                Position = new Vector2f(720,90),
+                Position = new Vector2f(720, 90),
                 FillColor = new Color(190, 190, 190)
-                
+
             });
 
             //Left Bar
@@ -67,6 +87,14 @@ namespace robot_nagivation
             {
                 Position = new Vector2f(0, 0),
                 Size = new Vector2f(60, 600),
+                FillColor = new Color(27, 27, 40)
+            });
+
+            //Left Bar
+            _nodeWindow.Draw(new RectangleShape()
+            {
+                Position = new Vector2f(0, 0),
+                Size = new Vector2f(60, 3000),
                 FillColor = new Color(27, 27, 40)
             });
 
@@ -113,8 +141,264 @@ namespace robot_nagivation
                 FillColor = new Color(40, 40, 40)
             });
 
+                
+            _window.Draw(new Text($"{_data.Agent.Name},   " +
+                $"Artificial Delay: {_data.Agent.AgentData.AgentDelay},   " +
+                $"Directional Cost: {_data.Agent.AgentData.DirectionalMovementCost.Count != 0},   " +
+                $"Nodes: {_data.Agent.AgentData.SearchedPos.Count}", _font, 16)
+            {
+                Position = new Vector2f(110, 535),
+                FillColor = new Color(252, 187, 116)
+
+            });
+        }
+        
+        public void DrawNodeDisplay()
+        {
+            _nodeWindow.Draw(new Text("Node tree", _font, 35)
+            {
+                Position = new Vector2f(90, 30),
+                FillColor = new Color(190, 190, 190)
+
+            });
+
+            _nodeWindow.Draw(new Text(_data.Agent.Name, _font, 15)
+            {
+                Position = new Vector2f(260, 53),
+                FillColor = new Color(200, 200, 200)
+
+            });
+
+            bool finished = false;
+            int level = 0;
+
+            int parentXPos = 0;
+            int childXPos = 0;
+
+            Queue<Node<TileType>> levelNodeQueue = new Queue<Node<TileType>>();
+            Queue<Node<TileType>> nextLevelNodeQueue = new Queue<Node<TileType>>();
+
+            levelNodeQueue.Enqueue(_data.Agent.AgentData.RootNode);
+
+            _nodeWindow.Draw(new CircleShape()
+            {
+                Position = new Vector2f(
+            105,
+            80),
+                Radius = 5,
+                FillColor = new Color(221, 108, 102)
+            });
+
+            _nodeWindow.Draw(new Text("(" + _data.Agent.AgentData.RootNode.Pos.X + ", "
+                + _data.Agent.AgentData.RootNode.Pos.Y + ")", _font, 10)
+            {
+                Position = new Vector2f(
+                        105 + 15,
+                        80),
+                FillColor = new Color(220, 220, 220)
+
+            });
 
 
+            while (!finished)
+            {
+                parentXPos = 0;
+                childXPos = 0;
+
+
+
+
+                while (levelNodeQueue.Count > 0)
+                {
+
+
+
+                    Node<TileType> currentParentNode = levelNodeQueue.Dequeue();
+
+                    foreach (Node<TileType> child in currentParentNode.Children)
+                    {
+                        nextLevelNodeQueue.Enqueue(child);
+
+
+
+
+                        // child is child node
+                        // current parent node is current parent node, xpos increases with eveyr child, however, we'll need to know the position of the parent node...
+                        // draw the line between aprent and child
+
+                        Vertex[] line = new Vertex[] { };
+
+                        if (child.IsOnPath)
+                        {
+                            if (currentParentNode.IsOnPath)
+                            {
+                                line = new Vertex[]
+                            {
+                                new Vertex(new Vector2f(105 + 5 + 80 * parentXPos, 110 + 5 + 30 * (level - 1 )), new Color(250,250,220)),
+                                new Vertex(new Vector2f(105 + 5 + 80 * childXPos, 110 + 5 + 30 * level), new Color(250,250,220))
+                            };
+                            }
+                        }
+                        else
+                        {
+                            line = new Vertex[]
+                            {
+                                new Vertex(new Vector2f(105 + 5 + 80 * parentXPos, 110 + 5 + 30 * (level - 1 )), new Color(150,150,150)),
+                                new Vertex(new Vector2f(105 + 5 + 80 * childXPos, 110 + 5 + 30 * level), new Color(150,150,150))
+                            };
+                        }
+
+                        
+
+                        _nodeWindow.Draw(line, PrimitiveType.Lines);
+
+                        _nodeWindow.Draw(new Text( "(" + child.Pos.X + ", " + child.Pos.Y + ")", _font, 10)
+                        {
+                            Position = new Vector2f(
+                                105 + 15 +  80 * childXPos,
+                                110 + 30 * level),
+                            FillColor = new Color(220, 220, 220)
+
+                        });
+
+                        if (child.Cost != 0)
+                        {
+                            _nodeWindow.Draw(new Text("c: " + child.Cost, _font, 10)
+                            {
+                                Position = new Vector2f(
+                                105 + 50 + 80 * childXPos,
+                                110 + 30 * level),
+                                FillColor = new Color(220, 220, 220)
+
+                            });
+                        }
+                        
+
+                        CircleShape nodeCircle = new CircleShape()
+                        {
+                            Position = new Vector2f(
+                                105 + 80 * childXPos,
+                                110 + 30 * level),
+                            Radius = 5,
+                            FillColor = HashedPosColor(child.Pos.X, child.Pos.Y, 100)
+                        };
+
+                        if (_data.Agent.AgentData.PosToSearch.Count > 0) 
+                            if (child.Pos == _data.Agent.AgentData.PosToSearch[0])
+                            {
+                                nodeCircle.FillColor = new Color(255, 201, 14);
+                            }
+
+
+                        if (child.Data == TileType.Goal)
+                            nodeCircle.FillColor = new Color(111, 221, 102);
+
+
+
+
+                        _nodeWindow.Draw(nodeCircle);
+
+
+
+
+                        childXPos++;
+
+                    }
+
+                    parentXPos++;
+                    
+
+                }
+
+                // We've just looped through all the stuff in this level, all the children are in the next level
+                // move each next level node to the level one and move on
+
+                levelNodeQueue.Clear();
+                while (nextLevelNodeQueue.Count > 0)
+                {
+                    levelNodeQueue.Enqueue(nextLevelNodeQueue.Dequeue());
+                }
+
+                nextLevelNodeQueue.Clear();
+
+                if (levelNodeQueue.Count == 0)
+                    finished = true;
+
+                level++;
+
+                _nodeWindow.Draw(new Text("INTERNAL", _font, 10)
+                {
+                    Position = new Vector2f(
+                                5,
+                                50),
+                    FillColor = new Color(220, 220, 220)
+
+                });
+
+                int yPos = 0;
+
+                for (int i = _data.Agent.AgentData.InternalHeap.Count - 1; i >= 0; i-- )
+                {
+                    Node<TileType> node = _data.Agent.AgentData.InternalHeap[i];
+                    CircleShape nodeCircle = new CircleShape()
+                    {
+                        Position = new Vector2f(
+                                10,
+                                90 + 30 * yPos),
+                        Radius = 5,
+                        FillColor = HashedPosColor(node.Pos.X, node.Pos.Y, 100)
+                    };
+
+
+                    _nodeWindow.Draw(nodeCircle);
+                    if (node.Cost != 0)
+                    {
+                        _nodeWindow.Draw(new Text(node.Cost.ToString(), _font, 10)
+                        {
+                            Position = new Vector2f(
+                            12,
+                            90 + 30 * yPos),
+                            FillColor = new Color(220, 220, 220)
+
+                        });
+                    }
+
+
+                    _nodeWindow.Draw(new Text("(" + node.Pos.X + ", " + node.Pos.Y + ")", _font, 10)
+                    {
+                        Position = new Vector2f(
+                                25,
+                                90 + 30 * yPos),
+                        FillColor = new Color(220, 220, 220)
+
+                    });
+                    yPos++;
+                }
+
+
+
+            }
+
+        }
+
+        
+        public void Draw()
+        {
+            // Process Events
+            _window.DispatchEvents();
+            _nodeWindow.DispatchEvents();
+
+            _window.Clear(new Color(61,71,78));
+            _nodeWindow.Clear(new Color(61,71,78));
+
+
+            float _currentViewYPos = _nodeView.Center.Y;
+            _nodeView.Move(new Vector2f(0,  ( _nodeViewPos - _currentViewYPos) / 10));
+            _nodeWindow.SetView(_nodeView);
+
+            DrawBackground();
+
+            DrawNodeDisplay();
 
             Vector2f boxSize = new Vector2f(
                     (570 - 100) / _data.Map.MapMatrix.GetLength(0),
@@ -137,10 +421,6 @@ namespace robot_nagivation
                 });
                 _posPointer++;
             }
-
-           
-
-            
 
             for (int y = 0; y < _data.Map.MapMatrix.GetLength(1); y++)
             {
@@ -211,10 +491,51 @@ namespace robot_nagivation
                 }
             }
 
-            for (int i = 0; i < _data.AgentPositions.Count - 1; i++)
+
+
+            foreach (Node<TileType> node in _data.Agent.AgentData.SearchedNodes)
             {
-                Vector2 prev = _data.AgentPositions[i];
-                Vector2 curr = _data.AgentPositions[i + 1];
+                _window.Draw(new CircleShape()
+                {
+                    Position = new Vector2f(
+                            85 + (spacing.X) + node.Pos.X * (boxSize.X + spacing.X) + boxSize.X / 2 - 10,
+                            60 + (spacing.Y) + node.Pos.Y * (boxSize.Y + spacing.Y) + boxSize.Y / 2 - 5) ,
+                    Radius = 10,
+                    FillColor = HashedPosColor(node.Pos.X, node.Pos.Y, 100)
+                });
+
+
+                if (node.Cost != 0)
+                {
+                    _window.Draw(new Text(node.Cost.ToString(), _font, 15)
+                    {
+                        Position = new Vector2f(
+                            85 + 5 + (spacing.X) + node.Pos.X * (boxSize.X + spacing.X) + boxSize.X / 2 - 10,
+                            60 + (spacing.Y) + node.Pos.Y * (boxSize.Y + spacing.Y) + boxSize.Y / 2 - 5),
+                        FillColor = new Color(220, 220, 220)
+
+                    });
+                }
+                    
+
+            }
+
+            foreach (Vector2i node in _data.Agent.AgentData.PosToSearch)
+            {
+                _window.Draw(new CircleShape()
+                {
+                    Position = new Vector2f(
+                            85 + (spacing.X) + node.X * (boxSize.X + spacing.X) + boxSize.X / 2 - 10,
+                            60 + (spacing.Y) + node.Y * (boxSize.Y + spacing.Y) + boxSize.Y / 2 - 5),
+                    Radius = 10,
+                    FillColor = new Color(255, 201, 14)
+                });
+            }
+
+            for (int i = 0; i < _data.Agent.AgentData.Path.Count - 1; i++)
+            {
+                Vector2i prev = _data.Agent.AgentData.Path[i];
+                Vector2i curr = _data.Agent.AgentData.Path[i + 1];
 
                 Vector2f A = new Vector2f(
                     85 + (spacing.X) + prev.X * (boxSize.X + spacing.X) + boxSize.X / 2,
@@ -238,9 +559,9 @@ namespace robot_nagivation
                     Size = new Vector2f(magnitude, 3),
                     Rotation = rotation,
                     FillColor = new Color(
-                        (byte)(255 * i / _data.AgentPositions.Count),
+                        (byte)(255 * i / _data.Agent.AgentData.Path.Count),
                         0,
-                       (byte)(255 - 255 * i / _data.AgentPositions.Count)
+                       (byte)(255 - 255 * i / _data.Agent.AgentData.Path.Count)
                     )
 
                 };
@@ -249,44 +570,8 @@ namespace robot_nagivation
 
             }
 
-            foreach (Vector2 node in _data.SearchedNodes)
-            {
-                _window.Draw(new CircleShape()
-                {
-                    Position = new Vector2f(
-                            85 + (spacing.X) + node.X * (boxSize.X + spacing.X) + boxSize.X / 2 - 10,
-                            60 + (spacing.Y) + node.Y * (boxSize.Y + spacing.Y) + boxSize.Y / 2 - 5) ,
-                    Radius = 10,
-                    FillColor = new Color(150, 150, 150)
-                });
-            }
-
-            foreach (Vector2 node in _data.FrontierNodes)
-            {
-                _window.Draw(new CircleShape()
-                {
-                    Position = new Vector2f(
-                            85 + (spacing.X) + node.X * (boxSize.X + spacing.X) + boxSize.X / 2 - 10,
-                            60 + (spacing.Y) + node.Y * (boxSize.Y + spacing.Y) + boxSize.Y / 2 - 5),
-                    Radius = 10,
-                    FillColor = new Color(255, 201, 14)
-                });
-            }
-
-            foreach (Vector2 node in _data.Path)
-            {
-                _window.Draw(new CircleShape()
-                {
-                    Position = new Vector2f(
-                            85 + (spacing.X) + node.X * (boxSize.X + spacing.X) + boxSize.X / 2 - 10,
-                            60 + (spacing.Y) + node.Y * (boxSize.Y + spacing.Y) + boxSize.Y / 2 - 5),
-                    Radius = 5,
-                    FillColor = new Color(255, 255, 255)
-                });
-            }
-
-
             _window.Display();
+            _nodeWindow.Display();
         }
 
         private void Window_KeyPressed(object sender, SFML.Window.KeyEventArgs e)
@@ -295,13 +580,40 @@ namespace robot_nagivation
             if (e.Code == SFML.Window.Keyboard.Key.Escape)
             {
                 window.Close();
+                _data.WindowRequestClosed = true;
                 _data.Finished = true;
             }
         }
+
+        private void Window_MouseWheeled(object sender, SFML.Window.MouseWheelScrollEventArgs e)
+        {
+            var window = (SFML.Window.Window)sender;
+
+            _nodeViewPos += -40 * e.Delta;
+            if (_nodeViewPos < 576 / 2)
+                _nodeViewPos = 576 / 2;
+
+            //_nodeView.Move(new Vector2f(0, -30 * e.Delta));
+
+        }
     }
 
-        public class ConsoleView : IView
+
+    public class ConsoleOutput : IView
     {
+        private ProgramData _data;
+
+        public ConsoleOutput(ref ProgramData data)
+        {
+            _data = data;
+
+        }
+        public void Draw()
+        {
+        }
+    }
+    public class ConsoleView : IView
+        {
         
         private ProgramData _data;
 
@@ -347,7 +659,7 @@ namespace robot_nagivation
 
             Console.WriteLine("  +-----------------------------------------+");
 
-            Thread.Sleep(10);
+            //Thread.Sleep(10);
            
             if (_data.AgentDecisions.Count > 0)
             {
