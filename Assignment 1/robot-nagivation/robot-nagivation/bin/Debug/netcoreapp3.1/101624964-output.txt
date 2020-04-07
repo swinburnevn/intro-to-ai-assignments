@@ -1,0 +1,2 @@
+101624964-output.txt 'ucs: Uniform Cost Agent' 39
+Down; Right; Right; Right; Right; Right; Right; Right; Right; Right; Right; Down; 

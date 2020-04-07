@@ -1,0 +1,18 @@
+@startuml
+
+title Robot Navigation 101624964
+
+class Node<Type>
+{
+ + Type _data
+ + Node<Type> _parent
+ + List Node<Type> _children
+ + bool _isOnPath
+ + Vector2i +pos
+ + int Cost
+}
+
+Node o--> Node
+
+
+@enduml

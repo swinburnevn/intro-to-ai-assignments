@@ -41,6 +41,10 @@
       "frameworks": {
         "netcoreapp3.1": {
           "dependencies": {
+            "C5": {
+              "target": "Package",
+              "version": "[2.5.3, )"
+            },
             "NUnit": {
               "target": "Package",
               "version": "[3.12.0, )"
