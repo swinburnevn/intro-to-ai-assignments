@@ -1,0 +1,375 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="classrobot__nagivation_1_1_agent_data" kind="class" prot="public">
+    <compoundname>robot_nagivation::AgentData</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classrobot__nagivation_1_1_agent_data_1a24f11478084277b9200189181a76f271" prot="private" static="no" mutable="no">
+        <type>Queue&lt; <ref refid="namespacerobot__nagivation_1a5d3ca8bdf460392c95d3ccd667728564" kindref="member">AgentActions</ref> &gt;</type>
+        <definition>Queue&lt;AgentActions&gt; robot_nagivation.AgentData._determinedMoveSet</definition>
+        <argsstring></argsstring>
+        <name>_determinedMoveSet</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/ProgramData.cs" line="28" column="1" bodyfile="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/ProgramData.cs" bodystart="28" bodyend="-1"/>
+        <referencedby refid="classrobot__nagivation_1_1_agent_data_1a1f572304c89f77537baffe5b59fb0e06" compoundref="_program_data_8cs" startline="56" endline="65">robot_nagivation.AgentData.AgentData</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classrobot__nagivation_1_1_agent_data_1a0d67429520990e2fb25a860ab20b731b" prot="private" static="no" mutable="no">
+        <type>List&lt; Vector2i &gt;</type>
+        <definition>List&lt;Vector2i&gt; robot_nagivation.AgentData._searchedPos</definition>
+        <argsstring></argsstring>
+        <name>_searchedPos</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/ProgramData.cs" line="29" column="1" bodyfile="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/ProgramData.cs" bodystart="29" bodyend="-1"/>
+        <referencedby refid="classrobot__nagivation_1_1_agent_data_1a1f572304c89f77537baffe5b59fb0e06" compoundref="_program_data_8cs" startline="56" endline="65">robot_nagivation.AgentData.AgentData</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classrobot__nagivation_1_1_agent_data_1a89fc0ef834ddeca029b665dc5e5c8115" prot="private" static="no" mutable="no">
+        <type>List&lt; Vector2i &gt;</type>
+        <definition>List&lt;Vector2i&gt; robot_nagivation.AgentData._posToSearch</definition>
+        <argsstring></argsstring>
+        <name>_posToSearch</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/ProgramData.cs" line="30" column="1" bodyfile="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/ProgramData.cs" bodystart="30" bodyend="-1"/>
+        <referencedby refid="classrobot__nagivation_1_1_agent_data_1a1f572304c89f77537baffe5b59fb0e06" compoundref="_program_data_8cs" startline="56" endline="65">robot_nagivation.AgentData.AgentData</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classrobot__nagivation_1_1_agent_data_1aff267d9c7e8b6d07045471feebc28a30" prot="private" static="no" mutable="no">
+        <type>List&lt; Vector2i &gt;</type>
+        <definition>List&lt;Vector2i&gt; robot_nagivation.AgentData._path</definition>
+        <argsstring></argsstring>
+        <name>_path</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/ProgramData.cs" line="31" column="1" bodyfile="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/ProgramData.cs" bodystart="31" bodyend="-1"/>
+        <referencedby refid="classrobot__nagivation_1_1_agent_data_1a1f572304c89f77537baffe5b59fb0e06" compoundref="_program_data_8cs" startline="56" endline="65">robot_nagivation.AgentData.AgentData</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classrobot__nagivation_1_1_agent_data_1a8b6d11a8fd560cfb03a3263e8743b4e8" prot="private" static="no" mutable="no">
+        <type>Node&lt; <ref refid="namespacerobot__nagivation_1aa197a860415d9780f789297b94da1a1f" kindref="member">TileType</ref> &gt;</type>
+        <definition>Node&lt;TileType&gt; robot_nagivation.AgentData._rootNode</definition>
+        <argsstring></argsstring>
+        <name>_rootNode</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/ProgramData.cs" line="33" column="1" bodyfile="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/ProgramData.cs" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classrobot__nagivation_1_1_agent_data_1a7a9e545b62f6e5af873c6677d29845ae" prot="private" static="no" mutable="no">
+        <type>List&lt; Node&lt; <ref refid="namespacerobot__nagivation_1aa197a860415d9780f789297b94da1a1f" kindref="member">TileType</ref> &gt; &gt;</type>
+        <definition>List&lt;Node&lt;TileType&gt; &gt; robot_nagivation.AgentData._internalHeap</definition>
+        <argsstring></argsstring>
+        <name>_internalHeap</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/ProgramData.cs" line="35" column="1" bodyfile="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/ProgramData.cs" bodystart="35" bodyend="-1"/>
+        <referencedby refid="classrobot__nagivation_1_1_agent_data_1a1f572304c89f77537baffe5b59fb0e06" compoundref="_program_data_8cs" startline="56" endline="65">robot_nagivation.AgentData.AgentData</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classrobot__nagivation_1_1_agent_data_1af9c714efc0aac80c4b1aca6b0a4dbd5e" prot="private" static="no" mutable="no">
+        <type>List&lt; Node&lt; <ref refid="namespacerobot__nagivation_1aa197a860415d9780f789297b94da1a1f" kindref="member">TileType</ref> &gt; &gt;</type>
+        <definition>List&lt;Node&lt;TileType&gt; &gt; robot_nagivation.AgentData._nodePath</definition>
+        <argsstring></argsstring>
+        <name>_nodePath</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/ProgramData.cs" line="37" column="1" bodyfile="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/ProgramData.cs" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classrobot__nagivation_1_1_agent_data_1add074c8dc3f1f9bca17c815cc7386ccf" prot="private" static="no" mutable="no">
+        <type>List&lt; Node&lt; <ref refid="namespacerobot__nagivation_1aa197a860415d9780f789297b94da1a1f" kindref="member">TileType</ref> &gt; &gt;</type>
+        <definition>List&lt;Node&lt;TileType&gt; &gt; robot_nagivation.AgentData._searchedNodes</definition>
+        <argsstring></argsstring>
+        <name>_searchedNodes</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/ProgramData.cs" line="38" column="1" bodyfile="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/ProgramData.cs" bodystart="38" bodyend="-1"/>
+        <referencedby refid="classrobot__nagivation_1_1_agent_data_1a1f572304c89f77537baffe5b59fb0e06" compoundref="_program_data_8cs" startline="56" endline="65">robot_nagivation.AgentData.AgentData</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classrobot__nagivation_1_1_agent_data_1adca5e5bc1d075b6d05cd660ceda57b30" prot="private" static="no" mutable="no">
+        <type>Dictionary&lt; Vector2i, int &gt;</type>
+        <definition>Dictionary&lt;Vector2i, int&gt; robot_nagivation.AgentData._directionalMovementCost</definition>
+        <argsstring></argsstring>
+        <name>_directionalMovementCost</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/ProgramData.cs" line="40" column="1" bodyfile="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/ProgramData.cs" bodystart="40" bodyend="-1"/>
+        <referencedby refid="classrobot__nagivation_1_1_agent_data_1a1f572304c89f77537baffe5b59fb0e06" compoundref="_program_data_8cs" startline="56" endline="65">robot_nagivation.AgentData.AgentData</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classrobot__nagivation_1_1_agent_data_1ababf209f702c0b1bf37025d23f3d9308" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int robot_nagivation.AgentData._agentDelay</definition>
+        <argsstring></argsstring>
+        <name>_agentDelay</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/ProgramData.cs" line="42" column="1" bodyfile="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/ProgramData.cs" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="classrobot__nagivation_1_1_agent_data_1a5f3ccca11c285a6e01f0d1c6c3ba6d9b" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="no">
+        <type>int</type>
+        <definition>int robot_nagivation.AgentData.Steps</definition>
+        <argsstring></argsstring>
+        <name>Steps</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/ProgramData.cs" line="44" column="1" bodyfile="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/ProgramData.cs" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="classrobot__nagivation_1_1_agent_data_1a076970d5c8843dc830e5f53515719d06" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="yes">
+        <type>Queue&lt; <ref refid="namespacerobot__nagivation_1a5d3ca8bdf460392c95d3ccd667728564" kindref="member">AgentActions</ref> &gt;</type>
+        <definition>Queue&lt;AgentActions&gt; robot_nagivation.AgentData.DeterminedMoveSet</definition>
+        <argsstring></argsstring>
+        <name>DeterminedMoveSet</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/ProgramData.cs" line="45" column="1" bodyfile="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/ProgramData.cs" bodystart="45" bodyend="-1"/>
+        <referencedby refid="classrobot__nagivation_1_1_greedy_first_agent_1aab4edec650137abb08222ed706638d99" compoundref="_informed_agents_8cs" startline="80" endline="178">robot_nagivation.GreedyFirstAgent.next</referencedby>
+        <referencedby refid="classrobot__nagivation_1_1_uniform_cost_agent_1acbb206617e54a5b45fe59b01a7975759" compoundref="_agents_8cs" startline="262" endline="345">robot_nagivation.UniformCostAgent.next</referencedby>
+        <referencedby refid="classrobot__nagivation_1_1_iterative_d_d_f_s_agent_1a8ef7371539363c3f0f89f7e6bf9b98f2" compoundref="_agents_8cs" startline="380" endline="489">robot_nagivation.IterativeDDFSAgent.next</referencedby>
+        <referencedby refid="classrobot__nagivation_1_1_depth_first_agent_1a600035f1635a9e0979cb249ea7ed1b99" compoundref="_agents_8cs" startline="513" endline="595">robot_nagivation.DepthFirstAgent.next</referencedby>
+        <referencedby refid="classrobot__nagivation_1_1_breadth_first_agent_1a0228c3fa03ba1af014ac7768eb34373f" compoundref="_agents_8cs" startline="619" endline="698">robot_nagivation.BreadthFirstAgent.next</referencedby>
+      </memberdef>
+      <memberdef kind="property" id="classrobot__nagivation_1_1_agent_data_1a82300a4ee007c7b2610bdda3ab251a1e" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="yes">
+        <type>List&lt; Vector2i &gt;</type>
+        <definition>List&lt;Vector2i&gt; robot_nagivation.AgentData.SearchedPos</definition>
+        <argsstring></argsstring>
+        <name>SearchedPos</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/ProgramData.cs" line="46" column="1" bodyfile="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/ProgramData.cs" bodystart="46" bodyend="-1"/>
+        <referencedby refid="classrobot__nagivation_1_1_greedy_first_agent_1aab4edec650137abb08222ed706638d99" compoundref="_informed_agents_8cs" startline="80" endline="178">robot_nagivation.GreedyFirstAgent.next</referencedby>
+        <referencedby refid="classrobot__nagivation_1_1_uniform_cost_agent_1acbb206617e54a5b45fe59b01a7975759" compoundref="_agents_8cs" startline="262" endline="345">robot_nagivation.UniformCostAgent.next</referencedby>
+        <referencedby refid="classrobot__nagivation_1_1_iterative_d_d_f_s_agent_1a8ef7371539363c3f0f89f7e6bf9b98f2" compoundref="_agents_8cs" startline="380" endline="489">robot_nagivation.IterativeDDFSAgent.next</referencedby>
+        <referencedby refid="classrobot__nagivation_1_1_depth_first_agent_1a600035f1635a9e0979cb249ea7ed1b99" compoundref="_agents_8cs" startline="513" endline="595">robot_nagivation.DepthFirstAgent.next</referencedby>
+        <referencedby refid="classrobot__nagivation_1_1_breadth_first_agent_1a0228c3fa03ba1af014ac7768eb34373f" compoundref="_agents_8cs" startline="619" endline="698">robot_nagivation.BreadthFirstAgent.next</referencedby>
+        <referencedby refid="classrobot__nagivation_1_1_agent_1a6520c09f81e71360fbe5471c9d7a6364" compoundref="_agents_8cs" startline="86" endline="121">robot_nagivation.Agent.SearchSurroundingNodes</referencedby>
+      </memberdef>
+      <memberdef kind="property" id="classrobot__nagivation_1_1_agent_data_1a7ff69650d6d3dbc51a45cb02c2aab508" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="yes">
+        <type>List&lt; Vector2i &gt;</type>
+        <definition>List&lt;Vector2i&gt; robot_nagivation.AgentData.PosToSearch</definition>
+        <argsstring></argsstring>
+        <name>PosToSearch</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/ProgramData.cs" line="47" column="1" bodyfile="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/ProgramData.cs" bodystart="47" bodyend="-1"/>
+        <referencedby refid="classrobot__nagivation_1_1_s_f_m_l_view_1a2e68cad55af91b78d2a070ee94287587" compoundref="_view_8cs" startline="405" endline="595">robot_nagivation.SFMLView.Draw</referencedby>
+        <referencedby refid="classrobot__nagivation_1_1_s_f_m_l_view_1af9f8e4dc8a6b79d40b01a23d11cc579a" compoundref="_view_8cs" startline="176" endline="402">robot_nagivation.SFMLView.DrawNodeDisplay</referencedby>
+      </memberdef>
+      <memberdef kind="property" id="classrobot__nagivation_1_1_agent_data_1a8f7924f2cd9acc242d03a85729b255cf" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="yes">
+        <type>List&lt; Node&lt; <ref refid="namespacerobot__nagivation_1aa197a860415d9780f789297b94da1a1f" kindref="member">TileType</ref> &gt; &gt;</type>
+        <definition>List&lt;Node&lt;TileType&gt; &gt; robot_nagivation.AgentData.NodePath</definition>
+        <argsstring></argsstring>
+        <name>NodePath</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/ProgramData.cs" line="48" column="1" bodyfile="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/ProgramData.cs" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="classrobot__nagivation_1_1_agent_data_1aec3ce56fb584af77ff5ac3a608791f32" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="yes">
+        <type>Node&lt; <ref refid="namespacerobot__nagivation_1aa197a860415d9780f789297b94da1a1f" kindref="member">TileType</ref> &gt;</type>
+        <definition>Node&lt;TileType&gt; robot_nagivation.AgentData.RootNode</definition>
+        <argsstring></argsstring>
+        <name>RootNode</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/ProgramData.cs" line="49" column="1" bodyfile="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/ProgramData.cs" bodystart="49" bodyend="-1"/>
+        <referencedby refid="classrobot__nagivation_1_1_s_f_m_l_view_1af9f8e4dc8a6b79d40b01a23d11cc579a" compoundref="_view_8cs" startline="176" endline="402">robot_nagivation.SFMLView.DrawNodeDisplay</referencedby>
+        <referencedby refid="classrobot__nagivation_1_1_greedy_first_agent_1ab871eecf3386b12e428633fd8a7d90ac" compoundref="_informed_agents_8cs" startline="58" endline="65">robot_nagivation.GreedyFirstAgent.Initialise</referencedby>
+        <referencedby refid="classrobot__nagivation_1_1_uniform_cost_agent_1a8aed5c48c9a947b89ec6dc64edce1180" compoundref="_agents_8cs" startline="215" endline="223">robot_nagivation.UniformCostAgent.Initialise</referencedby>
+        <referencedby refid="classrobot__nagivation_1_1_depth_first_agent_1ab0044b1146ff8bc1cc9f97e0e4ed0159" compoundref="_agents_8cs" startline="504" endline="511">robot_nagivation.DepthFirstAgent.Initialise</referencedby>
+        <referencedby refid="classrobot__nagivation_1_1_breadth_first_agent_1a9d5159e1e3458e4595f03d6ee57ca539" compoundref="_agents_8cs" startline="608" endline="615">robot_nagivation.BreadthFirstAgent.Initialise</referencedby>
+        <referencedby refid="classrobot__nagivation_1_1_greedy_first_agent_1aab4edec650137abb08222ed706638d99" compoundref="_informed_agents_8cs" startline="80" endline="178">robot_nagivation.GreedyFirstAgent.next</referencedby>
+        <referencedby refid="classrobot__nagivation_1_1_uniform_cost_agent_1acbb206617e54a5b45fe59b01a7975759" compoundref="_agents_8cs" startline="262" endline="345">robot_nagivation.UniformCostAgent.next</referencedby>
+        <referencedby refid="classrobot__nagivation_1_1_iterative_d_d_f_s_agent_1a8ef7371539363c3f0f89f7e6bf9b98f2" compoundref="_agents_8cs" startline="380" endline="489">robot_nagivation.IterativeDDFSAgent.next</referencedby>
+        <referencedby refid="classrobot__nagivation_1_1_depth_first_agent_1a600035f1635a9e0979cb249ea7ed1b99" compoundref="_agents_8cs" startline="513" endline="595">robot_nagivation.DepthFirstAgent.next</referencedby>
+        <referencedby refid="classrobot__nagivation_1_1_breadth_first_agent_1a0228c3fa03ba1af014ac7768eb34373f" compoundref="_agents_8cs" startline="619" endline="698">robot_nagivation.BreadthFirstAgent.next</referencedby>
+      </memberdef>
+      <memberdef kind="property" id="classrobot__nagivation_1_1_agent_data_1adfbfcff0e5b1dcbb7fdc8aed9ed78913" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="yes">
+        <type>List&lt; Vector2i &gt;</type>
+        <definition>List&lt;Vector2i&gt; robot_nagivation.AgentData.Path</definition>
+        <argsstring></argsstring>
+        <name>Path</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/ProgramData.cs" line="50" column="1" bodyfile="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/ProgramData.cs" bodystart="50" bodyend="-1"/>
+        <referencedby refid="classrobot__nagivation_1_1_s_f_m_l_view_1a2e68cad55af91b78d2a070ee94287587" compoundref="_view_8cs" startline="405" endline="595">robot_nagivation.SFMLView.Draw</referencedby>
+      </memberdef>
+      <memberdef kind="property" id="classrobot__nagivation_1_1_agent_data_1a8f864688969f706f80dc6dce7e736b90" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="yes">
+        <type>List&lt; Node&lt; <ref refid="namespacerobot__nagivation_1aa197a860415d9780f789297b94da1a1f" kindref="member">TileType</ref> &gt; &gt;</type>
+        <definition>List&lt;Node&lt;TileType&gt; &gt; robot_nagivation.AgentData.SearchedNodes</definition>
+        <argsstring></argsstring>
+        <name>SearchedNodes</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/ProgramData.cs" line="51" column="1" bodyfile="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/ProgramData.cs" bodystart="51" bodyend="-1"/>
+        <referencedby refid="classrobot__nagivation_1_1_uniform_cost_agent_1abead5fc61e57a706e0cf12810c2dd4ea" compoundref="_agents_8cs" startline="225" endline="251">robot_nagivation.UniformCostAgent.CostFunction</referencedby>
+        <referencedby refid="classrobot__nagivation_1_1_s_f_m_l_view_1a2e68cad55af91b78d2a070ee94287587" compoundref="_view_8cs" startline="405" endline="595">robot_nagivation.SFMLView.Draw</referencedby>
+      </memberdef>
+      <memberdef kind="property" id="classrobot__nagivation_1_1_agent_data_1acba9477e80e54c0bf68834d755371ad9" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="yes">
+        <type>List&lt; Node&lt; <ref refid="namespacerobot__nagivation_1aa197a860415d9780f789297b94da1a1f" kindref="member">TileType</ref> &gt; &gt;</type>
+        <definition>List&lt;Node&lt;TileType&gt; &gt; robot_nagivation.AgentData.InternalHeap</definition>
+        <argsstring></argsstring>
+        <name>InternalHeap</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/ProgramData.cs" line="52" column="1" bodyfile="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/ProgramData.cs" bodystart="52" bodyend="-1"/>
+        <referencedby refid="classrobot__nagivation_1_1_s_f_m_l_view_1af9f8e4dc8a6b79d40b01a23d11cc579a" compoundref="_view_8cs" startline="176" endline="402">robot_nagivation.SFMLView.DrawNodeDisplay</referencedby>
+      </memberdef>
+      <memberdef kind="property" id="classrobot__nagivation_1_1_agent_data_1ad4af99677ae6a93edab0a6d253d54bdb" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="yes">
+        <type>int</type>
+        <definition>int robot_nagivation.AgentData.AgentDelay</definition>
+        <argsstring></argsstring>
+        <name>AgentDelay</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/ProgramData.cs" line="53" column="1" bodyfile="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/ProgramData.cs" bodystart="53" bodyend="-1"/>
+        <referencedby refid="classrobot__nagivation_1_1_greedy_first_agent_1aab4edec650137abb08222ed706638d99" compoundref="_informed_agents_8cs" startline="80" endline="178">robot_nagivation.GreedyFirstAgent.next</referencedby>
+        <referencedby refid="classrobot__nagivation_1_1_uniform_cost_agent_1acbb206617e54a5b45fe59b01a7975759" compoundref="_agents_8cs" startline="262" endline="345">robot_nagivation.UniformCostAgent.next</referencedby>
+        <referencedby refid="classrobot__nagivation_1_1_iterative_d_d_f_s_agent_1a8ef7371539363c3f0f89f7e6bf9b98f2" compoundref="_agents_8cs" startline="380" endline="489">robot_nagivation.IterativeDDFSAgent.next</referencedby>
+        <referencedby refid="classrobot__nagivation_1_1_depth_first_agent_1a600035f1635a9e0979cb249ea7ed1b99" compoundref="_agents_8cs" startline="513" endline="595">robot_nagivation.DepthFirstAgent.next</referencedby>
+        <referencedby refid="classrobot__nagivation_1_1_breadth_first_agent_1a0228c3fa03ba1af014ac7768eb34373f" compoundref="_agents_8cs" startline="619" endline="698">robot_nagivation.BreadthFirstAgent.next</referencedby>
+      </memberdef>
+      <memberdef kind="property" id="classrobot__nagivation_1_1_agent_data_1a241445aff629c014634d50cf9ff03723" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="yes">
+        <type>Dictionary&lt; Vector2i, int &gt;</type>
+        <definition>Dictionary&lt;Vector2i, int&gt; robot_nagivation.AgentData.DirectionalMovementCost</definition>
+        <argsstring></argsstring>
+        <name>DirectionalMovementCost</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/ProgramData.cs" line="54" column="1" bodyfile="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/ProgramData.cs" bodystart="54" bodyend="-1"/>
+        <referencedby refid="classrobot__nagivation_1_1_agent_1a6520c09f81e71360fbe5471c9d7a6364" compoundref="_agents_8cs" startline="86" endline="121">robot_nagivation.Agent.SearchSurroundingNodes</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classrobot__nagivation_1_1_agent_data_1a1f572304c89f77537baffe5b59fb0e06" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>robot_nagivation.AgentData.AgentData</definition>
+        <argsstring>()</argsstring>
+        <name>AgentData</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/ProgramData.cs" line="56" column="1" bodyfile="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/ProgramData.cs" bodystart="56" bodyend="65"/>
+        <references refid="classrobot__nagivation_1_1_agent_data_1a24f11478084277b9200189181a76f271" compoundref="_program_data_8cs" startline="28">robot_nagivation.AgentData._determinedMoveSet</references>
+        <references refid="classrobot__nagivation_1_1_agent_data_1adca5e5bc1d075b6d05cd660ceda57b30" compoundref="_program_data_8cs" startline="40">robot_nagivation.AgentData._directionalMovementCost</references>
+        <references refid="classrobot__nagivation_1_1_agent_data_1a7a9e545b62f6e5af873c6677d29845ae" compoundref="_program_data_8cs" startline="35">robot_nagivation.AgentData._internalHeap</references>
+        <references refid="classrobot__nagivation_1_1_agent_data_1aff267d9c7e8b6d07045471feebc28a30" compoundref="_program_data_8cs" startline="31">robot_nagivation.AgentData._path</references>
+        <references refid="classrobot__nagivation_1_1_agent_data_1a89fc0ef834ddeca029b665dc5e5c8115" compoundref="_program_data_8cs" startline="30">robot_nagivation.AgentData._posToSearch</references>
+        <references refid="classrobot__nagivation_1_1_agent_data_1add074c8dc3f1f9bca17c815cc7386ccf" compoundref="_program_data_8cs" startline="38">robot_nagivation.AgentData._searchedNodes</references>
+        <references refid="classrobot__nagivation_1_1_agent_data_1a0d67429520990e2fb25a860ab20b731b" compoundref="_program_data_8cs" startline="29">robot_nagivation.AgentData._searchedPos</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/ProgramData.cs" line="27" column="1" bodyfile="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/ProgramData.cs" bodystart="26" bodyend="67"/>
+    <listofallmembers>
+      <member refid="classrobot__nagivation_1_1_agent_data_1ababf209f702c0b1bf37025d23f3d9308" prot="private" virt="non-virtual"><scope>robot_nagivation::AgentData</scope><name>_agentDelay</name></member>
+      <member refid="classrobot__nagivation_1_1_agent_data_1a24f11478084277b9200189181a76f271" prot="private" virt="non-virtual"><scope>robot_nagivation::AgentData</scope><name>_determinedMoveSet</name></member>
+      <member refid="classrobot__nagivation_1_1_agent_data_1adca5e5bc1d075b6d05cd660ceda57b30" prot="private" virt="non-virtual"><scope>robot_nagivation::AgentData</scope><name>_directionalMovementCost</name></member>
+      <member refid="classrobot__nagivation_1_1_agent_data_1a7a9e545b62f6e5af873c6677d29845ae" prot="private" virt="non-virtual"><scope>robot_nagivation::AgentData</scope><name>_internalHeap</name></member>
+      <member refid="classrobot__nagivation_1_1_agent_data_1af9c714efc0aac80c4b1aca6b0a4dbd5e" prot="private" virt="non-virtual"><scope>robot_nagivation::AgentData</scope><name>_nodePath</name></member>
+      <member refid="classrobot__nagivation_1_1_agent_data_1aff267d9c7e8b6d07045471feebc28a30" prot="private" virt="non-virtual"><scope>robot_nagivation::AgentData</scope><name>_path</name></member>
+      <member refid="classrobot__nagivation_1_1_agent_data_1a89fc0ef834ddeca029b665dc5e5c8115" prot="private" virt="non-virtual"><scope>robot_nagivation::AgentData</scope><name>_posToSearch</name></member>
+      <member refid="classrobot__nagivation_1_1_agent_data_1a8b6d11a8fd560cfb03a3263e8743b4e8" prot="private" virt="non-virtual"><scope>robot_nagivation::AgentData</scope><name>_rootNode</name></member>
+      <member refid="classrobot__nagivation_1_1_agent_data_1add074c8dc3f1f9bca17c815cc7386ccf" prot="private" virt="non-virtual"><scope>robot_nagivation::AgentData</scope><name>_searchedNodes</name></member>
+      <member refid="classrobot__nagivation_1_1_agent_data_1a0d67429520990e2fb25a860ab20b731b" prot="private" virt="non-virtual"><scope>robot_nagivation::AgentData</scope><name>_searchedPos</name></member>
+      <member refid="classrobot__nagivation_1_1_agent_data_1a1f572304c89f77537baffe5b59fb0e06" prot="public" virt="non-virtual"><scope>robot_nagivation::AgentData</scope><name>AgentData</name></member>
+      <member refid="classrobot__nagivation_1_1_agent_data_1ad4af99677ae6a93edab0a6d253d54bdb" prot="public" virt="non-virtual"><scope>robot_nagivation::AgentData</scope><name>AgentDelay</name></member>
+      <member refid="classrobot__nagivation_1_1_agent_data_1a076970d5c8843dc830e5f53515719d06" prot="public" virt="non-virtual"><scope>robot_nagivation::AgentData</scope><name>DeterminedMoveSet</name></member>
+      <member refid="classrobot__nagivation_1_1_agent_data_1a241445aff629c014634d50cf9ff03723" prot="public" virt="non-virtual"><scope>robot_nagivation::AgentData</scope><name>DirectionalMovementCost</name></member>
+      <member refid="classrobot__nagivation_1_1_agent_data_1acba9477e80e54c0bf68834d755371ad9" prot="public" virt="non-virtual"><scope>robot_nagivation::AgentData</scope><name>InternalHeap</name></member>
+      <member refid="classrobot__nagivation_1_1_agent_data_1a8f7924f2cd9acc242d03a85729b255cf" prot="public" virt="non-virtual"><scope>robot_nagivation::AgentData</scope><name>NodePath</name></member>
+      <member refid="classrobot__nagivation_1_1_agent_data_1adfbfcff0e5b1dcbb7fdc8aed9ed78913" prot="public" virt="non-virtual"><scope>robot_nagivation::AgentData</scope><name>Path</name></member>
+      <member refid="classrobot__nagivation_1_1_agent_data_1a7ff69650d6d3dbc51a45cb02c2aab508" prot="public" virt="non-virtual"><scope>robot_nagivation::AgentData</scope><name>PosToSearch</name></member>
+      <member refid="classrobot__nagivation_1_1_agent_data_1aec3ce56fb584af77ff5ac3a608791f32" prot="public" virt="non-virtual"><scope>robot_nagivation::AgentData</scope><name>RootNode</name></member>
+      <member refid="classrobot__nagivation_1_1_agent_data_1a8f864688969f706f80dc6dce7e736b90" prot="public" virt="non-virtual"><scope>robot_nagivation::AgentData</scope><name>SearchedNodes</name></member>
+      <member refid="classrobot__nagivation_1_1_agent_data_1a82300a4ee007c7b2610bdda3ab251a1e" prot="public" virt="non-virtual"><scope>robot_nagivation::AgentData</scope><name>SearchedPos</name></member>
+      <member refid="classrobot__nagivation_1_1_agent_data_1a5f3ccca11c285a6e01f0d1c6c3ba6d9b" prot="public" virt="non-virtual"><scope>robot_nagivation::AgentData</scope><name>Steps</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

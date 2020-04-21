@@ -1,0 +1,2 @@
+101624964_gbfs_RobotNav-test.txt_directional 'gbfs: Greedy-Best First Agent' 28
+Right; Down; Right; Right; Right; Right; Right; Right; Up; Up; 

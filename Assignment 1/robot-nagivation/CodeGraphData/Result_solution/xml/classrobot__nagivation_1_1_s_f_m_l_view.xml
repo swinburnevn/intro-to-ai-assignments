@@ -1,0 +1,450 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="classrobot__nagivation_1_1_s_f_m_l_view" kind="class" prot="public">
+    <compoundname>robot_nagivation::SFMLView</compoundname>
+    <basecompoundref refid="interfacerobot__nagivation_1_1_i_view" prot="public" virt="non-virtual">robot_nagivation.IView</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classrobot__nagivation_1_1_s_f_m_l_view_1aba487f7b263fb354ef71b173dc529e49" prot="private" static="no" mutable="no">
+        <type><ref refid="classrobot__nagivation_1_1_program_data" kindref="compound">ProgramData</ref></type>
+        <definition>ProgramData robot_nagivation.SFMLView._data</definition>
+        <argsstring></argsstring>
+        <name>_data</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/View.cs" line="20" column="1" bodyfile="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/View.cs" bodystart="20" bodyend="-1"/>
+        <referencedby refid="classrobot__nagivation_1_1_s_f_m_l_view_1af784e06f5e48f1aa4485fd38d99b1229" compoundref="_view_8cs" startline="620" endline="624">robot_nagivation.SFMLView.Close</referencedby>
+        <referencedby refid="classrobot__nagivation_1_1_s_f_m_l_view_1a2e68cad55af91b78d2a070ee94287587" compoundref="_view_8cs" startline="405" endline="595">robot_nagivation.SFMLView.Draw</referencedby>
+        <referencedby refid="classrobot__nagivation_1_1_s_f_m_l_view_1af9f8e4dc8a6b79d40b01a23d11cc579a" compoundref="_view_8cs" startline="176" endline="402">robot_nagivation.SFMLView.DrawNodeDisplay</referencedby>
+        <referencedby refid="classrobot__nagivation_1_1_s_f_m_l_view_1a695adf1d2eab9d1ab37399d00cc8edba" compoundref="_view_8cs" startline="33" endline="60">robot_nagivation.SFMLView.SFMLView</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classrobot__nagivation_1_1_s_f_m_l_view_1a663166960a756ce6a915fbf26bdc9e6c" prot="private" static="no" mutable="no">
+        <type>RenderWindow</type>
+        <definition>RenderWindow robot_nagivation.SFMLView._window</definition>
+        <argsstring></argsstring>
+        <name>_window</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/View.cs" line="22" column="1" bodyfile="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/View.cs" bodystart="22" bodyend="-1"/>
+        <referencedby refid="classrobot__nagivation_1_1_s_f_m_l_view_1a695adf1d2eab9d1ab37399d00cc8edba" compoundref="_view_8cs" startline="33" endline="60">robot_nagivation.SFMLView.SFMLView</referencedby>
+        <referencedby refid="classrobot__nagivation_1_1_s_f_m_l_view_1a220cd99d67cd2603dfda004f668555ce" compoundref="_view_8cs" startline="75" endline="79">robot_nagivation.SFMLView.TakeScreenshotOfWindows</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classrobot__nagivation_1_1_s_f_m_l_view_1a14518017532096cc2d9fa674956edbfd" prot="private" static="no" mutable="no">
+        <type>RenderWindow</type>
+        <definition>RenderWindow robot_nagivation.SFMLView._nodeWindow</definition>
+        <argsstring></argsstring>
+        <name>_nodeWindow</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/View.cs" line="23" column="1" bodyfile="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/View.cs" bodystart="23" bodyend="-1"/>
+        <referencedby refid="classrobot__nagivation_1_1_s_f_m_l_view_1a695adf1d2eab9d1ab37399d00cc8edba" compoundref="_view_8cs" startline="33" endline="60">robot_nagivation.SFMLView.SFMLView</referencedby>
+        <referencedby refid="classrobot__nagivation_1_1_s_f_m_l_view_1a220cd99d67cd2603dfda004f668555ce" compoundref="_view_8cs" startline="75" endline="79">robot_nagivation.SFMLView.TakeScreenshotOfWindows</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classrobot__nagivation_1_1_s_f_m_l_view_1a11f817a3ea0b4c64b67f83517840e9c9" prot="private" static="no" mutable="no">
+        <type>View</type>
+        <definition>View robot_nagivation.SFMLView._nodeView</definition>
+        <argsstring></argsstring>
+        <name>_nodeView</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/View.cs" line="25" column="1" bodyfile="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/View.cs" bodystart="25" bodyend="-1"/>
+        <referencedby refid="classrobot__nagivation_1_1_s_f_m_l_view_1a2e68cad55af91b78d2a070ee94287587" compoundref="_view_8cs" startline="405" endline="595">robot_nagivation.SFMLView.Draw</referencedby>
+        <referencedby refid="classrobot__nagivation_1_1_s_f_m_l_view_1a695adf1d2eab9d1ab37399d00cc8edba" compoundref="_view_8cs" startline="33" endline="60">robot_nagivation.SFMLView.SFMLView</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classrobot__nagivation_1_1_s_f_m_l_view_1a748cd2c59db64688c31fb4ad008ec1a8" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float robot_nagivation.SFMLView._nodeViewPos</definition>
+        <argsstring></argsstring>
+        <name>_nodeViewPos</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/View.cs" line="27" column="1" bodyfile="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/View.cs" bodystart="27" bodyend="-1"/>
+        <referencedby refid="classrobot__nagivation_1_1_s_f_m_l_view_1a2e68cad55af91b78d2a070ee94287587" compoundref="_view_8cs" startline="405" endline="595">robot_nagivation.SFMLView.Draw</referencedby>
+        <referencedby refid="classrobot__nagivation_1_1_s_f_m_l_view_1a695adf1d2eab9d1ab37399d00cc8edba" compoundref="_view_8cs" startline="33" endline="60">robot_nagivation.SFMLView.SFMLView</referencedby>
+        <referencedby refid="classrobot__nagivation_1_1_s_f_m_l_view_1a83671db69d44e75a12f48c2fb011c412" compoundref="_view_8cs" startline="609" endline="619">robot_nagivation.SFMLView.Window_MouseWheeled</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classrobot__nagivation_1_1_s_f_m_l_view_1a1dce79d2d7fce6f623e0def98940fa6f" prot="private" static="no" mutable="no">
+        <type>Font</type>
+        <definition>Font robot_nagivation.SFMLView._font</definition>
+        <argsstring></argsstring>
+        <name>_font</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/View.cs" line="29" column="1" bodyfile="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/View.cs" bodystart="29" bodyend="-1"/>
+        <referencedby refid="classrobot__nagivation_1_1_s_f_m_l_view_1a2e68cad55af91b78d2a070ee94287587" compoundref="_view_8cs" startline="405" endline="595">robot_nagivation.SFMLView.Draw</referencedby>
+        <referencedby refid="classrobot__nagivation_1_1_s_f_m_l_view_1a7ae4d5671bc3cd75874b98759871ec76" compoundref="_view_8cs" startline="96" endline="174">robot_nagivation.SFMLView.DrawBackground</referencedby>
+        <referencedby refid="classrobot__nagivation_1_1_s_f_m_l_view_1af9f8e4dc8a6b79d40b01a23d11cc579a" compoundref="_view_8cs" startline="176" endline="402">robot_nagivation.SFMLView.DrawNodeDisplay</referencedby>
+        <referencedby refid="classrobot__nagivation_1_1_s_f_m_l_view_1a695adf1d2eab9d1ab37399d00cc8edba" compoundref="_view_8cs" startline="33" endline="60">robot_nagivation.SFMLView.SFMLView</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classrobot__nagivation_1_1_s_f_m_l_view_1a8a321869cef3b11b990ac3af9e789c39" prot="private" static="no" mutable="no">
+        <type>Vector2i</type>
+        <definition>Vector2i robot_nagivation.SFMLView._windowSize</definition>
+        <argsstring></argsstring>
+        <name>_windowSize</name>
+        <initializer>= new Vector2i(1024, 576)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/View.cs" line="31" column="1" bodyfile="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/View.cs" bodystart="31" bodyend="-1"/>
+        <referencedby refid="classrobot__nagivation_1_1_s_f_m_l_view_1a2e4e32e03699935589aa813313f1aaec" compoundref="_view_8cs" startline="81" endline="84">robot_nagivation.SFMLView.SetWindowSize</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classrobot__nagivation_1_1_s_f_m_l_view_1a695adf1d2eab9d1ab37399d00cc8edba" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>robot_nagivation.SFMLView.SFMLView</definition>
+        <argsstring>(ref ProgramData data)</argsstring>
+        <name>SFMLView</name>
+        <param>
+          <type>ref <ref refid="classrobot__nagivation_1_1_program_data" kindref="compound">ProgramData</ref></type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/View.cs" line="33" column="1" bodyfile="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/View.cs" bodystart="33" bodyend="60"/>
+        <references refid="classrobot__nagivation_1_1_s_f_m_l_view_1aba487f7b263fb354ef71b173dc529e49" compoundref="_view_8cs" startline="20">robot_nagivation.SFMLView._data</references>
+        <references refid="classrobot__nagivation_1_1_s_f_m_l_view_1a1dce79d2d7fce6f623e0def98940fa6f" compoundref="_view_8cs" startline="29">robot_nagivation.SFMLView._font</references>
+        <references refid="classrobot__nagivation_1_1_s_f_m_l_view_1a11f817a3ea0b4c64b67f83517840e9c9" compoundref="_view_8cs" startline="25">robot_nagivation.SFMLView._nodeView</references>
+        <references refid="classrobot__nagivation_1_1_s_f_m_l_view_1a748cd2c59db64688c31fb4ad008ec1a8" compoundref="_view_8cs" startline="27">robot_nagivation.SFMLView._nodeViewPos</references>
+        <references refid="classrobot__nagivation_1_1_s_f_m_l_view_1a14518017532096cc2d9fa674956edbfd" compoundref="_view_8cs" startline="23">robot_nagivation.SFMLView._nodeWindow</references>
+        <references refid="classrobot__nagivation_1_1_s_f_m_l_view_1a663166960a756ce6a915fbf26bdc9e6c" compoundref="_view_8cs" startline="22">robot_nagivation.SFMLView._window</references>
+        <references refid="classrobot__nagivation_1_1_s_f_m_l_view_1a14ef23d2cab78818f2e43fe77954ea11" compoundref="_view_8cs" startline="597" endline="607">robot_nagivation.SFMLView.Window_KeyPressed</references>
+        <references refid="classrobot__nagivation_1_1_s_f_m_l_view_1a83671db69d44e75a12f48c2fb011c412" compoundref="_view_8cs" startline="609" endline="619">robot_nagivation.SFMLView.Window_MouseWheeled</references>
+      </memberdef>
+      <memberdef kind="function" id="classrobot__nagivation_1_1_s_f_m_l_view_1a0bb6b8339d08e4108bf7ae53ba0a93ea" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void robot_nagivation.SFMLView.TakeScreenshot</definition>
+        <argsstring>(ref RenderWindow window, string fileName)</argsstring>
+        <name>TakeScreenshot</name>
+        <param>
+          <type>ref RenderWindow</type>
+          <declname>window</declname>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>fileName</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/View.cs" line="62" column="1" bodyfile="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/View.cs" bodystart="62" bodyend="73"/>
+        <referencedby refid="classrobot__nagivation_1_1_s_f_m_l_view_1a220cd99d67cd2603dfda004f668555ce" compoundref="_view_8cs" startline="75" endline="79">robot_nagivation.SFMLView.TakeScreenshotOfWindows</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classrobot__nagivation_1_1_s_f_m_l_view_1a220cd99d67cd2603dfda004f668555ce" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void robot_nagivation.SFMLView.TakeScreenshotOfWindows</definition>
+        <argsstring>(string fileName)</argsstring>
+        <name>TakeScreenshotOfWindows</name>
+        <param>
+          <type>string</type>
+          <declname>fileName</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/View.cs" line="75" column="1" bodyfile="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/View.cs" bodystart="75" bodyend="79"/>
+        <references refid="classrobot__nagivation_1_1_s_f_m_l_view_1a14518017532096cc2d9fa674956edbfd" compoundref="_view_8cs" startline="23">robot_nagivation.SFMLView._nodeWindow</references>
+        <references refid="classrobot__nagivation_1_1_s_f_m_l_view_1a663166960a756ce6a915fbf26bdc9e6c" compoundref="_view_8cs" startline="22">robot_nagivation.SFMLView._window</references>
+        <references refid="classrobot__nagivation_1_1_s_f_m_l_view_1a0bb6b8339d08e4108bf7ae53ba0a93ea" compoundref="_view_8cs" startline="62" endline="73">robot_nagivation.SFMLView.TakeScreenshot</references>
+        <referencedby refid="classrobot__nagivation_1_1_s_f_m_l_view_1af784e06f5e48f1aa4485fd38d99b1229" compoundref="_view_8cs" startline="620" endline="624">robot_nagivation.SFMLView.Close</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classrobot__nagivation_1_1_s_f_m_l_view_1a2e4e32e03699935589aa813313f1aaec" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void robot_nagivation.SFMLView.SetWindowSize</definition>
+        <argsstring>(int width, int height)</argsstring>
+        <name>SetWindowSize</name>
+        <param>
+          <type>int</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>height</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/View.cs" line="81" column="1" bodyfile="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/View.cs" bodystart="81" bodyend="84"/>
+        <references refid="classrobot__nagivation_1_1_s_f_m_l_view_1a8a321869cef3b11b990ac3af9e789c39" compoundref="_view_8cs" startline="31">robot_nagivation.SFMLView._windowSize</references>
+      </memberdef>
+      <memberdef kind="function" id="classrobot__nagivation_1_1_s_f_m_l_view_1acf981fe8956b131c2588cbdf589fc8ca" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>Color</type>
+        <definition>Color robot_nagivation.SFMLView.HashedPosColor</definition>
+        <argsstring>(int x, int y, int seed)</argsstring>
+        <name>HashedPosColor</name>
+        <param>
+          <type>int</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>seed</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/View.cs" line="86" column="1" bodyfile="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/View.cs" bodystart="86" bodyend="94"/>
+        <referencedby refid="classrobot__nagivation_1_1_s_f_m_l_view_1a2e68cad55af91b78d2a070ee94287587" compoundref="_view_8cs" startline="405" endline="595">robot_nagivation.SFMLView.Draw</referencedby>
+        <referencedby refid="classrobot__nagivation_1_1_s_f_m_l_view_1af9f8e4dc8a6b79d40b01a23d11cc579a" compoundref="_view_8cs" startline="176" endline="402">robot_nagivation.SFMLView.DrawNodeDisplay</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classrobot__nagivation_1_1_s_f_m_l_view_1af9f8e4dc8a6b79d40b01a23d11cc579a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void robot_nagivation.SFMLView.DrawNodeDisplay</definition>
+        <argsstring>()</argsstring>
+        <name>DrawNodeDisplay</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/View.cs" line="176" column="1" bodyfile="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/View.cs" bodystart="176" bodyend="402"/>
+        <references refid="classrobot__nagivation_1_1_s_f_m_l_view_1aba487f7b263fb354ef71b173dc529e49" compoundref="_view_8cs" startline="20">robot_nagivation.SFMLView._data</references>
+        <references refid="classrobot__nagivation_1_1_s_f_m_l_view_1a1dce79d2d7fce6f623e0def98940fa6f" compoundref="_view_8cs" startline="29">robot_nagivation.SFMLView._font</references>
+        <references refid="classrobot__nagivation_1_1_program_data_1a548147670331af0cf0002d27f5406eac" compoundref="_program_data_8cs" startline="87">robot_nagivation.ProgramData.Agent</references>
+        <references refid="classrobot__nagivation_1_1_agent_1a84d6d0f727f66f9f812dd27ba5f79ebe" compoundref="_agents_8cs" startline="175">robot_nagivation.Agent.AgentData</references>
+        <references refid="classrobot__nagivation_1_1_s_f_m_l_view_1acf981fe8956b131c2588cbdf589fc8ca" compoundref="_view_8cs" startline="86" endline="94">robot_nagivation.SFMLView.HashedPosColor</references>
+        <references refid="classrobot__nagivation_1_1_agent_data_1acba9477e80e54c0bf68834d755371ad9" compoundref="_program_data_8cs" startline="52">robot_nagivation.AgentData.InternalHeap</references>
+        <references refid="classrobot__nagivation_1_1_agent_1a1459949e729b65404d111d97339de425" compoundref="_agents_8cs" startline="178">robot_nagivation.Agent.Name</references>
+        <references refid="classrobot__nagivation_1_1_agent_data_1a7ff69650d6d3dbc51a45cb02c2aab508" compoundref="_program_data_8cs" startline="47">robot_nagivation.AgentData.PosToSearch</references>
+        <references refid="classrobot__nagivation_1_1_agent_data_1aec3ce56fb584af77ff5ac3a608791f32" compoundref="_program_data_8cs" startline="49">robot_nagivation.AgentData.RootNode</references>
+        <referencedby refid="classrobot__nagivation_1_1_s_f_m_l_view_1a2e68cad55af91b78d2a070ee94287587" compoundref="_view_8cs" startline="405" endline="595">robot_nagivation.SFMLView.Draw</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classrobot__nagivation_1_1_s_f_m_l_view_1a2e68cad55af91b78d2a070ee94287587" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>void robot_nagivation.SFMLView.Draw</definition>
+        <argsstring>()</argsstring>
+        <name>Draw</name>
+        <reimplements refid="interfacerobot__nagivation_1_1_i_view_1a1347754747e0409e7233ae8e3a3f6d85">Draw</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/View.cs" line="405" column="1" bodyfile="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/View.cs" bodystart="405" bodyend="595"/>
+        <references refid="classrobot__nagivation_1_1_s_f_m_l_view_1aba487f7b263fb354ef71b173dc529e49" compoundref="_view_8cs" startline="20">robot_nagivation.SFMLView._data</references>
+        <references refid="classrobot__nagivation_1_1_s_f_m_l_view_1a1dce79d2d7fce6f623e0def98940fa6f" compoundref="_view_8cs" startline="29">robot_nagivation.SFMLView._font</references>
+        <references refid="classrobot__nagivation_1_1_s_f_m_l_view_1a11f817a3ea0b4c64b67f83517840e9c9" compoundref="_view_8cs" startline="25">robot_nagivation.SFMLView._nodeView</references>
+        <references refid="classrobot__nagivation_1_1_s_f_m_l_view_1a748cd2c59db64688c31fb4ad008ec1a8" compoundref="_view_8cs" startline="27">robot_nagivation.SFMLView._nodeViewPos</references>
+        <references refid="classrobot__nagivation_1_1_program_data_1a548147670331af0cf0002d27f5406eac" compoundref="_program_data_8cs" startline="87">robot_nagivation.ProgramData.Agent</references>
+        <references refid="classrobot__nagivation_1_1_agent_1a84d6d0f727f66f9f812dd27ba5f79ebe" compoundref="_agents_8cs" startline="175">robot_nagivation.Agent.AgentData</references>
+        <references refid="classrobot__nagivation_1_1_program_data_1a5307842949f56b62463cdf83b33edef0" compoundref="_program_data_8cs" startline="89">robot_nagivation.ProgramData.AgentDecisions</references>
+        <references refid="classrobot__nagivation_1_1_map_1a54bd7016194129978c1e6392c9ae9fbd" compoundref="_map_8cs" startline="130">robot_nagivation.Map.AgentPos</references>
+        <references refid="classrobot__nagivation_1_1_s_f_m_l_view_1a7ae4d5671bc3cd75874b98759871ec76" compoundref="_view_8cs" startline="96" endline="174">robot_nagivation.SFMLView.DrawBackground</references>
+        <references refid="classrobot__nagivation_1_1_s_f_m_l_view_1af9f8e4dc8a6b79d40b01a23d11cc579a" compoundref="_view_8cs" startline="176" endline="402">robot_nagivation.SFMLView.DrawNodeDisplay</references>
+        <references refid="classrobot__nagivation_1_1_s_f_m_l_view_1acf981fe8956b131c2588cbdf589fc8ca" compoundref="_view_8cs" startline="86" endline="94">robot_nagivation.SFMLView.HashedPosColor</references>
+        <references refid="classrobot__nagivation_1_1_program_data_1ae15d3ffc1f601b2405b87d014b804779" compoundref="_program_data_8cs" startline="88">robot_nagivation.ProgramData.Map</references>
+        <references refid="classrobot__nagivation_1_1_map_1a23fb5dc553546af36f8718fbf0576a02" compoundref="_map_8cs" startline="129">robot_nagivation.Map.MapMatrix</references>
+        <references refid="classrobot__nagivation_1_1_agent_data_1adfbfcff0e5b1dcbb7fdc8aed9ed78913" compoundref="_program_data_8cs" startline="50">robot_nagivation.AgentData.Path</references>
+        <references refid="classrobot__nagivation_1_1_agent_data_1a7ff69650d6d3dbc51a45cb02c2aab508" compoundref="_program_data_8cs" startline="47">robot_nagivation.AgentData.PosToSearch</references>
+        <references refid="classrobot__nagivation_1_1_agent_data_1a8f864688969f706f80dc6dce7e736b90" compoundref="_program_data_8cs" startline="51">robot_nagivation.AgentData.SearchedNodes</references>
+      </memberdef>
+      <memberdef kind="function" id="classrobot__nagivation_1_1_s_f_m_l_view_1af784e06f5e48f1aa4485fd38d99b1229" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>void robot_nagivation.SFMLView.Close</definition>
+        <argsstring>()</argsstring>
+        <name>Close</name>
+        <reimplements refid="interfacerobot__nagivation_1_1_i_view_1abe4af7e6eae747f7d4369fe672977897">Close</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/View.cs" line="620" column="1" bodyfile="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/View.cs" bodystart="620" bodyend="624"/>
+        <references refid="classrobot__nagivation_1_1_s_f_m_l_view_1aba487f7b263fb354ef71b173dc529e49" compoundref="_view_8cs" startline="20">robot_nagivation.SFMLView._data</references>
+        <references refid="classrobot__nagivation_1_1_program_data_1aeacf7e26dd383d6336a2b8bcfb08d49c" compoundref="_program_data_8cs" startline="92">robot_nagivation.ProgramData.DisplayMode</references>
+        <references refid="classrobot__nagivation_1_1_program_data_1abedc3d1b067728cdec35e0a882b02021" compoundref="_program_data_8cs" startline="93">robot_nagivation.ProgramData.OutputName</references>
+        <references refid="classrobot__nagivation_1_1_s_f_m_l_view_1a220cd99d67cd2603dfda004f668555ce" compoundref="_view_8cs" startline="75" endline="79">robot_nagivation.SFMLView.TakeScreenshotOfWindows</references>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classrobot__nagivation_1_1_s_f_m_l_view_1a7ae4d5671bc3cd75874b98759871ec76" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void robot_nagivation.SFMLView.DrawBackground</definition>
+        <argsstring>()</argsstring>
+        <name>DrawBackground</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/View.cs" line="96" column="1" bodyfile="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/View.cs" bodystart="96" bodyend="174"/>
+        <references refid="classrobot__nagivation_1_1_s_f_m_l_view_1a1dce79d2d7fce6f623e0def98940fa6f" compoundref="_view_8cs" startline="29">robot_nagivation.SFMLView._font</references>
+        <referencedby refid="classrobot__nagivation_1_1_s_f_m_l_view_1a2e68cad55af91b78d2a070ee94287587" compoundref="_view_8cs" startline="405" endline="595">robot_nagivation.SFMLView.Draw</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classrobot__nagivation_1_1_s_f_m_l_view_1a14ef23d2cab78818f2e43fe77954ea11" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void robot_nagivation.SFMLView.Window_KeyPressed</definition>
+        <argsstring>(object sender, SFML.Window.KeyEventArgs e)</argsstring>
+        <name>Window_KeyPressed</name>
+        <param>
+          <type>object</type>
+          <declname>sender</declname>
+        </param>
+        <param>
+          <type>SFML.Window.KeyEventArgs</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/View.cs" line="597" column="1" bodyfile="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/View.cs" bodystart="597" bodyend="607"/>
+        <referencedby refid="classrobot__nagivation_1_1_s_f_m_l_view_1a695adf1d2eab9d1ab37399d00cc8edba" compoundref="_view_8cs" startline="33" endline="60">robot_nagivation.SFMLView.SFMLView</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classrobot__nagivation_1_1_s_f_m_l_view_1a83671db69d44e75a12f48c2fb011c412" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void robot_nagivation.SFMLView.Window_MouseWheeled</definition>
+        <argsstring>(object sender, SFML.Window.MouseWheelScrollEventArgs e)</argsstring>
+        <name>Window_MouseWheeled</name>
+        <param>
+          <type>object</type>
+          <declname>sender</declname>
+        </param>
+        <param>
+          <type>SFML.Window.MouseWheelScrollEventArgs</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/View.cs" line="609" column="1" bodyfile="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/View.cs" bodystart="609" bodyend="619"/>
+        <references refid="classrobot__nagivation_1_1_s_f_m_l_view_1a748cd2c59db64688c31fb4ad008ec1a8" compoundref="_view_8cs" startline="27">robot_nagivation.SFMLView._nodeViewPos</references>
+        <referencedby refid="classrobot__nagivation_1_1_s_f_m_l_view_1a695adf1d2eab9d1ab37399d00cc8edba" compoundref="_view_8cs" startline="33" endline="60">robot_nagivation.SFMLView.SFMLView</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="115">
+        <label>robot_nagivation.SFMLView</label>
+        <link refid="classrobot__nagivation_1_1_s_f_m_l_view"/>
+        <childnode refid="116" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="116">
+        <label>IView</label>
+        <link refid="interfacerobot__nagivation_1_1_i_view"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="119">
+        <label>robot_nagivation.ProgramData</label>
+        <link refid="classrobot__nagivation_1_1_program_data"/>
+        <childnode refid="120" relation="usage">
+          <edgelabel>_map</edgelabel>
+        </childnode>
+        <childnode refid="121" relation="usage">
+          <edgelabel>_agent</edgelabel>
+        </childnode>
+      </node>
+      <node id="120">
+        <label>robot_nagivation.Map</label>
+        <link refid="classrobot__nagivation_1_1_map"/>
+      </node>
+      <node id="122">
+        <label>robot_nagivation.AgentData</label>
+        <link refid="classrobot__nagivation_1_1_agent_data"/>
+      </node>
+      <node id="121">
+        <label>robot_nagivation.Agent</label>
+        <link refid="classrobot__nagivation_1_1_agent"/>
+        <childnode refid="122" relation="usage">
+          <edgelabel>_agentData</edgelabel>
+        </childnode>
+      </node>
+      <node id="117">
+        <label>robot_nagivation.SFMLView</label>
+        <link refid="classrobot__nagivation_1_1_s_f_m_l_view"/>
+        <childnode refid="118" relation="public-inheritance">
+        </childnode>
+        <childnode refid="119" relation="usage">
+          <edgelabel>_data</edgelabel>
+        </childnode>
+      </node>
+      <node id="118">
+        <label>IView</label>
+        <link refid="interfacerobot__nagivation_1_1_i_view"/>
+      </node>
+    </collaborationgraph>
+    <location file="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/View.cs" line="19" column="1" bodyfile="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/View.cs" bodystart="18" bodyend="625"/>
+    <listofallmembers>
+      <member refid="classrobot__nagivation_1_1_s_f_m_l_view_1aba487f7b263fb354ef71b173dc529e49" prot="private" virt="non-virtual"><scope>robot_nagivation::SFMLView</scope><name>_data</name></member>
+      <member refid="classrobot__nagivation_1_1_s_f_m_l_view_1a1dce79d2d7fce6f623e0def98940fa6f" prot="private" virt="non-virtual"><scope>robot_nagivation::SFMLView</scope><name>_font</name></member>
+      <member refid="classrobot__nagivation_1_1_s_f_m_l_view_1a11f817a3ea0b4c64b67f83517840e9c9" prot="private" virt="non-virtual"><scope>robot_nagivation::SFMLView</scope><name>_nodeView</name></member>
+      <member refid="classrobot__nagivation_1_1_s_f_m_l_view_1a748cd2c59db64688c31fb4ad008ec1a8" prot="private" virt="non-virtual"><scope>robot_nagivation::SFMLView</scope><name>_nodeViewPos</name></member>
+      <member refid="classrobot__nagivation_1_1_s_f_m_l_view_1a14518017532096cc2d9fa674956edbfd" prot="private" virt="non-virtual"><scope>robot_nagivation::SFMLView</scope><name>_nodeWindow</name></member>
+      <member refid="classrobot__nagivation_1_1_s_f_m_l_view_1a663166960a756ce6a915fbf26bdc9e6c" prot="private" virt="non-virtual"><scope>robot_nagivation::SFMLView</scope><name>_window</name></member>
+      <member refid="classrobot__nagivation_1_1_s_f_m_l_view_1a8a321869cef3b11b990ac3af9e789c39" prot="private" virt="non-virtual"><scope>robot_nagivation::SFMLView</scope><name>_windowSize</name></member>
+      <member refid="classrobot__nagivation_1_1_s_f_m_l_view_1af784e06f5e48f1aa4485fd38d99b1229" prot="public" virt="virtual"><scope>robot_nagivation::SFMLView</scope><name>Close</name></member>
+      <member refid="classrobot__nagivation_1_1_s_f_m_l_view_1a2e68cad55af91b78d2a070ee94287587" prot="public" virt="virtual"><scope>robot_nagivation::SFMLView</scope><name>Draw</name></member>
+      <member refid="classrobot__nagivation_1_1_s_f_m_l_view_1a7ae4d5671bc3cd75874b98759871ec76" prot="protected" virt="non-virtual"><scope>robot_nagivation::SFMLView</scope><name>DrawBackground</name></member>
+      <member refid="classrobot__nagivation_1_1_s_f_m_l_view_1af9f8e4dc8a6b79d40b01a23d11cc579a" prot="public" virt="non-virtual"><scope>robot_nagivation::SFMLView</scope><name>DrawNodeDisplay</name></member>
+      <member refid="classrobot__nagivation_1_1_s_f_m_l_view_1acf981fe8956b131c2588cbdf589fc8ca" prot="public" virt="non-virtual"><scope>robot_nagivation::SFMLView</scope><name>HashedPosColor</name></member>
+      <member refid="classrobot__nagivation_1_1_s_f_m_l_view_1a2e4e32e03699935589aa813313f1aaec" prot="public" virt="non-virtual"><scope>robot_nagivation::SFMLView</scope><name>SetWindowSize</name></member>
+      <member refid="classrobot__nagivation_1_1_s_f_m_l_view_1a695adf1d2eab9d1ab37399d00cc8edba" prot="public" virt="non-virtual"><scope>robot_nagivation::SFMLView</scope><name>SFMLView</name></member>
+      <member refid="classrobot__nagivation_1_1_s_f_m_l_view_1a0bb6b8339d08e4108bf7ae53ba0a93ea" prot="public" virt="non-virtual"><scope>robot_nagivation::SFMLView</scope><name>TakeScreenshot</name></member>
+      <member refid="classrobot__nagivation_1_1_s_f_m_l_view_1a220cd99d67cd2603dfda004f668555ce" prot="public" virt="non-virtual"><scope>robot_nagivation::SFMLView</scope><name>TakeScreenshotOfWindows</name></member>
+      <member refid="classrobot__nagivation_1_1_s_f_m_l_view_1a14ef23d2cab78818f2e43fe77954ea11" prot="private" virt="non-virtual"><scope>robot_nagivation::SFMLView</scope><name>Window_KeyPressed</name></member>
+      <member refid="classrobot__nagivation_1_1_s_f_m_l_view_1a83671db69d44e75a12f48c2fb011c412" prot="private" virt="non-virtual"><scope>robot_nagivation::SFMLView</scope><name>Window_MouseWheeled</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

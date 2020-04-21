@@ -1,0 +1,79 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="classrobot__nagivation_1_1_map_scenario" kind="class" prot="public">
+    <compoundname>robot_nagivation::MapScenario</compoundname>
+    <basecompoundref refid="classrobot__nagivation_1_1_scenario_3_01_t_01_4" prot="public" virt="non-virtual">robot_nagivation.Scenario&lt; T &gt;</basecompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classrobot__nagivation_1_1_map_scenario_1aca7fe8acf07b7a7e083c46e971cbdc7d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>override List&lt; <ref refid="classrobot__nagivation_1_1_map_node" kindref="compound">MapNode</ref> &gt;</type>
+        <definition>override List&lt;MapNode&gt; robot_nagivation.MapScenario.DeterminePossibleMoves</definition>
+        <argsstring>(State&lt; MapNode &gt; state)</argsstring>
+        <name>DeterminePossibleMoves</name>
+        <param>
+          <type>State&lt; <ref refid="classrobot__nagivation_1_1_map_node" kindref="compound">MapNode</ref> &gt;</type>
+          <declname>state</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/MapScenario.cs" line="17" column="1" bodyfile="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/MapScenario.cs" bodystart="17" bodyend="20"/>
+      </memberdef>
+      <memberdef kind="function" id="classrobot__nagivation_1_1_map_scenario_1ace9aca56532786b41844c37cab33696f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>override bool</type>
+        <definition>override bool robot_nagivation.MapScenario.isSolved</definition>
+        <argsstring>(MapNode data)</argsstring>
+        <name>isSolved</name>
+        <param>
+          <type><ref refid="classrobot__nagivation_1_1_map_node" kindref="compound">MapNode</ref></type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/MapScenario.cs" line="22" column="1" bodyfile="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/MapScenario.cs" bodystart="22" bodyend="25"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="88">
+        <label>robot_nagivation.MapScenario</label>
+        <link refid="classrobot__nagivation_1_1_map_scenario"/>
+        <childnode refid="89" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="89">
+        <label>Scenario&lt; MapNode &gt;</label>
+        <link refid="classrobot__nagivation_1_1_scenario_3_01_t_01_4"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="90">
+        <label>robot_nagivation.MapScenario</label>
+        <link refid="classrobot__nagivation_1_1_map_scenario"/>
+        <childnode refid="91" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="91">
+        <label>Scenario&lt; MapNode &gt;</label>
+        <link refid="classrobot__nagivation_1_1_scenario_3_01_t_01_4"/>
+      </node>
+    </collaborationgraph>
+    <location file="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/MapScenario.cs" line="16" column="1" bodyfile="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/MapScenario.cs" bodystart="15" bodyend="26"/>
+    <listofallmembers>
+      <member refid="classrobot__nagivation_1_1_map_scenario_1aca7fe8acf07b7a7e083c46e971cbdc7d" prot="public" virt="non-virtual"><scope>robot_nagivation::MapScenario</scope><name>DeterminePossibleMoves</name></member>
+      <member refid="classrobot__nagivation_1_1_scenario_3_01_t_01_4_1a1920a15fe9943189fe265aad26438a6d" prot="public" virt="pure-virtual" ambiguityscope="robot_nagivation::Scenario&lt; T &gt;."><scope>robot_nagivation::MapScenario</scope><name>DeterminePossibleMoves</name></member>
+      <member refid="classrobot__nagivation_1_1_map_scenario_1ace9aca56532786b41844c37cab33696f" prot="public" virt="non-virtual"><scope>robot_nagivation::MapScenario</scope><name>isSolved</name></member>
+      <member refid="classrobot__nagivation_1_1_scenario_3_01_t_01_4_1a4842434d1b12985003aa94a24da385a0" prot="public" virt="pure-virtual" ambiguityscope="robot_nagivation::Scenario&lt; T &gt;."><scope>robot_nagivation::MapScenario</scope><name>isSolved</name></member>
+      <member refid="classrobot__nagivation_1_1_scenario_3_01_t_01_4_1add7082dd04da981174d512ca99b211d1" prot="public" virt="non-virtual"><scope>robot_nagivation::MapScenario</scope><name>LogSolution</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="classrobot__nagivation_1_1_map_node" kind="class" prot="public">
+    <compoundname>robot_nagivation::MapNode</compoundname>
+    <basecompoundref refid="classrobot__nagivation_1_1_state_data" prot="public" virt="non-virtual">robot_nagivation.StateData</basecompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classrobot__nagivation_1_1_map_node_1a66a48ad334c3cc983dbd502818cc2256" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>override int</type>
+        <definition>override int robot_nagivation.MapNode.GetCost</definition>
+        <argsstring>()</argsstring>
+        <name>GetCost</name>
+        <reimplements refid="classrobot__nagivation_1_1_state_data_1adff7b1f4843d96d00d714e1d97460f5b">GetCost</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/MapScenario.cs" line="10" column="1" bodyfile="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/MapScenario.cs" bodystart="10" bodyend="13"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="80">
+        <label>robot_nagivation.MapNode</label>
+        <link refid="classrobot__nagivation_1_1_map_node"/>
+        <childnode refid="81" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="81">
+        <label>StateData</label>
+        <link refid="classrobot__nagivation_1_1_state_data"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="82">
+        <label>robot_nagivation.MapNode</label>
+        <link refid="classrobot__nagivation_1_1_map_node"/>
+        <childnode refid="83" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="83">
+        <label>StateData</label>
+        <link refid="classrobot__nagivation_1_1_state_data"/>
+      </node>
+    </collaborationgraph>
+    <location file="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/MapScenario.cs" line="9" column="1" bodyfile="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/MapScenario.cs" bodystart="8" bodyend="14"/>
+    <listofallmembers>
+      <member refid="classrobot__nagivation_1_1_map_node_1a66a48ad334c3cc983dbd502818cc2256" prot="public" virt="virtual"><scope>robot_nagivation::MapNode</scope><name>GetCost</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

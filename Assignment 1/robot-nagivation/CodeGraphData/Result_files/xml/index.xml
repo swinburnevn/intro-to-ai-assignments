@@ -1,0 +1,307 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.8.6">
+  <compound refid="classrobot__nagivation_1_1_agent" kind="class"><name>robot_nagivation::Agent</name>
+    <member refid="classrobot__nagivation_1_1_agent_1a66c8341bab188bd627de0e853c757dfa" kind="variable"><name>_agentData</name></member>
+    <member refid="classrobot__nagivation_1_1_agent_1a7f38c204e7b3f7a47e5b8ede1a689f07" kind="variable"><name>_state</name></member>
+    <member refid="classrobot__nagivation_1_1_agent_1aecf7b2ffd788f1023b703ccdf401bd0d" kind="variable"><name>_name</name></member>
+    <member refid="classrobot__nagivation_1_1_agent_1a671fa09920aaa98fff04b267e696777a" kind="variable"><name>_agentDelay</name></member>
+    <member refid="classrobot__nagivation_1_1_agent_1a84d6d0f727f66f9f812dd27ba5f79ebe" kind="property"><name>AgentData</name></member>
+    <member refid="classrobot__nagivation_1_1_agent_1aefa1e338b6de4fba883b32e56074636a" kind="property"><name>State</name></member>
+    <member refid="classrobot__nagivation_1_1_agent_1ad473c20496bc2a969bb57a03d3e09e33" kind="property"><name>AgentDelay</name></member>
+    <member refid="classrobot__nagivation_1_1_agent_1a1459949e729b65404d111d97339de425" kind="property"><name>Name</name></member>
+    <member refid="classrobot__nagivation_1_1_agent_1a0a2dcf56fe39d7f405fa311c168d6bbc" kind="function"><name>Initialise</name></member>
+    <member refid="classrobot__nagivation_1_1_agent_1a604391fa53bb7bd17a4438733becfcbc" kind="function"><name>next</name></member>
+    <member refid="classrobot__nagivation_1_1_agent_1a1af24ba731b461b5d43ee00913b11e12" kind="function"><name>UpdateInternalHeap</name></member>
+    <member refid="classrobot__nagivation_1_1_agent_1a46a1d5bf27b3da51fc6b6dd8dc2d0a89" kind="function"><name>UpdateInternalHeap</name></member>
+    <member refid="classrobot__nagivation_1_1_agent_1a9e903cd36931925900ae5a0f58a68cfc" kind="function"><name>UpdateInternalHeap</name></member>
+    <member refid="classrobot__nagivation_1_1_agent_1a54d11264757d82422434b9d923d68989" kind="function"><name>HeuristicFunction</name></member>
+    <member refid="classrobot__nagivation_1_1_agent_1a26ec5591b104dd8762d37ae6d4c7e3d2" kind="function"><name>CostFunction</name></member>
+    <member refid="classrobot__nagivation_1_1_agent_1a2ffd1becb607062be39269cf9aacc919" kind="function"><name>IsGoalNode</name></member>
+    <member refid="classrobot__nagivation_1_1_agent_1ab7971e8a5481b2afff66994c1d1eba81" kind="function"><name>IsFinished</name></member>
+    <member refid="classrobot__nagivation_1_1_agent_1adeb6cf10c5c034fa14050f756e7f979f" kind="function"><name>DetermineMoveSet</name></member>
+    <member refid="classrobot__nagivation_1_1_agent_1adc4973dc07a8d6b8ba9b0eff77e77993" kind="function"><name>DetermineAgentPath</name></member>
+    <member refid="classrobot__nagivation_1_1_agent_1a69d8d416d09986f836ddb69fc3e90b58" kind="function"><name>WithinMap</name></member>
+    <member refid="classrobot__nagivation_1_1_agent_1a6520c09f81e71360fbe5471c9d7a6364" kind="function"><name>SearchSurroundingNodes</name></member>
+  </compound>
+  <compound refid="classrobot__nagivation_1_1_agent_data" kind="class"><name>robot_nagivation::AgentData</name>
+    <member refid="classrobot__nagivation_1_1_agent_data_1a24f11478084277b9200189181a76f271" kind="variable"><name>_determinedMoveSet</name></member>
+    <member refid="classrobot__nagivation_1_1_agent_data_1a0d67429520990e2fb25a860ab20b731b" kind="variable"><name>_searchedPos</name></member>
+    <member refid="classrobot__nagivation_1_1_agent_data_1a89fc0ef834ddeca029b665dc5e5c8115" kind="variable"><name>_posToSearch</name></member>
+    <member refid="classrobot__nagivation_1_1_agent_data_1aff267d9c7e8b6d07045471feebc28a30" kind="variable"><name>_path</name></member>
+    <member refid="classrobot__nagivation_1_1_agent_data_1a8b6d11a8fd560cfb03a3263e8743b4e8" kind="variable"><name>_rootNode</name></member>
+    <member refid="classrobot__nagivation_1_1_agent_data_1a7a9e545b62f6e5af873c6677d29845ae" kind="variable"><name>_internalHeap</name></member>
+    <member refid="classrobot__nagivation_1_1_agent_data_1af9c714efc0aac80c4b1aca6b0a4dbd5e" kind="variable"><name>_nodePath</name></member>
+    <member refid="classrobot__nagivation_1_1_agent_data_1add074c8dc3f1f9bca17c815cc7386ccf" kind="variable"><name>_searchedNodes</name></member>
+    <member refid="classrobot__nagivation_1_1_agent_data_1adca5e5bc1d075b6d05cd660ceda57b30" kind="variable"><name>_directionalMovementCost</name></member>
+    <member refid="classrobot__nagivation_1_1_agent_data_1ababf209f702c0b1bf37025d23f3d9308" kind="variable"><name>_agentDelay</name></member>
+    <member refid="classrobot__nagivation_1_1_agent_data_1a5f3ccca11c285a6e01f0d1c6c3ba6d9b" kind="property"><name>Steps</name></member>
+    <member refid="classrobot__nagivation_1_1_agent_data_1a076970d5c8843dc830e5f53515719d06" kind="property"><name>DeterminedMoveSet</name></member>
+    <member refid="classrobot__nagivation_1_1_agent_data_1a82300a4ee007c7b2610bdda3ab251a1e" kind="property"><name>SearchedPos</name></member>
+    <member refid="classrobot__nagivation_1_1_agent_data_1a7ff69650d6d3dbc51a45cb02c2aab508" kind="property"><name>PosToSearch</name></member>
+    <member refid="classrobot__nagivation_1_1_agent_data_1a8f7924f2cd9acc242d03a85729b255cf" kind="property"><name>NodePath</name></member>
+    <member refid="classrobot__nagivation_1_1_agent_data_1aec3ce56fb584af77ff5ac3a608791f32" kind="property"><name>RootNode</name></member>
+    <member refid="classrobot__nagivation_1_1_agent_data_1adfbfcff0e5b1dcbb7fdc8aed9ed78913" kind="property"><name>Path</name></member>
+    <member refid="classrobot__nagivation_1_1_agent_data_1a8f864688969f706f80dc6dce7e736b90" kind="property"><name>SearchedNodes</name></member>
+    <member refid="classrobot__nagivation_1_1_agent_data_1acba9477e80e54c0bf68834d755371ad9" kind="property"><name>InternalHeap</name></member>
+    <member refid="classrobot__nagivation_1_1_agent_data_1ad4af99677ae6a93edab0a6d253d54bdb" kind="property"><name>AgentDelay</name></member>
+    <member refid="classrobot__nagivation_1_1_agent_data_1a241445aff629c014634d50cf9ff03723" kind="property"><name>DirectionalMovementCost</name></member>
+    <member refid="classrobot__nagivation_1_1_agent_data_1a1f572304c89f77537baffe5b59fb0e06" kind="function"><name>AgentData</name></member>
+  </compound>
+  <compound refid="classrobot__nagivation_1_1_a_star_agent" kind="class"><name>robot_nagivation::AStarAgent</name>
+    <member refid="classrobot__nagivation_1_1_a_star_agent_1a1532e6a581b21dc2035e8fb44e46b1b9" kind="function"><name>Initialise</name></member>
+    <member refid="classrobot__nagivation_1_1_a_star_agent_1a298340352a5ace3c4f15972643033d59" kind="function"><name>CostFunction</name></member>
+  </compound>
+  <compound refid="classrobot__nagivation_1_1_breadth_first_agent" kind="class"><name>robot_nagivation::BreadthFirstAgent</name>
+    <member refid="classrobot__nagivation_1_1_breadth_first_agent_1a1be30fa9a986f89a16443d46d627351e" kind="variable"><name>_nodeQueue</name></member>
+    <member refid="classrobot__nagivation_1_1_breadth_first_agent_1a7f10a535108b9326894c3c55dfb87e24" kind="function"><name>BreadthFirstAgent</name></member>
+    <member refid="classrobot__nagivation_1_1_breadth_first_agent_1a9d5159e1e3458e4595f03d6ee57ca539" kind="function"><name>Initialise</name></member>
+    <member refid="classrobot__nagivation_1_1_breadth_first_agent_1a0228c3fa03ba1af014ac7768eb34373f" kind="function"><name>next</name></member>
+  </compound>
+  <compound refid="classrobot__nagivation_1_1_console_output" kind="class"><name>robot_nagivation::ConsoleOutput</name>
+    <member refid="classrobot__nagivation_1_1_console_output_1afd537ac58e37a3f904c34b4b8ddcfd13" kind="variable"><name>_data</name></member>
+    <member refid="classrobot__nagivation_1_1_console_output_1a58462eed2c00e944b1f4d441fab9b5bd" kind="function"><name>ConsoleOutput</name></member>
+    <member refid="classrobot__nagivation_1_1_console_output_1ae7898d6e07b232e6ce784b72b6f35d60" kind="function"><name>Close</name></member>
+    <member refid="classrobot__nagivation_1_1_console_output_1a6cc476a766f9bb9308af80f29105a77c" kind="function"><name>Draw</name></member>
+  </compound>
+  <compound refid="classrobot__nagivation_1_1_console_view" kind="class"><name>robot_nagivation::ConsoleView</name>
+    <member refid="classrobot__nagivation_1_1_console_view_1ac278881a52e097a6482a7042d5d4633c" kind="variable"><name>_data</name></member>
+    <member refid="classrobot__nagivation_1_1_console_view_1a605016f45940ad51cd3c1663b33e3f83" kind="variable"><name>_consoleDisplayValuePairs</name></member>
+    <member refid="classrobot__nagivation_1_1_console_view_1afc0b3046d53494b91c2b8cee64a33215" kind="function"><name>ConsoleView</name></member>
+    <member refid="classrobot__nagivation_1_1_console_view_1afe06a347186c7f74cd75b8e7883f393d" kind="function"><name>Close</name></member>
+    <member refid="classrobot__nagivation_1_1_console_view_1a513a4916f5c6754d08092ad99d01e7b2" kind="function"><name>Draw</name></member>
+  </compound>
+  <compound refid="classrobot__nagivation_1_1_depth_first_agent" kind="class"><name>robot_nagivation::DepthFirstAgent</name>
+    <member refid="classrobot__nagivation_1_1_depth_first_agent_1ac30cf51bc07e5b928ec7323a083a7488" kind="variable"><name>_nodeStack</name></member>
+    <member refid="classrobot__nagivation_1_1_depth_first_agent_1abb9343e3b1a5e0d266de3d5445ec3f0d" kind="function"><name>DepthFirstAgent</name></member>
+    <member refid="classrobot__nagivation_1_1_depth_first_agent_1ab0044b1146ff8bc1cc9f97e0e4ed0159" kind="function"><name>Initialise</name></member>
+    <member refid="classrobot__nagivation_1_1_depth_first_agent_1a600035f1635a9e0979cb249ea7ed1b99" kind="function"><name>next</name></member>
+  </compound>
+  <compound refid="classrobot__nagivation_1_1_game_model" kind="class"><name>robot_nagivation::GameModel</name>
+    <member refid="classrobot__nagivation_1_1_game_model_1a51ac3197bdf5464a8196c1010d272f79" kind="variable"><name>_data</name></member>
+    <member refid="classrobot__nagivation_1_1_game_model_1ab703405654c7f1d527853c31a7e0fee8" kind="function"><name>GameModel</name></member>
+    <member refid="classrobot__nagivation_1_1_game_model_1aa8a4bf67486c33898b7a30a0b0ff720f" kind="function"><name>Initialise</name></member>
+    <member refid="classrobot__nagivation_1_1_game_model_1a8d6433d4c6cace4d12b487508369b265" kind="function"><name>WithinMap</name></member>
+    <member refid="classrobot__nagivation_1_1_game_model_1ae6101cf0f1ebe6a58eaacf27b97c9212" kind="function"><name>MoveAgent</name></member>
+    <member refid="classrobot__nagivation_1_1_game_model_1af00220e7b11a1d082879480b0c149b58" kind="function"><name>CreatePercepts</name></member>
+    <member refid="classrobot__nagivation_1_1_game_model_1a60f9c532ddd3978cc426a8bf4cc5c5d3" kind="function"><name>Run</name></member>
+  </compound>
+  <compound refid="classrobot__nagivation_1_1_greedy_first_agent" kind="class"><name>robot_nagivation::GreedyFirstAgent</name>
+    <member refid="classrobot__nagivation_1_1_greedy_first_agent_1a642688b9b505a22dc001016e30727db5" kind="variable"><name>_frontierList</name></member>
+    <member refid="classrobot__nagivation_1_1_greedy_first_agent_1afdbf7d765994bb122e8387a6ec24247d" kind="function"><name>GreedyFirstAgent</name></member>
+    <member refid="classrobot__nagivation_1_1_greedy_first_agent_1ab871eecf3386b12e428633fd8a7d90ac" kind="function"><name>Initialise</name></member>
+    <member refid="classrobot__nagivation_1_1_greedy_first_agent_1a72447d38d7eaf51a29c89111e7754654" kind="function"><name>HeuristicFunction</name></member>
+    <member refid="classrobot__nagivation_1_1_greedy_first_agent_1aab4edec650137abb08222ed706638d99" kind="function"><name>next</name></member>
+  </compound>
+  <compound refid="interfacerobot__nagivation_1_1_i_map_parser" kind="interface"><name>robot_nagivation::IMapParser</name>
+    <member refid="interfacerobot__nagivation_1_1_i_map_parser_1a915e4e22fe60ae1941fe0d737be1bc67" kind="function"><name>ReadMapFromFile</name></member>
+  </compound>
+  <compound refid="interfacerobot__nagivation_1_1_i_model" kind="interface"><name>robot_nagivation::IModel</name>
+    <member refid="interfacerobot__nagivation_1_1_i_model_1ab670f457bba2f2be2beea78bc5377331" kind="function"><name>Initialise</name></member>
+    <member refid="interfacerobot__nagivation_1_1_i_model_1a87446d3e5d9994d87c2de8369ff1c489" kind="function"><name>Run</name></member>
+  </compound>
+  <compound refid="classrobot__nagivation_1_1_iterative_d_d_f_s_agent" kind="class"><name>robot_nagivation::IterativeDDFSAgent</name>
+    <member refid="classrobot__nagivation_1_1_iterative_d_d_f_s_agent_1a840ed8927ad8e84e9988a761bd0f0f6d" kind="variable"><name>_targetDepth</name></member>
+    <member refid="classrobot__nagivation_1_1_iterative_d_d_f_s_agent_1accd473d7db0a3b565de1fb1438d7706c" kind="variable"><name>_currentDepth</name></member>
+    <member refid="classrobot__nagivation_1_1_iterative_d_d_f_s_agent_1a5559e427fd433e98e59cb05145d2779e" kind="variable"><name>_leadingDepth</name></member>
+    <member refid="classrobot__nagivation_1_1_iterative_d_d_f_s_agent_1a660f7db83ab485abc5f73e8495c801b9" kind="function"><name>Initialise</name></member>
+    <member refid="classrobot__nagivation_1_1_iterative_d_d_f_s_agent_1ac0450ce108c2687dcae4ec8b8eb5870c" kind="function"><name>DepthFunction</name></member>
+    <member refid="classrobot__nagivation_1_1_iterative_d_d_f_s_agent_1a8ef7371539363c3f0f89f7e6bf9b98f2" kind="function"><name>next</name></member>
+  </compound>
+  <compound refid="interfacerobot__nagivation_1_1_i_view" kind="interface"><name>robot_nagivation::IView</name>
+    <member refid="interfacerobot__nagivation_1_1_i_view_1a1347754747e0409e7233ae8e3a3f6d85" kind="function"><name>Draw</name></member>
+    <member refid="interfacerobot__nagivation_1_1_i_view_1abe4af7e6eae747f7d4369fe672977897" kind="function"><name>Close</name></member>
+  </compound>
+  <compound refid="classrobot__nagivation_1_1_map" kind="class"><name>robot_nagivation::Map</name>
+    <member refid="classrobot__nagivation_1_1_map_1a2e1760077ee0c0bf47a9b676f200142d" kind="variable"><name>_agentPos</name></member>
+    <member refid="classrobot__nagivation_1_1_map_1ad8786e5528ed2a288452b47a980aacb0" kind="variable"><name>_size</name></member>
+    <member refid="classrobot__nagivation_1_1_map_1a81e33c741a3764e7acda79968552098d" kind="variable"><name>_mapMatrix</name></member>
+    <member refid="classrobot__nagivation_1_1_map_1aebb1fcb95319d468564107dd5c334ee7" kind="variable"><name>_goalPositions</name></member>
+    <member refid="classrobot__nagivation_1_1_map_1a75a51d78cca0afff1aaf0bb6a7facbef" kind="property"><name>GoalPos</name></member>
+    <member refid="classrobot__nagivation_1_1_map_1a23fb5dc553546af36f8718fbf0576a02" kind="property"><name>MapMatrix</name></member>
+    <member refid="classrobot__nagivation_1_1_map_1a54bd7016194129978c1e6392c9ae9fbd" kind="property"><name>AgentPos</name></member>
+    <member refid="classrobot__nagivation_1_1_map_1a99bad09b7de8ebef1fa227c83c07120e" kind="function"><name>Map</name></member>
+    <member refid="classrobot__nagivation_1_1_map_1a129ad89abbb58fbca25d7bac300c68c2" kind="function"><name>Map</name></member>
+  </compound>
+  <compound refid="classrobot__nagivation_1_1_map_node" kind="class"><name>robot_nagivation::MapNode</name>
+    <member refid="classrobot__nagivation_1_1_map_node_1a66a48ad334c3cc983dbd502818cc2256" kind="function"><name>GetCost</name></member>
+  </compound>
+  <compound refid="classrobot__nagivation_1_1_map_parser" kind="class"><name>robot_nagivation::MapParser</name>
+    <member refid="classrobot__nagivation_1_1_map_parser_1ae1fc066319d337fccb848eeb202b53ec" kind="function"><name>ReadMapFromFile</name></member>
+  </compound>
+  <compound refid="classrobot__nagivation_1_1_map_scenario" kind="class"><name>robot_nagivation::MapScenario</name>
+    <member refid="classrobot__nagivation_1_1_map_scenario_1aca7fe8acf07b7a7e083c46e971cbdc7d" kind="function"><name>DeterminePossibleMoves</name></member>
+    <member refid="classrobot__nagivation_1_1_map_scenario_1ace9aca56532786b41844c37cab33696f" kind="function"><name>isSolved</name></member>
+  </compound>
+  <compound refid="classrobot__nagivation_1_1_node_3_01_t_01_4" kind="class"><name>robot_nagivation::Node&lt; T &gt;</name>
+    <member refid="classrobot__nagivation_1_1_node_3_01_t_01_4_1ab63880f5ddcebd68697e418ac382c757" kind="variable"><name>_data</name></member>
+    <member refid="classrobot__nagivation_1_1_node_3_01_t_01_4_1af4e12d1aa3baaeafee420b6fc1f83766" kind="variable"><name>_parent</name></member>
+    <member refid="classrobot__nagivation_1_1_node_3_01_t_01_4_1a86da901d3594e1febd328d4d4a3316a6" kind="variable"><name>_children</name></member>
+    <member refid="classrobot__nagivation_1_1_node_3_01_t_01_4_1a236e9c5a315ae4dabbc28b1848ccdcfd" kind="variable"><name>_message</name></member>
+    <member refid="classrobot__nagivation_1_1_node_3_01_t_01_4_1a4010c03ade096eedef2182bc11b3c523" kind="variable"><name>_isOnPath</name></member>
+    <member refid="classrobot__nagivation_1_1_node_3_01_t_01_4_1a64752ad0c3472aedc833af6f7a59f598" kind="variable"><name>_pos</name></member>
+    <member refid="classrobot__nagivation_1_1_node_3_01_t_01_4_1a041c3f6ddd89030fed08e61bee940a48" kind="variable"><name>_cost</name></member>
+    <member refid="classrobot__nagivation_1_1_node_3_01_t_01_4_1a6d1a5903d5a56a38d0b73fb4cef2a69d" kind="property"><name>Data</name></member>
+    <member refid="classrobot__nagivation_1_1_node_3_01_t_01_4_1a5169b0dcabc02a2156e691c5158e4ea5" kind="property"><name>Pos</name></member>
+    <member refid="classrobot__nagivation_1_1_node_3_01_t_01_4_1afaace4716d761bf88fce652d36d90069" kind="property"><name>Parent</name></member>
+    <member refid="classrobot__nagivation_1_1_node_3_01_t_01_4_1a8f4e4ee02444c6c7529877d5a68b452d" kind="property"><name>Message</name></member>
+    <member refid="classrobot__nagivation_1_1_node_3_01_t_01_4_1a5080dc272467c8533897095605757266" kind="property"><name>Children</name></member>
+    <member refid="classrobot__nagivation_1_1_node_3_01_t_01_4_1a0d857eadde97e7d5a8790a42637f3502" kind="property"><name>IsOnPath</name></member>
+    <member refid="classrobot__nagivation_1_1_node_3_01_t_01_4_1a05eb4fd663f29ee18cd627e77a921528" kind="property"><name>Cost</name></member>
+    <member refid="classrobot__nagivation_1_1_node_3_01_t_01_4_1a0db7e76bf942ef68fb6cf812ba803d6f" kind="function"><name>Node</name></member>
+    <member refid="classrobot__nagivation_1_1_node_3_01_t_01_4_1a0ee39b680ac9b03646129f75c8021190" kind="function"><name>ToString</name></member>
+    <member refid="classrobot__nagivation_1_1_node_3_01_t_01_4_1a68c8260d711bed5017cd90404dd80d09" kind="function"><name>Node</name></member>
+    <member refid="classrobot__nagivation_1_1_node_3_01_t_01_4_1a49d153b2d060b7480d021b1c3df4b3d6" kind="function"><name>Node</name></member>
+  </compound>
+  <compound refid="classrobot__nagivation_1_1_node_comparer" kind="class"><name>robot_nagivation::NodeComparer</name>
+    <member refid="classrobot__nagivation_1_1_node_comparer_1a3a47d659b68a63d1b82a3c960e0385d8" kind="function"><name>Compare</name></member>
+  </compound>
+  <compound refid="classrobot__nagivation_1_1_percepts" kind="class"><name>robot_nagivation::Percepts</name>
+    <member refid="classrobot__nagivation_1_1_percepts_1a90508071a7589269fe9b172970b79f63" kind="variable"><name>_agentPos</name></member>
+    <member refid="classrobot__nagivation_1_1_percepts_1aff52c87e8477b7b70ee58112a966eb60" kind="variable"><name>_mapMatrix</name></member>
+    <member refid="classrobot__nagivation_1_1_percepts_1ae80073c4c44371576b091a6d291988e4" kind="variable"><name>_goalPositions</name></member>
+    <member refid="classrobot__nagivation_1_1_percepts_1a52ee3c79d17df7ad908a61ba9979c04d" kind="property"><name>AgentPos</name></member>
+    <member refid="classrobot__nagivation_1_1_percepts_1a215f4b712fba4dcab1ba5c20eaf505ca" kind="property"><name>MapMatrix</name></member>
+    <member refid="classrobot__nagivation_1_1_percepts_1aaf36077e5fa7ea470a79b76e0472e73f" kind="property"><name>GoalPositions</name></member>
+  </compound>
+  <compound refid="classrobot__nagivation_1_1_program" kind="class"><name>robot_nagivation::Program</name>
+    <member refid="classrobot__nagivation_1_1_program_1a01723c88590cb1abbb13fc9edbc069ef" kind="function"><name>Main</name></member>
+  </compound>
+  <compound refid="classrobot__nagivation_1_1_program_data" kind="class"><name>robot_nagivation::ProgramData</name>
+    <member refid="classrobot__nagivation_1_1_program_data_1a14dff3d8d263a0e36991415ec2e3508c" kind="variable"><name>_agent</name></member>
+    <member refid="classrobot__nagivation_1_1_program_data_1a65f9220b9add74537acce12924bbd00e" kind="variable"><name>_map</name></member>
+    <member refid="classrobot__nagivation_1_1_program_data_1a8bfef6bf7f237c8a57c3688121b36abd" kind="variable"><name>_finished</name></member>
+    <member refid="classrobot__nagivation_1_1_program_data_1accd0d430f0820df85c00a7fb5b9b6852" kind="variable"><name>_windowRequestClosed</name></member>
+    <member refid="classrobot__nagivation_1_1_program_data_1a0c140ba987bb15a7d9942e6f4964ef06" kind="variable"><name>_agentDecisions</name></member>
+    <member refid="classrobot__nagivation_1_1_program_data_1a0a4f7f8a6fe0f58683dbe62cea2d6373" kind="variable"><name>_outputName</name></member>
+    <member refid="classrobot__nagivation_1_1_program_data_1a77b40aba5830476cacb947b1b13dd057" kind="variable"><name>_displayMode</name></member>
+    <member refid="classrobot__nagivation_1_1_program_data_1a548147670331af0cf0002d27f5406eac" kind="property"><name>Agent</name></member>
+    <member refid="classrobot__nagivation_1_1_program_data_1ae15d3ffc1f601b2405b87d014b804779" kind="property"><name>Map</name></member>
+    <member refid="classrobot__nagivation_1_1_program_data_1a5307842949f56b62463cdf83b33edef0" kind="property"><name>AgentDecisions</name></member>
+    <member refid="classrobot__nagivation_1_1_program_data_1a2acac9872111ac3f5595e7477f09cabf" kind="property"><name>Finished</name></member>
+    <member refid="classrobot__nagivation_1_1_program_data_1acf848c6b2877728928c46b22a066b7c5" kind="property"><name>WindowRequestClosed</name></member>
+    <member refid="classrobot__nagivation_1_1_program_data_1aeacf7e26dd383d6336a2b8bcfb08d49c" kind="property"><name>DisplayMode</name></member>
+    <member refid="classrobot__nagivation_1_1_program_data_1abedc3d1b067728cdec35e0a882b02021" kind="property"><name>OutputName</name></member>
+    <member refid="classrobot__nagivation_1_1_program_data_1a0d88f4eb1cfd542b5f3af3970c5aa8d7" kind="function"><name>ProgramData</name></member>
+  </compound>
+  <compound refid="classrobot__nagivation_1_1_random_agent" kind="class"><name>robot_nagivation::RandomAgent</name>
+    <member refid="classrobot__nagivation_1_1_random_agent_1a26ebc81eb588c8eb66773663f773d2d5" kind="function"><name>Initialise</name></member>
+    <member refid="classrobot__nagivation_1_1_random_agent_1a93fa997397569278a0089a030e3dae7e" kind="function"><name>next</name></member>
+  </compound>
+  <compound refid="classrobot__nagivation_1_1_scenario_3_01_t_01_4" kind="class"><name>robot_nagivation::Scenario&lt; T &gt;</name>
+    <member refid="classrobot__nagivation_1_1_scenario_3_01_t_01_4_1a1920a15fe9943189fe265aad26438a6d" kind="function"><name>DeterminePossibleMoves</name></member>
+    <member refid="classrobot__nagivation_1_1_scenario_3_01_t_01_4_1a4842434d1b12985003aa94a24da385a0" kind="function"><name>isSolved</name></member>
+    <member refid="classrobot__nagivation_1_1_scenario_3_01_t_01_4_1add7082dd04da981174d512ca99b211d1" kind="function"><name>LogSolution</name></member>
+  </compound>
+  <compound refid="classrobot__nagivation_1_1_s_f_m_l_view" kind="class"><name>robot_nagivation::SFMLView</name>
+    <member refid="classrobot__nagivation_1_1_s_f_m_l_view_1aba487f7b263fb354ef71b173dc529e49" kind="variable"><name>_data</name></member>
+    <member refid="classrobot__nagivation_1_1_s_f_m_l_view_1a663166960a756ce6a915fbf26bdc9e6c" kind="variable"><name>_window</name></member>
+    <member refid="classrobot__nagivation_1_1_s_f_m_l_view_1a14518017532096cc2d9fa674956edbfd" kind="variable"><name>_nodeWindow</name></member>
+    <member refid="classrobot__nagivation_1_1_s_f_m_l_view_1a11f817a3ea0b4c64b67f83517840e9c9" kind="variable"><name>_nodeView</name></member>
+    <member refid="classrobot__nagivation_1_1_s_f_m_l_view_1a748cd2c59db64688c31fb4ad008ec1a8" kind="variable"><name>_nodeViewPos</name></member>
+    <member refid="classrobot__nagivation_1_1_s_f_m_l_view_1a1dce79d2d7fce6f623e0def98940fa6f" kind="variable"><name>_font</name></member>
+    <member refid="classrobot__nagivation_1_1_s_f_m_l_view_1a8a321869cef3b11b990ac3af9e789c39" kind="variable"><name>_windowSize</name></member>
+    <member refid="classrobot__nagivation_1_1_s_f_m_l_view_1a695adf1d2eab9d1ab37399d00cc8edba" kind="function"><name>SFMLView</name></member>
+    <member refid="classrobot__nagivation_1_1_s_f_m_l_view_1a0bb6b8339d08e4108bf7ae53ba0a93ea" kind="function"><name>TakeScreenshot</name></member>
+    <member refid="classrobot__nagivation_1_1_s_f_m_l_view_1a220cd99d67cd2603dfda004f668555ce" kind="function"><name>TakeScreenshotOfWindows</name></member>
+    <member refid="classrobot__nagivation_1_1_s_f_m_l_view_1a2e4e32e03699935589aa813313f1aaec" kind="function"><name>SetWindowSize</name></member>
+    <member refid="classrobot__nagivation_1_1_s_f_m_l_view_1acf981fe8956b131c2588cbdf589fc8ca" kind="function"><name>HashedPosColor</name></member>
+    <member refid="classrobot__nagivation_1_1_s_f_m_l_view_1af9f8e4dc8a6b79d40b01a23d11cc579a" kind="function"><name>DrawNodeDisplay</name></member>
+    <member refid="classrobot__nagivation_1_1_s_f_m_l_view_1a2e68cad55af91b78d2a070ee94287587" kind="function"><name>Draw</name></member>
+    <member refid="classrobot__nagivation_1_1_s_f_m_l_view_1af784e06f5e48f1aa4485fd38d99b1229" kind="function"><name>Close</name></member>
+    <member refid="classrobot__nagivation_1_1_s_f_m_l_view_1a7ae4d5671bc3cd75874b98759871ec76" kind="function"><name>DrawBackground</name></member>
+    <member refid="classrobot__nagivation_1_1_s_f_m_l_view_1a14ef23d2cab78818f2e43fe77954ea11" kind="function"><name>Window_KeyPressed</name></member>
+    <member refid="classrobot__nagivation_1_1_s_f_m_l_view_1a83671db69d44e75a12f48c2fb011c412" kind="function"><name>Window_MouseWheeled</name></member>
+  </compound>
+  <compound refid="classrobot__nagivation_1_1_state_3_01_t_01_4" kind="class"><name>robot_nagivation::State&lt; T &gt;</name>
+    <member refid="classrobot__nagivation_1_1_state_3_01_t_01_4_1aff56330bcae348bd5d98e26d16d18d9a" kind="variable"><name>_data</name></member>
+    <member refid="classrobot__nagivation_1_1_state_3_01_t_01_4_1ae5aaaf580d7ac9527dadf889691fb23a" kind="variable"><name>_parent</name></member>
+    <member refid="classrobot__nagivation_1_1_state_3_01_t_01_4_1a0ccb07628a7c111419ae2c76bf40997a" kind="variable"><name>_message</name></member>
+    <member refid="classrobot__nagivation_1_1_state_3_01_t_01_4_1a4735c6cd78188a8fb9cc4863628a9c14" kind="variable"><name>_cost</name></member>
+    <member refid="classrobot__nagivation_1_1_state_3_01_t_01_4_1ad7bc34563a7ace4a00131d102f37feb0" kind="property"><name>Parent</name></member>
+    <member refid="classrobot__nagivation_1_1_state_3_01_t_01_4_1a463daf58cb0bf86eca3efbab2f8cb194" kind="property"><name>Message</name></member>
+    <member refid="classrobot__nagivation_1_1_state_3_01_t_01_4_1a07c310a3962ef610128a8822ece6fa08" kind="property"><name>Cost</name></member>
+    <member refid="classrobot__nagivation_1_1_state_3_01_t_01_4_1a8bd405d5dcded4aba857e9c128a22b08" kind="function"><name>State</name></member>
+    <member refid="classrobot__nagivation_1_1_state_3_01_t_01_4_1a02873f538112456e037316700d93c76f" kind="function"><name>State</name></member>
+  </compound>
+  <compound refid="classrobot__nagivation_1_1_state_data" kind="class"><name>robot_nagivation::StateData</name>
+    <member refid="classrobot__nagivation_1_1_state_data_1adff7b1f4843d96d00d714e1d97460f5b" kind="function"><name>GetCost</name></member>
+  </compound>
+  <compound refid="classrobot__nagivation_1_1_uniform_cost_agent" kind="class"><name>robot_nagivation::UniformCostAgent</name>
+    <member refid="classrobot__nagivation_1_1_uniform_cost_agent_1af032e4379fe506d572c0e1e6ece0796f" kind="variable"><name>_priorityQueue</name></member>
+    <member refid="classrobot__nagivation_1_1_uniform_cost_agent_1a8aed5c48c9a947b89ec6dc64edce1180" kind="function"><name>Initialise</name></member>
+    <member refid="classrobot__nagivation_1_1_uniform_cost_agent_1abead5fc61e57a706e0cf12810c2dd4ea" kind="function"><name>CostFunction</name></member>
+    <member refid="classrobot__nagivation_1_1_uniform_cost_agent_1a38da1f1775b469b8b1b1f3d387649e51" kind="function"><name>UpdateInternalHeap</name></member>
+    <member refid="classrobot__nagivation_1_1_uniform_cost_agent_1acbb206617e54a5b45fe59b01a7975759" kind="function"><name>next</name></member>
+  </compound>
+  <compound refid="namespace_c5" kind="namespace"><name>C5</name>
+  </compound>
+  <compound refid="namespacerobot__nagivation" kind="namespace"><name>robot_nagivation</name>
+    <member refid="namespacerobot__nagivation_1af592e06c3cbf2ce77a56daf0dddd3489" kind="enum"><name>AgentState</name></member>
+    <member refid="namespacerobot__nagivation_1af592e06c3cbf2ce77a56daf0dddd3489a843627586c62e389041a4d8800143974" kind="enumvalue"><name>Searching</name></member>
+    <member refid="namespacerobot__nagivation_1af592e06c3cbf2ce77a56daf0dddd3489adefe967ad0373b2274fc298f19125ca7" kind="enumvalue"><name>Moving</name></member>
+    <member refid="namespacerobot__nagivation_1af592e06c3cbf2ce77a56daf0dddd3489ab578b733cbb788fc6ad208314d2c4c2b" kind="enumvalue"><name>Lost</name></member>
+    <member refid="namespacerobot__nagivation_1af592e06c3cbf2ce77a56daf0dddd3489a8f3d10eb21bd36347c258679eba9e92b" kind="enumvalue"><name>Finished</name></member>
+    <member refid="namespacerobot__nagivation_1af592e06c3cbf2ce77a56daf0dddd3489ae599161956d626eda4cb0a5ffb85271c" kind="enumvalue"><name>Idle</name></member>
+    <member refid="namespacerobot__nagivation_1aa197a860415d9780f789297b94da1a1f" kind="enum"><name>TileType</name></member>
+    <member refid="namespacerobot__nagivation_1aa197a860415d9780f789297b94da1a1face2c8aed9c2fa0cfbed56cbda4d8bf07" kind="enumvalue"><name>Empty</name></member>
+    <member refid="namespacerobot__nagivation_1aa197a860415d9780f789297b94da1a1fa94e8a499539d1a472f3b5dbbb85508c0" kind="enumvalue"><name>Wall</name></member>
+    <member refid="namespacerobot__nagivation_1aa197a860415d9780f789297b94da1a1faa6122a65eaa676f700ae68d393054a37" kind="enumvalue"><name>Start</name></member>
+    <member refid="namespacerobot__nagivation_1aa197a860415d9780f789297b94da1a1fa12c74214cb4c18cf36d885303d6aa2e1" kind="enumvalue"><name>Goal</name></member>
+    <member refid="namespacerobot__nagivation_1aa197a860415d9780f789297b94da1a1fa7446050b848d839fe9847073ff94cfd6" kind="enumvalue"><name>Agent</name></member>
+    <member refid="namespacerobot__nagivation_1a5d3ca8bdf460392c95d3ccd667728564" kind="enum"><name>AgentActions</name></member>
+    <member refid="namespacerobot__nagivation_1a5d3ca8bdf460392c95d3ccd667728564a13348442cc6a27032d2b4aa28b75a5d3" kind="enumvalue"><name>Search</name></member>
+    <member refid="namespacerobot__nagivation_1a5d3ca8bdf460392c95d3ccd667728564a258f49887ef8d14ac268c92b02503aaa" kind="enumvalue"><name>Up</name></member>
+    <member refid="namespacerobot__nagivation_1a5d3ca8bdf460392c95d3ccd667728564a08a38277b0309070706f6652eeae9a53" kind="enumvalue"><name>Down</name></member>
+    <member refid="namespacerobot__nagivation_1a5d3ca8bdf460392c95d3ccd667728564a945d5e233cf7d6240f6b783b36a374ff" kind="enumvalue"><name>Left</name></member>
+    <member refid="namespacerobot__nagivation_1a5d3ca8bdf460392c95d3ccd667728564a92b09c7c48c520c3c55e497875da437c" kind="enumvalue"><name>Right</name></member>
+    <member refid="namespacerobot__nagivation_1a5d3ca8bdf460392c95d3ccd667728564ab578b733cbb788fc6ad208314d2c4c2b" kind="enumvalue"><name>Lost</name></member>
+  </compound>
+  <compound refid="namespace_s_f_m_l_1_1_graphics" kind="namespace"><name>SFML::Graphics</name>
+  </compound>
+  <compound refid="namespace_s_f_m_l_1_1_system" kind="namespace"><name>SFML::System</name>
+  </compound>
+  <compound refid="namespace_system" kind="namespace"><name>System</name>
+  </compound>
+  <compound refid="namespace_system_1_1_collections_1_1_generic" kind="namespace"><name>System::Collections::Generic</name>
+  </compound>
+  <compound refid="namespace_system_1_1_diagnostics_1_1_code_analysis" kind="namespace"><name>System::Diagnostics::CodeAnalysis</name>
+  </compound>
+  <compound refid="namespace_system_1_1_i_o" kind="namespace"><name>System::IO</name>
+  </compound>
+  <compound refid="namespace_system_1_1_numerics" kind="namespace"><name>System::Numerics</name>
+  </compound>
+  <compound refid="namespace_system_1_1_text" kind="namespace"><name>System::Text</name>
+  </compound>
+  <compound refid="namespace_system_1_1_text_1_1_regular_expressions" kind="namespace"><name>System::Text::RegularExpressions</name>
+  </compound>
+  <compound refid="namespace_system_1_1_threading" kind="namespace"><name>System::Threading</name>
+  </compound>
+  <compound refid="_agents_8cs" kind="file"><name>Agents.cs</name>
+  </compound>
+  <compound refid="_informed_agents_8cs" kind="file"><name>InformedAgents.cs</name>
+  </compound>
+  <compound refid="_map_8cs" kind="file"><name>Map.cs</name>
+  </compound>
+  <compound refid="_map_scenario_8cs" kind="file"><name>MapScenario.cs</name>
+  </compound>
+  <compound refid="_model_8cs" kind="file"><name>Model.cs</name>
+  </compound>
+  <compound refid="_program_8cs" kind="file"><name>Program.cs</name>
+  </compound>
+  <compound refid="_program_data_8cs" kind="file"><name>ProgramData.cs</name>
+  </compound>
+  <compound refid="_state_model_8cs" kind="file"><name>StateModel.cs</name>
+  </compound>
+  <compound refid="_view_8cs" kind="file"><name>View.cs</name>
+  </compound>
+  <compound refid="dir_546e3d158ba45ecc33ecddf98533d6a8" kind="dir"><name>C:/repos/intro-to-ai/Assignment 1</name>
+  </compound>
+  <compound refid="dir_4e591bb7794d611cce70267b2c6e0d8b" kind="dir"><name>C:/repos/intro-to-ai</name>
+  </compound>
+  <compound refid="dir_5c1f77b6d547333da17420fc98c4f94a" kind="dir"><name>C:/repos</name>
+  </compound>
+  <compound refid="dir_ae6f23f3880d9516717f5150212a40a3" kind="dir"><name>C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation</name>
+  </compound>
+  <compound refid="dir_6aabd4b2c03966574fd9aeb8e324c2f9" kind="dir"><name>C:/repos/intro-to-ai/Assignment 1/robot-nagivation</name>
+  </compound>
+</doxygenindex>

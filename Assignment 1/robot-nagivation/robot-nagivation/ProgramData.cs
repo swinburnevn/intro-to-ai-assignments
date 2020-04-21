@@ -73,6 +73,8 @@ namespace robot_nagivation
         private bool _windowRequestClosed;
         private List<AgentActions> _agentDecisions;
 
+        string _outputName;
+
         private bool _displayMode = false;
 
         public ProgramData()
@@ -88,6 +90,7 @@ namespace robot_nagivation
         public bool Finished { get => _finished; set => _finished = value; }
         public bool WindowRequestClosed { get => _windowRequestClosed; set => _windowRequestClosed = value; }
         public bool DisplayMode { get => _displayMode; set => _displayMode = value; }
+        public string OutputName { get => _outputName; set => _outputName = value; }
     }
 
 

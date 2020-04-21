@@ -6,6 +6,11 @@ namespace robot_nagivation
 {
     public class Program
     {
+
+
+
+        
+
         static int Main(string[] args)
         {
 
@@ -24,7 +29,7 @@ namespace robot_nagivation
             IModel _model = new GameModel(ref _data);
             IMapParser _mapParser = new MapParser();
 
-            string _outputFile = "101624964-output.txt";
+            string _outputFile = "101624964";
            
 
             // Slight pause for GUI, so windows can be re-arranged.
@@ -33,10 +38,18 @@ namespace robot_nagivation
             // Defaults to console view, if program specifically calls for GUI, it's then used.
             if (args.Length >= 3 )
             {
-                if (args[2] != null)
+                if (args[2] == "gui")
                 {
                     _view = new SFMLView(ref _data);
                     _data.DisplayMode = true;
+                }
+
+                // For running tests and obtaining the screenshots,
+                //  hence it "isn't for display"
+                if (args[2] == "ss")
+                {
+                    _view = new SFMLView(ref _data);
+                    _data.DisplayMode = false;
                 }
             }
                 
@@ -86,18 +99,27 @@ namespace robot_nagivation
             _model.Initialise();
             int count = 0;
 
+            _data.OutputName = args[1] + "_" + args[0];
+            _outputFile += "_" + args[1] + "_" + args[0];
+
             if (args.Length >= 5)
             {
-                if (args[3] != null)
+                if (args[4] == "true")
                 {
                     _data.Agent.AgentData.DirectionalMovementCost.Add(new Vector2i(0, -1), 4);
                     _data.Agent.AgentData.DirectionalMovementCost.Add(new Vector2i(1, 0), 2);
                     _data.Agent.AgentData.DirectionalMovementCost.Add(new Vector2i(-1, 0), 2);
                     _data.Agent.AgentData.DirectionalMovementCost.Add(new Vector2i(0, 1), 1);
+
+                    _data.OutputName += "_directional";
+                    _outputFile += "_directional";
                 }
             }
 
+
             
+
+
 
 
             if (args.Length >= 4)
@@ -125,11 +147,12 @@ namespace robot_nagivation
 
             }
             // Write to file, open streamwriter without append (overwrite)
-            System.IO.StreamWriter _file = new System.IO.StreamWriter(_outputFile, false);
+            System.IO.StreamWriter _file = new System.IO.StreamWriter(_outputFile+".txt", false);
             string line;
             // Write output to console, write output to file.
             line = $"{_outputFile} '{args[1]}: {_data.Agent.Name}' {_data.Agent.AgentData.SearchedPos.Count}";
             Console.WriteLine(line);
+            Console.WriteLine();
             _file.WriteLine(line);
 
             foreach (AgentActions action in _data.AgentDecisions)
@@ -147,9 +170,6 @@ namespace robot_nagivation
             }
             _file.Close();
 
-            
-
-            
 
 
 
@@ -163,6 +183,8 @@ namespace robot_nagivation
                     System.Threading.Thread.Sleep(10);
                 }
             }
+
+            _view.Close();
 
             Console.WriteLine();
 

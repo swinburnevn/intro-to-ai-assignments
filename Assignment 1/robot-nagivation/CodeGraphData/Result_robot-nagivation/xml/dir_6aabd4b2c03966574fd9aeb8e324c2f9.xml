@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="dir_6aabd4b2c03966574fd9aeb8e324c2f9" kind="dir">
+    <compoundname>C:/repos/intro-to-ai/Assignment 1/robot-nagivation</compoundname>
+    <innerdir refid="dir_ae6f23f3880d9516717f5150212a40a3">C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/"/>
+  </compounddef>
+</doxygen>

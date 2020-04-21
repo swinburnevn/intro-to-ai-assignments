@@ -1,0 +1,2 @@
+101624964_astar_robot-nav-map4.txt 'astar: A-Star Agent' 33
+No solution found

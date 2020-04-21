@@ -1,0 +1,2 @@
+101624964_gbfs_robot-nav-map2.txt 'gbfs: Greedy-Best First Agent' 33
+Right; Down; Right; Right; Right; Right; Right; Right; Right; Right; Right; Up; Up; Up; Up; Left; Left; Left; Left; Left; Left; Down; Down; Right; Right; 

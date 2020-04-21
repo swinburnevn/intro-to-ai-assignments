@@ -1,0 +1,87 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="classrobot__nagivation_1_1_scenario_3_01_t_01_4" kind="class" prot="public" abstract="yes">
+    <compoundname>robot_nagivation::Scenario&lt; T &gt;</compoundname>
+    <derivedcompoundref refid="classrobot__nagivation_1_1_map_scenario" prot="public" virt="non-virtual">robot_nagivation.MapScenario</derivedcompoundref>
+    <templateparamlist>
+      <param>
+        <type>T</type>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classrobot__nagivation_1_1_scenario_3_01_t_01_4_1a1920a15fe9943189fe265aad26438a6d" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>abstract List&lt; T &gt;</type>
+        <definition>abstract List&lt;T&gt; robot_nagivation.Scenario&lt; T &gt;.DeterminePossibleMoves</definition>
+        <argsstring>(State&lt; T &gt; state)</argsstring>
+        <name>DeterminePossibleMoves</name>
+        <param>
+          <type>State&lt; T &gt;</type>
+          <declname>state</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/StateModel.cs" line="57" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classrobot__nagivation_1_1_scenario_3_01_t_01_4_1a4842434d1b12985003aa94a24da385a0" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>abstract bool</type>
+        <definition>abstract bool robot_nagivation.Scenario&lt; T &gt;.isSolved</definition>
+        <argsstring>(T data)</argsstring>
+        <name>isSolved</name>
+        <param>
+          <type>T</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/StateModel.cs" line="59" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classrobot__nagivation_1_1_scenario_3_01_t_01_4_1add7082dd04da981174d512ca99b211d1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void robot_nagivation.Scenario&lt; T &gt;.LogSolution</definition>
+        <argsstring>(State&lt; T &gt; state)</argsstring>
+        <name>LogSolution</name>
+        <param>
+          <type>State&lt; T &gt;</type>
+          <declname>state</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/StateModel.cs" line="61" column="1" bodyfile="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/StateModel.cs" bodystart="61" bodyend="74"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="113">
+        <label>robot_nagivation.MapScenario</label>
+        <link refid="classrobot__nagivation_1_1_map_scenario"/>
+        <childnode refid="112" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="112">
+        <label>robot_nagivation.Scenario&lt; T &gt;</label>
+        <link refid="classrobot__nagivation_1_1_scenario_3_01_t_01_4"/>
+      </node>
+    </inheritancegraph>
+    <location file="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/StateModel.cs" line="56" column="1" bodyfile="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/StateModel.cs" bodystart="55" bodyend="75"/>
+    <listofallmembers>
+      <member refid="classrobot__nagivation_1_1_scenario_3_01_t_01_4_1a1920a15fe9943189fe265aad26438a6d" prot="public" virt="pure-virtual"><scope>robot_nagivation::Scenario&lt; T &gt;</scope><name>DeterminePossibleMoves</name></member>
+      <member refid="classrobot__nagivation_1_1_scenario_3_01_t_01_4_1a4842434d1b12985003aa94a24da385a0" prot="public" virt="pure-virtual"><scope>robot_nagivation::Scenario&lt; T &gt;</scope><name>isSolved</name></member>
+      <member refid="classrobot__nagivation_1_1_scenario_3_01_t_01_4_1add7082dd04da981174d512ca99b211d1" prot="public" virt="non-virtual"><scope>robot_nagivation::Scenario&lt; T &gt;</scope><name>LogSolution</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

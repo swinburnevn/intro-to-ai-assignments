@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="interfacerobot__nagivation_1_1_i_map_parser" kind="interface" prot="public">
+    <compoundname>robot_nagivation::IMapParser</compoundname>
+    <derivedcompoundref refid="classrobot__nagivation_1_1_map_parser" prot="public" virt="non-virtual">robot_nagivation.MapParser</derivedcompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="interfacerobot__nagivation_1_1_i_map_parser_1a915e4e22fe60ae1941fe0d737be1bc67" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classrobot__nagivation_1_1_map" kindref="compound">Map</ref></type>
+        <definition>Map robot_nagivation.IMapParser.ReadMapFromFile</definition>
+        <argsstring>(string filename)</argsstring>
+        <name>ReadMapFromFile</name>
+        <reimplementedby refid="classrobot__nagivation_1_1_map_parser_1ae1fc066319d337fccb848eeb202b53ec">ReadMapFromFile</reimplementedby>
+        <param>
+          <type>string</type>
+          <declname>filename</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/Map.cs" line="139" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="61">
+        <label>robot_nagivation.MapParser</label>
+        <link refid="classrobot__nagivation_1_1_map_parser"/>
+        <childnode refid="60" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="60">
+        <label>robot_nagivation.IMapParser</label>
+        <link refid="interfacerobot__nagivation_1_1_i_map_parser"/>
+      </node>
+    </inheritancegraph>
+    <location file="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/Map.cs" line="138" column="1" bodyfile="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/Map.cs" bodystart="137" bodyend="140"/>
+    <listofallmembers>
+      <member refid="interfacerobot__nagivation_1_1_i_map_parser_1a915e4e22fe60ae1941fe0d737be1bc67" prot="public" virt="non-virtual"><scope>robot_nagivation::IMapParser</scope><name>ReadMapFromFile</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

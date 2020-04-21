@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="dir_5c1f77b6d547333da17420fc98c4f94a" kind="dir">
+    <compoundname>C:/repos</compoundname>
+    <innerdir refid="dir_4e591bb7794d611cce70267b2c6e0d8b">C:/repos/intro-to-ai</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/repos/"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,103 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="classrobot__nagivation_1_1_percepts" kind="class" prot="public">
+    <compoundname>robot_nagivation::Percepts</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classrobot__nagivation_1_1_percepts_1a90508071a7589269fe9b172970b79f63" prot="private" static="no" mutable="no">
+        <type>Vector2i</type>
+        <definition>Vector2i robot_nagivation.Percepts._agentPos</definition>
+        <argsstring></argsstring>
+        <name>_agentPos</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/Model.cs" line="12" column="1" bodyfile="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/Model.cs" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classrobot__nagivation_1_1_percepts_1aff52c87e8477b7b70ee58112a966eb60" prot="private" static="no" mutable="no">
+        <type><ref refid="namespacerobot__nagivation_1aa197a860415d9780f789297b94da1a1f" kindref="member">TileType</ref>[,]</type>
+        <definition>TileType [,] robot_nagivation.Percepts._mapMatrix</definition>
+        <argsstring></argsstring>
+        <name>_mapMatrix</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/Model.cs" line="14" column="1" bodyfile="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/Model.cs" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classrobot__nagivation_1_1_percepts_1ae80073c4c44371576b091a6d291988e4" prot="private" static="no" mutable="no">
+        <type>List&lt; Vector2i &gt;</type>
+        <definition>List&lt;Vector2i&gt; robot_nagivation.Percepts._goalPositions</definition>
+        <argsstring></argsstring>
+        <name>_goalPositions</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/Model.cs" line="16" column="1" bodyfile="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/Model.cs" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="classrobot__nagivation_1_1_percepts_1a52ee3c79d17df7ad908a61ba9979c04d" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="yes">
+        <type>Vector2i</type>
+        <definition>Vector2i robot_nagivation.Percepts.AgentPos</definition>
+        <argsstring></argsstring>
+        <name>AgentPos</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/Model.cs" line="19" column="1" bodyfile="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/Model.cs" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="classrobot__nagivation_1_1_percepts_1a215f4b712fba4dcab1ba5c20eaf505ca" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="yes">
+        <type><ref refid="namespacerobot__nagivation_1aa197a860415d9780f789297b94da1a1f" kindref="member">TileType</ref>[,]</type>
+        <definition>TileType [,] robot_nagivation.Percepts.MapMatrix</definition>
+        <argsstring></argsstring>
+        <name>MapMatrix</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/Model.cs" line="20" column="1" bodyfile="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/Model.cs" bodystart="20" bodyend="-1"/>
+        <referencedby refid="classrobot__nagivation_1_1_agent_1a69d8d416d09986f836ddb69fc3e90b58" compoundref="_agents_8cs" startline="67" endline="74">robot_nagivation.Agent.WithinMap</referencedby>
+      </memberdef>
+      <memberdef kind="property" id="classrobot__nagivation_1_1_percepts_1aaf36077e5fa7ea470a79b76e0472e73f" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="yes">
+        <type>List&lt; Vector2i &gt;</type>
+        <definition>List&lt;Vector2i&gt; robot_nagivation.Percepts.GoalPositions</definition>
+        <argsstring></argsstring>
+        <name>GoalPositions</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/Model.cs" line="21" column="1" bodyfile="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/Model.cs" bodystart="21" bodyend="-1"/>
+        <referencedby refid="classrobot__nagivation_1_1_greedy_first_agent_1a72447d38d7eaf51a29c89111e7754654" compoundref="_informed_agents_8cs" startline="67" endline="78">robot_nagivation.GreedyFirstAgent.HeuristicFunction</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/Model.cs" line="11" column="1" bodyfile="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/Model.cs" bodystart="10" bodyend="22"/>
+    <listofallmembers>
+      <member refid="classrobot__nagivation_1_1_percepts_1a90508071a7589269fe9b172970b79f63" prot="private" virt="non-virtual"><scope>robot_nagivation::Percepts</scope><name>_agentPos</name></member>
+      <member refid="classrobot__nagivation_1_1_percepts_1ae80073c4c44371576b091a6d291988e4" prot="private" virt="non-virtual"><scope>robot_nagivation::Percepts</scope><name>_goalPositions</name></member>
+      <member refid="classrobot__nagivation_1_1_percepts_1aff52c87e8477b7b70ee58112a966eb60" prot="private" virt="non-virtual"><scope>robot_nagivation::Percepts</scope><name>_mapMatrix</name></member>
+      <member refid="classrobot__nagivation_1_1_percepts_1a52ee3c79d17df7ad908a61ba9979c04d" prot="public" virt="non-virtual"><scope>robot_nagivation::Percepts</scope><name>AgentPos</name></member>
+      <member refid="classrobot__nagivation_1_1_percepts_1aaf36077e5fa7ea470a79b76e0472e73f" prot="public" virt="non-virtual"><scope>robot_nagivation::Percepts</scope><name>GoalPositions</name></member>
+      <member refid="classrobot__nagivation_1_1_percepts_1a215f4b712fba4dcab1ba5c20eaf505ca" prot="public" virt="non-virtual"><scope>robot_nagivation::Percepts</scope><name>MapMatrix</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

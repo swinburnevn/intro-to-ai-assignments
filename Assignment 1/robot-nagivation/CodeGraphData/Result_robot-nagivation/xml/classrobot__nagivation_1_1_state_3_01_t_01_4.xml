@@ -1,0 +1,187 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="classrobot__nagivation_1_1_state_3_01_t_01_4" kind="class" prot="public">
+    <compoundname>robot_nagivation::State&lt; T &gt;</compoundname>
+    <templateparamlist>
+      <param>
+        <type>T</type>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classrobot__nagivation_1_1_state_3_01_t_01_4_1aff56330bcae348bd5d98e26d16d18d9a" prot="private" static="no" mutable="no">
+        <type>T</type>
+        <definition>T robot_nagivation.State&lt; T &gt;._data</definition>
+        <argsstring></argsstring>
+        <name>_data</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/StateModel.cs" line="30" column="1" bodyfile="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/StateModel.cs" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classrobot__nagivation_1_1_state_3_01_t_01_4_1ae5aaaf580d7ac9527dadf889691fb23a" prot="private" static="no" mutable="no">
+        <type><ref refid="classrobot__nagivation_1_1_state_3_01_t_01_4_1a8bd405d5dcded4aba857e9c128a22b08" kindref="member">State</ref>&lt; T &gt;</type>
+        <definition>State&lt;T&gt; robot_nagivation.State&lt; T &gt;._parent</definition>
+        <argsstring></argsstring>
+        <name>_parent</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/StateModel.cs" line="31" column="1" bodyfile="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/StateModel.cs" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classrobot__nagivation_1_1_state_3_01_t_01_4_1a0ccb07628a7c111419ae2c76bf40997a" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string robot_nagivation.State&lt; T &gt;._message</definition>
+        <argsstring></argsstring>
+        <name>_message</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/StateModel.cs" line="32" column="1" bodyfile="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/StateModel.cs" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classrobot__nagivation_1_1_state_3_01_t_01_4_1a4735c6cd78188a8fb9cc4863628a9c14" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int robot_nagivation.State&lt; T &gt;._cost</definition>
+        <argsstring></argsstring>
+        <name>_cost</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/StateModel.cs" line="33" column="1" bodyfile="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/StateModel.cs" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="classrobot__nagivation_1_1_state_3_01_t_01_4_1ad7bc34563a7ace4a00131d102f37feb0" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="no">
+        <type><ref refid="classrobot__nagivation_1_1_state_3_01_t_01_4_1a8bd405d5dcded4aba857e9c128a22b08" kindref="member">State</ref>&lt; T &gt;</type>
+        <definition>State&lt;T&gt; robot_nagivation.State&lt; T &gt;.Parent</definition>
+        <argsstring></argsstring>
+        <name>Parent</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/StateModel.cs" line="50" column="1" bodyfile="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/StateModel.cs" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="classrobot__nagivation_1_1_state_3_01_t_01_4_1a463daf58cb0bf86eca3efbab2f8cb194" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="no">
+        <type>string</type>
+        <definition>string robot_nagivation.State&lt; T &gt;.Message</definition>
+        <argsstring></argsstring>
+        <name>Message</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/StateModel.cs" line="51" column="1" bodyfile="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/StateModel.cs" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="classrobot__nagivation_1_1_state_3_01_t_01_4_1a07c310a3962ef610128a8822ece6fa08" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="no">
+        <type>int</type>
+        <definition>int robot_nagivation.State&lt; T &gt;.Cost</definition>
+        <argsstring></argsstring>
+        <name>Cost</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/StateModel.cs" line="52" column="1" bodyfile="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/StateModel.cs" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classrobot__nagivation_1_1_state_3_01_t_01_4_1a8bd405d5dcded4aba857e9c128a22b08" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>robot_nagivation.State&lt; T &gt;.State</definition>
+        <argsstring>(State&lt; T &gt; parent, String message, T data)</argsstring>
+        <name>State</name>
+        <param>
+          <type>State&lt; T &gt;</type>
+          <declname>parent</declname>
+        </param>
+        <param>
+          <type>String</type>
+          <declname>message</declname>
+        </param>
+        <param>
+          <type>T</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/StateModel.cs" line="36" column="1" bodyfile="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/StateModel.cs" bodystart="36" bodyend="41"/>
+      </memberdef>
+      <memberdef kind="function" id="classrobot__nagivation_1_1_state_3_01_t_01_4_1a02873f538112456e037316700d93c76f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>robot_nagivation.State&lt; T &gt;.State</definition>
+        <argsstring>(State&lt; T &gt; parent, String message, T data, int cost)</argsstring>
+        <name>State</name>
+        <param>
+          <type>State&lt; T &gt;</type>
+          <declname>parent</declname>
+        </param>
+        <param>
+          <type>String</type>
+          <declname>message</declname>
+        </param>
+        <param>
+          <type>T</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>cost</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/StateModel.cs" line="43" column="1" bodyfile="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/StateModel.cs" bodystart="43" bodyend="47"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="124">
+        <label>robot_nagivation.State&lt; T &gt;</label>
+        <link refid="classrobot__nagivation_1_1_state_3_01_t_01_4"/>
+        <childnode refid="124" relation="usage">
+          <edgelabel>_parent</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/StateModel.cs" line="29" column="1" bodyfile="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/StateModel.cs" bodystart="28" bodyend="53"/>
+    <listofallmembers>
+      <member refid="classrobot__nagivation_1_1_state_3_01_t_01_4_1a4735c6cd78188a8fb9cc4863628a9c14" prot="private" virt="non-virtual"><scope>robot_nagivation::State&lt; T &gt;</scope><name>_cost</name></member>
+      <member refid="classrobot__nagivation_1_1_state_3_01_t_01_4_1aff56330bcae348bd5d98e26d16d18d9a" prot="private" virt="non-virtual"><scope>robot_nagivation::State&lt; T &gt;</scope><name>_data</name></member>
+      <member refid="classrobot__nagivation_1_1_state_3_01_t_01_4_1a0ccb07628a7c111419ae2c76bf40997a" prot="private" virt="non-virtual"><scope>robot_nagivation::State&lt; T &gt;</scope><name>_message</name></member>
+      <member refid="classrobot__nagivation_1_1_state_3_01_t_01_4_1ae5aaaf580d7ac9527dadf889691fb23a" prot="private" virt="non-virtual"><scope>robot_nagivation::State&lt; T &gt;</scope><name>_parent</name></member>
+      <member refid="classrobot__nagivation_1_1_state_3_01_t_01_4_1a07c310a3962ef610128a8822ece6fa08" prot="public" virt="non-virtual"><scope>robot_nagivation::State&lt; T &gt;</scope><name>Cost</name></member>
+      <member refid="classrobot__nagivation_1_1_state_3_01_t_01_4_1a463daf58cb0bf86eca3efbab2f8cb194" prot="public" virt="non-virtual"><scope>robot_nagivation::State&lt; T &gt;</scope><name>Message</name></member>
+      <member refid="classrobot__nagivation_1_1_state_3_01_t_01_4_1ad7bc34563a7ace4a00131d102f37feb0" prot="public" virt="non-virtual"><scope>robot_nagivation::State&lt; T &gt;</scope><name>Parent</name></member>
+      <member refid="classrobot__nagivation_1_1_state_3_01_t_01_4_1a8bd405d5dcded4aba857e9c128a22b08" prot="public" virt="non-virtual"><scope>robot_nagivation::State&lt; T &gt;</scope><name>State</name></member>
+      <member refid="classrobot__nagivation_1_1_state_3_01_t_01_4_1a02873f538112456e037316700d93c76f" prot="public" virt="non-virtual"><scope>robot_nagivation::State&lt; T &gt;</scope><name>State</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

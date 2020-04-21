@@ -1,0 +1,157 @@
+ Output log: robot-nagivation.exe 
+101624964_bfs_RobotNav-test.txt_directional 'bfs: Breadth-First Agent' 34
+
+Down; Right; Right; Right; Right; Up; Up; Right; Right; Right; 
+101624964_bfs_RobotNav-test.txt 'bfs: Breadth-First Agent' 34
+
+Down; Right; Right; Right; Right; Up; Up; Right; Right; Right; 
+101624964_bfs_robot-nav-map2.txt_directional 'bfs: Breadth-First Agent' 31
+
+Up; Up; Up; Right; Right; Down; Right; Down; Right; Right; Right; 
+101624964_bfs_robot-nav-map2.txt 'bfs: Breadth-First Agent' 31
+
+Up; Up; Up; Right; Right; Down; Right; Down; Right; Right; Right; 
+101624964_bfs_robot-nav-map3.txt_directional 'bfs: Breadth-First Agent' 36
+
+Up; Up; Right; Right; Right; Right; Right; Right; Right; Right; Right; Right; Down; Down; 
+101624964_bfs_robot-nav-map3.txt 'bfs: Breadth-First Agent' 36
+
+Up; Up; Right; Right; Right; Right; Right; Right; Right; Right; Right; Right; Down; Down; 
+101624964_bfs_robot-nav-map4.txt_directional 'bfs: Breadth-First Agent' 33
+
+No solution found
+
+101624964_bfs_robot-nav-map4.txt 'bfs: Breadth-First Agent' 33
+
+No solution found
+
+101624964_dfs_RobotNav-test.txt_directional 'dfs: Depth-First Agent' 28
+
+Up; Right; Down; Down; Right; Right; Down; Right; Up; Up; Up; Right; Down; Down; Down; Right; Up; Up; Up; Right; 
+101624964_dfs_RobotNav-test.txt 'dfs: Depth-First Agent' 28
+
+Up; Right; Down; Down; Right; Right; Down; Right; Up; Up; Up; Right; Down; Down; Down; Right; Up; Up; Up; Right; 
+101624964_dfs_robot-nav-map2.txt_directional 'dfs: Depth-First Agent' 15
+
+Up; Up; Up; Right; Right; Down; Right; Up; Right; Down; Down; Right; Right; 
+101624964_dfs_robot-nav-map2.txt 'dfs: Depth-First Agent' 15
+
+Up; Up; Up; Right; Right; Down; Right; Up; Right; Down; Down; Right; Right; 
+101624964_dfs_robot-nav-map3.txt_directional 'dfs: Depth-First Agent' 15
+
+Up; Up; Right; Right; Right; Right; Right; Right; Right; Right; Right; Right; Down; Down; 
+101624964_dfs_robot-nav-map3.txt 'dfs: Depth-First Agent' 15
+
+Up; Up; Right; Right; Right; Right; Right; Right; Right; Right; Right; Right; Down; Down; 
+101624964_dfs_robot-nav-map4.txt_directional 'dfs: Depth-First Agent' 34
+
+No solution found
+
+101624964_dfs_robot-nav-map4.txt 'dfs: Depth-First Agent' 34
+
+No solution found
+
+101624964_gbfs_RobotNav-test.txt_directional 'gbfs: Greedy-Best First Agent' 28
+
+Right; Down; Right; Right; Right; Right; Right; Right; Up; Up; 
+101624964_gbfs_RobotNav-test.txt 'gbfs: Greedy-Best First Agent' 24
+
+Right; Down; Right; Right; Right; Right; Right; Right; Up; Up; 
+101624964_gbfs_robot-nav-map2.txt_directional 'gbfs: Greedy-Best First Agent' 31
+
+Right; Down; Right; Right; Right; Right; Right; Right; Right; Right; Right; Up; Up; Up; Up; Left; Left; Left; Left; Left; Left; Down; Down; Right; Right; 
+101624964_gbfs_robot-nav-map2.txt 'gbfs: Greedy-Best First Agent' 33
+
+Right; Down; Right; Right; Right; Right; Right; Right; Right; Right; Right; Up; Up; Up; Up; Left; Left; Left; Left; Left; Left; Down; Down; Right; Right; 
+101624964_gbfs_robot-nav-map3.txt_directional 'gbfs: Greedy-Best First Agent' 24
+
+Down; Down; Right; Right; Right; Right; Right; Right; Right; Right; Right; Right; Up; Up; 
+101624964_gbfs_robot-nav-map3.txt 'gbfs: Greedy-Best First Agent' 25
+
+Up; Up; Right; Right; Right; Right; Right; Right; Right; Right; Right; Right; Down; Down; 
+101624964_gbfs_robot-nav-map4.txt_directional 'gbfs: Greedy-Best First Agent' 33
+
+No solution found
+
+101624964_gbfs_robot-nav-map4.txt 'gbfs: Greedy-Best First Agent' 33
+
+No solution found
+
+101624964_astar_RobotNav-test.txt_directional 'astar: A-Star Agent' 31
+
+Right; Down; Right; Right; Right; Right; Right; Right; Up; Up; 
+101624964_astar_RobotNav-test.txt 'astar: A-Star Agent' 24
+
+Right; Down; Right; Right; Right; Right; Right; Right; Up; Up; 
+101624964_astar_robot-nav-map2.txt_directional 'astar: A-Star Agent' 25
+
+Up; Up; Up; Right; Right; Down; Right; Down; Right; Right; Right; 
+101624964_astar_robot-nav-map2.txt 'astar: A-Star Agent' 28
+
+Up; Up; Up; Right; Right; Right; Right; Down; Down; Right; Right; 
+101624964_astar_robot-nav-map3.txt_directional 'astar: A-Star Agent' 36
+
+Up; Up; Right; Right; Right; Right; Right; Right; Right; Right; Right; Right; Down; Down; 
+101624964_astar_robot-nav-map3.txt 'astar: A-Star Agent' 25
+
+Up; Up; Right; Right; Right; Right; Right; Right; Right; Right; Right; Right; Down; Down; 
+101624964_astar_robot-nav-map4.txt_directional 'astar: A-Star Agent' 33
+
+No solution found
+
+101624964_astar_robot-nav-map4.txt 'astar: A-Star Agent' 33
+
+No solution found
+
+101624964_ucs_RobotNav-test.txt_directional 'ucs: Uniform Cost Agent' 39
+
+Down; Right; Right; Right; Right; Right; Right; Right; Right; Right; Right; Down; 
+101624964_ucs_RobotNav-test.txt 'ucs: Uniform Cost Agent' 45
+
+Right; Down; Right; Right; Right; Right; Up; Right; Right; Up; 
+101624964_ucs_robot-nav-map2.txt_directional 'ucs: Uniform Cost Agent' 38
+
+Up; Up; Up; Right; Right; Down; Right; Right; Down; Right; Right; 
+101624964_ucs_robot-nav-map2.txt 'ucs: Uniform Cost Agent' 32
+
+Up; Up; Up; Right; Right; Right; Right; Down; Down; Right; Right; 
+101624964_ucs_robot-nav-map3.txt_directional 'ucs: Uniform Cost Agent' 35
+
+Up; Up; Right; Right; Right; Right; Right; Right; Right; Right; Right; Right; Down; Down; 
+101624964_ucs_robot-nav-map3.txt 'ucs: Uniform Cost Agent' 30
+
+Down; Down; Right; Right; Right; Right; Right; Right; Right; Right; Right; Right; Up; Up; 
+101624964_ucs_robot-nav-map4.txt_directional 'ucs: Uniform Cost Agent' 34
+
+No solution found
+
+101624964_ucs_robot-nav-map4.txt 'ucs: Uniform Cost Agent' 34
+
+No solution found
+
+101624964_iddfs_RobotNav-test.txt_directional 'iddfs: Iterative Deepening DFS Agent' 24
+
+Up; Right; Down; Down; Right; Right; Down; Right; Up; Up; Up; Right; Right; Right; 
+101624964_iddfs_RobotNav-test.txt 'iddfs: Iterative Deepening DFS Agent' 24
+
+Up; Right; Down; Down; Right; Right; Down; Right; Up; Up; Up; Right; Right; Right; 
+101624964_iddfs_robot-nav-map2.txt_directional 'iddfs: Iterative Deepening DFS Agent' 14
+
+Up; Up; Up; Right; Right; Down; Right; Up; Right; Down; Down; Right; Right; 
+101624964_iddfs_robot-nav-map2.txt 'iddfs: Iterative Deepening DFS Agent' 14
+
+Up; Up; Up; Right; Right; Down; Right; Up; Right; Down; Down; Right; Right; 
+101624964_iddfs_robot-nav-map3.txt_directional 'iddfs: Iterative Deepening DFS Agent' 14
+
+Up; Up; Right; Right; Right; Right; Right; Right; Right; Right; Right; Right; Down; Down; 
+101624964_iddfs_robot-nav-map3.txt 'iddfs: Iterative Deepening DFS Agent' 14
+
+Up; Up; Right; Right; Right; Right; Right; Right; Right; Right; Right; Right; Down; Down; 
+101624964_iddfs_robot-nav-map4.txt_directional 'iddfs: Iterative Deepening DFS Agent' 33
+
+No solution found
+
+101624964_iddfs_robot-nav-map4.txt 'iddfs: Iterative Deepening DFS Agent' 33
+
+No solution found
+

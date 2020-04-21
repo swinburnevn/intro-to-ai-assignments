@@ -1,0 +1,2 @@
+101624964_astar_robot-nav-map3.txt_directional 'astar: A-Star Agent' 36
+Up; Up; Right; Right; Right; Right; Right; Right; Right; Right; Right; Right; Down; Down; 

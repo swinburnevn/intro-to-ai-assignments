@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="classrobot__nagivation_1_1_state_data" kind="class" prot="public" abstract="yes">
+    <compoundname>robot_nagivation::StateData</compoundname>
+    <derivedcompoundref refid="classrobot__nagivation_1_1_map_node" prot="public" virt="non-virtual">robot_nagivation.MapNode</derivedcompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classrobot__nagivation_1_1_state_data_1adff7b1f4843d96d00d714e1d97460f5b" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>abstract int</type>
+        <definition>abstract int robot_nagivation.StateData.GetCost</definition>
+        <argsstring>()</argsstring>
+        <name>GetCost</name>
+        <reimplementedby refid="classrobot__nagivation_1_1_map_node_1a66a48ad334c3cc983dbd502818cc2256">GetCost</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/StateModel.cs" line="25" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="126">
+        <label>robot_nagivation.MapNode</label>
+        <link refid="classrobot__nagivation_1_1_map_node"/>
+        <childnode refid="125" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="125">
+        <label>robot_nagivation.StateData</label>
+        <link refid="classrobot__nagivation_1_1_state_data"/>
+      </node>
+    </inheritancegraph>
+    <location file="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/StateModel.cs" line="24" column="1" bodyfile="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/StateModel.cs" bodystart="23" bodyend="26"/>
+    <listofallmembers>
+      <member refid="classrobot__nagivation_1_1_state_data_1adff7b1f4843d96d00d714e1d97460f5b" prot="public" virt="pure-virtual"><scope>robot_nagivation::StateData</scope><name>GetCost</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

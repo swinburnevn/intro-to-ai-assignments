@@ -1,0 +1,203 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="classrobot__nagivation_1_1_game_model" kind="class" prot="public">
+    <compoundname>robot_nagivation::GameModel</compoundname>
+    <basecompoundref refid="interfacerobot__nagivation_1_1_i_model" prot="public" virt="non-virtual">robot_nagivation.IModel</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classrobot__nagivation_1_1_game_model_1a51ac3197bdf5464a8196c1010d272f79" prot="private" static="no" mutable="no">
+        <type><ref refid="classrobot__nagivation_1_1_program_data" kindref="compound">ProgramData</ref></type>
+        <definition>ProgramData robot_nagivation.GameModel._data</definition>
+        <argsstring></argsstring>
+        <name>_data</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/Model.cs" line="35" column="1" bodyfile="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/Model.cs" bodystart="35" bodyend="-1"/>
+        <referencedby refid="classrobot__nagivation_1_1_game_model_1ab703405654c7f1d527853c31a7e0fee8" compoundref="_model_8cs" startline="36" endline="39">robot_nagivation.GameModel.GameModel</referencedby>
+        <referencedby refid="classrobot__nagivation_1_1_game_model_1ae6101cf0f1ebe6a58eaacf27b97c9212" compoundref="_model_8cs" startline="57" endline="87">robot_nagivation.GameModel.MoveAgent</referencedby>
+        <referencedby refid="classrobot__nagivation_1_1_game_model_1a60f9c532ddd3978cc426a8bf4cc5c5d3" compoundref="_model_8cs" startline="99" endline="117">robot_nagivation.GameModel.Run</referencedby>
+        <referencedby refid="classrobot__nagivation_1_1_game_model_1a8d6433d4c6cace4d12b487508369b265" compoundref="_model_8cs" startline="47" endline="55">robot_nagivation.GameModel.WithinMap</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classrobot__nagivation_1_1_game_model_1ab703405654c7f1d527853c31a7e0fee8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>robot_nagivation.GameModel.GameModel</definition>
+        <argsstring>(ref ProgramData data)</argsstring>
+        <name>GameModel</name>
+        <param>
+          <type>ref <ref refid="classrobot__nagivation_1_1_program_data" kindref="compound">ProgramData</ref></type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/Model.cs" line="36" column="1" bodyfile="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/Model.cs" bodystart="36" bodyend="39"/>
+        <references refid="classrobot__nagivation_1_1_game_model_1a51ac3197bdf5464a8196c1010d272f79" compoundref="_model_8cs" startline="35">robot_nagivation.GameModel._data</references>
+      </memberdef>
+      <memberdef kind="function" id="classrobot__nagivation_1_1_game_model_1aa8a4bf67486c33898b7a30a0b0ff720f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void robot_nagivation.GameModel.Initialise</definition>
+        <argsstring>()</argsstring>
+        <name>Initialise</name>
+        <reimplements refid="interfacerobot__nagivation_1_1_i_model_1ab670f457bba2f2be2beea78bc5377331">Initialise</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/Model.cs" line="41" column="1" bodyfile="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/Model.cs" bodystart="41" bodyend="45"/>
+        <references refid="classrobot__nagivation_1_1_game_model_1af00220e7b11a1d082879480b0c149b58" compoundref="_model_8cs" startline="89" endline="97">robot_nagivation.GameModel.CreatePercepts</references>
+      </memberdef>
+      <memberdef kind="function" id="classrobot__nagivation_1_1_game_model_1a8d6433d4c6cace4d12b487508369b265" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool robot_nagivation.GameModel.WithinMap</definition>
+        <argsstring>(Vector2i pos)</argsstring>
+        <name>WithinMap</name>
+        <param>
+          <type>Vector2i</type>
+          <declname>pos</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/Model.cs" line="47" column="1" bodyfile="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/Model.cs" bodystart="47" bodyend="55"/>
+        <references refid="classrobot__nagivation_1_1_game_model_1a51ac3197bdf5464a8196c1010d272f79" compoundref="_model_8cs" startline="35">robot_nagivation.GameModel._data</references>
+        <references refid="classrobot__nagivation_1_1_program_data_1ae15d3ffc1f601b2405b87d014b804779" compoundref="_program_data_8cs" startline="88">robot_nagivation.ProgramData.Map</references>
+        <references refid="classrobot__nagivation_1_1_map_1a23fb5dc553546af36f8718fbf0576a02" compoundref="_map_8cs" startline="129">robot_nagivation.Map.MapMatrix</references>
+        <referencedby refid="classrobot__nagivation_1_1_game_model_1ae6101cf0f1ebe6a58eaacf27b97c9212" compoundref="_model_8cs" startline="57" endline="87">robot_nagivation.GameModel.MoveAgent</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classrobot__nagivation_1_1_game_model_1ae6101cf0f1ebe6a58eaacf27b97c9212" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void robot_nagivation.GameModel.MoveAgent</definition>
+        <argsstring>(AgentActions direction)</argsstring>
+        <name>MoveAgent</name>
+        <param>
+          <type><ref refid="namespacerobot__nagivation_1a5d3ca8bdf460392c95d3ccd667728564" kindref="member">AgentActions</ref></type>
+          <declname>direction</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/Model.cs" line="57" column="1" bodyfile="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/Model.cs" bodystart="57" bodyend="87"/>
+        <references refid="classrobot__nagivation_1_1_game_model_1a51ac3197bdf5464a8196c1010d272f79" compoundref="_model_8cs" startline="35">robot_nagivation.GameModel._data</references>
+        <references refid="classrobot__nagivation_1_1_map_1a54bd7016194129978c1e6392c9ae9fbd" compoundref="_map_8cs" startline="130">robot_nagivation.Map.AgentPos</references>
+        <references refid="classrobot__nagivation_1_1_program_data_1ae15d3ffc1f601b2405b87d014b804779" compoundref="_program_data_8cs" startline="88">robot_nagivation.ProgramData.Map</references>
+        <references refid="classrobot__nagivation_1_1_game_model_1a8d6433d4c6cace4d12b487508369b265" compoundref="_model_8cs" startline="47" endline="55">robot_nagivation.GameModel.WithinMap</references>
+        <referencedby refid="classrobot__nagivation_1_1_game_model_1a60f9c532ddd3978cc426a8bf4cc5c5d3" compoundref="_model_8cs" startline="99" endline="117">robot_nagivation.GameModel.Run</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classrobot__nagivation_1_1_game_model_1af00220e7b11a1d082879480b0c149b58" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classrobot__nagivation_1_1_percepts" kindref="compound">Percepts</ref></type>
+        <definition>Percepts robot_nagivation.GameModel.CreatePercepts</definition>
+        <argsstring>()</argsstring>
+        <name>CreatePercepts</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/Model.cs" line="89" column="1" bodyfile="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/Model.cs" bodystart="89" bodyend="97"/>
+        <referencedby refid="classrobot__nagivation_1_1_game_model_1aa8a4bf67486c33898b7a30a0b0ff720f" compoundref="_model_8cs" startline="41" endline="45">robot_nagivation.GameModel.Initialise</referencedby>
+        <referencedby refid="classrobot__nagivation_1_1_game_model_1a60f9c532ddd3978cc426a8bf4cc5c5d3" compoundref="_model_8cs" startline="99" endline="117">robot_nagivation.GameModel.Run</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classrobot__nagivation_1_1_game_model_1a60f9c532ddd3978cc426a8bf4cc5c5d3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void robot_nagivation.GameModel.Run</definition>
+        <argsstring>()</argsstring>
+        <name>Run</name>
+        <reimplements refid="interfacerobot__nagivation_1_1_i_model_1a87446d3e5d9994d87c2de8369ff1c489">Run</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/Model.cs" line="99" column="1" bodyfile="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/Model.cs" bodystart="99" bodyend="117"/>
+        <references refid="classrobot__nagivation_1_1_game_model_1a51ac3197bdf5464a8196c1010d272f79" compoundref="_model_8cs" startline="35">robot_nagivation.GameModel._data</references>
+        <references refid="classrobot__nagivation_1_1_game_model_1af00220e7b11a1d082879480b0c149b58" compoundref="_model_8cs" startline="89" endline="97">robot_nagivation.GameModel.CreatePercepts</references>
+        <references refid="classrobot__nagivation_1_1_program_data_1a2acac9872111ac3f5595e7477f09cabf" compoundref="_program_data_8cs" startline="90">robot_nagivation.ProgramData.Finished</references>
+        <references refid="classrobot__nagivation_1_1_game_model_1ae6101cf0f1ebe6a58eaacf27b97c9212" compoundref="_model_8cs" startline="57" endline="87">robot_nagivation.GameModel.MoveAgent</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="47">
+        <label>IModel</label>
+        <link refid="interfacerobot__nagivation_1_1_i_model"/>
+      </node>
+      <node id="46">
+        <label>robot_nagivation.GameModel</label>
+        <link refid="classrobot__nagivation_1_1_game_model"/>
+        <childnode refid="47" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="50">
+        <label>robot_nagivation.ProgramData</label>
+        <link refid="classrobot__nagivation_1_1_program_data"/>
+        <childnode refid="51" relation="usage">
+          <edgelabel>_map</edgelabel>
+        </childnode>
+        <childnode refid="52" relation="usage">
+          <edgelabel>_agent</edgelabel>
+        </childnode>
+      </node>
+      <node id="49">
+        <label>IModel</label>
+        <link refid="interfacerobot__nagivation_1_1_i_model"/>
+      </node>
+      <node id="51">
+        <label>robot_nagivation.Map</label>
+        <link refid="classrobot__nagivation_1_1_map"/>
+      </node>
+      <node id="53">
+        <label>robot_nagivation.AgentData</label>
+        <link refid="classrobot__nagivation_1_1_agent_data"/>
+      </node>
+      <node id="48">
+        <label>robot_nagivation.GameModel</label>
+        <link refid="classrobot__nagivation_1_1_game_model"/>
+        <childnode refid="49" relation="public-inheritance">
+        </childnode>
+        <childnode refid="50" relation="usage">
+          <edgelabel>_data</edgelabel>
+        </childnode>
+      </node>
+      <node id="52">
+        <label>robot_nagivation.Agent</label>
+        <link refid="classrobot__nagivation_1_1_agent"/>
+        <childnode refid="53" relation="usage">
+          <edgelabel>_agentData</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/Model.cs" line="34" column="1" bodyfile="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/Model.cs" bodystart="33" bodyend="118"/>
+    <listofallmembers>
+      <member refid="classrobot__nagivation_1_1_game_model_1a51ac3197bdf5464a8196c1010d272f79" prot="private" virt="non-virtual"><scope>robot_nagivation::GameModel</scope><name>_data</name></member>
+      <member refid="classrobot__nagivation_1_1_game_model_1af00220e7b11a1d082879480b0c149b58" prot="public" virt="non-virtual"><scope>robot_nagivation::GameModel</scope><name>CreatePercepts</name></member>
+      <member refid="classrobot__nagivation_1_1_game_model_1ab703405654c7f1d527853c31a7e0fee8" prot="public" virt="non-virtual"><scope>robot_nagivation::GameModel</scope><name>GameModel</name></member>
+      <member refid="classrobot__nagivation_1_1_game_model_1aa8a4bf67486c33898b7a30a0b0ff720f" prot="public" virt="non-virtual"><scope>robot_nagivation::GameModel</scope><name>Initialise</name></member>
+      <member refid="classrobot__nagivation_1_1_game_model_1ae6101cf0f1ebe6a58eaacf27b97c9212" prot="public" virt="non-virtual"><scope>robot_nagivation::GameModel</scope><name>MoveAgent</name></member>
+      <member refid="classrobot__nagivation_1_1_game_model_1a60f9c532ddd3978cc426a8bf4cc5c5d3" prot="public" virt="non-virtual"><scope>robot_nagivation::GameModel</scope><name>Run</name></member>
+      <member refid="classrobot__nagivation_1_1_game_model_1a8d6433d4c6cace4d12b487508369b265" prot="public" virt="non-virtual"><scope>robot_nagivation::GameModel</scope><name>WithinMap</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

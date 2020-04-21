@@ -12,6 +12,7 @@ namespace robot_nagivation
     public interface IView
     {
         abstract void Draw();
+        abstract void Close();
     }
 
     public class SFMLView : IView
@@ -56,6 +57,25 @@ namespace robot_nagivation
 
             _nodeWindow.MouseWheelScrolled += Window_MouseWheeled;
 
+        }
+
+        public void TakeScreenshot(ref RenderWindow window, string fileName)
+        {
+            Texture texture;
+            texture = new Texture(window.Size.X, window.Size.Y);
+            texture.Update(window);
+
+            if (!texture.CopyToImage().SaveToFile(fileName))
+            {
+                // Error handling
+                Console.WriteLine($"Screenshot could not be saved as {fileName}, missing .png/.jpeg extension perhaps?");
+            }
+        }
+
+        public void TakeScreenshotOfWindows(string fileName)
+        {
+            TakeScreenshot(ref _window, fileName + "_aa.png");
+            TakeScreenshot(ref _nodeWindow, fileName + "_nv.png");
         }
 
         public void SetWindowSize(int width, int height)
@@ -579,6 +599,7 @@ namespace robot_nagivation
             var window = (SFML.Window.Window)sender;
             if (e.Code == SFML.Window.Keyboard.Key.Escape)
             {
+               
                 window.Close();
                 _data.WindowRequestClosed = true;
                 _data.Finished = true;
@@ -596,6 +617,11 @@ namespace robot_nagivation
             //_nodeView.Move(new Vector2f(0, -30 * e.Delta));
 
         }
+        public void Close()
+        {
+            if (!_data.DisplayMode)
+                TakeScreenshotOfWindows(_data.OutputName);
+        }
     }
 
 
@@ -608,6 +634,11 @@ namespace robot_nagivation
             _data = data;
 
         }
+
+        public void Close()
+        {
+        }
+
         public void Draw()
         {
         }
@@ -629,6 +660,11 @@ namespace robot_nagivation
             _consoleDisplayValuePairs.Add(TileType.Start, 'S');
             _consoleDisplayValuePairs.Add(TileType.Goal,  'G');
         }
+
+        public void Close()
+        {
+        }
+
         public void Draw()
         {
             

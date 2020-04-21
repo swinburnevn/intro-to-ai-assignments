@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="classrobot__nagivation_1_1_node_comparer" kind="class" prot="public">
+    <compoundname>robot_nagivation::NodeComparer</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">IComparer&lt; Node&lt; TileType &gt;&gt;</basecompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classrobot__nagivation_1_1_node_comparer_1a3a47d659b68a63d1b82a3c960e0385d8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int robot_nagivation.NodeComparer.Compare</definition>
+        <argsstring>([AllowNull] Node&lt; TileType &gt; x, [AllowNull] Node&lt; TileType &gt; y)</argsstring>
+        <name>Compare</name>
+        <param>
+          <attributes>[AllowNull]</attributes>
+          <type>Node&lt; <ref refid="namespacerobot__nagivation_1aa197a860415d9780f789297b94da1a1f" kindref="member">TileType</ref> &gt;</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <attributes>[AllowNull]</attributes>
+          <type>Node&lt; <ref refid="namespacerobot__nagivation_1aa197a860415d9780f789297b94da1a1f" kindref="member">TileType</ref> &gt;</type>
+          <declname>y</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/Agents.cs" line="205" column="1" bodyfile="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/Agents.cs" bodystart="205" bodyend="208"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="95">
+        <label>IComparer&lt; Node&lt; TileType &gt;&gt;</label>
+      </node>
+      <node id="94">
+        <label>robot_nagivation.NodeComparer</label>
+        <link refid="classrobot__nagivation_1_1_node_comparer"/>
+        <childnode refid="95" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="97">
+        <label>IComparer&lt; Node&lt; TileType &gt;&gt;</label>
+      </node>
+      <node id="96">
+        <label>robot_nagivation.NodeComparer</label>
+        <link refid="classrobot__nagivation_1_1_node_comparer"/>
+        <childnode refid="97" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/Agents.cs" line="204" column="1" bodyfile="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/Agents.cs" bodystart="203" bodyend="209"/>
+    <listofallmembers>
+      <member refid="classrobot__nagivation_1_1_node_comparer_1a3a47d659b68a63d1b82a3c960e0385d8" prot="public" virt="non-virtual"><scope>robot_nagivation::NodeComparer</scope><name>Compare</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

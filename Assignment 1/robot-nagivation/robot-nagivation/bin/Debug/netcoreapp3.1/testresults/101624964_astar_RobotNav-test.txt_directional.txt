@@ -1,0 +1,2 @@
+101624964_astar_RobotNav-test.txt_directional 'astar: A-Star Agent' 31
+Right; Down; Right; Right; Right; Right; Right; Right; Up; Up; 

@@ -1,0 +1,185 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="namespacerobot__nagivation" kind="namespace">
+    <compoundname>robot_nagivation</compoundname>
+    <innerclass refid="classrobot__nagivation_1_1_agent" prot="public">robot_nagivation::Agent</innerclass>
+    <innerclass refid="classrobot__nagivation_1_1_random_agent" prot="public">robot_nagivation::RandomAgent</innerclass>
+    <innerclass refid="classrobot__nagivation_1_1_node_comparer" prot="public">robot_nagivation::NodeComparer</innerclass>
+    <innerclass refid="classrobot__nagivation_1_1_uniform_cost_agent" prot="public">robot_nagivation::UniformCostAgent</innerclass>
+    <innerclass refid="classrobot__nagivation_1_1_iterative_d_d_f_s_agent" prot="public">robot_nagivation::IterativeDDFSAgent</innerclass>
+    <innerclass refid="classrobot__nagivation_1_1_depth_first_agent" prot="public">robot_nagivation::DepthFirstAgent</innerclass>
+    <innerclass refid="classrobot__nagivation_1_1_breadth_first_agent" prot="public">robot_nagivation::BreadthFirstAgent</innerclass>
+    <innerclass refid="classrobot__nagivation_1_1_a_star_agent" prot="public">robot_nagivation::AStarAgent</innerclass>
+    <innerclass refid="classrobot__nagivation_1_1_greedy_first_agent" prot="public">robot_nagivation::GreedyFirstAgent</innerclass>
+    <innerclass refid="classrobot__nagivation_1_1_node_3_01_t_01_4" prot="public">robot_nagivation::Node&lt; T &gt;</innerclass>
+    <innerclass refid="classrobot__nagivation_1_1_map" prot="public">robot_nagivation::Map</innerclass>
+    <innerclass refid="interfacerobot__nagivation_1_1_i_map_parser" prot="public">robot_nagivation::IMapParser</innerclass>
+    <innerclass refid="classrobot__nagivation_1_1_map_parser" prot="public">robot_nagivation::MapParser</innerclass>
+    <innerclass refid="classrobot__nagivation_1_1_map_node" prot="public">robot_nagivation::MapNode</innerclass>
+    <innerclass refid="classrobot__nagivation_1_1_map_scenario" prot="public">robot_nagivation::MapScenario</innerclass>
+    <innerclass refid="classrobot__nagivation_1_1_percepts" prot="public">robot_nagivation::Percepts</innerclass>
+    <innerclass refid="interfacerobot__nagivation_1_1_i_model" prot="public">robot_nagivation::IModel</innerclass>
+    <innerclass refid="classrobot__nagivation_1_1_game_model" prot="public">robot_nagivation::GameModel</innerclass>
+    <innerclass refid="classrobot__nagivation_1_1_program" prot="public">robot_nagivation::Program</innerclass>
+    <innerclass refid="classrobot__nagivation_1_1_agent_data" prot="public">robot_nagivation::AgentData</innerclass>
+    <innerclass refid="classrobot__nagivation_1_1_program_data" prot="public">robot_nagivation::ProgramData</innerclass>
+    <innerclass refid="classrobot__nagivation_1_1_state_data" prot="public">robot_nagivation::StateData</innerclass>
+    <innerclass refid="classrobot__nagivation_1_1_state_3_01_t_01_4" prot="public">robot_nagivation::State&lt; T &gt;</innerclass>
+    <innerclass refid="classrobot__nagivation_1_1_scenario_3_01_t_01_4" prot="public">robot_nagivation::Scenario&lt; T &gt;</innerclass>
+    <innerclass refid="interfacerobot__nagivation_1_1_i_view" prot="public">robot_nagivation::IView</innerclass>
+    <innerclass refid="classrobot__nagivation_1_1_s_f_m_l_view" prot="public">robot_nagivation::SFMLView</innerclass>
+    <innerclass refid="classrobot__nagivation_1_1_console_output" prot="public">robot_nagivation::ConsoleOutput</innerclass>
+    <innerclass refid="classrobot__nagivation_1_1_console_view" prot="public">robot_nagivation::ConsoleView</innerclass>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="namespacerobot__nagivation_1af592e06c3cbf2ce77a56daf0dddd3489" prot="public" static="no">
+        <name>AgentState</name>
+        <enumvalue id="namespacerobot__nagivation_1af592e06c3cbf2ce77a56daf0dddd3489a843627586c62e389041a4d8800143974" prot="public">
+          <name>Searching</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacerobot__nagivation_1af592e06c3cbf2ce77a56daf0dddd3489adefe967ad0373b2274fc298f19125ca7" prot="public">
+          <name>Moving</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacerobot__nagivation_1af592e06c3cbf2ce77a56daf0dddd3489ab578b733cbb788fc6ad208314d2c4c2b" prot="public">
+          <name>Lost</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacerobot__nagivation_1af592e06c3cbf2ce77a56daf0dddd3489a8f3d10eb21bd36347c258679eba9e92b" prot="public">
+          <name>Finished</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacerobot__nagivation_1af592e06c3cbf2ce77a56daf0dddd3489ae599161956d626eda4cb0a5ffb85271c" prot="public">
+          <name>Idle</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/Agents.cs" line="14" column="1" bodyfile="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/Agents.cs" bodystart="13" bodyend="20"/>
+      </memberdef>
+      <memberdef kind="enum" id="namespacerobot__nagivation_1aa197a860415d9780f789297b94da1a1f" prot="public" static="no">
+        <name>TileType</name>
+        <enumvalue id="namespacerobot__nagivation_1aa197a860415d9780f789297b94da1a1face2c8aed9c2fa0cfbed56cbda4d8bf07" prot="public">
+          <name>Empty</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacerobot__nagivation_1aa197a860415d9780f789297b94da1a1fa94e8a499539d1a472f3b5dbbb85508c0" prot="public">
+          <name>Wall</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacerobot__nagivation_1aa197a860415d9780f789297b94da1a1faa6122a65eaa676f700ae68d393054a37" prot="public">
+          <name>Start</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacerobot__nagivation_1aa197a860415d9780f789297b94da1a1fa12c74214cb4c18cf36d885303d6aa2e1" prot="public">
+          <name>Goal</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacerobot__nagivation_1aa197a860415d9780f789297b94da1a1fa7446050b848d839fe9847073ff94cfd6" prot="public">
+          <name>Agent</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/Map.cs" line="14" column="1" bodyfile="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/Map.cs" bodystart="13" bodyend="20"/>
+      </memberdef>
+      <memberdef kind="enum" id="namespacerobot__nagivation_1a5d3ca8bdf460392c95d3ccd667728564" prot="public" static="no">
+        <name>AgentActions</name>
+        <enumvalue id="namespacerobot__nagivation_1a5d3ca8bdf460392c95d3ccd667728564a13348442cc6a27032d2b4aa28b75a5d3" prot="public">
+          <name>Search</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacerobot__nagivation_1a5d3ca8bdf460392c95d3ccd667728564a258f49887ef8d14ac268c92b02503aaa" prot="public">
+          <name>Up</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacerobot__nagivation_1a5d3ca8bdf460392c95d3ccd667728564a08a38277b0309070706f6652eeae9a53" prot="public">
+          <name>Down</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacerobot__nagivation_1a5d3ca8bdf460392c95d3ccd667728564a945d5e233cf7d6240f6b783b36a374ff" prot="public">
+          <name>Left</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacerobot__nagivation_1a5d3ca8bdf460392c95d3ccd667728564a92b09c7c48c520c3c55e497875da437c" prot="public">
+          <name>Right</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacerobot__nagivation_1a5d3ca8bdf460392c95d3ccd667728564ab578b733cbb788fc6ad208314d2c4c2b" prot="public">
+          <name>Lost</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/Map.cs" line="23" column="1" bodyfile="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/Map.cs" bodystart="22" bodyend="30"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>A State contains information regarding how the &quot;world&quot; looks at a given point. &lt;T&gt; is generic, allowing States to contain any class</para><para><simplesect kind="author"><para>Steven Morris </para></simplesect>
+<simplesect kind="version"><para>21/03/2016 </para></simplesect>
+</para>    </detaileddescription>
+    <location file="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/Agents.cs" line="11" column="1"/>
+  </compounddef>
+</doxygen>

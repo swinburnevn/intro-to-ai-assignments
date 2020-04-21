@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="interfacerobot__nagivation_1_1_i_model" kind="interface" prot="public">
+    <compoundname>robot_nagivation::IModel</compoundname>
+    <derivedcompoundref refid="classrobot__nagivation_1_1_game_model" prot="public" virt="non-virtual">robot_nagivation.GameModel</derivedcompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="interfacerobot__nagivation_1_1_i_model_1ab670f457bba2f2be2beea78bc5377331" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void robot_nagivation.IModel.Initialise</definition>
+        <argsstring>()</argsstring>
+        <name>Initialise</name>
+        <reimplementedby refid="classrobot__nagivation_1_1_game_model_1aa8a4bf67486c33898b7a30a0b0ff720f">Initialise</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/Model.cs" line="29" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="interfacerobot__nagivation_1_1_i_model_1a87446d3e5d9994d87c2de8369ff1c489" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void robot_nagivation.IModel.Run</definition>
+        <argsstring>()</argsstring>
+        <name>Run</name>
+        <reimplementedby refid="classrobot__nagivation_1_1_game_model_1a60f9c532ddd3978cc426a8bf4cc5c5d3">Run</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/Model.cs" line="30" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="63">
+        <label>robot_nagivation.IModel</label>
+        <link refid="interfacerobot__nagivation_1_1_i_model"/>
+      </node>
+      <node id="64">
+        <label>robot_nagivation.GameModel</label>
+        <link refid="classrobot__nagivation_1_1_game_model"/>
+        <childnode refid="63" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <location file="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/Model.cs" line="28" column="1" bodyfile="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/Model.cs" bodystart="27" bodyend="31"/>
+    <listofallmembers>
+      <member refid="interfacerobot__nagivation_1_1_i_model_1ab670f457bba2f2be2beea78bc5377331" prot="public" virt="non-virtual"><scope>robot_nagivation::IModel</scope><name>Initialise</name></member>
+      <member refid="interfacerobot__nagivation_1_1_i_model_1a87446d3e5d9994d87c2de8369ff1c489" prot="public" virt="non-virtual"><scope>robot_nagivation::IModel</scope><name>Run</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

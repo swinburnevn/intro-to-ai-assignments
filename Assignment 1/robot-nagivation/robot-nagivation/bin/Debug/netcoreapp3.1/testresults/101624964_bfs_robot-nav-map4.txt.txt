@@ -1,0 +1,2 @@
+101624964_bfs_robot-nav-map4.txt 'bfs: Breadth-First Agent' 33
+No solution found

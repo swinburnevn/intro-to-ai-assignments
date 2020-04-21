@@ -1,0 +1,2 @@
+101624964_ucs_robot-nav-map2.txt_directional 'ucs: Uniform Cost Agent' 38
+Up; Up; Up; Right; Right; Down; Right; Right; Down; Right; Right; 

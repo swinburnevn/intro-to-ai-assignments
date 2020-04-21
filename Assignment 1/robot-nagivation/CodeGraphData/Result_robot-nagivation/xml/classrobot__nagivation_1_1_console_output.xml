@@ -1,0 +1,134 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="classrobot__nagivation_1_1_console_output" kind="class" prot="public">
+    <compoundname>robot_nagivation::ConsoleOutput</compoundname>
+    <basecompoundref refid="interfacerobot__nagivation_1_1_i_view" prot="public" virt="non-virtual">robot_nagivation.IView</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classrobot__nagivation_1_1_console_output_1afd537ac58e37a3f904c34b4b8ddcfd13" prot="private" static="no" mutable="no">
+        <type><ref refid="classrobot__nagivation_1_1_program_data" kindref="compound">ProgramData</ref></type>
+        <definition>ProgramData robot_nagivation.ConsoleOutput._data</definition>
+        <argsstring></argsstring>
+        <name>_data</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/View.cs" line="630" column="1" bodyfile="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/View.cs" bodystart="630" bodyend="-1"/>
+        <referencedby refid="classrobot__nagivation_1_1_console_output_1a58462eed2c00e944b1f4d441fab9b5bd" compoundref="_view_8cs" startline="632" endline="636">robot_nagivation.ConsoleOutput.ConsoleOutput</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classrobot__nagivation_1_1_console_output_1a58462eed2c00e944b1f4d441fab9b5bd" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>robot_nagivation.ConsoleOutput.ConsoleOutput</definition>
+        <argsstring>(ref ProgramData data)</argsstring>
+        <name>ConsoleOutput</name>
+        <param>
+          <type>ref <ref refid="classrobot__nagivation_1_1_program_data" kindref="compound">ProgramData</ref></type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/View.cs" line="632" column="1" bodyfile="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/View.cs" bodystart="632" bodyend="636"/>
+        <references refid="classrobot__nagivation_1_1_console_output_1afd537ac58e37a3f904c34b4b8ddcfd13" compoundref="_view_8cs" startline="630">robot_nagivation.ConsoleOutput._data</references>
+      </memberdef>
+      <memberdef kind="function" id="classrobot__nagivation_1_1_console_output_1ae7898d6e07b232e6ce784b72b6f35d60" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>void robot_nagivation.ConsoleOutput.Close</definition>
+        <argsstring>()</argsstring>
+        <name>Close</name>
+        <reimplements refid="interfacerobot__nagivation_1_1_i_view_1abe4af7e6eae747f7d4369fe672977897">Close</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/View.cs" line="638" column="1" bodyfile="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/View.cs" bodystart="638" bodyend="640"/>
+      </memberdef>
+      <memberdef kind="function" id="classrobot__nagivation_1_1_console_output_1a6cc476a766f9bb9308af80f29105a77c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>void robot_nagivation.ConsoleOutput.Draw</definition>
+        <argsstring>()</argsstring>
+        <name>Draw</name>
+        <reimplements refid="interfacerobot__nagivation_1_1_i_view_1a1347754747e0409e7233ae8e3a3f6d85">Draw</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/View.cs" line="642" column="1" bodyfile="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/View.cs" bodystart="642" bodyend="644"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="24">
+        <label>robot_nagivation.ConsoleOutput</label>
+        <link refid="classrobot__nagivation_1_1_console_output"/>
+        <childnode refid="25" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="25">
+        <label>IView</label>
+        <link refid="interfacerobot__nagivation_1_1_i_view"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="28">
+        <label>robot_nagivation.ProgramData</label>
+        <link refid="classrobot__nagivation_1_1_program_data"/>
+        <childnode refid="29" relation="usage">
+          <edgelabel>_map</edgelabel>
+        </childnode>
+        <childnode refid="30" relation="usage">
+          <edgelabel>_agent</edgelabel>
+        </childnode>
+      </node>
+      <node id="26">
+        <label>robot_nagivation.ConsoleOutput</label>
+        <link refid="classrobot__nagivation_1_1_console_output"/>
+        <childnode refid="27" relation="public-inheritance">
+        </childnode>
+        <childnode refid="28" relation="usage">
+          <edgelabel>_data</edgelabel>
+        </childnode>
+      </node>
+      <node id="29">
+        <label>robot_nagivation.Map</label>
+        <link refid="classrobot__nagivation_1_1_map"/>
+      </node>
+      <node id="31">
+        <label>robot_nagivation.AgentData</label>
+        <link refid="classrobot__nagivation_1_1_agent_data"/>
+      </node>
+      <node id="30">
+        <label>robot_nagivation.Agent</label>
+        <link refid="classrobot__nagivation_1_1_agent"/>
+        <childnode refid="31" relation="usage">
+          <edgelabel>_agentData</edgelabel>
+        </childnode>
+      </node>
+      <node id="27">
+        <label>IView</label>
+        <link refid="interfacerobot__nagivation_1_1_i_view"/>
+      </node>
+    </collaborationgraph>
+    <location file="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/View.cs" line="629" column="1" bodyfile="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/View.cs" bodystart="628" bodyend="645"/>
+    <listofallmembers>
+      <member refid="classrobot__nagivation_1_1_console_output_1afd537ac58e37a3f904c34b4b8ddcfd13" prot="private" virt="non-virtual"><scope>robot_nagivation::ConsoleOutput</scope><name>_data</name></member>
+      <member refid="classrobot__nagivation_1_1_console_output_1ae7898d6e07b232e6ce784b72b6f35d60" prot="public" virt="virtual"><scope>robot_nagivation::ConsoleOutput</scope><name>Close</name></member>
+      <member refid="classrobot__nagivation_1_1_console_output_1a58462eed2c00e944b1f4d441fab9b5bd" prot="public" virt="non-virtual"><scope>robot_nagivation::ConsoleOutput</scope><name>ConsoleOutput</name></member>
+      <member refid="classrobot__nagivation_1_1_console_output_1a6cc476a766f9bb9308af80f29105a77c" prot="public" virt="virtual"><scope>robot_nagivation::ConsoleOutput</scope><name>Draw</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

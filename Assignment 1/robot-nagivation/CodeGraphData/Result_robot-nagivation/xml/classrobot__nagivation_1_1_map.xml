@@ -1,0 +1,170 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="classrobot__nagivation_1_1_map" kind="class" prot="public">
+    <compoundname>robot_nagivation::Map</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classrobot__nagivation_1_1_map_1a2e1760077ee0c0bf47a9b676f200142d" prot="private" static="no" mutable="no">
+        <type>Vector2i</type>
+        <definition>Vector2i robot_nagivation.Map._agentPos</definition>
+        <argsstring></argsstring>
+        <name>_agentPos</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/Map.cs" line="99" column="1" bodyfile="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/Map.cs" bodystart="99" bodyend="-1"/>
+        <referencedby refid="classrobot__nagivation_1_1_map_1a99bad09b7de8ebef1fa227c83c07120e" compoundref="_map_8cs" startline="104" endline="121">robot_nagivation.Map.Map</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classrobot__nagivation_1_1_map_1ad8786e5528ed2a288452b47a980aacb0" prot="private" static="no" mutable="no">
+        <type>Vector2i</type>
+        <definition>Vector2i robot_nagivation.Map._size</definition>
+        <argsstring></argsstring>
+        <name>_size</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/Map.cs" line="100" column="1" bodyfile="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/Map.cs" bodystart="100" bodyend="-1"/>
+        <referencedby refid="classrobot__nagivation_1_1_map_1a99bad09b7de8ebef1fa227c83c07120e" compoundref="_map_8cs" startline="104" endline="121">robot_nagivation.Map.Map</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classrobot__nagivation_1_1_map_1a81e33c741a3764e7acda79968552098d" prot="private" static="no" mutable="no">
+        <type><ref refid="namespacerobot__nagivation_1aa197a860415d9780f789297b94da1a1f" kindref="member">TileType</ref>[,]</type>
+        <definition>TileType [,] robot_nagivation.Map._mapMatrix</definition>
+        <argsstring></argsstring>
+        <name>_mapMatrix</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/Map.cs" line="101" column="1" bodyfile="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/Map.cs" bodystart="101" bodyend="-1"/>
+        <referencedby refid="classrobot__nagivation_1_1_map_1a99bad09b7de8ebef1fa227c83c07120e" compoundref="_map_8cs" startline="104" endline="121">robot_nagivation.Map.Map</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classrobot__nagivation_1_1_map_1aebb1fcb95319d468564107dd5c334ee7" prot="private" static="no" mutable="no">
+        <type>List&lt; Vector2i &gt;</type>
+        <definition>List&lt;Vector2i&gt; robot_nagivation.Map._goalPositions</definition>
+        <argsstring></argsstring>
+        <name>_goalPositions</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/Map.cs" line="102" column="1" bodyfile="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/Map.cs" bodystart="102" bodyend="-1"/>
+        <referencedby refid="classrobot__nagivation_1_1_map_1a99bad09b7de8ebef1fa227c83c07120e" compoundref="_map_8cs" startline="104" endline="121">robot_nagivation.Map.Map</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="classrobot__nagivation_1_1_map_1a75a51d78cca0afff1aaf0bb6a7facbef" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="yes">
+        <type>List&lt; Vector2i &gt;</type>
+        <definition>List&lt;Vector2i&gt; robot_nagivation.Map.GoalPos</definition>
+        <argsstring></argsstring>
+        <name>GoalPos</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/Map.cs" line="128" column="1" bodyfile="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/Map.cs" bodystart="128" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="classrobot__nagivation_1_1_map_1a23fb5dc553546af36f8718fbf0576a02" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="yes">
+        <type><ref refid="namespacerobot__nagivation_1aa197a860415d9780f789297b94da1a1f" kindref="member">TileType</ref>[,]</type>
+        <definition>TileType [,] robot_nagivation.Map.MapMatrix</definition>
+        <argsstring></argsstring>
+        <name>MapMatrix</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/Map.cs" line="129" column="1" bodyfile="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/Map.cs" bodystart="129" bodyend="-1"/>
+        <referencedby refid="classrobot__nagivation_1_1_s_f_m_l_view_1a2e68cad55af91b78d2a070ee94287587" compoundref="_view_8cs" startline="405" endline="595">robot_nagivation.SFMLView.Draw</referencedby>
+        <referencedby refid="classrobot__nagivation_1_1_game_model_1a8d6433d4c6cace4d12b487508369b265" compoundref="_model_8cs" startline="47" endline="55">robot_nagivation.GameModel.WithinMap</referencedby>
+      </memberdef>
+      <memberdef kind="property" id="classrobot__nagivation_1_1_map_1a54bd7016194129978c1e6392c9ae9fbd" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="yes">
+        <type>Vector2i</type>
+        <definition>Vector2i robot_nagivation.Map.AgentPos</definition>
+        <argsstring></argsstring>
+        <name>AgentPos</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/Map.cs" line="130" column="1" bodyfile="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/Map.cs" bodystart="130" bodyend="-1"/>
+        <referencedby refid="classrobot__nagivation_1_1_s_f_m_l_view_1a2e68cad55af91b78d2a070ee94287587" compoundref="_view_8cs" startline="405" endline="595">robot_nagivation.SFMLView.Draw</referencedby>
+        <referencedby refid="classrobot__nagivation_1_1_console_view_1a513a4916f5c6754d08092ad99d01e7b2" compoundref="_view_8cs" startline="668" endline="709">robot_nagivation.ConsoleView.Draw</referencedby>
+        <referencedby refid="classrobot__nagivation_1_1_game_model_1ae6101cf0f1ebe6a58eaacf27b97c9212" compoundref="_model_8cs" startline="57" endline="87">robot_nagivation.GameModel.MoveAgent</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classrobot__nagivation_1_1_map_1a99bad09b7de8ebef1fa227c83c07120e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>robot_nagivation.Map.Map</definition>
+        <argsstring>(Vector2i size)</argsstring>
+        <name>Map</name>
+        <param>
+          <type>Vector2i</type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/Map.cs" line="104" column="1" bodyfile="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/Map.cs" bodystart="104" bodyend="121"/>
+        <references refid="classrobot__nagivation_1_1_map_1a2e1760077ee0c0bf47a9b676f200142d" compoundref="_map_8cs" startline="99">robot_nagivation.Map._agentPos</references>
+        <references refid="classrobot__nagivation_1_1_map_1aebb1fcb95319d468564107dd5c334ee7" compoundref="_map_8cs" startline="102">robot_nagivation.Map._goalPositions</references>
+        <references refid="classrobot__nagivation_1_1_map_1a81e33c741a3764e7acda79968552098d" compoundref="_map_8cs" startline="101">robot_nagivation.Map._mapMatrix</references>
+        <references refid="classrobot__nagivation_1_1_map_1ad8786e5528ed2a288452b47a980aacb0" compoundref="_map_8cs" startline="100">robot_nagivation.Map._size</references>
+      </memberdef>
+      <memberdef kind="function" id="classrobot__nagivation_1_1_map_1a129ad89abbb58fbca25d7bac300c68c2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>robot_nagivation.Map.Map</definition>
+        <argsstring>(int x, int y)</argsstring>
+        <name>Map</name>
+        <param>
+          <type>int</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>y</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/Map.cs" line="123" column="1" bodyfile="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/Map.cs" bodystart="123" bodyend="126"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para><ref refid="classrobot__nagivation_1_1_map" kindref="compound">Map</ref> class, contains details about the world and agent. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/Map.cs" line="98" column="1" bodyfile="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/Map.cs" bodystart="97" bodyend="131"/>
+    <listofallmembers>
+      <member refid="classrobot__nagivation_1_1_map_1a2e1760077ee0c0bf47a9b676f200142d" prot="private" virt="non-virtual"><scope>robot_nagivation::Map</scope><name>_agentPos</name></member>
+      <member refid="classrobot__nagivation_1_1_map_1aebb1fcb95319d468564107dd5c334ee7" prot="private" virt="non-virtual"><scope>robot_nagivation::Map</scope><name>_goalPositions</name></member>
+      <member refid="classrobot__nagivation_1_1_map_1a81e33c741a3764e7acda79968552098d" prot="private" virt="non-virtual"><scope>robot_nagivation::Map</scope><name>_mapMatrix</name></member>
+      <member refid="classrobot__nagivation_1_1_map_1ad8786e5528ed2a288452b47a980aacb0" prot="private" virt="non-virtual"><scope>robot_nagivation::Map</scope><name>_size</name></member>
+      <member refid="classrobot__nagivation_1_1_map_1a54bd7016194129978c1e6392c9ae9fbd" prot="public" virt="non-virtual"><scope>robot_nagivation::Map</scope><name>AgentPos</name></member>
+      <member refid="classrobot__nagivation_1_1_map_1a75a51d78cca0afff1aaf0bb6a7facbef" prot="public" virt="non-virtual"><scope>robot_nagivation::Map</scope><name>GoalPos</name></member>
+      <member refid="classrobot__nagivation_1_1_map_1a99bad09b7de8ebef1fa227c83c07120e" prot="public" virt="non-virtual"><scope>robot_nagivation::Map</scope><name>Map</name></member>
+      <member refid="classrobot__nagivation_1_1_map_1a129ad89abbb58fbca25d7bac300c68c2" prot="public" virt="non-virtual"><scope>robot_nagivation::Map</scope><name>Map</name></member>
+      <member refid="classrobot__nagivation_1_1_map_1a23fb5dc553546af36f8718fbf0576a02" prot="public" virt="non-virtual"><scope>robot_nagivation::Map</scope><name>MapMatrix</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
