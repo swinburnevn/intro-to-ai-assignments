@@ -1,8 +1,8 @@
 @echo off
 setlocal EnableDelayedExpansion
 
-set _agents=bfs,dfs,gbfs,astar,ucs,iddfs
-set _maps=RobotNav-test.txt,robot-nav-map2.txt,robot-nav-map3.txt,robot-nav-map4.txt
+set _agents=bfs,dfs,gbfs,astar,ucs,iddfs,dja
+set _maps=RobotNav-test.txt,robot-nav-map2.txt,robot-nav-map3.txt,robot-nav-map4.txt,robot-nav-map5.txt
 set _logfile=testlog.txt
 set _APPNAME=robot-nagivation.exe
 

@@ -25,6 +25,12 @@ No solution found
 
 No solution found
 
+101624964_bfs_robot-nav-map5.txt_directional 'bfs: Breadth-First Agent' 36
+
+Left; Left; Up; Up; Up; Up; Right; Right; Right; Right; Right; Right; Right; 
+101624964_bfs_robot-nav-map5.txt 'bfs: Breadth-First Agent' 36
+
+Left; Left; Up; Up; Up; Up; Right; Right; Right; Right; Right; Right; Right; 
 101624964_dfs_RobotNav-test.txt_directional 'dfs: Depth-First Agent' 28
 
 Up; Right; Down; Down; Right; Right; Down; Right; Up; Up; Up; Right; Down; Down; Down; Right; Up; Up; Up; Right; 
@@ -51,6 +57,12 @@ No solution found
 
 No solution found
 
+101624964_dfs_robot-nav-map5.txt_directional 'dfs: Depth-First Agent' 14
+
+Left; Left; Up; Up; Up; Up; Right; Right; Right; Right; Right; Right; Right; 
+101624964_dfs_robot-nav-map5.txt 'dfs: Depth-First Agent' 14
+
+Left; Left; Up; Up; Up; Up; Right; Right; Right; Right; Right; Right; Right; 
 101624964_gbfs_RobotNav-test.txt_directional 'gbfs: Greedy-Best First Agent' 28
 
 Right; Down; Right; Right; Right; Right; Right; Right; Up; Up; 
@@ -77,6 +89,12 @@ No solution found
 
 No solution found
 
+101624964_gbfs_robot-nav-map5.txt_directional 'gbfs: Greedy-Best First Agent' 19
+
+Right; Right; Right; Right; Right; Right; Right; Right; Up; Up; Left; Left; Left; Up; Up; 
+101624964_gbfs_robot-nav-map5.txt 'gbfs: Greedy-Best First Agent' 19
+
+Right; Right; Right; Right; Right; Right; Right; Right; Up; Up; Left; Left; Left; Up; Up; 
 101624964_astar_RobotNav-test.txt_directional 'astar: A-Star Agent' 31
 
 Right; Down; Right; Right; Right; Right; Right; Right; Up; Up; 
@@ -103,6 +121,12 @@ No solution found
 
 No solution found
 
+101624964_astar_robot-nav-map5.txt_directional 'astar: A-Star Agent' 28
+
+Left; Left; Up; Up; Up; Up; Right; Right; Right; Right; Right; Right; Right; 
+101624964_astar_robot-nav-map5.txt 'astar: A-Star Agent' 26
+
+Left; Left; Up; Up; Up; Up; Right; Right; Right; Right; Right; Right; Right; 
 101624964_ucs_RobotNav-test.txt_directional 'ucs: Uniform Cost Agent' 39
 
 Down; Right; Right; Right; Right; Right; Right; Right; Right; Right; Right; Down; 
@@ -129,6 +153,12 @@ No solution found
 
 No solution found
 
+101624964_ucs_robot-nav-map5.txt_directional 'ucs: Uniform Cost Agent' 38
+
+Left; Left; Up; Up; Up; Up; Right; Right; Right; Right; Right; Right; Right; 
+101624964_ucs_robot-nav-map5.txt 'ucs: Uniform Cost Agent' 37
+
+Right; Right; Right; Right; Right; Right; Right; Right; Up; Up; Left; Left; Left; Up; Up; 
 101624964_iddfs_RobotNav-test.txt_directional 'iddfs: Iterative Deepening DFS Agent' 24
 
 Up; Right; Down; Down; Right; Right; Down; Right; Up; Up; Up; Right; Right; Right; 
@@ -155,3 +185,41 @@ No solution found
 
 No solution found
 
+101624964_iddfs_robot-nav-map5.txt_directional 'iddfs: Iterative Deepening DFS Agent' 13
+
+Left; Left; Up; Up; Up; Up; Right; Right; Right; Right; Right; Right; Right; 
+101624964_iddfs_robot-nav-map5.txt 'iddfs: Iterative Deepening DFS Agent' 13
+
+Left; Left; Up; Up; Up; Up; Right; Right; Right; Right; Right; Right; Right; 
+101624964_dja_RobotNav-test.txt_directional 'dja: Dijkstra's Algorithm Agent' 30
+
+Right; Down; Right; Right; Right; Up; Up; Right; Right; Right; 
+101624964_dja_RobotNav-test.txt 'dja: Dijkstra's Algorithm Agent' 31
+
+Right; Down; Right; Right; Right; Up; Up; Right; Right; Right; 
+101624964_dja_robot-nav-map2.txt_directional 'dja: Dijkstra's Algorithm Agent' 23
+
+Up; Up; Up; Right; Right; Down; Right; Down; Right; Right; Right; 
+101624964_dja_robot-nav-map2.txt 'dja: Dijkstra's Algorithm Agent' 23
+
+Up; Up; Up; Right; Right; Down; Right; Down; Right; Right; Right; 
+101624964_dja_robot-nav-map3.txt_directional 'dja: Dijkstra's Algorithm Agent' 34
+
+Down; Down; Right; Right; Right; Right; Right; Right; Right; Right; Right; Right; Up; Up; 
+101624964_dja_robot-nav-map3.txt 'dja: Dijkstra's Algorithm Agent' 32
+
+Down; Down; Right; Right; Right; Right; Right; Right; Right; Right; Right; Right; Up; Up; 
+101624964_dja_robot-nav-map4.txt_directional 'dja: Dijkstra's Algorithm Agent' 33
+
+No solution found
+
+101624964_dja_robot-nav-map4.txt 'dja: Dijkstra's Algorithm Agent' 33
+
+No solution found
+
+101624964_dja_robot-nav-map5.txt_directional 'dja: Dijkstra's Algorithm Agent' 24
+
+Left; Left; Up; Up; Up; Up; Right; Right; Right; Right; Right; Right; Right; 
+101624964_dja_robot-nav-map5.txt 'dja: Dijkstra's Algorithm Agent' 25
+
+Left; Left; Up; Up; Up; Up; Right; Right; Right; Right; Right; Right; Right; 

@@ -1,0 +1,2 @@
+101624964_dja_robot-nav-map4.txt_directional 'dja: Dijkstra's Algorithm Agent' 33
+No solution found

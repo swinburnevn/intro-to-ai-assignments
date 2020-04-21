@@ -1,0 +1,2 @@
+101624964_ucs_robot-nav-map5.txt 'ucs: Uniform Cost Agent' 37
+Right; Right; Right; Right; Right; Right; Right; Right; Up; Up; Left; Left; Left; Up; Up; 

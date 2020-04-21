@@ -1,0 +1,2 @@
+101624964_iddfs_robot-nav-map5.txt 'iddfs: Iterative Deepening DFS Agent' 13
+Left; Left; Up; Up; Up; Up; Right; Right; Right; Right; Right; Right; Right; 

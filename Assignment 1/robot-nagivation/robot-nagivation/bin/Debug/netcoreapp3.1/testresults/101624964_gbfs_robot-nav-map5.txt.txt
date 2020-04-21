@@ -1,0 +1,2 @@
+101624964_gbfs_robot-nav-map5.txt 'gbfs: Greedy-Best First Agent' 19
+Right; Right; Right; Right; Right; Right; Right; Right; Up; Up; Left; Left; Left; Up; Up; 
