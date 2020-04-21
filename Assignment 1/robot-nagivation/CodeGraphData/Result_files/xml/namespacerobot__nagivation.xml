@@ -10,6 +10,7 @@
     <innerclass refid="classrobot__nagivation_1_1_depth_first_agent" prot="public">robot_nagivation::DepthFirstAgent</innerclass>
     <innerclass refid="classrobot__nagivation_1_1_breadth_first_agent" prot="public">robot_nagivation::BreadthFirstAgent</innerclass>
     <innerclass refid="classrobot__nagivation_1_1_a_star_agent" prot="public">robot_nagivation::AStarAgent</innerclass>
+    <innerclass refid="classrobot__nagivation_1_1_dijkstra_agent" prot="public">robot_nagivation::DijkstraAgent</innerclass>
     <innerclass refid="classrobot__nagivation_1_1_greedy_first_agent" prot="public">robot_nagivation::GreedyFirstAgent</innerclass>
     <innerclass refid="classrobot__nagivation_1_1_node_3_01_t_01_4" prot="public">robot_nagivation::Node&lt; T &gt;</innerclass>
     <innerclass refid="classrobot__nagivation_1_1_map" prot="public">robot_nagivation::Map</innerclass>

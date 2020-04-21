@@ -28,13 +28,13 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="61">
+      <node id="70">
         <label>robot_nagivation.MapParser</label>
         <link refid="classrobot__nagivation_1_1_map_parser"/>
-        <childnode refid="60" relation="public-inheritance">
+        <childnode refid="69" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="60">
+      <node id="69">
         <label>robot_nagivation.IMapParser</label>
         <link refid="interfacerobot__nagivation_1_1_i_map_parser"/>
       </node>

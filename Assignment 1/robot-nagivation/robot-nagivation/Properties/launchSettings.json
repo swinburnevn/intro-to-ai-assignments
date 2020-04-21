@@ -2,7 +2,7 @@
   "profiles": {
     "robot-nagivation": {
       "commandName": "Project",
-      "commandLineArgs": "RobotNav-test.txt astar gui 1 asd"
+      "commandLineArgs": "robot-nav-map5.txt dja gui 1"
     }
   }
 }

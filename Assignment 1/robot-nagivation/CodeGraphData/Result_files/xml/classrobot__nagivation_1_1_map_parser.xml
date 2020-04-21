@@ -28,25 +28,25 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="84">
+      <node id="93">
         <label>robot_nagivation.MapParser</label>
         <link refid="classrobot__nagivation_1_1_map_parser"/>
-        <childnode refid="85" relation="public-inheritance">
+        <childnode refid="94" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="85">
+      <node id="94">
         <label>IMapParser</label>
         <link refid="interfacerobot__nagivation_1_1_i_map_parser"/>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="86">
+      <node id="95">
         <label>robot_nagivation.MapParser</label>
         <link refid="classrobot__nagivation_1_1_map_parser"/>
-        <childnode refid="87" relation="public-inheritance">
+        <childnode refid="96" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="87">
+      <node id="96">
         <label>IMapParser</label>
         <link refid="interfacerobot__nagivation_1_1_i_map_parser"/>
       </node>

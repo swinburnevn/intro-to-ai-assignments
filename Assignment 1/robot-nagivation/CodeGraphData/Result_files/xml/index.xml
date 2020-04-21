@@ -76,6 +76,10 @@
     <member refid="classrobot__nagivation_1_1_depth_first_agent_1ab0044b1146ff8bc1cc9f97e0e4ed0159" kind="function"><name>Initialise</name></member>
     <member refid="classrobot__nagivation_1_1_depth_first_agent_1a600035f1635a9e0979cb249ea7ed1b99" kind="function"><name>next</name></member>
   </compound>
+  <compound refid="classrobot__nagivation_1_1_dijkstra_agent" kind="class"><name>robot_nagivation::DijkstraAgent</name>
+    <member refid="classrobot__nagivation_1_1_dijkstra_agent_1a272df3e4c88587039dcdd2beed93b4b9" kind="function"><name>Initialise</name></member>
+    <member refid="classrobot__nagivation_1_1_dijkstra_agent_1af0e229045ad846d86093d1863bb52dc7" kind="function"><name>CostFunction</name></member>
+  </compound>
   <compound refid="classrobot__nagivation_1_1_game_model" kind="class"><name>robot_nagivation::GameModel</name>
     <member refid="classrobot__nagivation_1_1_game_model_1a51ac3197bdf5464a8196c1010d272f79" kind="variable"><name>_data</name></member>
     <member refid="classrobot__nagivation_1_1_game_model_1ab703405654c7f1d527853c31a7e0fee8" kind="function"><name>GameModel</name></member>

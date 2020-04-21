@@ -276,10 +276,10 @@
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
-      <node id="93">
+      <node id="102">
         <label>robot_nagivation.Node&lt; T &gt;</label>
         <link refid="classrobot__nagivation_1_1_node_3_01_t_01_4"/>
-        <childnode refid="93" relation="usage">
+        <childnode refid="102" relation="usage">
           <edgelabel>_parent</edgelabel>
         </childnode>
       </node>

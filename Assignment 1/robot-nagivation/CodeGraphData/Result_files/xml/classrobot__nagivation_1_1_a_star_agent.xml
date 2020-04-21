@@ -51,45 +51,45 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="14">
+      <node id="15">
         <label>Agent</label>
         <link refid="classrobot__nagivation_1_1_agent"/>
       </node>
-      <node id="13">
+      <node id="14">
         <label>GreedyFirstAgent</label>
         <link refid="classrobot__nagivation_1_1_greedy_first_agent"/>
-        <childnode refid="14" relation="public-inheritance">
+        <childnode refid="15" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="12">
+      <node id="13">
         <label>robot_nagivation.AStarAgent</label>
         <link refid="classrobot__nagivation_1_1_a_star_agent"/>
-        <childnode refid="13" relation="public-inheritance">
+        <childnode refid="14" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="18">
+      <node id="19">
         <label>robot_nagivation.AgentData</label>
         <link refid="classrobot__nagivation_1_1_agent_data"/>
       </node>
-      <node id="17">
+      <node id="18">
         <label>Agent</label>
         <link refid="classrobot__nagivation_1_1_agent"/>
-        <childnode refid="18" relation="usage">
+        <childnode refid="19" relation="usage">
           <edgelabel>_agentData</edgelabel>
         </childnode>
       </node>
-      <node id="16">
+      <node id="17">
         <label>GreedyFirstAgent</label>
         <link refid="classrobot__nagivation_1_1_greedy_first_agent"/>
-        <childnode refid="17" relation="public-inheritance">
+        <childnode refid="18" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="15">
+      <node id="16">
         <label>robot_nagivation.AStarAgent</label>
         <link refid="classrobot__nagivation_1_1_a_star_agent"/>
-        <childnode refid="16" relation="public-inheritance">
+        <childnode refid="17" relation="public-inheritance">
         </childnode>
       </node>
     </collaborationgraph>

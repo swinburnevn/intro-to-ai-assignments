@@ -45,6 +45,35 @@ namespace robot_nagivation
 
     }
 
+    public class DijkstraAgent : GreedyFirstAgent
+    {
+
+        public override void Initialise(Percepts percepts)
+        {
+
+
+            base.Initialise(percepts);
+
+            Name = "Dijkstra's Algorithm Agent";
+        }
+
+        public override int CostFunction(Vector2i Pos, Percepts percepts)
+        {
+            //Dijkstra's Algorithm is to determine the cost to get up to this node, using a distance function.
+            // In this case, it'll be the manhattan distance to this node location
+
+            int manhattanDistance = 0;
+
+            manhattanDistance = Math.Abs(Pos.X - AgentData.RootNode.Pos.X) +
+                Math.Abs(Pos.Y - Pos.X - AgentData.RootNode.Pos.Y);
+
+            return manhattanDistance;
+
+        }
+
+
+    }
+
     public class GreedyFirstAgent : Agent
     {
         /*  Geedy-First Search Specific Items  */

@@ -83,7 +83,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/Model.cs" line="21" column="1" bodyfile="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/Model.cs" bodystart="21" bodyend="-1"/>
-        <referencedby refid="classrobot__nagivation_1_1_greedy_first_agent_1a72447d38d7eaf51a29c89111e7754654" compoundref="_informed_agents_8cs" startline="67" endline="78">robot_nagivation.GreedyFirstAgent.HeuristicFunction</referencedby>
+        <referencedby refid="classrobot__nagivation_1_1_greedy_first_agent_1a72447d38d7eaf51a29c89111e7754654" compoundref="_informed_agents_8cs" startline="103" endline="114">robot_nagivation.GreedyFirstAgent.HeuristicFunction</referencedby>
       </memberdef>
       </sectiondef>
     <briefdescription>

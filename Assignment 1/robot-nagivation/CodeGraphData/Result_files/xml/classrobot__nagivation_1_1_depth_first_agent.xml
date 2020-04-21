@@ -93,39 +93,39 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="41">
+      <node id="42">
         <label>Agent</label>
         <link refid="classrobot__nagivation_1_1_agent"/>
       </node>
-      <node id="42">
+      <node id="43">
         <label>robot_nagivation.IterativeDDFSAgent</label>
         <link refid="classrobot__nagivation_1_1_iterative_d_d_f_s_agent"/>
-        <childnode refid="40" relation="public-inheritance">
+        <childnode refid="41" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="40">
+      <node id="41">
         <label>robot_nagivation.DepthFirstAgent</label>
         <link refid="classrobot__nagivation_1_1_depth_first_agent"/>
-        <childnode refid="41" relation="public-inheritance">
+        <childnode refid="42" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="45">
+      <node id="46">
         <label>robot_nagivation.AgentData</label>
         <link refid="classrobot__nagivation_1_1_agent_data"/>
       </node>
-      <node id="44">
+      <node id="45">
         <label>Agent</label>
         <link refid="classrobot__nagivation_1_1_agent"/>
-        <childnode refid="45" relation="usage">
+        <childnode refid="46" relation="usage">
           <edgelabel>_agentData</edgelabel>
         </childnode>
       </node>
-      <node id="43">
+      <node id="44">
         <label>robot_nagivation.DepthFirstAgent</label>
         <link refid="classrobot__nagivation_1_1_depth_first_agent"/>
-        <childnode refid="44" relation="public-inheritance">
+        <childnode refid="45" relation="public-inheritance">
         </childnode>
       </node>
     </collaborationgraph>

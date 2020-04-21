@@ -82,6 +82,7 @@ namespace robot_nagivation
             _agentsByIdentifier.Add("astar", new AStarAgent());
             _agentsByIdentifier.Add("iddfs", new IterativeDDFSAgent());
             _agentsByIdentifier.Add("ucs", new UniformCostAgent());
+            _agentsByIdentifier.Add("dja", new DijkstraAgent());
 
             try
             {

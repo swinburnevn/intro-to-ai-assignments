@@ -44,25 +44,25 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="74">
+      <node id="83">
         <label>robot_nagivation.ConsoleOutput</label>
         <link refid="classrobot__nagivation_1_1_console_output"/>
-        <childnode refid="73" relation="public-inheritance">
+        <childnode refid="82" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="75">
+      <node id="84">
         <label>robot_nagivation.ConsoleView</label>
         <link refid="classrobot__nagivation_1_1_console_view"/>
-        <childnode refid="73" relation="public-inheritance">
+        <childnode refid="82" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="76">
+      <node id="85">
         <label>robot_nagivation.SFMLView</label>
         <link refid="classrobot__nagivation_1_1_s_f_m_l_view"/>
-        <childnode refid="73" relation="public-inheritance">
+        <childnode refid="82" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="73">
+      <node id="82">
         <label>robot_nagivation.IView</label>
         <link refid="interfacerobot__nagivation_1_1_i_view"/>
       </node>
