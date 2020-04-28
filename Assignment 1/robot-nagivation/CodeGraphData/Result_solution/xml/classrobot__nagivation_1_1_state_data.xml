@@ -24,13 +24,13 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="126">
+      <node id="135">
         <label>robot_nagivation.MapNode</label>
         <link refid="classrobot__nagivation_1_1_map_node"/>
-        <childnode refid="125" relation="public-inheritance">
+        <childnode refid="134" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="125">
+      <node id="134">
         <label>robot_nagivation.StateData</label>
         <link refid="classrobot__nagivation_1_1_state_data"/>
       </node>

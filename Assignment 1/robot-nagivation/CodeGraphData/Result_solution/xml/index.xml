@@ -76,6 +76,10 @@
     <member refid="classrobot__nagivation_1_1_depth_first_agent_1ab0044b1146ff8bc1cc9f97e0e4ed0159" kind="function"><name>Initialise</name></member>
     <member refid="classrobot__nagivation_1_1_depth_first_agent_1a600035f1635a9e0979cb249ea7ed1b99" kind="function"><name>next</name></member>
   </compound>
+  <compound refid="classrobot__nagivation_1_1_dijkstra_agent" kind="class"><name>robot_nagivation::DijkstraAgent</name>
+    <member refid="classrobot__nagivation_1_1_dijkstra_agent_1a272df3e4c88587039dcdd2beed93b4b9" kind="function"><name>Initialise</name></member>
+    <member refid="classrobot__nagivation_1_1_dijkstra_agent_1af0e229045ad846d86093d1863bb52dc7" kind="function"><name>CostFunction</name></member>
+  </compound>
   <compound refid="classrobot__nagivation_1_1_game_model" kind="class"><name>robot_nagivation::GameModel</name>
     <member refid="classrobot__nagivation_1_1_game_model_1a51ac3197bdf5464a8196c1010d272f79" kind="variable"><name>_data</name></member>
     <member refid="classrobot__nagivation_1_1_game_model_1ab703405654c7f1d527853c31a7e0fee8" kind="function"><name>GameModel</name></member>
@@ -294,14 +298,6 @@
   </compound>
   <compound refid="_view_8cs" kind="file"><name>View.cs</name>
   </compound>
-  <compound refid="dir_546e3d158ba45ecc33ecddf98533d6a8" kind="dir"><name>C:/repos/intro-to-ai/Assignment 1</name>
-  </compound>
-  <compound refid="dir_4e591bb7794d611cce70267b2c6e0d8b" kind="dir"><name>C:/repos/intro-to-ai</name>
-  </compound>
-  <compound refid="dir_5c1f77b6d547333da17420fc98c4f94a" kind="dir"><name>C:/repos</name>
-  </compound>
-  <compound refid="dir_ae6f23f3880d9516717f5150212a40a3" kind="dir"><name>C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation</name>
-  </compound>
-  <compound refid="dir_6aabd4b2c03966574fd9aeb8e324c2f9" kind="dir"><name>C:/repos/intro-to-ai/Assignment 1/robot-nagivation</name>
+  <compound refid="dir_2ad60d56e9a6b5a44251d01ee278bf23" kind="dir"><name>robot-nagivation</name>
   </compound>
 </doxygenindex>

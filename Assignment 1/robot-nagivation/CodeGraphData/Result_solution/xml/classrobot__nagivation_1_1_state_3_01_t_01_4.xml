@@ -163,10 +163,10 @@
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
-      <node id="124">
+      <node id="133">
         <label>robot_nagivation.State&lt; T &gt;</label>
         <link refid="classrobot__nagivation_1_1_state_3_01_t_01_4"/>
-        <childnode refid="124" relation="usage">
+        <childnode refid="133" relation="usage">
           <edgelabel>_parent</edgelabel>
         </childnode>
       </node>

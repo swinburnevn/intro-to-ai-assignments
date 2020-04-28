@@ -168,7 +168,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/ProgramData.cs" line="45" column="1" bodyfile="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/ProgramData.cs" bodystart="45" bodyend="-1"/>
-        <referencedby refid="classrobot__nagivation_1_1_greedy_first_agent_1aab4edec650137abb08222ed706638d99" compoundref="_informed_agents_8cs" startline="80" endline="178">robot_nagivation.GreedyFirstAgent.next</referencedby>
+        <referencedby refid="classrobot__nagivation_1_1_greedy_first_agent_1aab4edec650137abb08222ed706638d99" compoundref="_informed_agents_8cs" startline="109" endline="207">robot_nagivation.GreedyFirstAgent.next</referencedby>
         <referencedby refid="classrobot__nagivation_1_1_uniform_cost_agent_1acbb206617e54a5b45fe59b01a7975759" compoundref="_agents_8cs" startline="262" endline="345">robot_nagivation.UniformCostAgent.next</referencedby>
         <referencedby refid="classrobot__nagivation_1_1_iterative_d_d_f_s_agent_1a8ef7371539363c3f0f89f7e6bf9b98f2" compoundref="_agents_8cs" startline="380" endline="489">robot_nagivation.IterativeDDFSAgent.next</referencedby>
         <referencedby refid="classrobot__nagivation_1_1_depth_first_agent_1a600035f1635a9e0979cb249ea7ed1b99" compoundref="_agents_8cs" startline="513" endline="595">robot_nagivation.DepthFirstAgent.next</referencedby>
@@ -186,7 +186,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/ProgramData.cs" line="46" column="1" bodyfile="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/ProgramData.cs" bodystart="46" bodyend="-1"/>
-        <referencedby refid="classrobot__nagivation_1_1_greedy_first_agent_1aab4edec650137abb08222ed706638d99" compoundref="_informed_agents_8cs" startline="80" endline="178">robot_nagivation.GreedyFirstAgent.next</referencedby>
+        <referencedby refid="classrobot__nagivation_1_1_greedy_first_agent_1aab4edec650137abb08222ed706638d99" compoundref="_informed_agents_8cs" startline="109" endline="207">robot_nagivation.GreedyFirstAgent.next</referencedby>
         <referencedby refid="classrobot__nagivation_1_1_uniform_cost_agent_1acbb206617e54a5b45fe59b01a7975759" compoundref="_agents_8cs" startline="262" endline="345">robot_nagivation.UniformCostAgent.next</referencedby>
         <referencedby refid="classrobot__nagivation_1_1_iterative_d_d_f_s_agent_1a8ef7371539363c3f0f89f7e6bf9b98f2" compoundref="_agents_8cs" startline="380" endline="489">robot_nagivation.IterativeDDFSAgent.next</referencedby>
         <referencedby refid="classrobot__nagivation_1_1_depth_first_agent_1a600035f1635a9e0979cb249ea7ed1b99" compoundref="_agents_8cs" startline="513" endline="595">robot_nagivation.DepthFirstAgent.next</referencedby>
@@ -233,12 +233,13 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/ProgramData.cs" line="49" column="1" bodyfile="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/ProgramData.cs" bodystart="49" bodyend="-1"/>
+        <referencedby refid="classrobot__nagivation_1_1_dijkstra_agent_1af0e229045ad846d86093d1863bb52dc7" compoundref="_informed_agents_8cs" startline="60" endline="72">robot_nagivation.DijkstraAgent.CostFunction</referencedby>
         <referencedby refid="classrobot__nagivation_1_1_s_f_m_l_view_1af9f8e4dc8a6b79d40b01a23d11cc579a" compoundref="_view_8cs" startline="176" endline="402">robot_nagivation.SFMLView.DrawNodeDisplay</referencedby>
-        <referencedby refid="classrobot__nagivation_1_1_greedy_first_agent_1ab871eecf3386b12e428633fd8a7d90ac" compoundref="_informed_agents_8cs" startline="58" endline="65">robot_nagivation.GreedyFirstAgent.Initialise</referencedby>
+        <referencedby refid="classrobot__nagivation_1_1_greedy_first_agent_1ab871eecf3386b12e428633fd8a7d90ac" compoundref="_informed_agents_8cs" startline="87" endline="94">robot_nagivation.GreedyFirstAgent.Initialise</referencedby>
         <referencedby refid="classrobot__nagivation_1_1_uniform_cost_agent_1a8aed5c48c9a947b89ec6dc64edce1180" compoundref="_agents_8cs" startline="215" endline="223">robot_nagivation.UniformCostAgent.Initialise</referencedby>
         <referencedby refid="classrobot__nagivation_1_1_depth_first_agent_1ab0044b1146ff8bc1cc9f97e0e4ed0159" compoundref="_agents_8cs" startline="504" endline="511">robot_nagivation.DepthFirstAgent.Initialise</referencedby>
         <referencedby refid="classrobot__nagivation_1_1_breadth_first_agent_1a9d5159e1e3458e4595f03d6ee57ca539" compoundref="_agents_8cs" startline="608" endline="615">robot_nagivation.BreadthFirstAgent.Initialise</referencedby>
-        <referencedby refid="classrobot__nagivation_1_1_greedy_first_agent_1aab4edec650137abb08222ed706638d99" compoundref="_informed_agents_8cs" startline="80" endline="178">robot_nagivation.GreedyFirstAgent.next</referencedby>
+        <referencedby refid="classrobot__nagivation_1_1_greedy_first_agent_1aab4edec650137abb08222ed706638d99" compoundref="_informed_agents_8cs" startline="109" endline="207">robot_nagivation.GreedyFirstAgent.next</referencedby>
         <referencedby refid="classrobot__nagivation_1_1_uniform_cost_agent_1acbb206617e54a5b45fe59b01a7975759" compoundref="_agents_8cs" startline="262" endline="345">robot_nagivation.UniformCostAgent.next</referencedby>
         <referencedby refid="classrobot__nagivation_1_1_iterative_d_d_f_s_agent_1a8ef7371539363c3f0f89f7e6bf9b98f2" compoundref="_agents_8cs" startline="380" endline="489">robot_nagivation.IterativeDDFSAgent.next</referencedby>
         <referencedby refid="classrobot__nagivation_1_1_depth_first_agent_1a600035f1635a9e0979cb249ea7ed1b99" compoundref="_agents_8cs" startline="513" endline="595">robot_nagivation.DepthFirstAgent.next</referencedby>
@@ -299,7 +300,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/ProgramData.cs" line="53" column="1" bodyfile="C:/repos/intro-to-ai/Assignment 1/robot-nagivation/robot-nagivation/ProgramData.cs" bodystart="53" bodyend="-1"/>
-        <referencedby refid="classrobot__nagivation_1_1_greedy_first_agent_1aab4edec650137abb08222ed706638d99" compoundref="_informed_agents_8cs" startline="80" endline="178">robot_nagivation.GreedyFirstAgent.next</referencedby>
+        <referencedby refid="classrobot__nagivation_1_1_greedy_first_agent_1aab4edec650137abb08222ed706638d99" compoundref="_informed_agents_8cs" startline="109" endline="207">robot_nagivation.GreedyFirstAgent.next</referencedby>
         <referencedby refid="classrobot__nagivation_1_1_uniform_cost_agent_1acbb206617e54a5b45fe59b01a7975759" compoundref="_agents_8cs" startline="262" endline="345">robot_nagivation.UniformCostAgent.next</referencedby>
         <referencedby refid="classrobot__nagivation_1_1_iterative_d_d_f_s_agent_1a8ef7371539363c3f0f89f7e6bf9b98f2" compoundref="_agents_8cs" startline="380" endline="489">robot_nagivation.IterativeDDFSAgent.next</referencedby>
         <referencedby refid="classrobot__nagivation_1_1_depth_first_agent_1a600035f1635a9e0979cb249ea7ed1b99" compoundref="_agents_8cs" startline="513" endline="595">robot_nagivation.DepthFirstAgent.next</referencedby>

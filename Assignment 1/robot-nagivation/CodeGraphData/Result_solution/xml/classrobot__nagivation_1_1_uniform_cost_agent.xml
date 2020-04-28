@@ -119,33 +119,33 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="129">
+      <node id="138">
         <label>Agent</label>
         <link refid="classrobot__nagivation_1_1_agent"/>
       </node>
-      <node id="128">
+      <node id="137">
         <label>robot_nagivation.UniformCostAgent</label>
         <link refid="classrobot__nagivation_1_1_uniform_cost_agent"/>
-        <childnode refid="129" relation="public-inheritance">
+        <childnode refid="138" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="132">
+      <node id="141">
         <label>robot_nagivation.AgentData</label>
         <link refid="classrobot__nagivation_1_1_agent_data"/>
       </node>
-      <node id="131">
+      <node id="140">
         <label>Agent</label>
         <link refid="classrobot__nagivation_1_1_agent"/>
-        <childnode refid="132" relation="usage">
+        <childnode refid="141" relation="usage">
           <edgelabel>_agentData</edgelabel>
         </childnode>
       </node>
-      <node id="130">
+      <node id="139">
         <label>robot_nagivation.UniformCostAgent</label>
         <link refid="classrobot__nagivation_1_1_uniform_cost_agent"/>
-        <childnode refid="131" relation="public-inheritance">
+        <childnode refid="140" relation="public-inheritance">
         </childnode>
       </node>
     </collaborationgraph>

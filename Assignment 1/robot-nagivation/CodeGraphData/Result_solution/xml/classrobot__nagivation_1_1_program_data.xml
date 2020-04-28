@@ -226,28 +226,28 @@
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
-      <node id="103">
+      <node id="112">
         <label>robot_nagivation.ProgramData</label>
         <link refid="classrobot__nagivation_1_1_program_data"/>
-        <childnode refid="104" relation="usage">
+        <childnode refid="113" relation="usage">
           <edgelabel>_map</edgelabel>
         </childnode>
-        <childnode refid="105" relation="usage">
+        <childnode refid="114" relation="usage">
           <edgelabel>_agent</edgelabel>
         </childnode>
       </node>
-      <node id="104">
+      <node id="113">
         <label>robot_nagivation.Map</label>
         <link refid="classrobot__nagivation_1_1_map"/>
       </node>
-      <node id="106">
+      <node id="115">
         <label>robot_nagivation.AgentData</label>
         <link refid="classrobot__nagivation_1_1_agent_data"/>
       </node>
-      <node id="105">
+      <node id="114">
         <label>robot_nagivation.Agent</label>
         <link refid="classrobot__nagivation_1_1_agent"/>
-        <childnode refid="106" relation="usage">
+        <childnode refid="115" relation="usage">
           <edgelabel>_agentData</edgelabel>
         </childnode>
       </node>

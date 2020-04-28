@@ -72,53 +72,53 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="24">
+      <node id="25">
         <label>robot_nagivation.ConsoleOutput</label>
         <link refid="classrobot__nagivation_1_1_console_output"/>
-        <childnode refid="25" relation="public-inheritance">
+        <childnode refid="26" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="25">
+      <node id="26">
         <label>IView</label>
         <link refid="interfacerobot__nagivation_1_1_i_view"/>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="28">
+      <node id="29">
         <label>robot_nagivation.ProgramData</label>
         <link refid="classrobot__nagivation_1_1_program_data"/>
-        <childnode refid="29" relation="usage">
+        <childnode refid="30" relation="usage">
           <edgelabel>_map</edgelabel>
         </childnode>
-        <childnode refid="30" relation="usage">
+        <childnode refid="31" relation="usage">
           <edgelabel>_agent</edgelabel>
         </childnode>
       </node>
-      <node id="26">
+      <node id="27">
         <label>robot_nagivation.ConsoleOutput</label>
         <link refid="classrobot__nagivation_1_1_console_output"/>
-        <childnode refid="27" relation="public-inheritance">
+        <childnode refid="28" relation="public-inheritance">
         </childnode>
-        <childnode refid="28" relation="usage">
+        <childnode refid="29" relation="usage">
           <edgelabel>_data</edgelabel>
         </childnode>
       </node>
-      <node id="29">
+      <node id="30">
         <label>robot_nagivation.Map</label>
         <link refid="classrobot__nagivation_1_1_map"/>
       </node>
-      <node id="31">
+      <node id="32">
         <label>robot_nagivation.AgentData</label>
         <link refid="classrobot__nagivation_1_1_agent_data"/>
       </node>
-      <node id="30">
+      <node id="31">
         <label>robot_nagivation.Agent</label>
         <link refid="classrobot__nagivation_1_1_agent"/>
-        <childnode refid="31" relation="usage">
+        <childnode refid="32" relation="usage">
           <edgelabel>_agentData</edgelabel>
         </childnode>
       </node>
-      <node id="27">
+      <node id="28">
         <label>IView</label>
         <link refid="interfacerobot__nagivation_1_1_i_view"/>
       </node>

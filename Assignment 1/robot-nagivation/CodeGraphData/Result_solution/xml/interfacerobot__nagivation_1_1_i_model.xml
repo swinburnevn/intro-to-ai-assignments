@@ -38,14 +38,14 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="63">
+      <node id="72">
         <label>robot_nagivation.IModel</label>
         <link refid="interfacerobot__nagivation_1_1_i_model"/>
       </node>
-      <node id="64">
+      <node id="73">
         <label>robot_nagivation.GameModel</label>
         <link refid="classrobot__nagivation_1_1_game_model"/>
-        <childnode refid="63" relation="public-inheritance">
+        <childnode refid="72" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>

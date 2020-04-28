@@ -1,4 +1,4 @@
-# Progress Week 5
+# Progress Week 6
 
 ## Programming
 
@@ -14,8 +14,12 @@
 
 * My concern is that IDDA* may be too similar given that the current A* Algorithm uses the number of steps to get to a given goal. Either or, Dijktra's is implemented.
 * Added a new map, Map 5 which contains two paths to get to one goal. 
-* 
+* Re-run all the tests, approx. 70 tests now
+* Entered all the data manually, since there's no dedicated data output mode. I should do that next time
+* Overall polish of program roughly complete, no major overhauls as of late. Everything is done.
 
 ## Research
 
-* 
+* Finished all of the writing re: searching algorithms and the presenting examples
+* Finished writing report 
+* Finish analysis of data in excel

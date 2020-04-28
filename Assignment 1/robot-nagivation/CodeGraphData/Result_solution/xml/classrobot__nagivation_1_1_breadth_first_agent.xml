@@ -91,33 +91,33 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="20">
+      <node id="21">
         <label>Agent</label>
         <link refid="classrobot__nagivation_1_1_agent"/>
       </node>
-      <node id="19">
+      <node id="20">
         <label>robot_nagivation.BreadthFirstAgent</label>
         <link refid="classrobot__nagivation_1_1_breadth_first_agent"/>
-        <childnode refid="20" relation="public-inheritance">
+        <childnode refid="21" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="23">
+      <node id="24">
         <label>robot_nagivation.AgentData</label>
         <link refid="classrobot__nagivation_1_1_agent_data"/>
       </node>
-      <node id="22">
+      <node id="23">
         <label>Agent</label>
         <link refid="classrobot__nagivation_1_1_agent"/>
-        <childnode refid="23" relation="usage">
+        <childnode refid="24" relation="usage">
           <edgelabel>_agentData</edgelabel>
         </childnode>
       </node>
-      <node id="21">
+      <node id="22">
         <label>robot_nagivation.BreadthFirstAgent</label>
         <link refid="classrobot__nagivation_1_1_breadth_first_agent"/>
-        <childnode refid="22" relation="public-inheritance">
+        <childnode refid="23" relation="public-inheritance">
         </childnode>
       </node>
     </collaborationgraph>

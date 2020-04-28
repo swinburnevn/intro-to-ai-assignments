@@ -47,33 +47,33 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="108">
+      <node id="117">
         <label>Agent</label>
         <link refid="classrobot__nagivation_1_1_agent"/>
       </node>
-      <node id="107">
+      <node id="116">
         <label>robot_nagivation.RandomAgent</label>
         <link refid="classrobot__nagivation_1_1_random_agent"/>
-        <childnode refid="108" relation="public-inheritance">
+        <childnode refid="117" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="111">
+      <node id="120">
         <label>robot_nagivation.AgentData</label>
         <link refid="classrobot__nagivation_1_1_agent_data"/>
       </node>
-      <node id="110">
+      <node id="119">
         <label>Agent</label>
         <link refid="classrobot__nagivation_1_1_agent"/>
-        <childnode refid="111" relation="usage">
+        <childnode refid="120" relation="usage">
           <edgelabel>_agentData</edgelabel>
         </childnode>
       </node>
-      <node id="109">
+      <node id="118">
         <label>robot_nagivation.RandomAgent</label>
         <link refid="classrobot__nagivation_1_1_random_agent"/>
-        <childnode refid="110" relation="public-inheritance">
+        <childnode refid="119" relation="public-inheritance">
         </childnode>
       </node>
     </collaborationgraph>

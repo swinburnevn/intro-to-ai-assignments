@@ -127,45 +127,45 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="67">
+      <node id="76">
         <label>DepthFirstAgent</label>
         <link refid="classrobot__nagivation_1_1_depth_first_agent"/>
-        <childnode refid="68" relation="public-inheritance">
+        <childnode refid="77" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="68">
+      <node id="77">
         <label>Agent</label>
         <link refid="classrobot__nagivation_1_1_agent"/>
       </node>
-      <node id="66">
+      <node id="75">
         <label>robot_nagivation.IterativeDDFSAgent</label>
         <link refid="classrobot__nagivation_1_1_iterative_d_d_f_s_agent"/>
-        <childnode refid="67" relation="public-inheritance">
+        <childnode refid="76" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="70">
+      <node id="79">
         <label>DepthFirstAgent</label>
         <link refid="classrobot__nagivation_1_1_depth_first_agent"/>
-        <childnode refid="71" relation="public-inheritance">
+        <childnode refid="80" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="72">
+      <node id="81">
         <label>robot_nagivation.AgentData</label>
         <link refid="classrobot__nagivation_1_1_agent_data"/>
       </node>
-      <node id="71">
+      <node id="80">
         <label>Agent</label>
         <link refid="classrobot__nagivation_1_1_agent"/>
-        <childnode refid="72" relation="usage">
+        <childnode refid="81" relation="usage">
           <edgelabel>_agentData</edgelabel>
         </childnode>
       </node>
-      <node id="69">
+      <node id="78">
         <label>robot_nagivation.IterativeDDFSAgent</label>
         <link refid="classrobot__nagivation_1_1_iterative_d_d_f_s_agent"/>
-        <childnode refid="70" relation="public-inheritance">
+        <childnode refid="79" relation="public-inheritance">
         </childnode>
       </node>
     </collaborationgraph>

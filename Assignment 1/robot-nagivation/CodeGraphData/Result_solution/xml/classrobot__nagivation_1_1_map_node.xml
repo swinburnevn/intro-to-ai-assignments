@@ -24,25 +24,25 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="80">
+      <node id="89">
         <label>robot_nagivation.MapNode</label>
         <link refid="classrobot__nagivation_1_1_map_node"/>
-        <childnode refid="81" relation="public-inheritance">
+        <childnode refid="90" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="81">
+      <node id="90">
         <label>StateData</label>
         <link refid="classrobot__nagivation_1_1_state_data"/>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="82">
+      <node id="91">
         <label>robot_nagivation.MapNode</label>
         <link refid="classrobot__nagivation_1_1_map_node"/>
-        <childnode refid="83" relation="public-inheritance">
+        <childnode refid="92" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="83">
+      <node id="92">
         <label>StateData</label>
         <link refid="classrobot__nagivation_1_1_state_data"/>
       </node>

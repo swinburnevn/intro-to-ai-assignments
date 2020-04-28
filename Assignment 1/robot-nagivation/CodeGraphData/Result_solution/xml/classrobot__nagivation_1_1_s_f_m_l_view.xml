@@ -374,53 +374,53 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="115">
+      <node id="124">
         <label>robot_nagivation.SFMLView</label>
         <link refid="classrobot__nagivation_1_1_s_f_m_l_view"/>
-        <childnode refid="116" relation="public-inheritance">
+        <childnode refid="125" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="116">
+      <node id="125">
         <label>IView</label>
         <link refid="interfacerobot__nagivation_1_1_i_view"/>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="119">
+      <node id="128">
         <label>robot_nagivation.ProgramData</label>
         <link refid="classrobot__nagivation_1_1_program_data"/>
-        <childnode refid="120" relation="usage">
+        <childnode refid="129" relation="usage">
           <edgelabel>_map</edgelabel>
         </childnode>
-        <childnode refid="121" relation="usage">
+        <childnode refid="130" relation="usage">
           <edgelabel>_agent</edgelabel>
         </childnode>
       </node>
-      <node id="120">
+      <node id="129">
         <label>robot_nagivation.Map</label>
         <link refid="classrobot__nagivation_1_1_map"/>
       </node>
-      <node id="122">
+      <node id="131">
         <label>robot_nagivation.AgentData</label>
         <link refid="classrobot__nagivation_1_1_agent_data"/>
       </node>
-      <node id="121">
+      <node id="130">
         <label>robot_nagivation.Agent</label>
         <link refid="classrobot__nagivation_1_1_agent"/>
-        <childnode refid="122" relation="usage">
+        <childnode refid="131" relation="usage">
           <edgelabel>_agentData</edgelabel>
         </childnode>
       </node>
-      <node id="117">
+      <node id="126">
         <label>robot_nagivation.SFMLView</label>
         <link refid="classrobot__nagivation_1_1_s_f_m_l_view"/>
-        <childnode refid="118" relation="public-inheritance">
+        <childnode refid="127" relation="public-inheritance">
         </childnode>
-        <childnode refid="119" relation="usage">
+        <childnode refid="128" relation="usage">
           <edgelabel>_data</edgelabel>
         </childnode>
       </node>
-      <node id="118">
+      <node id="127">
         <label>IView</label>
         <link refid="interfacerobot__nagivation_1_1_i_view"/>
       </node>

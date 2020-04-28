@@ -66,13 +66,13 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="113">
+      <node id="122">
         <label>robot_nagivation.MapScenario</label>
         <link refid="classrobot__nagivation_1_1_map_scenario"/>
-        <childnode refid="112" relation="public-inheritance">
+        <childnode refid="121" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="112">
+      <node id="121">
         <label>robot_nagivation.Scenario&lt; T &gt;</label>
         <link refid="classrobot__nagivation_1_1_scenario_3_01_t_01_4"/>
       </node>
