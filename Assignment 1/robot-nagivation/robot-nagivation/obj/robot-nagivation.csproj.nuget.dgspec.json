@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\repos\\intro-to-ai\\Assignment 1\\robot-nagivation\\robot-nagivation\\robot-nagivation.csproj": {}
+    "F:\\repos\\intro-to-ai\\Assignment 1\\robot-nagivation\\robot-nagivation\\robot-nagivation.csproj": {}
   },
   "projects": {
-    "C:\\repos\\intro-to-ai\\Assignment 1\\robot-nagivation\\robot-nagivation\\robot-nagivation.csproj": {
+    "F:\\repos\\intro-to-ai\\Assignment 1\\robot-nagivation\\robot-nagivation\\robot-nagivation.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\repos\\intro-to-ai\\Assignment 1\\robot-nagivation\\robot-nagivation\\robot-nagivation.csproj",
+        "projectUniqueName": "F:\\repos\\intro-to-ai\\Assignment 1\\robot-nagivation\\robot-nagivation\\robot-nagivation.csproj",
         "projectName": "robot-nagivation",
-        "projectPath": "C:\\repos\\intro-to-ai\\Assignment 1\\robot-nagivation\\robot-nagivation\\robot-nagivation.csproj",
-        "packagesPath": "C:\\Users\\Mikan Lumi\\.nuget\\packages\\",
-        "outputPath": "C:\\repos\\intro-to-ai\\Assignment 1\\robot-nagivation\\robot-nagivation\\obj\\",
+        "projectPath": "F:\\repos\\intro-to-ai\\Assignment 1\\robot-nagivation\\robot-nagivation\\robot-nagivation.csproj",
+        "packagesPath": "C:\\Users\\Mikan Kikuchi\\.nuget\\packages\\",
+        "outputPath": "F:\\repos\\intro-to-ai\\Assignment 1\\robot-nagivation\\robot-nagivation\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Mikan Lumi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Mikan Kikuchi\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -69,7 +69,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
         }
       }
     }
