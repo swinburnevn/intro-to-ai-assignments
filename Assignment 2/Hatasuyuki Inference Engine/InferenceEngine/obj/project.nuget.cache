@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "Bphgl7sn+mGIfXs4ytJKswYIN97yRumCoV4GT2MMMCGe1snDs2p/LHY+Ya8702XMYs3lRwwzd88QmaqJPN68mQ==",
+  "success": true,
+  "projectFilePath": "C:\\repos\\intro-to-ai\\Assignment 2\\Hatasuyuki Inference Engine\\InferenceEngine\\InferenceEngine.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Mikan Lumi\\.nuget\\packages\\csfml\\2.5.0\\csfml.2.5.0.nupkg.sha512",
+    "C:\\Users\\Mikan Lumi\\.nuget\\packages\\sfml.audio\\2.5.0\\sfml.audio.2.5.0.nupkg.sha512",
+    "C:\\Users\\Mikan Lumi\\.nuget\\packages\\sfml.graphics\\2.5.0\\sfml.graphics.2.5.0.nupkg.sha512",
+    "C:\\Users\\Mikan Lumi\\.nuget\\packages\\sfml.net\\2.5.0\\sfml.net.2.5.0.nupkg.sha512",
+    "C:\\Users\\Mikan Lumi\\.nuget\\packages\\sfml.system\\2.5.0\\sfml.system.2.5.0.nupkg.sha512",
+    "C:\\Users\\Mikan Lumi\\.nuget\\packages\\sfml.window\\2.5.0\\sfml.window.2.5.0.nupkg.sha512"
+  ],
+  "logs": []
+}

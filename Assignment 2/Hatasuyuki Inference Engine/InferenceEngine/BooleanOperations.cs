@@ -49,4 +49,14 @@ namespace InferenceEngine
         }
     }
 
+    public class OperationInv : OperationFunction
+    {
+        public override bool Evaluate(bool a, bool b)
+        {
+            if (b)
+                return !a;
+            else return a;
+        }
+    }
+
 }

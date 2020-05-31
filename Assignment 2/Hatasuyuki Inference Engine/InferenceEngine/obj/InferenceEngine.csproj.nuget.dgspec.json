@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "F:\\repos\\intro-to-ai\\Assignment 2\\Hatasuyuki Inference Engine\\InferenceEngine\\InferenceEngine.csproj": {}
+    "C:\\repos\\intro-to-ai\\Assignment 2\\Hatasuyuki Inference Engine\\InferenceEngine\\InferenceEngine.csproj": {}
   },
   "projects": {
-    "F:\\repos\\intro-to-ai\\Assignment 2\\Hatasuyuki Inference Engine\\InferenceEngine\\InferenceEngine.csproj": {
+    "C:\\repos\\intro-to-ai\\Assignment 2\\Hatasuyuki Inference Engine\\InferenceEngine\\InferenceEngine.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\repos\\intro-to-ai\\Assignment 2\\Hatasuyuki Inference Engine\\InferenceEngine\\InferenceEngine.csproj",
+        "projectUniqueName": "C:\\repos\\intro-to-ai\\Assignment 2\\Hatasuyuki Inference Engine\\InferenceEngine\\InferenceEngine.csproj",
         "projectName": "InferenceEngine",
-        "projectPath": "F:\\repos\\intro-to-ai\\Assignment 2\\Hatasuyuki Inference Engine\\InferenceEngine\\InferenceEngine.csproj",
-        "packagesPath": "C:\\Users\\Mikan Kikuchi\\.nuget\\packages\\",
-        "outputPath": "F:\\repos\\intro-to-ai\\Assignment 2\\Hatasuyuki Inference Engine\\InferenceEngine\\obj\\",
+        "projectPath": "C:\\repos\\intro-to-ai\\Assignment 2\\Hatasuyuki Inference Engine\\InferenceEngine\\InferenceEngine.csproj",
+        "packagesPath": "C:\\Users\\Mikan Lumi\\.nuget\\packages\\",
+        "outputPath": "C:\\repos\\intro-to-ai\\Assignment 2\\Hatasuyuki Inference Engine\\InferenceEngine\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Mikan Kikuchi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Mikan Lumi\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -61,7 +61,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.200\\RuntimeIdentifierGraph.json"
         }
       }
     }
