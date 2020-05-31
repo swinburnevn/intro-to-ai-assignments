@@ -85,23 +85,25 @@ namespace InferenceEngine
             return symbols;
         }
 
-        public List<string> ConvertIntoOperators(string tell)
+        public List<string> ConvertIntoOperators(string tell, bool allowDuplicates = false)
         {
             List<string> operators = new List<string>();
-            string allSymbols = "";
+            string allSymbols = "\\Q";
             foreach (string symbol in ConvertIntoSymbols(tell))
                 allSymbols += symbol;
-
+            allSymbols += "\\E";
 
             string[] splitSentences = Regex.Split(tell, @"[\s" + allSymbols + "]+");
 
             foreach (string s in splitSentences)
             {
                 if (s != "" && !operators.Contains(s))
-                    operators.Add(s.Trim());
+                    if (!allowDuplicates)
+                        operators.Add(s.Trim());
             }
             return operators;
         }
+
 
 
 
@@ -122,7 +124,6 @@ namespace InferenceEngine
 
     
 
-
     public class TT : KnowledgeBase
     {
         // We need a 2D matrix, hence, list of dicts?:
@@ -139,6 +140,33 @@ namespace InferenceEngine
             _operations.Add("||", new OperationOr());
             _operations.Add("=>", new OperationImplies());
         }
+
+        public bool IterativelyParseOperator(ref List<string> operators, ref List<string> symbols, bool key, int index)
+        {
+            // Sym: B C
+            // Opr: & & ~
+
+            if (symbols.Count > 2)
+            {
+                string localSymbol = symbols[0];
+                
+                string localOperator = operators[0];
+                symbols.RemoveAt(0);
+                operators.RemoveAt(0);
+
+                return _operations[localOperator].Evaluate(IterativelyParseOperator(ref operators, ref symbols, key, index),
+                    _truthTable[localSymbol][index]) ;
+            }
+            else
+            {
+                // This means that we're on the final element, return this value
+                return _truthTable[symbols[0]][index];
+            }
+
+
+            return false;
+        }
+
 
         public override string Execute()
         {
@@ -188,13 +216,7 @@ namespace InferenceEngine
                     // LHS is likey to have operator and therefore we need to parse the number of symbols:
                     List<string> LHSSymbols = ConvertIntoSymbols(LHS);
                     int numberOfLHSSymbols = LHSSymbols.Count;
-                    List<string> operators = ConvertIntoOperators(LHS);
-
-
-
-
-
-                    // Assuming LHS and RHS are free of operators
+                    List<string> LHSOperators = ConvertIntoOperators(LHS, false);
 
                     List<bool> sentenceCol = new List<bool>();
 
@@ -202,11 +224,29 @@ namespace InferenceEngine
                     for (int i = 0; i < numberOfRows; i++)
                     {
 
-                        if (operators.Count > 0)
+                        if (LHSOperators.Count > 0)
                         {
                             //Assuming 1 operator for now
 
-                            bool localLHS = _operations[operators[0]].Evaluate(_truthTable[LHSSymbols[0]][i], _truthTable[LHSSymbols[1]][i]);
+                            //bool localLHS = _operations[LHSOperators[0]].Evaluate(_truthTable[LHSSymbols[0]][i], _truthTable[LHSSymbols[1]][i]);
+
+                            //string localSymbol = LHSSymbols[0];
+                            //LHSSymbols.RemoveAt(0); // Remove first symbol as it's placed inside the parser
+                            //bool localLHS = IterativelyParseOperator(ref LHSOperators, ref LHSSymbols, _truthTable[localSymbol][i], i);
+
+                            Queue<string> symbolsQueue = new Queue<string>(LHSSymbols);
+                            Queue<string> operatorsQueue = new Queue<string>(LHSOperators);
+
+                            bool resolvedValue;
+                            resolvedValue = _truthTable[symbolsQueue.Dequeue()][i];
+                            while (symbolsQueue.Count > 0)
+                            {
+                                resolvedValue = _operations[operatorsQueue.Dequeue()].Evaluate(
+                                    resolvedValue, _truthTable[symbolsQueue.Dequeue()][i]);
+                            }
+
+                            bool localLHS = resolvedValue;
+
 
                             sentenceCol.Add(_operations["=>"].Evaluate(localLHS, _truthTable[RHS][i]));
                         }
