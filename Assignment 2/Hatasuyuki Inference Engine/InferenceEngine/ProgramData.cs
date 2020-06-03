@@ -58,6 +58,9 @@ namespace InferenceEngine
             
         }
 
+
+        public abstract bool Entails(string goal);
+
         #region Inherited Methods
 
         public List<string> ConvertIntoSentences(string tell)

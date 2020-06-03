@@ -139,7 +139,7 @@ namespace InferenceEngine
                             bool resolvedValue;
                             bool hasNegative = false;
                             resolvedValue = _truthTable[symbolsQueue.Dequeue()][i];
-                            while (symbolsQueue.Count > 0)
+                            while (symbolsQueue.Count > 1)
                             {
 
 
@@ -212,6 +212,11 @@ namespace InferenceEngine
                 return "No";
 
 
+        }
+
+        public override bool Entails(string goal)
+        {
+            throw new NotImplementedException();
         }
     }
 }

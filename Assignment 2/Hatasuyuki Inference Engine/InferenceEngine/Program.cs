@@ -26,11 +26,11 @@ namespace InferenceEngine
             //    throw new Exception("Not enough arguments! Usage: iengine [Method] [Filename] [Mode]");
 
             // Create modules and assign connections
-            TextParser parser = new TextParser("test_HornKB2I.txt");
+            TextParser parser = new TextParser("test_HornKB.txt");
 
             Console.WriteLine($"ASK: {parser.Ask} | TELL: {parser.Tell}");
 
-            KnowledgeBase KB = new TT(parser.Ask, parser.Tell);
+            KnowledgeBase KB = new ForwardChaining(parser.Ask, parser.Tell);
 
             Console.WriteLine($"KB Output: {KB.Execute()}");
         }
