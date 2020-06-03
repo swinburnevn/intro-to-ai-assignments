@@ -1,4 +1,4 @@
 TELL
-w=> r; r&s||c=>h
+w=> r; r&s=>h
 ASK
 h

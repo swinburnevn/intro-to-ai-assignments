@@ -1,17 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.Immutable;
 using System.Linq;
-using System.Reflection.Metadata.Ecma335;
-using System.Runtime.CompilerServices;
-using System.Text;
 
 namespace InferenceEngine
 {
 
     public class ForwardChaining : KnowledgeBase
     {
-        //private string _goal; // Z
         private List<string> _knowledgeBase;     // E.g. A, E, B, C
         private List<string> _clauses;   // F & B => Z, C & D => F, A => D
         private Dictionary<string, int> _clauseCounts; // keeps a track of each clauses' fact count

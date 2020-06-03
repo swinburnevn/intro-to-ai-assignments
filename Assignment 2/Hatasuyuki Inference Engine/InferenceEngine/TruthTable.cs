@@ -1,36 +1,54 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Text.RegularExpressions;
+using System.Xml.Schema;
 
 namespace InferenceEngine
 {
-
-
-    public class TT : KnowledgeBase
+    public class TruthTable : KnowledgeBase
     {
-        // We need a 2D matrix, hence, list of dicts?:
-
         private Dictionary<string, List<bool>> _truthTable;
 
+        private List<string> _sentences;
+        private List<string> _symbols;
+
+        private List<string> _models;
         private Dictionary<string, OperationFunction> _operations;
 
-
-        public TT(string ask, string tell) : base(ask, tell)
+        public TruthTable(string ask, string tell) : base(ask, tell)
         {
+            _truthTable = new Dictionary<string, List<bool>>();
+            _models = new List<string>();
+            _sentences = new List<string>();
+            _symbols = new List<string>();
+
             _operations = new Dictionary<string, OperationFunction>();
             _operations.Add("&", new OperationAnd());
-            _operations.Add("||", new OperationOr());
+            //_operations.Add("||", new OperationOr());
             _operations.Add("=>", new OperationImplies());
-            _operations.Add("~", new OperationInv());
+            //_operations.Add("~", new OperationInv());
+
+        }
+
+        public List<string> ConvertIntoSentences(string tell)
+        {
+            List<string> sentences = new List<string>();
+
+            string[] splitSentences = tell.Split(";");
+
+            foreach (string s in splitSentences)
+            {
+                if (s != "")
+                    if (s.Contains("=>"))
+                        sentences.Add(s.Trim());
+            }
+            return sentences;
         }
 
         public List<string> ConvertIntoOperators(string tell, bool allowDuplicates = false)
         {
             List<string> operators = new List<string>();
-            //string allSymbols = "\\Q";
-            //foreach (string symbol in ConvertIntoSymbols(tell))
-            //    allSymbols += symbol;
-            //allSymbols += "\\E";
 
             foreach (KeyValuePair<string, OperationFunction> entry in _operations)
             {
@@ -38,49 +56,28 @@ namespace InferenceEngine
                     operators.Add(entry.Key);
             }
 
-            /*
-            string[] splitSentences = Regex.Split(tell, @"[\s" + allSymbols + "]+");
-
-            foreach (string s in splitSentences)
-            {
-                if (s != "" && !operators.Contains(s))
-                    if (!allowDuplicates)
-                        operators.Add(s.Trim());
-            }
-            */
             return operators;
         }
 
-        public bool IterativelyParseOperator(ref List<string> operators, ref List<string> symbols, bool key, int index)
+        public List<string> ConvertIntoSymbols(string tell)
         {
-            // Sym: B C
-            // Opr: & & ~
+            List<string> symbols = new List<string>();
 
-            if (symbols.Count > 2)
+            string[] splitSentences = Regex.Split(tell, @"[\s.,;&=>\\~\\|\\|]+");
+
+            foreach (string s in splitSentences)
             {
-                string localSymbol = symbols[0];
-
-                string localOperator = operators[0];
-                symbols.RemoveAt(0);
-                operators.RemoveAt(0);
-
-                return _operations[localOperator].Evaluate(IterativelyParseOperator(ref operators, ref symbols, key, index),
-                    _truthTable[localSymbol][index]);
+                if (s != "" && !symbols.Contains(s))
+                    symbols.Add(s.Trim());
             }
-            else
-            {
-                // This means that we're on the final element, return this value
-                return _truthTable[symbols[0]][index];
-            }
+            return symbols;
         }
 
 
-        public override string Execute()
+        public override bool Entails(string goal)
         {
-            Sentences = ConvertIntoSentences(Tell);
-            Symbols = ConvertIntoSymbols(Tell);
-
-            _truthTable = new Dictionary<string, List<bool>>();
+            _sentences = ConvertIntoSentences(Tell);
+            _symbols = ConvertIntoSymbols(Tell);
 
 
             /* ----------------- Truth Table (Symbols) Generation ----------------- */
@@ -111,14 +108,43 @@ namespace InferenceEngine
             {
                 //Evaluate the logic of the sentence
 
-                List<string> localSymbols = ConvertIntoSymbols(sentence);
+                //List<string> localSymbols = ConvertIntoSymbols(sentence);
 
 
                 string[] splitSentence = sentence.Split("=>", StringSplitOptions.RemoveEmptyEntries);
+                string LHS = splitSentence[0].Trim(); // This may contain some sort of operator
+                string RHS = splitSentence[1].Trim(); // This is always one symbol
+
+                // We can count the number of Symbols on the LHS
+                List<string> localSymbols = ConvertIntoSymbols(LHS);
+
+                List<bool> sentenceColumn = new List<bool>();
+
+                for (int i = 0; i < numberOfRows; i++)
+                {
+
+                    // We want to evaluate the AND of all symbols in LocalSymbols, 
+
+                    bool resolvedValue = true;
+                    foreach (string symbol in localSymbols)
+                    {
+                        // truthTable [Sentence/Symbol][Row Number]
+                        resolvedValue = _truthTable[symbol][i] && resolvedValue;
+                    }
+
+                    //Resolved value is the AND of all the LHS symbols
+
+                    sentenceColumn.Add(_operations["=>"].Evaluate(resolvedValue, _truthTable[RHS][i]));
+
+                }
+                _truthTable.Add(sentence, sentenceColumn);
+
+                /*
+
+
                 if (splitSentence.Length > 1)
                 {
-                    string LHS = splitSentence[0].Trim(); // This may contain some sort of operator
-                    string RHS = splitSentence[1].Trim(); // This is always one symbol
+                    
 
                     // LHS is likey to have operator and therefore we need to parse the number of symbols:
                     List<string> LHSSymbols = ConvertIntoSymbols(LHS);
@@ -137,24 +163,15 @@ namespace InferenceEngine
                             Queue<string> operatorsQueue = new Queue<string>(LHSOperators);
 
                             bool resolvedValue;
-                            bool hasNegative = false;
                             resolvedValue = _truthTable[symbolsQueue.Dequeue()][i];
                             while (symbolsQueue.Count > 1)
                             {
-
-
                                 if (operatorsQueue.Count > 1)
                                 {
                                     string nextOperator = operatorsQueue.Dequeue();
 
-                                    if (operatorsQueue.Peek() == "~")
-                                    {
-                                        hasNegative = true;
-                                        operatorsQueue.Dequeue();
-                                    }
-
                                     resolvedValue = _operations[nextOperator].Evaluate(
-                                        resolvedValue, _operations["~"].Evaluate(_truthTable[symbolsQueue.Dequeue()][i], hasNegative));
+                                        resolvedValue, _truthTable[symbolsQueue.Dequeue()][i]);
                                 }
                             }
 
@@ -171,15 +188,14 @@ namespace InferenceEngine
 
                     _truthTable.Add(sentence, sentenceCol);
                 }
-
+                */
             }
+            
 
             /* ----------------- Truth Table (Ask) Generation ----------------- */
 
             // Now that the entire truth table is complete, we need to check for every model that:
             //  = ASK || (foreach prop is true)
-
-            int foundModels = 0;
             for (int i = 0; i < numberOfRows; i++)
             {
                 bool isSatisfied = true;
@@ -191,32 +207,42 @@ namespace InferenceEngine
                 if (isSatisfied && _truthTable[Ask][i])
                 {
                     // We have found a model that satisfies the sentences AND the ASK:
-                    foundModels++;
-                    Console.WriteLine($" Model {i} found to satisfy: ");
-                    foreach (string symbol in Symbols)
+                    string model = "";
+                    foreach(string s in Symbols)
                     {
-                        Console.WriteLine($" ->  {symbol} : {_truthTable[symbol][i]}; ");
+                        model += ($"{s}: {_truthTable[s][i]}; ");
                     }
-                    Console.WriteLine(" and therefore: ");
-                    foreach (string sentence in Sentences)
+
+                    foreach (string s in Sentences)
                     {
-                        Console.WriteLine($" ->  {sentence} : {_truthTable[sentence][i]}, ");
+                        model += ($"{s}: {_truthTable[s][i]}; ");
                     }
-                    Console.WriteLine();
+                    _models.Add(model);
                 }
 
             }
-            if (foundModels > 0)
-                return "Yes, " + foundModels;
-            else
-                return "No";
 
-
+            return (_models.Count >= 0);
         }
 
-        public override bool Entails(string goal)
+        public override string Execute()
         {
-            throw new NotImplementedException();
+            string output = "";
+
+            if (Entails(Ask))
+            {
+                output = "YES:" + _models.Count;
+            }
+            else
+            {
+                output = "NO";
+            }
+
+            return output;
         }
+
+        public List<string> Sentences { get => _sentences; set => _sentences = value; }
+        public List<string> Symbols { get => _symbols; set => _symbols = value; }
+
     }
 }
