@@ -132,7 +132,7 @@ namespace InferenceEngine
                 }
 
             }
-
+            // If we cannot find any (reachable) sentence that implies the goal, then it is unreachable.
             return false;
         }
 

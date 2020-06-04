@@ -43,7 +43,7 @@ namespace InferenceEngine
             if (args.Length < 1)
                 throw new Exception("Not enough arguments! Usage: iengine [Method] [Filename] [GUI: Yes/No]");
 
-            if (args.Length < 2)
+            if (args.Length > 2)
             {
                 guiEnabled = true;
             }

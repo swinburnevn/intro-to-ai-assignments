@@ -200,21 +200,21 @@ namespace InferenceEngine
             {
                 Position = new Vector2f(110, 90),
                 Size = new Vector2f(520, 90),
-                FillColor = new Color(190, 190, 190)
+                FillColor = new Color(180, 180, 180)
             });
 
             _window.Draw(new RectangleShape()
             {
                 Position = new Vector2f(110, 205),
                 Size = new Vector2f(520, 90),
-                FillColor = new Color(190, 190, 190)
+                FillColor = new Color(180, 180, 180)
             });
 
             _window.Draw(new RectangleShape()
             {
                 Position = new Vector2f(110, 360),
                 Size = new Vector2f(520, 90),
-                FillColor = new Color(190, 190, 190)
+                FillColor = new Color(180, 180, 180)
             });
 
 
@@ -306,21 +306,21 @@ namespace InferenceEngine
             {
                 Position = new Vector2f(110, 90),
                 Size = new Vector2f(520, 90),
-                FillColor = new Color(190, 190, 190)
+                FillColor = new Color(180, 180, 180)
             });
 
             _window.Draw(new RectangleShape()
             {
                 Position = new Vector2f(110, 205),
                 Size = new Vector2f(520, 90),
-                FillColor = new Color(190, 190, 190)
+                FillColor = new Color(180, 180, 180)
             });
 
             _window.Draw(new RectangleShape()
             {
                 Position = new Vector2f(110, 360),
                 Size = new Vector2f(520, 90),
-                FillColor = new Color(190, 190, 190)
+                FillColor = new Color(180, 180, 180)
             });
 
 
