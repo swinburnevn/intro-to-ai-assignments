@@ -12,8 +12,19 @@ namespace InferenceEngine
         private Dictionary<string, int> _clauseCounts; // keeps a track of each clauses' fact count
         private Queue<string> _agenda;
 
+        private string _solution;
+
+        public List<string> KnowledgeBase { get => _knowledgeBase; set => _knowledgeBase = value; }
+        public List<string> Clauses { get => _clauses; set => _clauses = value; }
+        public Dictionary<string, int> ClauseCounts { get => _clauseCounts; set => _clauseCounts = value; }
+        public Queue<string> Agenda { get => _agenda; set => _agenda = value; }
+        public string Solution { get => _solution; }
+
         public ForwardChaining(string ask, string tell) : base(ask, tell)
         {
+            Type = KnowledgeBaseType.FC;
+
+
             _knowledgeBase = new List<string>(); // This essentially becomes our knowledgebase
             _clauses = new List<string>();
             _clauseCounts = new Dictionary<string, int>();
@@ -42,7 +53,6 @@ namespace InferenceEngine
                 {
                     // S is a Fact
                     _agenda.Enqueue(s.Trim()); // Here we want to add facts to our system to consider
-                    //_knowledgeBase.Add(s);
                 }
             }
         }
@@ -69,6 +79,8 @@ namespace InferenceEngine
             {
                 output = "NO";
             }
+
+            _solution = output;
 
             return output;
         }

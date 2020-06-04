@@ -12,23 +12,29 @@ namespace InferenceEngine
 
         private List<string> _sentences;
         private List<string> _symbols;
+        private List<string> _facts;
 
         private List<string> _models;
+        private List<int> _modelRows;
         private Dictionary<string, OperationFunction> _operations;
+
+        private string _solution;
 
         public TruthTable(string ask, string tell) : base(ask, tell)
         {
+
+            Type = KnowledgeBaseType.TT;
+
             _truthTable = new Dictionary<string, List<bool>>();
             _models = new List<string>();
+            _facts = new List<string>();
+            _modelRows = new List<int>();
             _sentences = new List<string>();
             _symbols = new List<string>();
 
             _operations = new Dictionary<string, OperationFunction>();
             _operations.Add("&", new OperationAnd());
-            //_operations.Add("||", new OperationOr());
             _operations.Add("=>", new OperationImplies());
-            //_operations.Add("~", new OperationInv());
-
         }
 
         public List<string> ConvertIntoSentences(string tell)
@@ -40,8 +46,17 @@ namespace InferenceEngine
             foreach (string s in splitSentences)
             {
                 if (s != "")
+                {
                     if (s.Contains("=>"))
+                    {
                         sentences.Add(s.Trim());
+                    }                   
+                    else
+                    {
+                        _facts.Add(s.Trim());
+                    }
+                }
+                    
             }
             return sentences;
         }
@@ -107,10 +122,6 @@ namespace InferenceEngine
             foreach (string sentence in Sentences)
             {
                 //Evaluate the logic of the sentence
-
-                //List<string> localSymbols = ConvertIntoSymbols(sentence);
-
-
                 string[] splitSentence = sentence.Split("=>", StringSplitOptions.RemoveEmptyEntries);
                 string LHS = splitSentence[0].Trim(); // This may contain some sort of operator
                 string RHS = splitSentence[1].Trim(); // This is always one symbol
@@ -133,10 +144,11 @@ namespace InferenceEngine
                     }
 
                     //Resolved value is the AND of all the LHS symbols
-
-                    sentenceColumn.Add(_operations["=>"].Evaluate(resolvedValue, _truthTable[RHS][i]));
+                    bool conclusion = (!resolvedValue || _truthTable[RHS][i]);
+                    sentenceColumn.Add(conclusion);
 
                 }
+                // Add the new Column into the Truth Table
                 _truthTable.Add(sentence, sentenceColumn);
 
                 /*
@@ -204,6 +216,11 @@ namespace InferenceEngine
                     isSatisfied = isSatisfied && _truthTable[sentence][i];
                 }
 
+                foreach (string fact in _facts)
+                {
+                    isSatisfied = isSatisfied && _truthTable[fact][i];
+                }
+
                 if (isSatisfied && _truthTable[Ask][i])
                 {
                     // We have found a model that satisfies the sentences AND the ASK:
@@ -218,6 +235,7 @@ namespace InferenceEngine
                         model += ($"{s}: {_truthTable[s][i]}; ");
                     }
                     _models.Add(model);
+                    _modelRows.Add(i);
                 }
 
             }
@@ -237,12 +255,15 @@ namespace InferenceEngine
             {
                 output = "NO";
             }
-
+            _solution = output;
             return output;
         }
 
         public List<string> Sentences { get => _sentences; set => _sentences = value; }
         public List<string> Symbols { get => _symbols; set => _symbols = value; }
 
+        public string Solution { get => _solution; }
+        public Dictionary<string, List<bool>> TruthTableRef { get => _truthTable; set => _truthTable = value; }
+        public List<int> ModelRows { get => _modelRows; set => _modelRows = value; }
     }
 }

@@ -9,25 +9,33 @@ using System.Text;
 
 namespace InferenceEngine
 {
-
     public class BackwardChaining : KnowledgeBase
     {
 
         private List<string> _facts;     // E.g. A, E, B, C
         private List<string> _clauses;   // F & B => Z, C & D => F, A => D
-        private Dictionary<string, int> _clauseCounts; // keeps a track of each clauses' fact count
         private Queue<string> _agenda;
         private List<string> _knowledgeBase;
 
+        private string _solution;
+
+        public List<string> Facts { get => _facts; set => _facts = value; }
+        public List<string> Clauses { get => _clauses; set => _clauses = value; }
+        public List<string> KnowledgeBase { get => _knowledgeBase; set => _knowledgeBase = value; }
+        public Queue<string> Agenda { get => _agenda; set => _agenda = value; }
+        public string Solution { get => _solution; }
+
         public BackwardChaining(string ask, string tell) : base(ask, tell)
         {
-            _facts = new List<string>(); // This essentially becomes our knowledgebase
-            _clauses = new List<string>();
-            _clauseCounts = new Dictionary<string, int>();
-            _agenda = new Queue<string>();
-            _knowledgeBase = new List<string>();
-        }
+            Type = KnowledgeBaseType.BC;
 
+            _facts = new List<string>();         // Initial facts of the system
+            _clauses = new List<string>();       // sentences to process
+            _agenda = new Queue<string>();       // list of symbols to process
+            _knowledgeBase = new List<string>(); // list of known facts
+        }
+        
+        // Returns the symbols on the LHS of the sentence 
         public List<string> GetPremiseSymbols(string clause)
         {
             string LHS = clause.Split("=>")[0].Trim();
@@ -45,36 +53,46 @@ namespace InferenceEngine
         // The backward chaining algorithm, yay!
         public override bool Entails(string goal)
         {
+            // Initialise DB by enqueing starting proposition and adding in required
+            //  Sentences and logic
             Initialise();
 
             while (_agenda.Count >= 1)
             {
+                // Taking the first element of the queue
                 string query = _agenda.Dequeue();
                 _knowledgeBase.Add(query);
 
+                // ... if it is not entailed by our current facts
                 if (!_facts.Contains(query))
                 {
-                    
-
+                    // We want to make a list of any additional clauses to confirm
                     List<string> clausesToConfirm = new List<string>();
+
+                    // Checking all known clauses
                     foreach(string clause in _clauses)
                     {
+                        // to see if it is concluded by the query
                         if (Concludes(clause, query))
                         {
                             List<string> premiseSymbols = GetPremiseSymbols(clause);
                             foreach (string symbol in premiseSymbols)
                             {
+                                //... we add the premise symbols to clauses to confirm
                                 clausesToConfirm.Add(symbol);
                             }
                         }
                     }
 
+                    // if there are no additonal clauses to evaluate, we have determined that the premise (ask)
+                    //  is unreachable and therefore is false.
                     if (clausesToConfirm.Count == 0)
                     {
                         return false;
                     }
                     else
                     {
+                        // Otherwise we want to confirm each of the clauses, so we enqueue them
                         foreach (string symbol in clausesToConfirm)
                         {
                             if (!_knowledgeBase.Contains(symbol))
@@ -92,6 +110,7 @@ namespace InferenceEngine
 
         }
 
+        // Initialises the Knowledgebase to the given TELL
         public void Initialise() { Initialise(Tell); }
         public void Initialise(string tell)
         {
@@ -142,7 +161,7 @@ namespace InferenceEngine
             {
                 output = "NO";
             }
-
+            _solution = output;
             return output;
         }
     }

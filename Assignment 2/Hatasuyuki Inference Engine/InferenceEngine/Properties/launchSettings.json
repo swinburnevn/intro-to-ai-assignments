@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "InferenceEngine": {
+      "commandName": "Project",
+      "commandLineArgs": "TT \"test_HornKB.txt\""
+    }
+  }
+}
